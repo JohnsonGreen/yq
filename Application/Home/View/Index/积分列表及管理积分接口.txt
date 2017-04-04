@@ -1,0 +1,68 @@
+登录处理：
+ 1.提交参数：username
+            password
+  成功: {"is_err":"0","result":{"userid":"4","username":"hahah","group":"\u4e00\u822c\u7528\u6237","realname":"\u738b\u6d77\u5f1b","email":"3432415454","phone":"425245245","school":"\u8f6f\u4ef6\u5b66\u9662","score":"0","lastip":"127.0.0.1","ip":"127.0.0.1","currentLoginTime":1490598391,"lastlogintime":"1971-06-07 20:18:55"}}
+
+  失败：{"is_err":"1","result":"提示信息"}
+
+ 2.注销：成功:{"is_err":"0","result":"注销成功"}，没有注销失败
+
+
+管理积分页：
+
+1.获取分数列表
+  使用post提交请求，参数为"page"，"pagesize","schoolid" ,没有以上参数时默认返回所有学院全部种类的第一页的前10条数据
+  返回数据：
+   正确：{"is_err":"0",
+   "result":[{"messageid":"10","schname":"\u8f6f\u4ef6\u5b66\u9662","title":"\u9b3c\u5730\u65b9\u4e2a","score":"4","base":"1","select":"0","approval":"0","warning":"0","quality":"0","special":"0","substract":"0","add":"0"},
+           {"messageid":"9","schname":"\u8ba1\u7b97\u673a\u5b66\u9662","title":"\u53cd\u653b\u5012\u7b97\u6cd5\u56fd\u961f","score":"3","base":"1","select":"0","approval":"0","warning":"0","quality":"0","special":"0","substract":"0","add":"0"},
+           {"messageid":"8","schname":"\u8ba1\u7b97\u673a\u5b66\u9662","title":"\u5927\u6982\u662f\u5927\u6cd5\u5b98","score":"2","base":"1","select":"0","approval":"0","warning":"0","quality":"0","special":"0","substract":"0","add":"0"},
+           {"messageid":"7","schname":"\u8f6f\u4ef6\u5b66\u9662","title":"\u53d1\u9001\u7ed9\u5bf9\u65b9\u8bf4","score":"2","base":"1","select":"0","approval":"0","warning":"0","quality":"0","special":"0","substract":"0","add":"0"},
+           {"messageid":"6","schname":"\u8f6f\u4ef6\u5b66\u9662","title":"\u5730\u65b9","score":"2","base":"1","select":"0","approval":"0","warning":"0","quality":"0","special":"0","substract":"0","add":"0"},
+           {"messageid":"5","schname":"\u672a\u77e5\u5b66\u9662","title":"\u53d1\u7ed9","score":"2","base":"1","select":"0","approval":"0","warning":"0","quality":"0","special":"0","substract":"0","add":"0"},
+           {"messageid":"4","schname":"\u672a\u77e5\u5b66\u9662","title":"\u5730\u65b9","score":"2","base":"1","select":"0","approval":"0","warning":"0","quality":"0","special":"0","substract":"0","add":"0"},
+           {"messageid":"3","schname":"\u8ba1\u7b97\u673a\u5b66\u9662","title":"\u5927\u8d5b","score":"2","base":"1","select":"0","approval":"0","warning":"0","quality":"0","special":"0","substract":"0","add":"0"},
+           {"messageid":"2","schname":"\u672a\u77e5\u5b66\u9662","title":"fs","score":"2","base":"1","select":"0","approval":"0","warning":"0","quality":"0","special":"0","substract":"0","add":"0"},
+           {"messageid":"1","schname":"\u8f6f\u4ef6\u5b66\u9662","title":"\u54c8\u54c8","score":"1","base":"1","select":"0","approval":"0","warning":"0","quality":"0","special":"0","substract":"0","add":"0"}]}
+
+   title:标题
+   score:总分
+   base：基础分
+   以此类推，除了最后一个add
+
+   错误：{"is_err":"1","result":"提示信息"}
+
+2.删除单条报送 
+         提交参数：messageid
+         成功：{"is_err":"0","result":"1"}
+        失败：{"is_err":"1","result":"提示信息"}
+   
+3.更新数据： 
+        提交参数：messageid和base到substract的内容，不用传json
+        成功：{"is_err":"0","result":"1"}
+        失败：{"is_err":"1","result":"提示信息"}
+4.返回“管理积分页”总的页数，供分页使用，没有参数：
+       成功:  {"is_err":"0","result":{"pages":1}} 
+       失败，实际上没有失败，没有找到数据时，页数为0：
+              {"is_err":"0","result":{"pages":0}} 
+5.学院下拉选项，没有参数：
+       成功：{"is_err":"0","result":[{"schoolid":"0","schname":"全部"},{"schoolid":"3","schname":"\u8ba1\u7b97\u673a\u5b66\u9662"},{"schoolid":"1","schname":"\u8f6f\u4ef6\u5b66\u9662"},{"schoolid":"2","schname":"\u672a\u77e5\u5b66\u9662"}]},提交“schoolid”给后台
+       失败：{"is_err":"1","result":"提示信息"}
+
+6.类别下拉选项，没有参数
+       成功： {"is_err":"0","result":[{"typeid":"0","type":"全部"},{"typeid":"2","type":"\u610f\u8bc6\u5f62\u6001"},{"typeid":"6","type":"\u6559\u80b2\u6539\u9769"},{"typeid":"3","type":"\u6c11\u65cf\u5b97\u6559"},{"typeid":"4","type":"\u7a81\u53d1\u7fa4\u4f53\u6027\u4e8b\u4ef6"},{"typeid":"5","type":"\u7ba1\u7406\u7ef4\u6743"}]}，提交typeid给后台
+       失败： {"is_err":"1","result":"提示信息"}
+   
+
+积分列表页：
+     1.返回积分列表，参数为"page"，"pagesize",没有以上参数时默认返回学院第一页的前10条数据：
+             成功：{"is_err":"0","result":[{"schoolid":"1","schname":"\u8f6f\u4ef6\u5b66\u9662","score":"100"},{"schoolid":"2","schname":"\u672a\u77e5\u5b66\u9662","score":"45"},{"schoolid":"3","schname":"\u8ba1\u7b97\u673a\u5b66\u9662","score":"25"}]}
+             失败: {"is_err":"1","result":"提示信息"}  
+
+     2.返回积分列表总页数，没有参数：
+          成功:  {"is_err":"0","result":{"pages":1}} 
+          失败，实际上没有失败，没有找到数据时，页数为0：
+              {"is_err":"0","result":{"pages":0}} 
+    
+      
+    

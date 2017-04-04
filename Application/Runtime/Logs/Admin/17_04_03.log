@@ -1,0 +1,1014 @@
+[ 2017-04-03T22:16:13+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000451s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007881s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0115s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0122s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0143s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0016s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0018s ]
+
+[ 2017-04-03T22:17:13+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000763s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006025s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003136s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005703s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0116s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0112s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0121s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0014s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0015s ]
+
+[ 2017-04-03T22:19:59+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001454s ]
+INFO: [ app_init ] --END-- [ RunTime:0.026401s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012654s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0145s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0140s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0134s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0017s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0163s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0017s ]
+
+[ 2017-04-03T22:24:24+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.026309s ]
+INFO: [ app_init ] --END-- [ RunTime:0.038107s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.017254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.029113s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0141s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0140s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0164s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0019s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0168s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0542s ]
+ERR: Think\Model:replyCounts方法不存在！
+
+[ 2017-04-03T22:29:12+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000882s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.013083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018021s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0123s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0096s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0112s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0017s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0166s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0121s ]
+ERR: Think\Model:replyCounts方法不存在！
+
+[ 2017-04-03T22:29:25+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001580s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004917s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010605s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0141s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0135s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0106s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0018s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0155s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0145s ]
+ERR: Think\Model:replyCounts方法不存在！
+
+[ 2017-04-03T22:32:40+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001174s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004065s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008205s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0092s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0091s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0094s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0011s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0013s ]
+ERR: 1146:Table 'tjuyq.yq_reply_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `yq_reply_model`
+ERR: 1146:Table 'tjuyq.yq_reply_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `yq_reply_model`
+
+[ 2017-04-03T22:32:57+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.004459s ]
+INFO: [ app_init ] --END-- [ RunTime:0.068747s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.026576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036934s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.1019s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0137s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0129s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0014s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0013s ]
+ERR: 1146:Table 'tjuyq.yq_reply_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `yq_reply_model`
+ERR: 1146:Table 'tjuyq.yq_reply_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `yq_reply_model`
+
+[ 2017-04-03T22:37:27+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002241s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019877s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.014788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.020381s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0191s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0127s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0126s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0017s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0255s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0016s ]
+ERR: 1146:Table 'tjuyq.yq_reply_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `yq_reply_model`
+ERR: 1146:Table 'tjuyq.yq_reply_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `yq_reply_model`
+
+[ 2017-04-03T22:38:18+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000695s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014462s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0110s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0093s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0080s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0009s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0097s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0069s ]
+ERR: Think\Model:replyCounts方法不存在！
+
+[ 2017-04-03T22:39:46+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000546s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004441s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005879s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015963s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0105s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0103s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0086s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0014s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0077s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0072s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+
+[ 2017-04-03T22:40:11+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000856s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008810s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015989s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0093s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0084s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0079s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0009s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+
+[ 2017-04-03T22:40:21+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000798s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008471s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0131s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0117s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0126s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0018s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0231s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0125s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0021s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0013s ]
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+
+[ 2017-04-03T22:41:15+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000492s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005145s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003991s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009643s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0149s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0028s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0128s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0109s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0013s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0106s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0015s ]
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 43 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+
+[ 2017-04-03T23:06:58+08:00 ] ::1 /yq/index.php/Admin/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000458s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003683s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002997s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004997s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0063s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0069s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0062s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0016s ]
+
+[ 2017-04-03T23:06:58+08:00 ] ::1 /yq/index.php/Admin/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000701s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.055333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.060096s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0087s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0060s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0053s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0012s ]
+
+[ 2017-04-03T23:08:16+08:00 ] ::1 /yq/index.php/Admin/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000386s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003702s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009533s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0075s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0063s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0064s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0008s ]
+
+[ 2017-04-03T23:08:16+08:00 ] ::1 /yq/index.php/Admin/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000499s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008063s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0063s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0064s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0059s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0075s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0008s ]
+
+[ 2017-04-03T23:08:24+08:00 ] ::1 /yq/index.php/Admin/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000644s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006083s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007040s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0089s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0087s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0088s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0013s ]
+
+[ 2017-04-03T23:08:24+08:00 ] ::1 /yq/index.php/Admin/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000607s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.027609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.031206s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0097s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0097s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0084s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0011s ]
+
+[ 2017-04-03T23:08:29+08:00 ] ::1 /yq/index.php/Admin/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000610s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.027530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.050255s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0098s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0101s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0090s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0012s ]
+
+[ 2017-04-03T23:08:29+08:00 ] ::1 /yq/index.php/Admin/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000682s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.014418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.044775s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0092s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0094s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0077s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0011s ]
+
+[ 2017-04-03T23:08:40+08:00 ] ::1 /yq/index.php/Admin/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000683s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016900s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.020405s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0280s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0100s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0090s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0014s ]
+
+[ 2017-04-03T23:08:40+08:00 ] ::1 /yq/index.php/Admin/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000665s ]
+INFO: [ app_init ] --END-- [ RunTime:0.041286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014458s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0097s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0092s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0087s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0012s ]
+
+[ 2017-04-03T23:08:46+08:00 ] ::1 /yq/index.php/Admin/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000719s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006957s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.051603s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0089s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0095s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0085s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0012s ]
+
+[ 2017-04-03T23:08:46+08:00 ] ::1 /yq/index.php/Admin/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000756s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006856s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.017451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.020431s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0099s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0081s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0091s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0011s ]
+
+[ 2017-04-03T23:10:21+08:00 ] ::1 /yq/index.php/Admin/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000516s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002954s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004983s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0095s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0094s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0050s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0006s ]
+
+[ 2017-04-03T23:10:21+08:00 ] ::1 /yq/index.php/Admin/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000564s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.032559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.038337s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0078s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0077s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0061s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0006s ]
+
+[ 2017-04-03T23:11:08+08:00 ] ::1 /yq/index.php/Admin/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000456s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003672s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005871s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0090s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0084s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0071s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0009s ]
+
+[ 2017-04-03T23:11:08+08:00 ] ::1 /yq/index.php/Admin/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000430s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016882s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0273s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0072s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0074s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0009s ]
+
+[ 2017-04-03T23:11:09+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000432s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003865s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.027433s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0075s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0073s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0070s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0010s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0066s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+
+[ 2017-04-03T23:11:18+08:00 ] ::1 /yq/index.php/Admin/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001654s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019181s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0118s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0105s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0092s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0013s ]
+
+[ 2017-04-03T23:11:18+08:00 ] ::1 /yq/index.php/Admin/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000851s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019624s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0107s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0094s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0087s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0010s ]
+
+[ 2017-04-03T23:11:19+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000749s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004795s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006341s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0106s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0078s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0080s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0009s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0076s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0071s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+
+[ 2017-04-03T23:14:25+08:00 ] ::1 /yq/index.php/Admin/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000525s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006282s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0116s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0073s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0085s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0009s ]
+
+[ 2017-04-03T23:14:26+08:00 ] ::1 /yq/index.php/Admin/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001757s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008627s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006696s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0071s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0083s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0052s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0008s ]
+
+[ 2017-04-03T23:14:26+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000541s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005116s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007334s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0096s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0084s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0074s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0028s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0078s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+
+[ 2017-04-03T23:17:33+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000791s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008959s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009053s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0277s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0143s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='1' )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0163s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','2','4','7','10')  [ RunTime:0.0017s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `yq_message` WHERE `userid` = 1 ORDER BY createtime desc  [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0079s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0015s ]
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 46 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
+

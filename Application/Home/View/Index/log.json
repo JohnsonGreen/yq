@@ -1,0 +1,41 @@
+{
+  "is_err": 0,
+  "result": [
+    {
+      "userid": "1",
+      "username": "admin",
+      "lastip": "111",
+      "lastlogintime": "1111",
+      "schname": null,
+      "groupname": "一般用户",
+      "realname": "陈恒"
+    },
+    {
+      "userid": "2",
+      "username": "manageer",
+      "lastip": "213123",
+      "lastlogintime": "23123",
+      "schname": null,
+      "groupname": "超级管理员",
+      "realname": "郭仁杰"
+    },
+    {
+      "userid": "3",
+      "username": "辅导员",
+      "lastip": "234234234",
+      "lastlogintime": "23423423",
+      "schname": null,
+      "groupname": "辅导员",
+      "realname": "媛姐"
+    },
+    {
+      "userid": "4",
+      "username": "hahah",
+      "lastip": "14514515",
+      "lastlogintime": "45145135",
+      "schname": null,
+      "groupname": "一般用户",
+      "realname": "王海弛"
+    }
+  ]
+}

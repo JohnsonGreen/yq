@@ -1,0 +1,456 @@
+[ 2017-03-24T17:58:41+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000577s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006531s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002535s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005956s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.082275s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.084780s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005287s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008173s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004005s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006596s ]
+
+[ 2017-03-24T17:58:45+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000518s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004857s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011084s ]
+ERR: 1146:Table 'tjuyq.yq_users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `yq_users`
+ERR: 1146:Table 'tjuyq.yq_users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `yq_users`
+
+[ 2017-03-24T18:16:22+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000498s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006612s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003724s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.066327s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.068801s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002550s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005060s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003342s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006399s ]
+
+[ 2017-03-24T18:16:26+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000477s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004089s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005381s ]
+ERR: 1146:Table 'tjuyq.yq_users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `yq_users`
+ERR: 1146:Table 'tjuyq.yq_users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `yq_users`
+
+[ 2017-03-24T18:16:54+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000775s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003007s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006187s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005910s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.077778s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.081216s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002668s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005768s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003744s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007151s ]
+
+[ 2017-03-24T18:16:55+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000455s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005607s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'test' AND `password` = '827ccb0eea8a706c4c34a16891f84e7b' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001674s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005389s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063014s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.065519s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002808s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005420s ]
+
+[ 2017-03-24T18:17:32+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001287s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007654s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004153s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007619s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001275s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004618s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.070424s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.074830s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002443s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005136s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003532s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006797s ]
+
+[ 2017-03-24T18:17:33+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000470s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004110s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005227s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'test' AND `password` = '827ccb0eea8a706c4c34a16891f84e7b' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001832s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004998s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063324s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067840s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003760s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006527s ]
+
+[ 2017-03-24T18:18:52+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000479s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004116s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003104s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005601s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0141s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'hahah' AND `password` = '4134134' LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0157s ]
+SQL: SELECT `schname` FROM `yq_school` WHERE ( schoolid=4514545 ) LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [8] Undefined index: schore F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 30 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003570s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061085s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063901s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002431s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004821s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003397s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005787s ]
+
+[ 2017-03-24T18:44:07+08:00 ] ::1 /yq/?XDEBUG_SESSION_START=10202
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001765s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008120s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008883s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001519s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004771s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.091203s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.096180s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.011693s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003399s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007156s ]
+
+[ 2017-03-24T18:44:15+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001266s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008416s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0372s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'test' AND `password` = '12345' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.007937s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.090130s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.096698s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003776s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007892s ]
+
+[ 2017-03-24T18:45:02+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001313s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007758s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004165s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008664s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0230s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'hahah' AND `password` = '4134134' LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0224s ]
+SQL: SELECT `schname` FROM `yq_school` WHERE ( schoolid=4514545 ) LIMIT 1   [ RunTime:0.0013s ]
+NOTIC: [8] Undefined index: schore F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 30 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005607s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.077103s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.081421s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003486s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006712s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002954s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005504s ]
+
+[ 2017-03-24T19:16:52+08:00 ] ::1 /yq/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001665s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003991s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008899s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001324s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005086s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.095655s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.100147s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003360s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008585s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006838s ]
+
+[ 2017-03-24T19:17:25+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001292s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006799s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012302s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'hahah' AND `password` = '4134134' LIMIT 1   [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0137s ]
+SQL: SELECT `schname` FROM `yq_school` WHERE ( schoolid=4514545 ) LIMIT 1   [ RunTime:0.0019s ]
+NOTIC: [8] Undefined index: schore F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 30 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002419s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008185s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.106339s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.110467s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008319s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005395s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012888s ]
+
+[ 2017-03-24T20:08:38+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000499s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004137s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005965s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001324s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003747s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063764s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066503s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003934s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006336s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005703s ]
+
+[ 2017-03-24T20:09:38+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000512s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004622s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003149s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006537s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'hahah' AND `password` = '4134134' LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0117s ]
+SQL: SELECT `schname` FROM `yq_school` WHERE ( schoolid=4514545 ) LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [8] Undefined index: schore F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 30 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001291s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003714s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.064869s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067545s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002736s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005189s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005060s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009220s ]
+
+[ 2017-03-24T20:09:42+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000472s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003986s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005265s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'hahah' AND `password` = '4134134' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0103s ]
+SQL: SELECT `schname` FROM `yq_school` WHERE ( schoolid=4514545 ) LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: schore F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 30 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001481s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004145s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.072303s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.075329s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.009863s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003155s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006096s ]
+
+[ 2017-03-24T20:09:55+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000849s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008975s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014185s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'hahah' AND `password` = '4134134' LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0118s ]
+SQL: SELECT `schname` FROM `yq_school` WHERE ( schoolid=4514545 ) LIMIT 1   [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: schore F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 30 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003329s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.007838s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.076608s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080332s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003193s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008481s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003163s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005846s ]
+
+[ 2017-03-24T20:09:58+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000719s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004795s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'hahah' AND `password` = '4134134' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0110s ]
+SQL: SELECT `schname` FROM `yq_school` WHERE ( schoolid=4514545 ) LIMIT 1   [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: schore F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 30 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003446s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.059923s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062550s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003865s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006350s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003986s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006379s ]
+
+[ 2017-03-24T20:55:44+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002962s ]
+INFO: [ app_init ] --END-- [ RunTime:0.029390s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014649s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.005162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.011524s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.128371s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.133154s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006225s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012651s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007857s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012658s ]
+
+[ 2017-03-24T20:55:44+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001087s ]
+INFO: [ app_init ] --END-- [ RunTime:0.062512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.050380s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004307s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009672s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.190672s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.196958s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003283s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006135s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010640s ]
+
+[ 2017-03-24T20:55:45+08:00 ] ::1 /yq/index.php/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001094s ]
+INFO: [ app_init ] --END-- [ RunTime:0.075706s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.040137s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001684s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.007826s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.125201s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.130702s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013692s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.018413s ]
+INFO: [ app_end ] --END-- [ RunTime:0.022245s ]
+
