@@ -11,7 +11,9 @@ class KeyController extends AdminBaseController{
 	 */
 	public function index(){
 		$p = I('post.page');
-
+        if(empty($p)){
+            $p = 1;
+        }
 		$response['is_er'] = 0;
 		$result = D('Key')->getKeys($p);
 		$response['result'] = $result;

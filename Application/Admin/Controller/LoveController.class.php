@@ -11,7 +11,8 @@ class LoveController extends AdminBaseController{
 	 */
 	public function index(){
 		$p = I('post.page');
-		$result = D('User_collection')->getData(null, $p);
+		$p = 1;
+		$result = D('UserCollection')->getData(null, $p);
 		$response['is_err'] = 0;
 		$response['result'] = $result;
 		$response['max_page'] = count($result)/10;

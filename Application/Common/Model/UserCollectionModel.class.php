@@ -11,8 +11,8 @@ class UserCollectionModel extends Model {
 
     //收藏
     public function love($id){
-
-        $data['userid'] = I('session,userid');
+        @session_start();
+        $data['userid'] = $_SESSION['user']['userid'];
         $data['messageid'] = $id;
         if($this->add($data)){
             return true;
@@ -23,8 +23,7 @@ class UserCollectionModel extends Model {
 
     public function getData($map = array(), $p = 1){
         @session_start();
-
-        $map['yq_user_collection.userid'] = I('session.userid');
+        $map['yq_user_collection.userid'] = $_SESSION['user']['userid'];
 //        $map['yq_user_collection.userid'] = 1;
         $result = $this
             ->join('left join yq_message a on yq_user_collection.messageid = a.messageid')
@@ -41,8 +40,9 @@ class UserCollectionModel extends Model {
     }
 
     public function del($id){
+        @session_start();
         $map['messageid'] = $id;
-        $map['userid'] = I('session.userid');
+        $map['userid'] = $_SESSION['user']['userid'];
         if($this->where($map)->delete()){
             return true;
         }else{

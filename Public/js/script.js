@@ -146,7 +146,7 @@ var ctrl = {
 	//获取舆情公告的具体内容
 	getPub: function() {
 		$.ajax({
-			url: "announcement.json",
+			url: "/yq/index.php/Admin/Announce/index",
 			type: "GET",
 			datatype: "json",
 
@@ -156,7 +156,7 @@ var ctrl = {
 				for(var i = 0; i < s.length; i++) {
 					$(".opinion-content").append('<div class="opinion-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
 					$(".opinion-contentDet"+i).append('<span class="opinion-callback">'+s[i].reply+'</span>');
-					$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="images/sound.png"><a style="margin-left: 20px;" onclick="opdetail('+s[i]+')">'+s[i].title+'</a></span>');
+					$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="Public/images/sound.png"><a style="margin-left: 20px;" onclick="opdetail('+s[i]+')">'+s[i].title+'</a></span>');
 					$(".opinion-contentDet"+i).append('<span class="opinion-author">'+s[i].realname+'</span>');
 					$(".opinion-contentDet"+i).append('<span class="opinion-time">'+s[i].createtime+'</span>');
 					$(".opinion-contentDet"+i).append('<span class="opinion-operation"><a onclick="ctrl.opedit('+s[i]+')">编辑</a><a onclick="ctrl.opup('+s[i]+')">置顶</a><a onclick="ctrl.opdele('+s[i]+')">删除</a></span>');
@@ -168,8 +168,9 @@ var ctrl = {
 	//获得单条信息报送的具体内容
 	getSingle: function() {
 		$.ajax({
-			url: "single.json",
+			url: "/yq/index.php/Admin/Message/single",
 			type: "GET",
+			async:false,
 			datatype: "json",
 
 			success: function(json) {
@@ -192,7 +193,7 @@ var ctrl = {
 	//获得综合信息报送的内容
 	getIntegrative: function() {
 		$.ajax({
-			url: "single.json",
+			url: "/yq/index.php/Admin/Message/single",
 			type: "GET",
 			datatype: "json",
 
@@ -216,7 +217,7 @@ var ctrl = {
 	//获得管理用户内容
 	getManager: function() {
 		$.ajax({
-			url: "manager.json",
+			url: "/yq/index.php/Admin/User/index",
 			type: "GET",
 			datatype: "json",
 
@@ -242,7 +243,7 @@ var ctrl = {
 	//获得我的收藏页的内容
 	getCollection: function() {
 		$.ajax({
-			url: "collection.json",
+			url: "/yq/index.php/Admin/Love/index",
 			type: "GET",
 			datatype: "json",
 
@@ -267,7 +268,7 @@ var ctrl = {
 	//获得管理积分的内容
 	getMark: function() {
 		$.ajax({
-			url: "key.json",
+			url: "/yq/index.php/Admin/ManageScore",
 			type: "GET",
 			datatype: "json",
 
@@ -296,7 +297,7 @@ var ctrl = {
 	//获得管理关键字的内容
 	getKeyword: function() {
 		$.ajax({
-			url: "key.json",
+			url: "/yq/index.php/Admin/Key/index",
 			type: "GET",
 			datatype: "json",
 
@@ -317,7 +318,7 @@ var ctrl = {
 	//获取积分列表的内容
 	getList: function() {
 		$.ajax({
-			url: "???.json",
+			url: "/yq/index.php/Admin/ManageScore/getSchoolScoreList",
 			type: "GET",
 			datatype: "json",
 
@@ -338,7 +339,7 @@ var ctrl = {
 	//获得在线人数的内容
 	getOnline: function() {
 		$.ajax({
-			url: "online.json",
+			url: "/yq/index.php/Admin/User/online",
 			type: "GET",
 			datatype: "json",
 
@@ -360,7 +361,7 @@ var ctrl = {
 	//获得日志的内容
 	getLog: function() {
 		$.ajax({
-			url: "log.json",
+			url: "/yq/index.php/Admin/User/user",
 			type: "GET",
 			datatype: "json",
 

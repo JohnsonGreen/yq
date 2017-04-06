@@ -67,8 +67,10 @@ class UserController extends AdminBaseController{
 	//在线
 	public function online(){
 		$p = I('post.page');
+		if(!empty($p)){
+		    $p = 1;
+        }
 		$result = D('User')->getOnline($p);
-
 		$response['result'] = $result;
 		$response['is_err'] = 0;
 		$response['max_page'] = count($result)/10;
@@ -80,6 +82,9 @@ class UserController extends AdminBaseController{
 	//日志
 	public function user(){
 		$p = I('post.page');
+        if(!empty($p)){
+            $p = 1;
+        }
 		$result = D('User')->getUser($p);
 		$response['is_err'] = 0;
 		$response['result'] = $result;
@@ -87,9 +92,13 @@ class UserController extends AdminBaseController{
 		echo json_encode($response);
 		exit;
 	}
+
 	//user
 	public function index(){
 		$p = I('post.page');
+        if(!empty($p)){
+            $p = 1;
+        }
 		$result = D('User')->getUser($p);
 		$response['is_err'] = 0;
 		$response['result'] = $result;
