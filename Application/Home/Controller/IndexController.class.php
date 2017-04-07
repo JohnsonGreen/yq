@@ -9,7 +9,6 @@ class IndexController extends HomeBaseController{
         $this->display();
     }
 
-
     /**
      * 登录
      */
@@ -29,9 +28,14 @@ class IndexController extends HomeBaseController{
                 ));
                 exit;
             }else{
-
-                $school = M('School')->field('schname')->where('schoolid='.$data['schoolid'])->find();
+                $sch = M('School');
+                $school = $sch->field('schname')->where('schoolid='.$data['schoolid'])->find();
+                $rank =  $sch->order('score desc')->limit(3)->select();    //首页学院分数排名
                 $group = M()->table('__USER_GROUP__ a')->field('b.groupid,b.groupname')->join('__GROUP__ b')->where('a.userid='.$data['userid'].'&&a.groupid=b.groupid')->find();
+                $leftBar = D('GroupLeftbarPermission')->getLeftBar($group['groupid']);
+                $root = 'index.php/';
+                $logout = 'Home/Index/logout';
+
                 $_SESSION['user']=array(
                     'userid'=>$data['userid'],
                     'username'=>$data['username'],
@@ -45,7 +49,11 @@ class IndexController extends HomeBaseController{
                     'lastip'=>$data['lastip'],
                     'ip'=>get_client_ip(1),
                     'currentLoginTime'=> time(),
-                    'lastlogintime' => date("Y-m-d H:i:s", $data['lastlogintime'])
+                    'lastlogintime' => date("Y-m-d H:i:s", $data['lastlogintime']),
+                    'root'=>$root,
+                    'logout'=>$logout,
+                    'leftBar'=>$leftBar,
+                    'rank'=>$rank
                 );
 
                 echo json_encode(array(

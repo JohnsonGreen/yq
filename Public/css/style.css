@@ -5,6 +5,7 @@ body {
 	background-color: #f9f9f9;
 	box-sizing: content-box;
 	overflow: hidden;
+	overflow-y: auto;
 }
 
 header {
@@ -45,6 +46,23 @@ table {
 	width: 90%;
 	margin: 20px auto 0 auto;
 	overflow: hidden;
+}
+
+.person {
+	float: right;
+	position: relative;
+	right: 10%;
+	bottom: 5px;
+	font-size: 14px;
+}
+
+.person a {
+	color: #4d8aa8;
+	cursor: pointer;
+}
+
+.person a:hover {
+	text-decoration: underline;
 }
 
 .user,
@@ -92,7 +110,7 @@ table {
 }
 
 .showing {
-	height: 20px;
+	height: 25px;
 	width: 100%;
 	margin-top: -20px;
 	background-color: #e5e5e5;
@@ -575,6 +593,7 @@ select {
 }
 
 .manager-content {
+	padding-top: 10px;
 	margin-top: 20px;
 	width: 100%;
 	height: auto;
@@ -888,7 +907,8 @@ select {
 }
 
 .settings button,
-.details button {
+.details button,
+.add button {
 	width: 60px;
 	height: 25px;
 	background-color: #4d8aa8;
@@ -1085,7 +1105,7 @@ footer span {
 	}
 
 	.opinion-search {
-		margin-left: 28%;
+		margin-left: 22%;
 	}
 
 	.opinion-content span {
@@ -1358,6 +1378,11 @@ footer span {
 		width: 70%;
 		height: 500px;
 		margin-left: 25%;
+	}
+
+	.add {
+		width: 50%;
+		margin: 20px auto 0 auto;
 	}
 
 	footer {
