@@ -14,6 +14,7 @@ header {
 	width: 100%;
 	height: 50px;
 	margin-bottom: 10px;
+	opacity: 0.8;
 }
 
 header span {
@@ -40,6 +41,8 @@ table {
 	width: 100%;
 	height: 300px;
 	margin-top: 20px;
+	opacity: 0.8;
+	border-radius: 10px;
 }
 
 .inner {
@@ -710,6 +713,10 @@ select {
 	margin-left: 31px;
 }
 
+.managemark-all span {
+	height: 19px;
+}
+
 .managemark-number {
 	display: inline-block;
 	width: 18%;
@@ -817,17 +824,17 @@ select {
 
 .marklist-school {
 	display: inline-block;
-	width: 10%;
+	width: 15%;
 }
 
 .marklist-total {
 	display: inline-block;
-	width: 65%;
+	width: 50%;
 }
 
 .marklist-detail {
 	display: inline-block;
-	width: 10%;
+	width: 20%;
 }
 
 .marklist-content a {
@@ -1034,7 +1041,7 @@ footer {
 	color: white;
 	width: 100%;
 	height: 60px;
-	margin-top: 100%;
+	margin-top: 500px;
 }
 
 footer span {

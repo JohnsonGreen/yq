@@ -1,24 +1,27 @@
 $(document).ready(function() {
 
+    $("body").css("background-image", "url("+ImgPath+"login.png)");
 
-    $.ajax({
-        url: login,
-        type: "GET",
-        datatype: "json",
+	$.ajax({
+		url: login ,
+		type: "GET",
+		datatype: "json",
 
-        success: function(json) {
-            //登录成功时需要渲染的函数
-            if(json.is_err == 0) {
-                model.identity = json.result;
-                $(".navigation").css("display", "block");
-                $(".showing").css("display", "block");
-                $(".login").css("display", "none");
-                $(".contain").css("display", "block");
-                ctrl.getMenu();
-                ctrl.getInformation();
-            }
-        }
-    });
+		success: function(json) {
+			//登录成功时需要渲染的函数
+			if(json.is_err == 0) {
+				model.identity = json.result;
+				$("body").css("background-image", "none");
+				$(".person").css("display", "block");
+				$(".navigation").css("display", "block");
+				$(".showing").css("display", "block");
+				$(".login").css("display", "none");
+				$(".contain").css("display", "block");
+				ctrl.getMenu();
+				ctrl.getInformation();
+			}
+		}
+	})
 
 	//获得学院名称
 	// $.ajax({
@@ -48,11 +51,10 @@ $(document).ready(function() {
 })
 
 var model = {
-    identity: {},
-    url:[],
-    //菜单的内容，用数组表示
-    menu: [],
-    ranks: ["化工学院", "机械学院", "建工学院"],
+	identity: {},
+	//菜单的内容，用数组表示
+	menu: ["首页", "舆情公告", "单条信息报送", "综合信息报送", "管理用户", "我的收藏", "管理积分", "管理关键字", "积分列表", "在线人数", "日志"],
+	ranks: ["化工学院", "机械学院", "建工学院"],
 }
 
 var view = {
@@ -78,7 +80,7 @@ var view = {
 
 var ctrl = {
 	//个人设置
-	setting: function() {
+	setting: function(index) {
 		$(ctrl.getCurrentClass()).css("display", "none");
 		$(".details").css("display", "none");
 		$(".send").css("display", "none");
@@ -96,11 +98,12 @@ var ctrl = {
 		ctrl.getRank();
 		ctrl.getNews();
 		ctrl.getPublics();
+		ctrl.getPub();
 	},
 
 	//获得菜单页的信息
 	getMenu: function() {
-		//model.menu = [];
+		model.menu = [];
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
 			model.menu[i] = model.identity.leftBar[i].name;
 		}
@@ -186,7 +189,7 @@ var ctrl = {
 				ctrl.getOnline();
 				break;
 			case ".log":
-				//ctrl.getLog();
+				ctrl.getLog();
 				break;
 		}
 		if(ctrl.getCurrentClass() == ".opinion" || ctrl.getCurrentClass() == ".single-post" || ctrl.getCurrentClass() == ".integrative-post" || ctrl.getCurrentClass() == ".collection")
@@ -204,21 +207,21 @@ var ctrl = {
 	},
 	//获取最新报送
 	getNews: function() {
-		// $(".news-content").empty();
-		// $.ajax({
-		// 	url: model.identity.root + model.identity.leftBar[i].api,
-		// 	type: "get",
-		// 	datatype: "json",
-        //
-		// 	success: function(json) {
-		// 		var s = json.result;
-		// 		for(var i = 0; i < s.length; i++){
-		// 			$(".news").append('<div style="width:90%; margin:10px auto;" class="news'+i+'"></div>')
-		// 			$(".news"+i).append('<span>'+s[i].title+'</span>');
-		// 			$(".news"+i).append('<span style="float: right;">'+s[i].createtime+'</span>');
-		// 		}
-		// 	}
-		// })
+		$(".news-content").empty();
+		$.ajax({
+			url: model.identity.root + model.identity.leftBar[0].api,
+			type: "get",
+			datatype: "json",
+
+			success: function(json) {
+				var s = json.result.message;
+				for(var i = 0; i < s.length; i++){
+					$(".news").append('<div style="width:90%; margin:10px auto;" class="news'+i+'"></div>')
+					$(".news"+i).append('<span>'+s[i].title+'</span>');
+					$(".news"+i).append('<span style="float: right;">'+s[i].createtime+'</span>');
+				}
+			}
+		})
 	},
 	//获取舆情公告
 	getPublics: function() {
@@ -242,10 +245,9 @@ var ctrl = {
 	//获取舆情公告的具体内容
 	getPub: function() {
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
-			console.log(model.identity.leftBar[i].keybind);
 			if(model.identity.leftBar[i].keybind == 0) {
 					$.ajax({
-					url: model.identity.leftBar[1].api,
+					url: model.identity.root + model.identity.leftBar[i].api,
 					type: "GET",
 					datatype: "json",
 
@@ -255,17 +257,15 @@ var ctrl = {
 						for(var i = 0; i < s.length; i++) {
 							$(".opinion-content").append('<div class="opinion-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
 							$(".opinion-contentDet"+i).append('<span class="opinion-callback">'+s[i].reply+'</span>');
-							$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="images/sound.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail('+s[i].anoceid+')">'+s[i].title+'</a></span>');
+							$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'sound.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail('+s[i].anoceid+')">'+s[i].title+'</a></span>');
 							$(".opinion-contentDet"+i).append('<span class="opinion-author">'+s[i].realname+'</span>');
 							$(".opinion-contentDet"+i).append('<span class="opinion-time">'+s[i].createtime+'</span>');
 							$(".opinion-contentDet"+i).append('<span class="opinion-operation"><a onclick="ctrl.opedit('+s[i].anoceid+')">编辑</a><a onclick="ctrl.opup('+s[i].anoceid+')">置顶</a><a onclick="ctrl.opdele('+s[i].anoceid+')">删除</a></span>');
 						}
 					}
 				})
-				break;
 			}
 		}
-		
 	},
 
 	//舆情公告获取详情页
@@ -327,13 +327,11 @@ var ctrl = {
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
 			if(model.identity.leftBar[i].keybind == 1) {
 				$.ajax({
-					url: model.identity.root + model.identity.leftBar[2].api,
+					url: model.identity.root + model.identity.leftBar[i].api,
 					type: "GET",
 					datatype: "json",
 
 					success: function(json) {
-						console.log( json.result);
-
 						$(".single-content").empty();
 						var s = json.result;
 						for(var i = 0; i < s.length; i++) {
@@ -511,7 +509,7 @@ var ctrl = {
 	},
 
 	maedit: function(index) {
-
+		ctrl.setting(index);
 	},
 
 	madele: function(index) {
@@ -519,7 +517,7 @@ var ctrl = {
 	},
 
 	machange: function(index) {
-
+		ctrl.setting(index);
 	},
 
 	//获得我的收藏页的内容
@@ -646,12 +644,16 @@ var ctrl = {
 							$(".marklist-contentDet"+i).append('<span class="marklist-rank">'+s[i].schoolid+'</span>');
 							$(".marklist-contentDet"+i).append('<span class="marklist-school">'+s[i].schname+'</span>');
 							$(".marklist-contentDet"+i).append('<span class="marklist-total">'+s[i].score+'</span>');
-							$(".marklist-contentDet"+i).append('<span class="marklist-detail"><a onclick="ctrl.listdet('+s[i]+')">查看详情</a></span>');
+							$(".marklist-contentDet"+i).append('<span class="marklist-detail"><a onclick="ctrl.listdet('+s[i].schoolid+')">查看详情</a></span>');
 						}
 					}
 				})
 			}
 		}
+	},
+
+	listdet: function(index) {
+
 	},
 
 	//获得在线人数的内容
@@ -821,5 +823,5 @@ var ctrl = {
 				$(".contain").css("display", "block");
 			}
 		})
-	}
+	},
 }

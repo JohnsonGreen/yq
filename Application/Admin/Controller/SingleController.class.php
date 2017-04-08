@@ -38,79 +38,46 @@ class SingleController extends AdminBaseController{
 	}
 
 
-	//时间搜索
-	public function search(){
-		$date1 = strtotime(I('post.date1'));
-		$date2 = strtotime(I('post.date2'));
-		$map['createtime'] = array('gt', $date1);
-		$map['createtime'] = array('lt', $date2);
+    //搜索
+    public function search(){
+        $date1 = strtotime(I('post.date1'));
+        $date2 = strtotime(I('post.date2'));
+        if($date1)
+            $map['createtime'] = array('gt', $date1);
+        if($date2)
+            $map['createtime'] = array('lt', $date2);
 
-		$map['userid'] = I('session.userid');
+        //关键字
+        $key = I('post.keywords');
+        if($key)
+            $map['title'] = array('like', $key);
 
-		$map['product'] = 1;
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
+        //学院
+        $school = I('post.school');
+        if($school)
+            $map['schname'] = $school;
 
-	}
+        //类别
+        $type = I('post.type');
+        if($type)
+            $map['type'] = $type;
 
-	//关键字搜索
-	public function key_search(){
-		$key = I('post.keywords');
-		$map['title'] = array('like', $key);
+        $map['userid'] = I('session.userid');
 
-		$map['userid'] = I('session.userid');
+        $map['product'] = 1;
+        $page = I('post.page');
+        $result = D('Message')->getData($map, $page);
+        $response['result'] = $result;
+        $response['max_page'] = count($result)/10;
+        $response['is_err'] = 0;
+        echo json_encode($response);
+        exit;
 
-		$map['product'] = 1;
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
-	}
-
-	//学院搜索
-	public function school_search(){
-		$school = I('post.school');
-		$map['schname'] = $school;
-
-		$map['userid'] = I('session.userid');
-
-		$map['product'] = 1;
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
-	}
-	public function type_search(){
-		$map['type'] = I('post.type');
-
-		$map['userid']=I('session.userid');
-
-		$map['product'] = 1;
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
-	}
-
+    }
 
 	/**管理员
 	 * 没有userid约束
 	 */
-	//日期搜索
 	public function search_admin(){
 		$date1 = strtotime(I('post.date1'));
 		$date2 = strtotime(I('post.date2'));
@@ -126,56 +93,7 @@ class SingleController extends AdminBaseController{
 		echo json_encode($response);
 		exit;
 	}
-	//关键字搜索
-	public function key_search_admin(){
 
-		$key = I('post.keywords');
-		$map['title'] = array('like', $key);
-
-		$map['product'] = 1;
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
-	}
-
-	//学院搜索
-	public function school_search_admin(){
-
-		$school = I('post.school');
-		$map['schname'] = $school;
-
-		$map['product'] = 1;
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
-	}
-
-	//类别搜索
-	public function type_search_admin(){
-		$map['type'] = I('post.type');
-
-		$map['product'] = 1;
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
-	}
-
-	//增加
-	public function add_message(){
-		
-	}
 
 	//编辑
 	public function update_message(){

@@ -13,15 +13,15 @@
 
 <!--移动端导航栏-->
 <div class="showing">
-    <a href="javascript:void(0)" onclick="showMenu()"><img src="/yq/Public/images/menu.png"
+    <a href="javascript:void(0)" onclick="showMenu()"><img src="/yq/Public/images//menu.png"
                                                            alt="click this to open the menu"></a>
     <!--记得到时候加上
-    <a style="float: right;" href="javascript:void(0)" onclick="showAdmin()"><img src="/yq/Public/images/admin.png" align="click this to open the admin"></a>-->
+    <a style="float: right;" href="javascript:void(0)" onclick="showAdmin()"><img src="/yq/Public/images//admin.png" align="click this to open the admin"></a>-->
     <div class="person" style="display: none;">
-        <img style="position: relative; top: 5px;" src="/yq/Public/images/user.png">
+        <img style="position: relative; top: 5px;" src="/yq/Public/images//user.png">
         <span class="person-identity"></span>&nbsp;|&nbsp;
         <a class="logout" onclick="return logout()">注销</a>&nbsp;|&nbsp;
-        <a class="person-setting" onclick="return ctrl.setting()">个人设置</a>
+        <a class="person-setting" onclick="return ctrl.setting(model.identity.userid)">个人设置</a>
         &nbsp;|&nbsp;积分<span class="person-mark"></span>
     </div>
 </div>
@@ -251,7 +251,7 @@
             <a href="">下一页</a>
             <a href="">末页</a>
             <div class="opinion-output">
-                <img src="/yq/Public/images/feedback_write.png">
+                <img src="/yq/Public/images//feedback_write.png">
                 <a href="">发布公告</a>
             </div>
         </div>
@@ -283,7 +283,7 @@
             <a href="">下一页</a>
             <a href="">末页</a>
             <div class="single-output">
-                <img src="/yq/Public/images/feedback_write.png">
+                <img src="/yq/Public/images//feedback_write.png">
                 <a style="cursor: pointer;" onclick="return send()">上报舆情</a>
             </div>
         </div>
@@ -315,7 +315,7 @@
             <a href="">下一页</a>
             <a href="">末页</a>
             <div class="integrative-output">
-                <img src="/yq/Public/images/feedback_write.png">
+                <img src="/yq/Public/images//feedback_write.png">
                 <a style="cursor: pointer;" onclick="return send()">上报舆情</a>
             </div>
         </div>
@@ -530,14 +530,14 @@
 <footer>
     <span>&copy;天津大学舆情系统</span>
 </footer>
-
 <script type="text/javascript" src="/yq/Public/js/jQuery.js"></script>
 <script>
-   var login = "<?php echo U('Home/Index/login');?>";
+    var login = "<?php echo U('Home/Index/login');?>";
+    var ImgPath = "/yq/Public/images/";
 </script>
-<script type="text/javascript" src="/yq/Public/js/script.js"></script>
+<!-- ?<?php echo rand(3000,4000); ?> -->
+<script type="text/javascript" src="/yq/Public/js/script.js?<?php echo rand(3000,4000); ?>"></script>
 <script type="text/javascript">
-
     //验证表单
     function sub() {
         $.ajax({
@@ -547,20 +547,23 @@
             data: $("#login").serialize(),
 
             success: function (json) {
-                //登录失败时需要渲染的函数
+                //登录失败是需要渲染的函数
                 if (json.is_err == 1) {
                     $(".forget").text("错误的用户名或密码!");
-                }else{
+                }
+
+                //登录成功时需要渲染的函数
+                if (json.is_err == 0) {
+
+                    $("body").css("background-image", "none");
                     model.identity = json.result;
                     $(".navigation").css("display", "block");
                     $(".showing").css("display", "block");
                     $(".login").css("display", "none");
                     $(".contain").css("display", "block");
                     $(".person").css("display", "block");
-
                     ctrl.getMenu();
                     ctrl.getInformation();
-
                 }
             }
         })
@@ -569,9 +572,8 @@
     //注销用户
     function logout() {
         $.ajax({
-            url: "",
+            url: model.identity.root + model.identity.logout,
             type: "POST",
-
             success: function () {
                 alert("注销成功！");
                 location.reload();

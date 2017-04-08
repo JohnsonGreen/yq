@@ -12,7 +12,7 @@ class AnnounceController extends AdminBaseController{
 
 	public function index(){
 		@session_start();
-		$announcement = D('Announce')	->join('left join yq_user on yq_announce.userid = yq_user.userid')
+		$announcement = D('Announce')->join('left join yq_user on yq_announce.userid = yq_user.userid')
 										->order('yq_announce.createtime desc, stick desc')->select();
 
 		$announcement = stand_date($announcement);

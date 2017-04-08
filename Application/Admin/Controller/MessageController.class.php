@@ -7,7 +7,7 @@ header('content-type:application/json;charset=utf8');
  */
 class MessageController extends AdminBaseController{
 	/**
-	 * 点出来页面
+	 * 报送条目的详情页
 	 */
 	public function index(){
 		$id = I('post.message_id');
@@ -17,7 +17,6 @@ class MessageController extends AdminBaseController{
 		$map['messageid'] = $id;
 		D('Message')->where($map)->setInc('click');
 
-
 		$response['is_err'] = 0;
 		$response['result'] = $result;
 		$response['max_page'] = count($result)/10;
@@ -26,91 +25,20 @@ class MessageController extends AdminBaseController{
 	}
 
 	/**
-	 * 综合信息报送(学生)
+	 * 综合信息报送
 	 * 有userid约束
 	 */
 	public function single(){
-//		@session_start();
-//		$map['userid'] = I('session.userid');
-		$map['userid'] = 1;
+		@session_start();
+		$map['userid'] = $_SESSION['user']['userid'];
 		$page = I('post.page');
 		$page = 1;
-		$map['product'] = array('neq', 1);
-
-		$result = D('Message')->getData(null, $page);
-		$response['result'] = $result;
-		$response['is_err'] = 0;
-		$response['max_page'] = count($result)/10;
-		echo json_encode($response);
-		exit;
-	}
-
-	//时间搜索
-	public function search(){
-		$date1 = strtotime(I('post.date1'));
-		$date2 = strtotime(I('post.date2'));
-		$map['createtime'] = array('gt', $date1);
-		$map['createtime'] = array('lt', $date2);
-
-		$map['userid'] = I('session.userid');
 
 		$map['product'] = array('neq', 1);
-		$page = I('post.page');
 		$result = D('Message')->getData($map, $page);
 		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
 		$response['is_err'] = 0;
-		echo json_encode($result);
-		exit;
-
-	}
-
-	//关键字搜索
-	public function key_search(){
-		$key = I('post.keywords');
-		$map['title'] = array('like', $key);
-
-		$map['userid'] = I('session.userid');
-
-		$map['product'] = array('neq', 1);
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
 		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-
-		exit;
-	}
-
-	//学院搜索
-	public function school_search(){
-		$school = I('post.school');
-		$map['schname'] = $school;
-
-		$map['userid'] = I('session.userid');
-
-		$map['product'] = array('neq', 1);
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
-	}
-	//类别搜索
-	public function type_search(){
-		$map['type'] = I('post.type');
-
-		$map['userid'] = I('session.userid');
-
-		$map['product'] = array('neq', 1);
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
 		echo json_encode($response);
 		exit;
 	}
@@ -118,7 +46,7 @@ class MessageController extends AdminBaseController{
 	//管理员
 	//没有userid约束
 	//日期搜索
-	//单条信息报送（管理员）
+	//综合信息报送（管理员）
 	public function single_admin(){
 		$map['product'] = array('neq', 1);
 		$page = I('post.page');
@@ -130,64 +58,39 @@ class MessageController extends AdminBaseController{
 		exit;
 	}
 
-	public function search_admin(){
-		$date1 = strtotime(I('post.date1'));
-		$date2 = strtotime(I('post.date2'));
-		$map['createtime'] = array('gt', $date1);
-		$map['createtime'] = array('lt', $date2);
+    public function search_admin(){
+        $date1 = strtotime(I('post.date1'));
+        $date2 = strtotime(I('post.date2'));
+        if($date1)
+            $map['createtime'] = array('gt', $date1);
+        if($date2)
+            $map['createtime'] = array('lt', $date2);
 
-		$map['product'] = array('neq', 1);
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
-	}
-	//关键字搜索
-	public function key_search_admin(){
-		$key = I('post.keywords');
-		$map['title'] = array('like', $key);
+        //关键字
+        $key = I('post.keywords');
+        if($key)
+            $map['title'] = array('like', $key);
 
-		$map['product'] = array('neq', 1);
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
-	}
+        //学院
+        $school = I('post.school');
+        if($school)
+            $map['schname'] = $school;
 
-	//学院搜索
-	public function school_search_admin(){
-		$school = I('post.school');
-		$map['schname'] = $school;
+        //类别
+        $type = I('post.type');
+        if($type)
+            $map['type'] = $type;
 
-		$map['product'] = array('neq', 1);
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
-	}
+        $map['product'] = array('neq', 1);
+        $page = I('post.page');
+        $result = D('Message')->getData($map, $page);
+        $response['result'] = $result;
+        $response['max_page'] = count($result)/10;
+        $response['is_err'] = 0;
+        echo json_encode($result);
+        exit;
 
-	//类别搜索
-	public function type_search_admin(){
-		$map['type'] = I('post.type');
-
-		$map['product'] = array('neq', 1);
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
-	}
+    }
 
 		//删除
 	public function del_message(){
@@ -203,6 +106,7 @@ class MessageController extends AdminBaseController{
 		echo json_encode($result);
 		exit;
 	}
+
 	//收藏
 	public function love(){
 		$id = trim(I('post.message_id'));
@@ -305,7 +209,6 @@ class MessageController extends AdminBaseController{
 		$result = D('User')->where($map)->find();
 
 		//舆情信息输入
-
 		$data['userid'] = $user_id;
 		$data['schoolid'] = $result['schoolid'];
 		$data['title'] = trim(I('post.title'));

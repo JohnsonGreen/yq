@@ -46,6 +46,34 @@ class IndexController extends AdminBaseController{
         echo json_encode($res);
         exit;
     }
+
+    /**
+     * 修改个人信息，个人设置
+     */
+    public function update(){
+        @session_start();
+        $data = I('post.');
+        $us = D('User');
+        if(!empty($data['originpassword'])){
+           $user = $us->findByUserId($_SESSION['user']['userid']);
+           if(empty($user) && $user['password'] == md5(trim($data['originpassword']))){
+               $data['password'] = md5($data['password']);
+           }else{
+              echo json_encode(array(
+                  'is_err' => '1',
+                  'result' => '原始密码不正确，请重试！'
+              ));
+              exit;
+           }
+        }
+        $us->editData(array('userid'=>$_SESSION['user']['userid']),$data);
+        echo json_encode(array(
+            'is_err' => '0',
+            'result' => '修改信息成功'
+        ));
+        exit;
+    }
+
     /**
      * elements
      */

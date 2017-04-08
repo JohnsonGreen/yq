@@ -29,22 +29,26 @@ class IndexController extends HomeBaseController{
                 exit;
             }else{
                 $sch = M('School');
-                $school = $sch->field('schname')->where('schoolid='.$data['schoolid'])->find();
+                $school = $sch->field('schoolid,schname')->where('schoolid='.$data['schoolid'])->find();
                 $rank =  $sch->order('score desc')->limit(3)->select();    //首页学院分数排名
                 $group = M()->table('__USER_GROUP__ a')->field('b.groupid,b.groupname')->join('__GROUP__ b')->where('a.userid='.$data['userid'].'&&a.groupid=b.groupid')->find();
                 $leftBar = D('GroupLeftbarPermission')->getLeftBar($group['groupid']);
                 $root = 'index.php/';
                 $logout = 'Home/Index/logout';
 
+                $other_data = array(
+                    'realname'=>$data['realname'],
+                    'email'=>$data['email'],
+                    'phone'=>$data['phone'],
+                    'school'=>$school['schname'],
+                    'schoolid'=>$school['schoolid'],
+                );
+
                 $_SESSION['user']=array(
                     'userid'=>$data['userid'],
                     'username'=>$data['username'],
                     'group' => $group['groupname'],
                     'groupid' => $group['groupid'],
-                    'realname'=>$data['realname'],
-                    'email'=>$data['email'],
-                    'phone'=>$data['phone'],
-                    'school'=>$school['schname'],
                     'score'=>$data['score'],
                     'lastip'=>$data['lastip'],
                     'ip'=>get_client_ip(1),
@@ -58,15 +62,25 @@ class IndexController extends HomeBaseController{
 
                 echo json_encode(array(
                     'is_err' => '0',
-                    'result' => $_SESSION['user']
+                    'result' => array_merge($_SESSION['user'],$other_data)
                 ));
                 exit;
             }
         }else{
             if(check_login()){
+                $map['username'] = $_SESSION['user']['username'];
+                $data=M('User')->where($map)->find();
+                $school = M('School')->field('schoolid,schname')->where('schoolid='.$data['schoolid'])->find();
+                $other_data = array(
+                    'realname'=>$data['realname'],
+                    'email'=>$data['email'],
+                    'phone'=>$data['phone'],
+                    'school'=>$school['schname'],
+                    'schoolid'=>$school['schoolid'],
+                );
                 echo json_encode(array(
                     'is_err' => '0',
-                    'result' => $_SESSION['user']
+                    'result' => array_merge($_SESSION['user'],$other_data)
                 ));
                 exit;
             }else{
