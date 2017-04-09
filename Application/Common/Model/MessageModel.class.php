@@ -124,6 +124,10 @@ class MessageModel extends BaseModel{
         }
     }
 
+    public function getUidByMessageid($messageid){
+        $res = $this->where(array('messageid'=>$messageid))->field('userid')->find();
+        return $res['userid']; 
+    }
     public function getMessage($id){
         $map['messageid'] = $id;
         $message = $this

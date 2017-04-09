@@ -35,7 +35,7 @@ class IndexController extends HomeBaseController{
                 $leftBar = D('GroupLeftbarPermission')->getLeftBar($group['groupid']);
                 $root = 'index.php/';
                 $logout = 'Home/Index/logout';
-
+                $update = 'Admin/Index/update';
                 $other_data = array(
                     'realname'=>$data['realname'],
                     'email'=>$data['email'],
@@ -56,6 +56,7 @@ class IndexController extends HomeBaseController{
                     'lastlogintime' => date("Y-m-d H:i:s", $data['lastlogintime']),
                     'root'=>$root,
                     'logout'=>$logout,
+                    'update'=>$update,
                     'leftBar'=>$leftBar,
                     'rank'=>$rank
                 );
@@ -107,6 +108,19 @@ class IndexController extends HomeBaseController{
            "is_err" => '0',
             "result" => '退出成功'
         ));
+        exit;
+    }
+
+    //学院列表
+    public function school(){
+        $result = D('School')->select();
+        echo json_encode($result);
+        exit;
+    }
+    //类别列表
+    public function type(){
+        $result = D('Type')->select();
+        echo json_encode($result);
         exit;
     }
 

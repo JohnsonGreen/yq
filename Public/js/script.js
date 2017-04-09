@@ -24,37 +24,52 @@ $(document).ready(function() {
 	})
 
 	//获得学院名称
-	// $.ajax({
-	// 	url: "school.json",
-	// 	type: "GET",
-	// 	datatype: "json",
-    //
-	// 	success: function(json) {
-	// 		for(var i = 0; i < json.length; i++) {
-	// 			$(".school").append('<option value="'+json[i].schname+'">'+json[i].schname+'</option>');
-	// 		}
-	// 	}
-	// })
+	$.ajax({
+		url: schools_url,
+		type: "GET",
+		datatype: "json",
+    
+		success: function(json) {
+			for(var i = 0; i < json.length; i++) {
+				$(".school").append('<option value="'+json[i].schoolid+'">'+json[i].schname+'</option>');
+			}
+		}
+	})
 
 	//获得类型名称
-	// $.ajax({
-	// 	url: "type.json",
-	// 	type: "GET",
-	// 	datatype: "json",
-    //
-	// 	success: function(json) {
-	// 		for(var i = 0; i < json.length; i++) {
-	// 			$(".type").append('<option value="'+json[i].type+'">'+json[i].type+'</option>');
-	// 		}
-	// 	}
-	// })
+	$.ajax({
+		url: types_url,
+		type: "GET",
+		datatype: "json",
+    
+		success: function(json) {
+			for(var i = 0; i < json.length; i++) {
+				$(".type").append('<option value="'+json[i].typeid+'">'+json[i].type+'</option>');
+			}
+		}
+	})
 })
 
 var model = {
 	identity: {},
-	//菜单的内容，用数组表示
+    pub: {},
+    single: {},
+    integrative: {},
+    manager: {add_url:"",groups_api:""},
+    collection: {},
+    managemark: {},
+    key: {},
+    marklist: {},
+    online: {},
+    log: {},
+    //菜单的内容，用数组表示
 	menu: ["首页", "舆情公告", "单条信息报送", "综合信息报送", "管理用户", "我的收藏", "管理积分", "管理关键字", "积分列表", "在线人数", "日志"],
 	ranks: ["化工学院", "机械学院", "建工学院"],
+}
+
+//判断数据是否为空
+function isNull(data){ 
+  return (data == "" || data == undefined || data == null) ? true : false; 
 }
 
 var view = {
@@ -78,6 +93,8 @@ var view = {
 	}
 }
 
+
+
 var ctrl = {
 	//个人设置
 	setting: function(index) {
@@ -87,6 +104,15 @@ var ctrl = {
 		$(".add").css("display", "none");
 		$(".opinion-search").css("display", "none");
 		$(".settings").css("display", "block");
+       
+        $('select option[value='+model.identity.schoolid+']').prop('selected', true);
+		$(".settings-account").empty();
+		$(".settings-account").text(model.identity.username);
+		$(".settings-mark").empty();
+		$(".settings-mark").text(model.identity.score);
+		$(".settings-realname").val(model.identity.realname);
+		$(".settings-mail").val(model.identity.email);
+		$(".settings-phone").val(model.identity.phone);
 	},
 
 	//获得首页的内容信息
@@ -159,6 +185,7 @@ var ctrl = {
 		$(".details").css("display", "none");
 		$(".settings").css("display", "none");
 		$(".add").css("display", "none");
+		$(".school-detail").css("display", "none");
 		var current = ctrl.getCurrentClass();
 		switch (current) {
 			case ".contain":
@@ -257,7 +284,11 @@ var ctrl = {
 						for(var i = 0; i < s.length; i++) {
 							$(".opinion-content").append('<div class="opinion-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
 							$(".opinion-contentDet"+i).append('<span class="opinion-callback">'+s[i].reply+'</span>');
-							$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'sound.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail('+s[i].anoceid+')">'+s[i].title+'</a></span>');
+							if(s[i].file == null)
+								$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'content.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail('+s[i].anoceid+')">'+s[i].title+'</a></span>');
+							else
+								$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'clip.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail('+s[i].anoceid+')">'+s[i].title+'</a></span>');
+
 							$(".opinion-contentDet"+i).append('<span class="opinion-author">'+s[i].realname+'</span>');
 							$(".opinion-contentDet"+i).append('<span class="opinion-time">'+s[i].createtime+'</span>');
 							$(".opinion-contentDet"+i).append('<span class="opinion-operation"><a onclick="ctrl.opedit('+s[i].anoceid+')">编辑</a><a onclick="ctrl.opup('+s[i].anoceid+')">置顶</a><a onclick="ctrl.opdele('+s[i].anoceid+')">删除</a></span>');
@@ -375,7 +406,7 @@ var ctrl = {
 			success: function(json) {
 				if(json.is_err == 0) {
 					alert("置顶成功！");
-					ctrl.getPub();
+					ctrl.getSingle();
 				} else {
 					alert("失败，请重试！");
 				}
@@ -392,7 +423,7 @@ var ctrl = {
 			success: function(json) {
 				if(json.is_err == 0) {
 					alert("删除成功！");
-					ctrl.getPub();
+					ctrl.getSingle();
 				} else {
 					alert("失败，请重试！");
 				}
@@ -453,7 +484,7 @@ var ctrl = {
 			success: function(json) {
 				if(json.is_err == 0) {
 					alert("置顶成功！");
-					ctrl.getPub();
+				ctrl.getIntegrative();
 				} else {
 					alert("失败，请重试！");
 				}
@@ -470,7 +501,7 @@ var ctrl = {
 			success: function(json) {
 				if(json.is_err == 0) {
 					alert("删除成功！");
-					ctrl.getPub();
+					ctrl.getIntegrative();
 				} else {
 					alert("失败，请重试！");
 				}
@@ -489,6 +520,8 @@ var ctrl = {
 
 					success: function(json) {
 						$(".manager-content").empty();
+						model.manager.add_url = json.add_url;
+						model.manager.groups_api = json.groups_api;
 						var s = json.result;
 						for(var i = 0; i < s.length; i++) {
 							$(".manager-content").append('<div class="manager-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
@@ -497,10 +530,12 @@ var ctrl = {
 							$(".manager-contentDet"+i).append('<span class="manager-unit">'+s[i].schname+'</span>');
 							$(".manager-contentDet"+i).append('<span class="manager-attribute">'+s[i].groupname+'</span>');
 							$(".manager-contentDet"+i).append('<span class="manager-realname">'+s[i].realname+'</span>');
-							if(s[i].groupname.indexOf("管理员") >= 0)
-								$(".manager-contentDet"+i).append('<span class="manager-operation">无</span>');
-							else//注意有权限的设置要求到时候商量更改
+							if(!isNull(s[i].groupname) && s[i].groupname.indexOf("管理员") >= 0){
+                                 $(".manager-contentDet"+i).append('<span class="manager-operation">无</span>');
+							}else{
+                                  //注意有权限的设置要求到时候商量更改
 								$(".manager-contentDet"+i).append('<span class="manager-operation"><a onclick="ctrl.maedit('+s[i].userid+')">编辑</a><a onclick="ctrl.madele('+s[i].userid+')">删除</a><a onclick="ctrl.machange('+s[i].userid+')">修改密码</a></span>');
+							}
 						}
 					}
 				})
@@ -652,8 +687,23 @@ var ctrl = {
 		}
 	},
 
+	//查看学院报送的详情页
 	listdet: function(index) {
+		$.ajax({
+			url: "",
+			type: "GET",
+			datatype: "json",
 
+			success: function(json) {
+				$(".marklist").css("display", "none");
+				$(".school-detail").css("display", "block");
+				$(".schdet-content").empty();
+				var s = json.result;
+				for(var i = 0; i < 1; i++){
+
+				}
+			}
+		})
 	},
 
 	//获得在线人数的内容
@@ -771,14 +821,27 @@ var ctrl = {
 
 	//保存用户更改的信息
 	save:function() {
+       if(!($(".originpassword").val() == "" && $(".newpassword").val() == "" && $(".confirmpassword").val() == "")){
+			if(!($(".newpassword").val() == $(".confirmpassword").val() && $(".originpassword").val() != "")){
+				alert("错误的用户密码，请重新清空或者输入!");
+				return;
+			}	
+		} 
 		$.ajax({
-			url: "",
+			url: model.identity.root + model.identity.update,
 			type: "POST",
-
-			success: function() {
-				alert("保存成功！");
-				$(".settings").css("display", "none");
-				$(".contain").css("display", "block");
+			data: $("#settings").serialize(),
+			success: function(json) {
+				if(json.is_err == 0){
+                    alert("保存成功！");
+                    model.identity.realname = $(".settings-realname").val();
+                    model.identity.email = $(".settings-mail").val();
+                    model.identity.phone = $(".settings-phone").val();
+                    $(".settings").css("display", "none");
+                    $(".contain").css("display", "block");
+				}else{
+                    alert(json.result);
+				}
 			}
 		})
 	},
@@ -814,13 +877,17 @@ var ctrl = {
 	//添加用户
 	add:function() {
 		$.ajax({
-			url: "",
+			url: model.identity.root + model.manager.add_url,
 			type: "POST",
-
-			success: function() {
-				alert("添加成功！");
-				$(".add").css("display", "none");
-				$(".contain").css("display", "block");
+            data: $("#add").serialize(),
+			success: function(json) {
+				if(json.is_err == 0){
+					alert("添加成功！");
+				    $(".add").css("display", "none");
+				    $(".contain").css("display", "block");
+				}else{
+					alert(json.result);
+				}
 			}
 		})
 	},

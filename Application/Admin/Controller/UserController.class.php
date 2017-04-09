@@ -103,6 +103,8 @@ class UserController extends AdminBaseController{
 		$response['is_err'] = 0;
 		$response['result'] = $result;
 		$response['max_page'] = count($result)/10;
+        $response['add_url'] = 'Admin/User/add_user';
+        $response['groups_api'] = 'Admin/User/getGroups';
 		echo json_encode($response);
 		exit;
 	}
@@ -142,5 +144,67 @@ class UserController extends AdminBaseController{
 		exit;
 	}
 
+    public function add_user(){
+        $username = trim(I('post.username'));
+        $map['username'] = $username;
 
+        //不知道添加用户会不会有学号
+       // $stunum = trim(I('post.stunum'));
+        //$map['stunum'] = $stunum;
+
+        if(!empty(D('User')->field('username')->where($map)->find())){
+            $response['is_err'] = 1;
+            $response['result'] = "账号已存在";
+        }else{
+            $pass = trim(I('post.password'));
+            $confirm_pass = trim(I('post.confirm_password'));
+            if(!empty($pass) && $pass == $confirm_pass){
+                $data['username'] = $username;
+                $data['stunum'] = $stunum;
+                $data['realname']   = trim(I('post.realname'));
+                $data['birthday'] 	= trim(I('post.birthday'));
+                $data['birthplace'] = trim(I('post.birthplace'));
+                $data['email'] 		= trim(I('post.email'));
+                $data['schoolid']   = trim(I('post.schoolid'));
+                $data['phone'] 		= trim(I('post.phone'));
+                $data['score'] 		= 0;
+                $data['ban']		= 0;
+                $data['createtime'] = time();
+                $data['lastip'] 	= 0;
+                $data['password']   = md5($pass);
+                $data['lastlogintime'] = 0;
+                $data['updatetime']    = 0;
+                $userid = D('User')->add($data);
+                 $groupid = trim(I('post.groupid'));
+                
+                $id = D('UserGroup')->addGroupUser($userid,$groupid);
+                // echo json_encode(array($userid, $groupid, $id));
+                // exit;
+               
+                if(!empty($id)){
+                    $response['is_err'] = 0;
+                    $response['result'] = "添加用户成功！";
+                }else{
+                    $response['is_err'] = 1;
+                    $response['result'] = "数据库错误，请重试！";
+                }
+            }else{
+                $response['is_err'] = 1;
+                $response['result'] = "密码验证错误！";
+            }
+        }
+
+        echo json_encode($response);
+        exit;
+    }
+
+    public function getGroups(){
+       echo json_encode(array(
+           "is_err" => 0,
+           "result"=> D('Group')->getGroups()
+       ));
+       exit;
+    }
+
+   
 }

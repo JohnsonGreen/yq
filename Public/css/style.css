@@ -452,7 +452,8 @@ button:hover {
 .managekeyword-content,
 .marklist-content,
 .online-content,
-.log-content {
+.log-content,
+.schdet-content {
 	padding-top: 10px;
 	margin-top: 5px;
 	width: 100%;
@@ -468,7 +469,8 @@ button:hover {
 .managekeyword-content span,
 .marklist-content span,
 .online-content span,
-.log-content span {
+.log-content span,
+.schdet-content span {
 	height: 38px;
 }
 
@@ -480,7 +482,8 @@ button:hover {
 .managekeyword-page,
 .marklist-page,
 .online-page,
-.log-page {
+.log-page,
+.schdet-page {
 	text-align: center;
 	color: #4d8aa8;
 }
@@ -493,7 +496,8 @@ button:hover {
 .managekeyword-page a,
 .marklist-page a,
 .online-page a,
-.log-page a {
+.log-page a,
+.schdet-page a {
 	color: #4d8aa8;
 	text-decoration: none;
 	margin: 0 5px;
@@ -507,7 +511,8 @@ button:hover {
 .managekeyword-page a:hover,
 .marklist-page a:hover,
 .online-page a:hover,
-.log-page a:hover {
+.log-page a:hover,
+.schdet-page a:hover {
 	text-decoration: underline;
 }
 
@@ -519,7 +524,8 @@ button:hover {
 .managekeyword-page span,
 .marklist-page span,
 .online-page span,
-.log-page span {
+.log-page span,
+.schdet-page span {
 	color: #4d8aa8;
 }
 
@@ -619,7 +625,8 @@ select {
 .managekeyword-all,
 .marklist-all,
 .online-all,
-.log-all {
+.log-all,
+.schdet-all {
 	margin-top: 10px;
 	background-color: #4d8aa8;
 	width: 100%;
@@ -634,7 +641,8 @@ select {
 .managekeyword-all span,
 .marklist-all span,
 .online-all span,
-.log-all span {
+.log-all span,
+.schdet-all span {
 	float: left;
 	text-align: center;
 }
@@ -702,7 +710,8 @@ select {
 .managekeyword-page span,
 .marklist-page span,
 .online-page span,
-.log-page span {
+.log-page span,
+.schdet-page span {
 	float: inherit;
 }
 
@@ -777,6 +786,11 @@ select {
 	width: 18%;
 }
 
+.managemark-content input {
+	width: 100%;
+	border: 1px solid #eee;
+}
+
 .managemark-content a {
 	cursor: pointer;
 	color: #4d8aa8;
@@ -785,6 +799,47 @@ select {
 .managemark-content a:hover {
 	text-decoration: underline;
 }
+
+/*查看学院详情页*/
+.schdet-number {
+		display: inline-block;
+		width: 10%;
+	}
+
+	.schdet-type {
+		display: none;
+		width: 16%;
+	}
+
+	.schdet-send {
+		display: none;
+		width: 16%;
+	}
+
+	.schdet-title {
+		display: inline-block;
+		width: 80%;
+	}
+
+	.schdet-mark {
+		display: none;
+		width: 10%;
+	}
+
+	.schdet-person {
+		display: none;
+		width: 20%;
+	}
+
+	.schdet-time {
+		display: none;
+		width: 36%;
+	}
+
+	.schdet-operation {
+		display: inline-block;
+		width: 10%;
+	}
 
 /*管理关键字开始*/
 .managekeyword-number {
@@ -911,6 +966,13 @@ select {
 	margin-left: 8%;
 	font-size: 14px;
 	border-bottom: 1px solid #e5e5e5;
+}
+
+.settings-input {
+	float: right;
+	margin-right: 35%;
+	width: 40%;
+	height: 20px;
 }
 
 .settings button,
@@ -1128,7 +1190,8 @@ footer span {
 	.managekeyword-all,
 	.marklist-all,
 	.online-all,
-	.log-all {
+	.log-all,
+	.schdet-all {
 		width: 70%;
 		margin-left: 20%;
 		margin-top: 10px;
@@ -1190,7 +1253,8 @@ footer span {
 	.managekeyword-content,
 	.marklist-content,
 	.online-content,
-	.log-content {
+	.log-content,
+	.schdet-content {
 		height: 380px;
 	}
 
@@ -1347,6 +1411,48 @@ footer span {
 		width: 8%;
 	}
 
+
+
+	.schdet-number {
+		display: inline-block;
+		width: 5%;
+	}
+
+	.schdet-type {
+		display: inline-block;
+		width: 8%;
+	}
+
+	.schdet-send {
+		display: inline-block;
+		width: 8%;
+	}
+
+	.schdet-title {
+		display: inline-block;
+		width: 40%;
+	}
+
+	.schdet-mark {
+		display: inline-block;
+		width: 5%;
+	}
+
+	.schdet-person {
+		display: inline-block;
+		width: 10%;
+	}
+
+	.schdet-time {
+		display: inline-block;
+		width: 18%;
+	}
+
+	.schdet-operation {
+		display: inline-block;
+		width: 5%;
+	}
+
 	.managekeyword-all,
 	.marklist-all,
 	.online-all,
@@ -1360,7 +1466,8 @@ footer span {
 	.integrative-ctrl,
 	.manager-ctrl,
 	.collection-ctrl,
-	.managemark-ctrl {
+	.managemark-ctrl,
+	.schdet-ctrl {
 		display: none;
 	}
 

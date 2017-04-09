@@ -143,17 +143,6 @@ class IndexController extends AdminBaseController{
         echo json_encode($right);
         exit;
     }
-    //学院列表
-    public function school(){
-        $result = D('School')->select();
-        echo json_encode($result);
-        exit;
-    }
-    //类别列表
-    public function type(){
-        $result = D('Type')->select();
-        echo json_encode($result);
-        exit;
-    }
+    
 
 }

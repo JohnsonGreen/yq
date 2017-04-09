@@ -21,6 +21,11 @@ class SingleController extends AdminBaseController{
 		$response['result'] = $result;
 		$response['max_page'] = count($result)/10;
 		$response['is_err'] = 0;
+		$response['url'] = array(
+			'single_del'=>'Admin/Single/del_message'
+			'single_update' => 'Admin/Single/update_message'
+			'single_love' => 'Admin/Single/love'
+			);
 		echo json_encode($response);
 		exit;
 	}
@@ -33,6 +38,11 @@ class SingleController extends AdminBaseController{
 		$response['result'] = $result;
 		$response['max_page'] = count($result)/10;
 		$response['is_err'] = 0;
+		$response['url'] = array(
+			'single_del'=>'Admin/Single/del_message_admin',
+			'single_update' => 'Admin/Single/update_message',
+			'single_love' => 'Admin/Single/love'
+         );
 		echo json_encode($response);
 		exit;
 	}
@@ -100,8 +110,31 @@ class SingleController extends AdminBaseController{
 
 	}
 
-	//删除
+    //删除
 	public function del_message(){
+		$id = trim(I('post.message_id'));
+		$result = array();
+		$uid = D('Message')->getUidByMessageid($id);
+		if($uid != $_SESSION['user']['userid']){
+			$result['result'] = '只能删除自己的报送';
+			$result['is_err'] = 1;
+			echo json_encode($result);
+		    exit;
+		}
+
+		if(D('Message')->del($id)){
+			$result['result'] = 'is_ok';
+			$result['is_err'] = 0;
+		}else{
+			$result['result'] = '数据库错误，请重试！';
+			$result['is_err'] = 1;
+		}
+		echo json_encode($result);
+		exit;
+	}
+
+	//删除
+	public function del_message_admin(){
 		$id = trim(I('post.message_id'));
 		$result = array();
 		if(D('Message')->del($id)){

@@ -66,4 +66,6 @@ class UserModel extends BaseModel{
         return $this->where(array('userid'=>$userid))->find();
     }
 
+
+
 }
