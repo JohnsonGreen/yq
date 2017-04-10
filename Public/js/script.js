@@ -90,6 +90,16 @@ var view = {
 		$(ctrl.getCurrentClass()).css("display", "none");
 		$(".details").css("display", "block");
 		$(".opinion-search").css("display", "none");
+	},
+	
+	lookArticle: function() {
+		$("#article1").css("display", "block");
+		$("#article2").css("display", "none");
+	},
+
+	editArticle: function() {
+		$("#article1").css("display", "none");
+		$("#article2").css("display", "block");
 	}
 }
 
@@ -103,6 +113,7 @@ var ctrl = {
 		$(".send").css("display", "none");
 		$(".add").css("display", "none");
 		$(".opinion-search").css("display", "none");
+		$(".school-detail").css("display", "none");
 		$(".settings").css("display", "block");
        
         $('select option[value='+model.identity.schoolid+']').prop('selected', true);
@@ -171,7 +182,8 @@ var ctrl = {
 				$(".details-content").append('<h3 style="margin-left:20px;">标题：'+s.title+'</h3>');
 				$(".details-content").append('<p style="margin-left:20px;">关键字：'+s.keyword+'</p>');
 				$(".details-content").append('<p style="margin-left:20px;">来源网址：<a href="'+s.url+'">'+s.url+'</p>');
-				$(".details-content").append('<article style="margin-left:20px;">'+s.content+'</article>');
+				$(".details-content").append('<article id="article1" style="margin-left:20px;">'+s.content+'</article>');
+				$(".details-content").append('<textarea name="content" id="article2" style="margin-left:20px;">'+s.content+'</textarea>');
 			}
 		})
 	},
@@ -301,20 +313,17 @@ var ctrl = {
 
 	//舆情公告获取详情页
 	opdetail: function(index) {
-		view.transform();
+		alert(1);
+		view.transform();alert(1);
+		ctrl.getDetail(index);alert(1);
+        ctrl.lookArticle();alert(1);
 	},
 
 	//对自己的舆情公告进行编辑，跳转到编辑页
 	opedit: function(index) {
-		$.ajax({
-			url: "",
-			type: "GET",
-			datatype: "json",
-
-			success: function() {
-				view.transform();
-			}
-		})
+		view.transform();
+		ctrl.getDetail(index);
+		ctrl.editArticle();
 	},
 
 	//对自己的舆情公告页进行置顶发，成功重新加载此页
@@ -375,7 +384,7 @@ var ctrl = {
 							$(".single-contentDet"+i).append('<span class="single-mark">'+s[i].score+'</span>');
 							$(".single-contentDet"+i).append('<span class="single-unit">'+s[i].schname+'</span>');
 							$(".single-contentDet"+i).append('<span class="single-time">'+s[i].createtime+'</span>');
-							$(".single-contentDet"+i).append('<span class="single-operation"><a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a><a onclick="ctrl.siup('+s[i].messageid+')">收藏</a><a onclick="ctrl.sidele('+s[i].messageid+')">删除</a></span>');
+							$(".single-contentDet"+i).append('<span class="single-operation"><a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a><a onclick="ctrl.silove('+s[i].messageid+')">收藏</a><a onclick="ctrl.sidele('+s[i].messageid+')">删除</a></span>');
 						}
 					}
 				})
@@ -387,14 +396,17 @@ var ctrl = {
 
 		view.transform();
         ctrl.getDetail(index);
+		ctrl.lookArticle();
 
 	},
 
 	siedit: function(index) {
-
+		view.transform();
+		ctrl.getDetail(index);
+		ctrl.editArticle();
 	},
 
-    siup: function(index) {
+    silove: function(index) {
 		$.ajax({
 			url: model.identity.root + model.single.url.single_love,
 			type: "POST",
@@ -446,6 +458,7 @@ var ctrl = {
 							$(".integrative-content").append('<div class="integrative-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
 							$(".integrative-contentDet"+i).append('<span class="integrative-number">'+s[i].messageid+'</span>');
 							$(".integrative-contentDet"+i).append('<span class="integrative-type">'+s[i].type+'</span>');
+							$(".integrative-contentDet"+i).append('<span class="integrative-product">'+s[i].proname+'</span>');
 							$(".integrative-contentDet"+i).append('<span class="integrative-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.indetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
 							$(".integrative-contentDet"+i).append('<span class="integrative-mark">'+s[i].score+'</span>');
 							$(".integrative-contentDet"+i).append('<span class="integrative-unit">'+s[i].schname+'</span>');
@@ -454,9 +467,9 @@ var ctrl = {
 							if(s[i].flag == 1){
                                 str += '<a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a>';
 							}
-							str += '<a onclick="ctrl.inup('+s[i].messageid+')">收藏</a>' ;
+							str += '<a onclick="ctrl.inlove('+s[i].messageid+')">收藏</a>' ;
                             if(s[i].flag == 1){
-                                '<a onclick="ctrl.indele('+s[i].messageid+')">删除</a></span>';
+                               str += '<a onclick="ctrl.indele('+s[i].messageid+')">删除</a></span>';
                             }
 							$(".integrative-contentDet"+i).append(str);
 						}
@@ -468,6 +481,7 @@ var ctrl = {
 
 	indetail: function(index) {
 		view.transform();
+		ctrl.lookArticle();
 	},
 
 	inedit: function(index) {
@@ -478,11 +492,13 @@ var ctrl = {
             data: {"messageid":index},
 			success: function() {
 				view.transform();
+				ctrl.getDetail(index);
+				ctrl.editArticle();
 			}
 		})
 	},
 
-	inup: function(index) {
+	inlove: function(index) {
 		$.ajax({
 			url: model.identity.root + model.integrative.url.overall_love,
 			type: "POST",
@@ -526,6 +542,7 @@ var ctrl = {
 					datatype: "json",
 
 					success: function(json) {
+						model.manager.url = json.addurl;
 						$(".manager-content").empty();
 						model.manager.add_url = json.add_url;
 						model.manager.groups_api = json.groups_api;
@@ -595,6 +612,7 @@ var ctrl = {
 
 	codetail: function(index) {
 		view.transform();
+		ctrl.lookArticle();
 	},
 
 	codele: function(index) {
@@ -633,13 +651,13 @@ var ctrl = {
 							$(".managemark-contentDet"+i).append('<span class="managemark-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.markdet('+s[i].messageid+')">'+s[i].title+'</a></span>');
 							$(".managemark-contentDet"+i).append('<span class="managemark-total">'+s[i].score+'</span>');
 							$(".managemark-contentDet"+i).append('<span class="managemark-mark">'+s[i].base+'</span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-xuanyong">'+s[i].select+'</span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-pishi">'+s[i].approval+'</span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-yujing">'+s[i].warning+'</span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-zhiliang">'+s[i].quality+'</span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-zhuanxiang">'+s[i].special+'</span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-minus">'+s[i].substract+'</span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-operation"><a onclick="ctrl.markdele('+s[i].messageid+')">删除</a></span>');
+							$(".managemark-contentDet"+i).append('<span class="managemark-xuanyong"><input name="select" value="'+s[i].select+'"></span>');
+							$(".managemark-contentDet"+i).append('<span class="managemark-pishi"><input name="approval" value="'+s[i].approval+'"></span>');
+							$(".managemark-contentDet"+i).append('<span class="managemark-yujing"><input name="warning" value="'+s[i].warning+'"></span>');
+							$(".managemark-contentDet"+i).append('<span class="managemark-zhiliang"><input name="quality" value="'+s[i].quality+'"></span>');
+							$(".managemark-contentDet"+i).append('<span class="managemark-zhuanxiang"><input name="special" value="'+s[i].special+'"></span>');
+							$(".managemark-contentDet"+i).append('<span class="managemark-minus"><input name="substract" value="'+s[i].substract+'"></span>');
+							$(".managemark-contentDet"+i).append('<span class="managemark-operation"><a onclick="ctrl.markJudge('+s[i].messageid+')">打分</a></span>');
 						}
 					}
 				})
@@ -649,6 +667,8 @@ var ctrl = {
 
 	markdet: function(index) {
 		view.transform();
+		ctrl.getDetail(index);
+		ctrl.lookArticle();
 	},
 
 	markdele: function(index) {
@@ -895,34 +915,66 @@ var ctrl = {
 	},
 
 	//上传用户发表的舆情信息
-	send: function() {
+	singlesend: function() {
 		$.ajax({
 			url: model.identity.root + model.single.url.single_add,
 			type: "POST",
             data: $('#send').serialize(),
 			success: function() {
 				alert("推送成功！");
-				$(".send").css("display", "none");
-				$(".contain").css("display", "block");
+				$(".single-send").css("display", "none");
+				$(".single").css("display", "block");
+			}
+		})
+	},
+	
+	integrativesend: function() {
+		$.ajax({
+			url: model.identity.root + model.integrative.url.integrative_add,
+			type: "POST",
+			data: $('#send').serialize(),
+
+			success: function() {
+				alert("推送成功！");
+				$(".single-send").css("display", "none");
+				$(".integrative").css("display", "block");
 			}
 		})
 	},
 
 	//添加用户
 	add:function() {
-		$.ajax({
-			url: model.identity.root + model.manager.add_url,
-			type: "POST",
-            data: $("#add").serialize(),
-			success: function(json) {
-				if(json.is_err == 0){
-					alert("添加成功！");
-				    $(".add").css("display", "none");
-				    $(".contain").css("display", "block");
-				}else{
-					alert(json.result);
-				}
-			}
-		})
+		if($(".add-newpassword").val() == $(".add-confirmpassword").val())
+			if($(".add-newpassword").val() != "" && $(".add-confirmpassword").val() != "")
+				$.ajax({
+					url: model.identity.root + model.manager.add_url,
+					type: "POST",
+					
+					data: $("#add").serialize(),
+
+					success: function() {
+                       if(json.is_err == 0){
+						 alert("添加成功！");
+						 $(".add").css("display", "none");
+						 $(".contain").css("display", "block");
+                       }else{
+					     alert(json.result);
+				       }  
+					}
+				})
+			else
+				alert("请输入密码！");
+		else
+			alert("密码不相同！");
 	},
+
+    lookArticle: function() {
+		$("#article1").css("display", "block");
+		$("#article2").css("display", "none");
+	},
+
+	editArticle: function() {
+		$("#article1").css("display", "none");
+		$("#article2").css("display", "block");
+	}
 }

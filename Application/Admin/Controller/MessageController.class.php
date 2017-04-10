@@ -17,10 +17,9 @@ class MessageController extends AdminBaseController{
 		//访问量加一
 		$map['messageid'] = $id;
 		D('Message')->where($map)->setInc('click');
-        $result['createtime'] = date('Y-m-d H:i:s', $result['createtime']);
 		$response['is_err'] = 0;
 		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
+		$response['max_page'] = ceil(count($result)/10);
 		echo json_encode($response);
 		exit;
 	}
@@ -31,11 +30,18 @@ class MessageController extends AdminBaseController{
 	 */
 	public function single(){
 		@session_start();
-		$map['userid'] = $_SESSION['user']['userid'];
 		$page = I('post.page');
-		//$page = 1;
         $map['yq_message.product'] = array('neq', 1);
 		$result = D('Message')->getData($map, $page);
+        $cnt = count($result);
+        for($i = 0; $i < $cnt;$i++){
+            if($result[$i]['userid'] == $_SESSION['user']['userid']){
+                $result[$i]['flag'] = 1;
+            }else{
+                $result[$i]['flag'] = 0;
+            }
+        }
+
 		$response['result'] = $result;
 		$response['is_err'] = 0;
 		$response['max_page'] = count($result)/10;
@@ -43,7 +49,9 @@ class MessageController extends AdminBaseController{
 		    'overall_del'=>'Admin/Message/del_message',
             'overall_love'=>'Admin/Message/love',
             'overall_update'=>'Admin/Message/update_message',
-            'overall_add'=>'Admin/Message/add_message'
+            'overall_add'=>'Admin/Message/add_message',
+            'overall_search'=> 'Admin/Message/search_admin',
+            'overall_details'=>'Admin/Message/index'
         );
 		echo json_encode($response);
 		exit;
@@ -57,6 +65,10 @@ class MessageController extends AdminBaseController{
         $map['yq_message.product'] = array('neq', 1);
 		$page = I('post.page');
 		$result = D('Message')->getData($map, $page);
+        $cnt = count($result);
+        for($i = 0; $i < $cnt;$i++){
+            $result[$i]['flag'] = 1;
+        }
 		$response['result'] = $result;
 		$response['max_page'] = count($result)/10;
 		$response['is_err'] = 0;
@@ -64,7 +76,9 @@ class MessageController extends AdminBaseController{
             'overall_del'=>'Admin/Message/del_message_admin',
             'overall_love'=>'Admin/Message/love',
             'overall_update'=>'Admin/Message/update_message',
-            'overall_add'=>'Admin/Message/add_message'
+            'overall_add'=>'Admin/Message/add_message',
+            'overall_search'=> 'Admin/Message/search_admin',
+            'overall_details'=>'Admin/Message/index'
         );
 		echo json_encode($response);
 		exit;
@@ -136,9 +150,20 @@ class MessageController extends AdminBaseController{
 
 	//收藏
 	public function love(){
+        @session_start();
 		$id = trim(I('post.messageid'));
 		$result = array();
-		if(D('UserCollection')->love($id)){
+        $uc = D('UserCollection');
+        $map['userid'] = $_SESSION['user']['userid'];
+        $map['messageid'] = $id;
+        $res = $uc->where($map)->field('messageid')->find();
+        if(!empty($res)){
+            $result['result'] = '已收藏';
+            $result['is_err'] = 1;
+            echo json_encode($result);
+            exit;
+        }
+		if($uc->love($id)){
 			$result['result'] = 'is_ok';
 			$result['is_err'] = 0;
 		}
@@ -197,10 +222,11 @@ class MessageController extends AdminBaseController{
 
 		$data['is_delete'] = 0;
 
+
 		//UPLOAD
 		$upload = new \Think\Upload();// 实例化上传类
 		$upload->maxSize   =     3145728 ;// 设置附件上传大小
-		$upload->exts      =     array('pdf', 'txt', 'doc', 'jpeg', '.docx', 'png', 'jpg');// 设置附件上传类型
+		$upload->exts      =     array('pdf', 'txt', 'doc', 'jpeg', 'docx', 'png', 'jpg','xls','xlsx');// 设置附件上传类型
 		$upload->rootPath  =     __ROOT__.'/Uploads/'; // 设置附件上传根目录
 		$upload->savePath  =     ''; // 设置附件上传（子）目录
 		// 上传文件

@@ -15,8 +15,6 @@
 <div class="showing">
     <a href="javascript:void(0)" onclick="showMenu()"><img src="__PUBLIC__/images//menu.png"
                                                            alt="click this to open the menu"></a>
-    <!--记得到时候加上
-    <a style="float: right;" href="javascript:void(0)" onclick="showAdmin()"><img src="__PUBLIC__/images//admin.png" align="click this to open the admin"></a>-->
     <div class="person" style="display: none;">
         <img style="position: relative; top: 5px;" src="__PUBLIC__/images//user.png">
         <span class="person-identity"></span>&nbsp;|&nbsp;
@@ -62,27 +60,38 @@
 <!--个人设置-->
 <div class="settings" style="display: none;">
     <form id="settings">
-      
-			<div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span style="margin-left: 8%;">基本资料</span></div>
-			<div class="settings-content"><span>账号</span><span style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-account"></span></div>
 
-			<div class="settings-content"><span>积分</span><span style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-mark"></span></div>
+        <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span
+                style="margin-left: 8%;">基本资料</span></div>
+        <div class="settings-content"><span>账号</span><span
+                style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-account"></span>
+        </div>
 
-			<div class="settings-content"><span>真实姓名</span><input class="settings-realname settings-input" type="text" name="realname"></div>
-			<div class="settings-content"><span>邮箱</span><input class="settings-mail settings-input" type="text" name="email"></div>
-			<div class="settings-content"><span>所属单位</span>
-				<select style="float: right; margin-right: 35%; width: 40%;" class="school" name="choose_school">
-					<option value="全部">全部</option>
-				</select>
-			</div>
-			<div class="settings-content"><span>手机号码</span><input class="settings-phone settings-input" type="text" name="phone"></div>
+        <div class="settings-content"><span>积分</span><span
+                style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-mark"></span></div>
+
+        <div class="settings-content"><span>真实姓名</span><input class="settings-realname settings-input" type="text"
+                                                              name="realname"></div>
+        <div class="settings-content"><span>邮箱</span><input class="settings-mail settings-input" type="text"
+                                                            name="email"></div>
+        <div class="settings-content"><span>所属单位</span>
+            <select style="float: right; margin-right: 35%; width: 40%;" class="school" name="choose_school">
+                <option value="全部">全部</option>
+            </select>
+        </div>
+        <div class="settings-content"><span>手机号码</span><input class="settings-phone settings-input" type="text"
+                                                              name="phone"></div>
 
 
-			<div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span style="margin-left: 8%;">修改密码</span></div>
-			<div class="settings-content"><span>原始密码</span><input class="originpassword settings-input" type="password" name="originpassword"></div>
-			<div class="settings-content"><span>新密码</span><input class="newpassword settings-input" type="password" name="password"></div>
-			<div class="settings-content"><span>确认密码</span><input class="confirmpassword settings-input" type="password" name="confirmpassword"></div>
-			<button type="button" onclick="return ctrl.save()">保存</button>
+        <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span
+                style="margin-left: 8%;">修改密码</span></div>
+        <div class="settings-content"><span>原始密码</span><input class="originpassword settings-input" type="password"
+                                                              name="originpassword"></div>
+        <div class="settings-content"><span>新密码</span><input class="newpassword settings-input" type="password"
+                                                             name="password"></div>
+        <div class="settings-content"><span>确认密码</span><input class="confirmpassword settings-input" type="password"
+                                                              name="confirmpassword"></div>
+        <button type="button" onclick="return ctrl.save()">保存</button>
     </form>
 </div>
 
@@ -119,49 +128,56 @@
 </div>
 
 <!--上报舆情-->
-<form id="send" class="send" method="POST" enctype="multipart/form-data" style="display: none;">
-    <div class="send-items correct">
+<form id="send" class="send single-send" method="POST" enctype="multipart/form-data" style="display: none;">
+    <div class="send-product send-items correct">
+        <span>产品类型</span>
+        <select onchange="return toggleProduct()" class="product" name="pronameid">
+            <option value="2">舆情专报</option>
+            <option value="3">舆情扫描</option>
+        </select>
+    </div>
+    <div class="send-type send-items correct">
         <span>舆情类型</span>
         <select class="type" name="typeid">
-        
+
         </select>
     </div>
 
-    <div class="send-items correct">
-			<span>舆情标题</span>
-			<input type="text" name="title"/>
+    <div class="send-title send-items correct">
+        <span>舆情标题</span>
+        <input type="text" name="title"/>
+    </div>
+
+    <div class="send-key send-items correct">
+        <span>舆情关键字</span>
+        <input type="text" name="keyword"/>
+    </div>
+
+    <div class="send-webpage send-items correct">
+        <span>来源网站</span>
+        <input type="text" name="source"/>
+    </div>
+
+    <div class="send-website send-items correct">
+        <span>来源网址</span>
+        <input type="text" name="url"/>
     </div>
 
     <div class="send-items correct">
-			<span>舆情关键字</span>
-			<input type="text" name="keyword"/>
-    </div>
-
-    <div class="send-items correct">
-			<span>来源网站</span>
-			<input type="text" name="source"/>
-    </div>
-
-    <div class="send-items correct">
-			<span>来源网址</span>
-			<input type="text" name="url"/>
-    </div>
-
-    <div class="send-items correct">
-			<span>上传文件</span>
-			<input type="text" id="a" readonly="readonly"/>
-			 <a href="javascript:void(0);" class="input">浏览
-			  <input type="file" id="file" name="file"/>
-			 </a><br>
-    		<label style="font-size: 12px;">请上传txt,pdf,doc,jpeg,docx,jpg,png,jpg格式</label>
-    		<script type="text/javascript">
-			 	var input1 = document.getElementById("file");// 获得控件对象
-                input1.onchange = inputPath; //当控件对象 input1 有变化时执行函数 inputPath
-                function inputPath() {
-                    var input2 = document.getElementById("a"); // 获取 input 对象 input2
-                    input2.value = input1.value;  // 将控件 input1 的值赋给 input2
-                }
-			</script>
+        <span>上传文件</span>
+        <input type="text" id="a" readonly="readonly"/>
+        <a href="javascript:void(0);" class="input">浏览
+            <input type="file" id="file" name="file"/>
+        </a><br>
+        <label style="font-size: 12px;">请上传txt,pdf,doc,jpeg,docx,jpg,png,jpg格式</label>
+        <script type="text/javascript">
+            var input1 = document.getElementById("file");// 获得控件对象
+            input1.onchange = inputPath; //当控件对象 input1 有变化时执行函数 inputPath
+            function inputPath() {
+                var input2 = document.getElementById("a"); // 获取 input 对象 input2
+                input2.value = input1.value;  // 将控件 input1 的值赋给 input2
+            }
+        </script>
     </div>
 
     <div class="send-items correct">
@@ -170,29 +186,36 @@
 				
         </textarea>
     </div>
-    <button type="button" onclick="return ctrl.send()">发布</button>
+    <button type="button" onclick="return ctrl.singlesend()">发布</button>
 </form>
 
 <!--添加用户-->
 <form id="add" class="add" method="POST" style="display: none;">
-    <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span style="margin-left: 8%;">基本资料</span></div>
-    <div class="settings-content"><span>账号</span><input class="add-account settings-input" type="text" name="username"></div>
-    <div class="settings-content"><span>真实姓名</span><input class="add-realname settings-input" type="text" name="realname"></div>
+    <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span
+            style="margin-left: 8%;">基本资料</span></div>
+    <div class="settings-content"><span>账号</span><input class="add-account settings-input" type="text" name="username">
+    </div>
+    <div class="settings-content"><span>真实姓名</span><input class="add-realname settings-input" type="text"
+                                                          name="realname"></div>
     <div class="settings-content"><span>邮箱</span><input class="add-mail settings-input" type="text" name="email"></div>
     <div class="settings-content"><span>所属单位</span>
         <select style="float: right; margin-right: 35%; width: 40%;" class="school" name="schoolid">
-        
+
         </select>
     </div>
-	<div class="settings-content"><span>用户身份</span>
-		<select style="float: right; margin-right: 35%; width: 40%;" class="user_identity" name="groupid">
-			
-		</select>
-	</div>
-    <div class="settings-content"><span>手机号码</span><input class="add-phone settings-input" type="text" name="phone"></div>
-    <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span style="margin-left: 8%;">设置密码</span></div>
-    <div class="settings-content"><span>密码</span><input class="newpassword settings-input" type="password" name="password"></div>
-    <div class="settings-content"><span>确认密码</span><input class="confirmpassword settings-input" type="password" name="confirm_password"></div>
+    <div class="settings-content"><span>用户身份</span>
+        <select style="float: right; margin-right: 35%; width: 40%;" class="user_identity" name="groupid">
+
+        </select>
+    </div>
+    <div class="settings-content"><span>手机号码</span><input class="add-phone settings-input" type="text" name="phone">
+    </div>
+    <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span
+            style="margin-left: 8%;">设置密码</span></div>
+    <div class="settings-content"><span>密码</span><input class="newpassword settings-input" type="password"
+                                                        name="password"></div>
+    <div class="settings-content"><span>确认密码</span><input class="confirmpassword settings-input" type="password"
+                                                          name="confirm_password"></div>
     <button type="button" onclick="return ctrl.add()">保存</button>
 </form>
 
@@ -294,7 +317,7 @@
             <a href="">末页</a>
             <div class="single-output">
                 <img src="__PUBLIC__/images//feedback_write.png">
-                <a style="cursor: pointer;" onclick="return send()">上报舆情</a>
+                <a style="cursor: pointer;" onclick="return singlesend()">上报舆情</a>
             </div>
         </div>
     </div>
@@ -309,6 +332,7 @@
     <div class="integrative-all">
         <div class="integrative-number">编号</div>
         <div class="integrative-type">舆情类别</div>
+        <div class="integrative-product">产品类型</div>
         <div class="integrative-title">标题</div>
         <div class="integrative-mark">评分</div>
         <div class="integrative-unit">上报单位</div>
@@ -326,7 +350,7 @@
             <a href="">末页</a>
             <div class="integrative-output">
                 <img src="__PUBLIC__/images//feedback_write.png">
-                <a style="cursor: pointer;" onclick="return send()">上报舆情</a>
+                <a style="cursor: pointer;" onclick="return integrativesend()">上报舆情</a>
             </div>
         </div>
     </div>
@@ -495,35 +519,35 @@
     </div>
 </div>
 
-	<!--查看学院报送详情页-->
-	<div class="school-detail" style="display: none;">
+<!--查看学院报送详情页-->
+<div class="school-detail" style="display: none;">
 
-		<div class="schdet-ctrl" style="width: 100%; height: 20px; font-size: 20px;">
-			<span class="schdet-left" style="float: left; display: none;" onclick="schdetLeft()">&#8592;</span>
-			<span class="schdet-right" style="float: right;" onclick="schdetRight()">&#8594;</span>
-		</div>
+    <div class="schdet-ctrl" style="width: 100%; height: 20px; font-size: 20px;">
+        <span class="schdet-left" style="float: left; display: none;" onclick="schdetLeft()">&#8592;</span>
+        <span class="schdet-right" style="float: right;" onclick="schdetRight()">&#8594;</span>
+    </div>
 
-		<div class="schdet-all">
-			<span class="schdet-number">编号</span>
-			<span class="schdet-type">舆情类别</span>
-			<span class="schdet-send">报送类别</span>
-			<span class="schdet-title">标题</span>
-			<span class="schdet-mark">评分</span>
-			<span class="schdet-person">上报人</span>
-			<span class="schdet-time">发表时间</span>
-			<span class="schdet-operation">操作</span>
+    <div class="schdet-all">
+        <span class="schdet-number">编号</span>
+        <span class="schdet-type">舆情类别</span>
+        <span class="schdet-send">报送类别</span>
+        <span class="schdet-title">标题</span>
+        <span class="schdet-mark">评分</span>
+        <span class="schdet-person">上报人</span>
+        <span class="schdet-time">发表时间</span>
+        <span class="schdet-operation">操作</span>
 
-			<div class="schdet-content"></div>
+        <div class="schdet-content"></div>
 
-			<div class="schdet-page">
-				<a href="">首页</a>
-				<a href="">上一页</a>
-				<span>1</span>
-				<a href="">下一页</a>
-				<a href="">末页</a>
-			</div>
-		</div>
-	</div>
+        <div class="schdet-page">
+            <a href="">首页</a>
+            <a href="">上一页</a>
+            <span>1</span>
+            <a href="">下一页</a>
+            <a href="">末页</a>
+        </div>
+    </div>
+</div>
 <!--在线人数页-->
 <div class="online" style="display: none;">
     <div class="online-all">
@@ -632,28 +656,59 @@
     }
 
     //上报舆情按钮
-    function send() {
+    function singlesend() {
         $(ctrl.getCurrentClass()).css("display", "none");
-        $(".send").css("display", "block");
+        $(".single-send").css("display", "block");
         $(".opinion-search").css("display", "none");
+        $(".send-product").css("display", "none");
+        $(".send-type").css("display", "block");
+        $(".send-key").css("display", "block");
+        $(".send-website").css("display", "block");
+        $(".send-webpage").css("display", "block");
+        $(".send-type").css("display", "block");
+    }
+
+    function integrativesend() {
+
+        $(ctrl.getCurrentClass()).css("display", "none");
+        $(".single-send").css("display", "block");
+        $(".opinion-search").css("display", "none");
+        $(".send-product").css("display", "block");
+        $(".send-type").css("display", "block");
+        $(".send-key").css("display", "none");
+        $(".send-website").css("display", "none");
+        $(".send-webpage").css("display", "none");
     }
 
     function add() {
         $(ctrl.getCurrentClass()).css("display", "none");
         $(".add").css("display", "block");
         $(".opinion-search").css("display", "none");
-		//添加身份选取菜单
-			$.ajax({
-				url: model.identity.root + model.manager.groups_api,
-				type: "GET",
-				datatype: "json",
+        //添加身份选取菜单
+        $.ajax({
+            url: model.identity.root + model.manager.groups_api,
+            type: "GET",
+            datatype: "json",
 
-				success: function(json) {
-					for(var i = 0; i < json.result.length; i++) {
-						$(".user_identity").append('<option value="'+json.result[i].groupid+'">'+json.result[i].groupname+'</option>');
-					}
-				}
-			})
+            success: function (json) {
+                if (json.is_err == 0) {
+                    $(".user_identity").empty();
+                    for (var i = 0; i < json.result.length; i++) {
+                        $(".user_identity").append('<option value="' + json.result[i].groupid + '">' + json.result[i].groupname + '</option>');
+                    }
+                }
+                else
+                    alert(json.result);
+            }
+        })
+    }
+    //改变产品类型时需要改变的舆情类型是否显示
+    function toggleProduct() {
+        var temp = $(".product").val();
+        if (temp == 2)
+            $(".send-type").css("display", "block");
+        if (temp == 3)
+            $(".send-type").css("display", "none");
     }
 </script>
 <script type="text/javascript" src="__PUBLIC__/js/arrowctrl.js"></script>

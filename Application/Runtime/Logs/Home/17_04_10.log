@@ -3563,3 +3563,2083 @@ SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.00
 SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0116s ]
 SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0010s ]
 
+[ 2017-04-10T19:35:36+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001186s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015110s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002639s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.006235s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.159606s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.164584s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002648s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005278s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006089s ]
+INFO: [ app_end ] --END-- [ RunTime:0.021742s ]
+
+[ 2017-04-10T19:35:37+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000748s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.032320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035998s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0274s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0262s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0015s ]
+
+[ 2017-04-10T19:35:37+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000765s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007833s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008659s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0189s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0014s ]
+
+[ 2017-04-10T19:35:37+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000909s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008871s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008540s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0251s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T19:38:57+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001672s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021644s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009874s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018243s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001570s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004196s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.149390s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.153952s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005852s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010277s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.011035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.103947s ]
+
+[ 2017-04-10T19:38:58+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000730s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006518s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0122s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2017-04-10T19:38:59+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000595s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005878s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006957s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0177s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0024s ]
+
+[ 2017-04-10T19:38:59+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000848s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007473s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0228s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0011s ]
+
+[ 2017-04-10T19:39:06+08:00 ] ::1 /yq/index.php/Home/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001261s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006066s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 101 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0142s ]
+SQL: UPDATE `yq_user` SET `lastip`='0',`lastlogintime`='1491803722' WHERE `userid` = 1 [ RunTime:0.0033s ]
+
+[ 2017-04-10T19:39:08+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002519s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019613s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001759s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004780s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.167761s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.173424s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004476s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008997s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.018122s ]
+INFO: [ app_end ] --END-- [ RunTime:0.027468s ]
+
+[ 2017-04-10T19:39:09+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.016597s ]
+INFO: [ app_init ] --END-- [ RunTime:0.028192s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003982s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007231s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+
+[ 2017-04-10T19:39:09+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000831s ]
+INFO: [ app_init ] --END-- [ RunTime:0.022080s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006605s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0014s ]
+
+[ 2017-04-10T19:39:09+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.051714s ]
+INFO: [ app_init ] --END-- [ RunTime:0.056893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006022s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T19:39:12+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000544s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005105s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' AND `password` = '123456' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0128s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0112s ]
+SQL: SELECT b.groupid,b.groupname FROM yq_user_group a INNER JOIN yq_group b  WHERE ( a.userid=1&&a.groupid=b.groupid ) LIMIT 1   [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0151s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0134s ]
+SQL: SELECT b.itemname as name,c.action as api,b.keybind FROM yq_group_leftbar_permission  a INNER JOIN yq_leftbar  b INNER JOIN yq_permission c  WHERE ( a.groupid=3 and a.itemid=b.itemid and a.permid=c.permid ) ORDER BY a.itemid asc  [ RunTime:0.0023s ]
+
+[ 2017-04-10T19:42:07+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000693s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003908s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007988s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001721s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004792s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.194723s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.203969s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.018660s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.035396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.013452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.017122s ]
+
+[ 2017-04-10T19:42:07+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000433s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003847s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016467s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0009s ]
+
+[ 2017-04-10T19:42:07+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000393s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002685s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006085s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0010s ]
+
+[ 2017-04-10T19:42:07+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000477s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003865s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004009s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006810s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0079s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-04-10T19:43:01+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001187s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010791s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010707s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001857s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004507s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.129942s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.132666s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003414s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007299s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010105s ]
+INFO: [ app_end ] --END-- [ RunTime:0.025945s ]
+
+[ 2017-04-10T19:43:03+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000880s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007876s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.023992s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0179s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0148s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0016s ]
+
+[ 2017-04-10T19:43:03+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000779s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010880s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0141s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0015s ]
+
+[ 2017-04-10T19:43:03+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000835s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.021443s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0017s ]
+
+[ 2017-04-10T19:46:25+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001198s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012596s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.028603s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002728s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.007928s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.215371s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.223744s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004072s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008501s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.013410s ]
+INFO: [ app_end ] --END-- [ RunTime:0.088411s ]
+
+[ 2017-04-10T19:46:26+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000571s ]
+INFO: [ app_init ] --END-- [ RunTime:0.026360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003872s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009981s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0123s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0014s ]
+
+[ 2017-04-10T19:46:26+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000612s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005120s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.043478s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T19:46:26+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000728s ]
+INFO: [ app_init ] --END-- [ RunTime:0.049113s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005963s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0011s ]
+
+[ 2017-04-10T19:54:12+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000433s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003970s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007033s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001441s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080273s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.082697s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002213s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004731s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003787s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006500s ]
+
+[ 2017-04-10T19:54:13+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000376s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008241s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0090s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-04-10T19:54:13+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000439s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002148s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003971s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0009s ]
+
+[ 2017-04-10T19:54:13+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000378s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010079s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0713s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0008s ]
+
+[ 2017-04-10T19:58:20+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000634s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009022s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007816s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002677s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.006415s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.133335s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.137250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004060s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007467s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.013874s ]
+INFO: [ app_end ] --END-- [ RunTime:0.018480s ]
+
+[ 2017-04-10T19:58:20+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000737s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012018s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0009s ]
+
+[ 2017-04-10T19:58:21+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001340s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005351s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0078s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-04-10T19:58:21+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000849s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006640s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0011s ]
+
+[ 2017-04-10T19:59:29+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000554s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008018s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005580s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.180207s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.184939s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004357s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010596s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.020146s ]
+INFO: [ app_end ] --END-- [ RunTime:0.036856s ]
+
+[ 2017-04-10T19:59:30+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000684s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005708s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006399s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0010s ]
+
+[ 2017-04-10T19:59:30+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001510s ]
+INFO: [ app_init ] --END-- [ RunTime:0.040611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018724s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0011s ]
+
+[ 2017-04-10T19:59:30+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002345s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007497s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0095s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2017-04-10T20:00:14+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000640s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009320s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002175s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.006229s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.119890s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.123818s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003106s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006651s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004332s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008772s ]
+
+[ 2017-04-10T20:00:15+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000522s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004899s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004593s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T20:00:15+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000516s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002735s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004854s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0114s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2017-04-10T20:00:15+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000521s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005213s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0009s ]
+
+[ 2017-04-10T20:01:30+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000404s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.023135s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002811s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.007758s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.259305s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.265155s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005795s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.011360s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005680s ]
+INFO: [ app_end ] --END-- [ RunTime:0.017495s ]
+
+[ 2017-04-10T20:01:31+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008836s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009555s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0016s ]
+
+[ 2017-04-10T20:01:31+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000789s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003908s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007353s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0111s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2017-04-10T20:01:31+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000844s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.019946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.052015s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0302s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0015s ]
+
+[ 2017-04-10T20:02:37+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000534s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009641s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001740s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005733s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.161778s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.165683s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.008858s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014687s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015595s ]
+INFO: [ app_end ] --END-- [ RunTime:0.034719s ]
+
+[ 2017-04-10T20:02:38+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000753s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011986s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0016s ]
+
+[ 2017-04-10T20:02:38+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000863s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016027s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.020385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.026231s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0144s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0014s ]
+
+[ 2017-04-10T20:02:38+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001390s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006154s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015632s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T20:04:26+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001753s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010445s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002481s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005891s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.149610s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.153695s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006661s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010535s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007192s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011535s ]
+
+[ 2017-04-10T20:04:27+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000663s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004858s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007686s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0011s ]
+
+[ 2017-04-10T20:04:27+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000529s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004555s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007385s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0092s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-04-10T20:04:27+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000879s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005992s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005851s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0008s ]
+
+[ 2017-04-10T20:05:05+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000581s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010025s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004860s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001632s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004050s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.092172s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.095165s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001730s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003671s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009162s ]
+INFO: [ app_end ] --END-- [ RunTime:0.013750s ]
+
+[ 2017-04-10T20:05:05+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000461s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005354s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0010s ]
+
+[ 2017-04-10T20:05:05+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000434s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005083s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004162s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006832s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0007s ]
+
+[ 2017-04-10T20:05:05+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000424s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004361s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0054s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-04-10T20:08:48+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001523s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007355s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001664s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004346s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.150713s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.153853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002777s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005406s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010332s ]
+INFO: [ app_end ] --END-- [ RunTime:0.018978s ]
+
+[ 2017-04-10T20:08:49+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.003855s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012644s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.013355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.049825s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0179s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0015s ]
+
+[ 2017-04-10T20:08:49+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000930s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006644s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011590s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0141s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0148s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2017-04-10T20:08:49+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000914s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011982s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015735s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0278s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T20:13:02+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000998s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011818s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002283s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005914s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.132270s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.136821s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002628s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007707s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010992s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015598s ]
+
+[ 2017-04-10T20:13:03+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001509s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005954s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005481s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0014s ]
+
+[ 2017-04-10T20:13:03+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000563s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005598s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0090s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-04-10T20:13:03+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000571s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004546s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006378s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0009s ]
+
+[ 2017-04-10T20:16:56+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.030572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.030879s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002738s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010454s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.237491s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.247462s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004960s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009496s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009895s ]
+INFO: [ app_end ] --END-- [ RunTime:0.023389s ]
+
+[ 2017-04-10T20:16:57+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000719s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004092s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018330s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T20:16:57+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000656s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005940s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010145s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0125s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2017-04-10T20:16:57+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000710s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012832s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014903s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0011s ]
+
+[ 2017-04-10T20:19:34+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000438s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004112s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005071s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001298s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003252s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.096707s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.099648s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001507s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004205s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006592s ]
+
+[ 2017-04-10T20:19:35+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000404s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003596s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001997s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003677s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0139s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2017-04-10T20:19:35+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000424s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009170s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0009s ]
+
+[ 2017-04-10T20:19:35+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000417s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005955s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0014s ]
+
+[ 2017-04-10T20:23:51+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000871s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001745s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004459s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.129474s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.141566s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002480s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006543s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004661s ]
+INFO: [ app_end ] --END-- [ RunTime:0.039883s ]
+
+[ 2017-04-10T20:23:51+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000422s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003638s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005735s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0093s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-04-10T20:23:52+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000523s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004734s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0009s ]
+
+[ 2017-04-10T20:23:52+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000810s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007421s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0009s ]
+
+[ 2017-04-10T20:31:06+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002153s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013480s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.006032s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.165145s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.168746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004986s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010268s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.013148s ]
+INFO: [ app_end ] --END-- [ RunTime:0.017708s ]
+
+[ 2017-04-10T20:31:07+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001377s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002927s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005121s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0167s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T20:31:08+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000893s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.031619s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0189s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0160s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2017-04-10T20:31:08+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000530s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002991s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005502s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0425s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0011s ]
+
+[ 2017-04-10T20:36:27+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000819s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011977s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018829s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004423s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.013176s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.278630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.283943s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005275s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012067s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.021124s ]
+INFO: [ app_end ] --END-- [ RunTime:0.048167s ]
+
+[ 2017-04-10T20:36:28+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000657s ]
+INFO: [ app_init ] --END-- [ RunTime:0.040463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004190s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.047260s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0217s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0214s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2017-04-10T20:36:29+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001071s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006720s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0189s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0013s ]
+
+[ 2017-04-10T20:36:29+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000612s ]
+INFO: [ app_init ] --END-- [ RunTime:0.038986s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.024740s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0192s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T20:36:56+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001120s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005876s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001844s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005415s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.121257s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.124222s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002267s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004652s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005083s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008581s ]
+
+[ 2017-04-10T20:36:57+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000521s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003169s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006264s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0178s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0011s ]
+
+[ 2017-04-10T20:36:57+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000604s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016841s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0010s ]
+
+[ 2017-04-10T20:36:57+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000590s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004870s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007284s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0145s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-04-10T20:37:03+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000596s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007517s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001196s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003932s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.096919s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.099952s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002244s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004908s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.010775s ]
+INFO: [ app_end ] --END-- [ RunTime:0.013353s ]
+
+[ 2017-04-10T20:37:04+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000627s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004313s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007847s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0196s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0129s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-04-10T20:37:04+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000588s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004825s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005454s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0018s ]
+
+[ 2017-04-10T20:37:04+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000615s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002712s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004968s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0136s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0031s ]
+
+[ 2017-04-10T20:37:43+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000800s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007008s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004991s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009054s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005194s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.151360s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.154532s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002863s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005607s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.012067s ]
+INFO: [ app_end ] --END-- [ RunTime:0.017344s ]
+
+[ 2017-04-10T20:37:45+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000958s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009933s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011200s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0169s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0132s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0016s ]
+
+[ 2017-04-10T20:37:45+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001733s ]
+INFO: [ app_init ] --END-- [ RunTime:0.044832s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003893s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007161s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0194s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0016s ]
+
+[ 2017-04-10T20:37:45+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008880s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.035815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.039272s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0013s ]
+
+[ 2017-04-10T20:57:08+08:00 ] ::1 /yq/index.php/Home/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001894s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003853s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006914s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 101 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0250s ]
+SQL: UPDATE `yq_user` SET `lastip`='0',`lastlogintime`='1491824352' WHERE `userid` = 1 [ RunTime:0.0043s ]
+
+[ 2017-04-10T20:57:09+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012696s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002842s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006259s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001787s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004471s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.125286s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.129147s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002729s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005946s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007081s ]
+INFO: [ app_end ] --END-- [ RunTime:0.013925s ]
+
+[ 2017-04-10T20:57:10+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.034225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.038724s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0253s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0014s ]
+
+[ 2017-04-10T20:57:10+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000805s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014992s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007178s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+
+[ 2017-04-10T20:57:11+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000754s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.026373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.034407s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0182s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T20:57:12+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000768s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009838s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0194s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' AND `password` = '123456' LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0196s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0208s ]
+SQL: SELECT b.groupid,b.groupname FROM yq_user_group a INNER JOIN yq_group b  WHERE ( a.userid=1&&a.groupid=b.groupid ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0224s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0249s ]
+SQL: SELECT b.itemname as name,c.action as api,b.keybind FROM yq_group_leftbar_permission  a INNER JOIN yq_leftbar  b INNER JOIN yq_permission c  WHERE ( a.groupid=3 and a.itemid=b.itemid and a.permid=c.permid ) ORDER BY a.itemid asc  [ RunTime:0.0025s ]
+
+[ 2017-04-10T20:57:35+08:00 ] ::1 /yq/index.php/Home/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001327s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018943s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005051s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 101 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0156s ]
+SQL: UPDATE `yq_user` SET `lastip`='0',`lastlogintime`='1491829032' WHERE `userid` = 1 [ RunTime:0.0043s ]
+
+[ 2017-04-10T20:57:37+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001184s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018098s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014319s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001688s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004558s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.131924s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.134602s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004058s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007650s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005959s ]
+INFO: [ app_end ] --END-- [ RunTime:0.019231s ]
+
+[ 2017-04-10T20:57:38+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000756s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007194s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008639s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0025s ]
+
+[ 2017-04-10T20:57:38+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000832s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006704s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008216s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+
+[ 2017-04-10T20:57:38+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000823s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006927s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004105s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007174s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0014s ]
+
+[ 2017-04-10T20:58:21+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015805s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009936s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' AND `password` = '123456' LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0255s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0135s ]
+SQL: SELECT b.groupid,b.groupname FROM yq_user_group a INNER JOIN yq_group b  WHERE ( a.userid=1&&a.groupid=b.groupid ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0135s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0123s ]
+SQL: SELECT b.itemname as name,c.action as api,b.keybind FROM yq_group_leftbar_permission  a INNER JOIN yq_leftbar  b INNER JOIN yq_permission c  WHERE ( a.groupid=3 and a.itemid=b.itemid and a.permid=c.permid ) ORDER BY a.itemid asc  [ RunTime:0.0022s ]
+
+[ 2017-04-10T20:58:41+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.003267s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014715s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005923s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009829s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001806s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004986s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.141837s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.145411s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005780s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012413s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.056071s ]
+INFO: [ app_end ] --END-- [ RunTime:0.131145s ]
+
+[ 2017-04-10T20:58:42+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000891s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007581s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008857s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0211s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0026s ]
+
+[ 2017-04-10T20:58:42+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000724s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006093s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007662s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0135s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0026s ]
+
+[ 2017-04-10T20:58:43+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000912s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008174s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0202s ]
+
+[ 2017-04-10T20:59:59+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001606s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006184s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010768s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002546s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005730s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.119375s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.123449s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002642s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005113s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004874s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009817s ]
+
+[ 2017-04-10T21:00:00+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000947s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010071s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.021761s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0157s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0015s ]
+
+[ 2017-04-10T21:00:00+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000997s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018912s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004101s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007573s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0107s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0014s ]
+
+[ 2017-04-10T21:00:01+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001324s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010830s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0013s ]
+
+[ 2017-04-10T21:00:21+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.003552s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017901s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013478s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.006128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.011112s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.180024s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.183500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.007476s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.011304s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.030297s ]
+INFO: [ app_end ] --END-- [ RunTime:0.074369s ]
+
+[ 2017-04-10T21:00:22+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000716s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018944s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008808s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0153s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0121s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2017-04-10T21:00:22+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000737s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007781s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.037200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.042934s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T21:00:22+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000970s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012132s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.021305s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0174s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0014s ]
+
+[ 2017-04-10T21:00:41+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001314s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014256s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002160s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.007006s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.121859s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.124751s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003673s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.012407s ]
+INFO: [ app_end ] --END-- [ RunTime:0.020539s ]
+
+[ 2017-04-10T21:00:42+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.050859s ]
+INFO: [ app_init ] --END-- [ RunTime:0.057042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008621s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0136s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2017-04-10T21:00:42+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001191s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004106s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010227s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T21:00:42+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000819s ]
+INFO: [ app_init ] --END-- [ RunTime:0.025309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007210s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0013s ]
+
+[ 2017-04-10T21:01:35+08:00 ] ::1 /yq/index.php/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000550s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006679s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013908s ]
+ERR: 无法加载控制器:Undefined
+
+[ 2017-04-10T21:16:04+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000965s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005816s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011652s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.007412s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.179539s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.184769s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005711s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.016848s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008787s ]
+INFO: [ app_end ] --END-- [ RunTime:0.023149s ]
+
+[ 2017-04-10T21:16:05+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000602s ]
+INFO: [ app_init ] --END-- [ RunTime:0.033361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.037883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.041001s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0012s ]
+
+[ 2017-04-10T21:16:05+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000776s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.040589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.045623s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0016s ]
+
+[ 2017-04-10T21:16:05+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.031641s ]
+INFO: [ app_init ] --END-- [ RunTime:0.036210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.042406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.045418s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0102s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-04-10T21:17:19+08:00 ] ::1 /yq/index.php/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000472s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004265s ]
+ERR: 无法加载控制器:Undefined
+
+[ 2017-04-10T21:21:58+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000520s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005881s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005704s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001654s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004297s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.099453s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.101626s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002716s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004834s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005181s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007912s ]
+
+[ 2017-04-10T21:40:55+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000534s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004785s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005301s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001700s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003899s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.132756s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.135812s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002629s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005263s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005601s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008920s ]
+
+[ 2017-04-10T21:42:33+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000470s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002810s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004810s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002270s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.005243s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.142702s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.146726s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004552s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012063s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007115s ]
+INFO: [ app_end ] --END-- [ RunTime:0.021703s ]
+
+[ 2017-04-10T21:42:35+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000616s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005527s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001855s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003940s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.104497s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.107174s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002919s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005605s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006940s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009756s ]
+
+[ 2017-04-10T21:42:44+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000546s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007286s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001563s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004044s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.110455s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.113241s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003389s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007146s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005062s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011532s ]
+
+[ 2017-04-10T21:42:45+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002588s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016819s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018146s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0230s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0236s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0014s ]
+
+[ 2017-04-10T21:42:45+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008891s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.064235s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0265s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0015s ]
+
+[ 2017-04-10T21:42:45+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001263s ]
+INFO: [ app_init ] --END-- [ RunTime:0.060698s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008547s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0230s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0043s ]
+
+[ 2017-04-10T21:44:00+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001655s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008096s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007393s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002711s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.006537s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.176506s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.180748s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002660s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005646s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007052s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011851s ]
+
+[ 2017-04-10T21:44:01+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000757s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006915s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.054183s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.058287s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0454s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0234s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0016s ]
+
+[ 2017-04-10T21:44:01+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000761s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008603s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0217s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0016s ]
+
+[ 2017-04-10T21:44:02+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000744s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007568s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0203s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0013s ]
+
+[ 2017-04-10T21:44:03+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000546s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004130s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0169s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0124s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-04-10T21:44:03+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000535s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.016967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019899s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0009s ]
+
+[ 2017-04-10T21:44:03+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000561s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007766s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006104s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0009s ]
+
+[ 2017-04-10T21:44:04+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001125s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004828s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001990s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004177s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0009s ]
+
+[ 2017-04-10T21:44:04+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000400s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002008s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004022s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0155s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0122s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-04-10T21:44:04+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000581s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006118s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0009s ]
+
+[ 2017-04-10T21:44:06+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000839s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010944s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.025682s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003325s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010847s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.238721s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.242978s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005074s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009611s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009511s ]
+INFO: [ app_end ] --END-- [ RunTime:0.043100s ]
+
+[ 2017-04-10T21:44:07+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000898s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008152s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0249s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0232s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0017s ]
+
+[ 2017-04-10T21:44:07+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000671s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007313s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0184s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0013s ]
+
+[ 2017-04-10T21:44:07+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000745s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007556s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009748s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0182s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0012s ]
+

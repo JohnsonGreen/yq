@@ -283,6 +283,8 @@ class SingleController extends AdminBaseController{
             // 上传文件
 
             $info   =   $upload->upload();
+            var_dump($info);
+            exit;
             $imgPath = $upload->rootPath.$info['content']['savepath'].$info['content']['savename'];
             if(!$info) {// 上传错误提示错误信息
                 $response['is_err'] = 1;
@@ -356,11 +358,9 @@ class SingleController extends AdminBaseController{
 		$id = trim(I('post.messageid'));
 		$result = array();
         $uc = D('UserCollection');
-
         $map['userid'] = $_SESSION['user']['userid'];
         $map['messageid'] = $id;
         $res = $uc->where($map)->field('messageid')->find();
-
         if(!empty($res)){
             $result['result'] = '已收藏';
             $result['is_err'] = 1;
@@ -378,12 +378,11 @@ class SingleController extends AdminBaseController{
 		echo json_encode($result);
 		exit;
 	}
+
 	/**
 	 * elements
 	 */
     public function add_single_message(){
-
-
 
 		//判断在中文逗号
 		$keys = trim(I('post.keyword'));
@@ -425,22 +424,22 @@ class SingleController extends AdminBaseController{
 			//UPLOAD
 			$upload = new \Think\Upload();// 实例化上传类
 			$upload->maxSize   =     3145728 ;// 设置附件上传大小
-			$upload->exts      =     array('pdf', 'txt', 'doc', 'jpeg', '.docx', 'png', 'jpg');// 设置附件上传类型
+			$upload->exts      =     array('pptx','ppt','xls','xlsx','pdf', 'txt', 'doc', 'jpeg', 'docx', 'png', 'jpg');// 设置附件上传类型
 			$upload->rootPath  =     __ROOT__.'/Uploads/'; // 设置附件上传根目录
 			$upload->savePath  =     ''; // 设置附件上传（子）目录
 			// 上传文件
-
 			$info   =   $upload->upload();
-			$imgPath = $upload->rootPath.$info['content']['savepath'].$info['content']['savename'];
+			$imgPath = "";
+
 			if(!$info) {// 上传错误提示错误信息
 				$response['is_err'] = 1;
 				$result['result'] = $upload->getError();
 			}else{// 上传成功
 				$response['is_err'] = 0;
 				$result['result'] = "is_ok";
+                $imgPath = $upload->rootPath.$info['content']['savepath'].$info['content']['savename'];
 			}
 
-			//
 			$data['file'] = $imgPath;
 
 			$new_message = D('Message')->add($data);

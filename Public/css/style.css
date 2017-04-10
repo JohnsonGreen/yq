@@ -113,10 +113,17 @@ table {
 }
 
 .showing {
+	display: none;
 	height: 25px;
 	width: 100%;
 	margin-top: -20px;
 	background-color: #e5e5e5;
+}
+
+.showingimg {
+	position: relative;
+	top: 2px;
+	display: inline-block;
 }
 
 /*导航栏开始*/
@@ -163,7 +170,7 @@ table {
 	font-size: 20px;
 	margin-left: 10px;
 	margin: 15px 0;
-	text-align: center;
+	/*text-align: center;*/
 } 
 
 .rank p:first-of-type {
@@ -176,10 +183,11 @@ table {
 	color: white;
 	display: inline-block;
 	font-size: 16px;
+	text-align: center;
 }
 
 .rank-first span {
-	background-color: #ffe197;
+	background-color: #f39800;
 }
 
 .rank-second span {
@@ -187,7 +195,7 @@ table {
 }
 
 .rank-third span {
-	background-color: #f39800;
+	background-color: #ffe197;
 }
 
 /*首页开始*/
@@ -378,6 +386,7 @@ button:hover {
 .single-time,
 .single-operation,
 .integrative-number,
+.integrative-product,
 .integrative-type,
 .integrative-title,
 .integrative-mark,
@@ -397,6 +406,10 @@ button:hover {
 .integrative-type {
 	display: inline-block;
 	width: 20%;
+}
+
+.integrative-product {
+	display: none;
 }
 
 .single-title,
@@ -1038,6 +1051,18 @@ select {
 	border: 1px solid #eee;
 }
 
+.details-username,
+.details-createtime,
+.details-type {
+	border-right: 1px solid black;
+}
+
+.details-schname,
+.details-type {
+	margin-left: 2px;
+}
+
+
 /*信息报送页*/
 .send {
 	width: 100%;
@@ -1110,7 +1135,7 @@ footer span {
 	margin: auto;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
 	header {
 		height: 60px;
 	}
@@ -1120,7 +1145,7 @@ footer span {
 	}
 
 	#i_am_a_table {
-		left: 30%;
+		left: 22%;
 	}
 
 	.login {
@@ -1140,10 +1165,20 @@ footer span {
 		display: none;
 	}
 
-	.news, .public {
+	.showingimg {
+		display: none;
+	}
+
+	.news {
 		float: left;
+		width: 33%;
+		margin-left: 5%;
+	}
+
+	.public {
 		width: 32%;
-		margin-left: 30px;
+		float: right;
+		margin-right: 10%;
 	}
 
 	.opinion-title {
@@ -1200,6 +1235,11 @@ footer span {
 
 	.single-number,
 	.integrative-number {
+		width: 5%;
+	}
+
+	.integrative-product {
+		display: inline-block;
 		width: 10%;
 	}
 
@@ -1230,7 +1270,7 @@ footer span {
 
 	.single-operation,
 	.integrative-operation {
-		width: 15%;
+		width: 12%;
 	}
 
 	.single-mark,
@@ -1272,7 +1312,7 @@ footer span {
 	}
 
 	form {
-		margin-left: 28%;
+		margin-left: 22%;
 	}
 
 	.manager-search {
@@ -1456,7 +1496,8 @@ footer span {
 	.managekeyword-all,
 	.marklist-all,
 	.online-all,
-	.log-all {
+	.log-all,
+	.schdet-all {
 		margin-top: 40px;
 	}
 
@@ -1483,7 +1524,8 @@ footer span {
 	}
 
 	.details {
-		margin-left: 25%;
+		float: right;
+		margin-right: 10%;
 		width: 70%;
 		height: 500px;
 	}
@@ -1502,12 +1544,6 @@ footer span {
 	footer {
 		position: absolute;
 		bottom: 0;
-	}
-}
-
-@media screen and (min-width: 700px) and (max-width: 820px) {
-	.news, .public {
-		width: 64%;
 	}
 }
 

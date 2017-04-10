@@ -39,7 +39,7 @@
             //缩减title
             if($arr[$i]['title']){
                 $arr[$i]['title_detail'] = $arr[$i]['title'];
-                $arr[$i]['title'] = mb_substr($arr[$i]['title'], 0, 6)."...";
+                $arr[$i]['title'] = mb_substr($arr[$i]['title'], 0, 30)."...";
             }
 
             //获取回复数
