@@ -87,7 +87,7 @@ class UserController extends AdminBaseController{
         }
 		$result = D('User')->getUser($p);
 		$response['is_err'] = 0;
-		$response['result'] = $result;
+		$response['result'  ] = $result;
 		$response['max_page'] = count($result)/10;
 		echo json_encode($response);
 		exit;

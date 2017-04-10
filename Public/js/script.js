@@ -52,14 +52,14 @@ $(document).ready(function() {
 
 var model = {
 	identity: {},
-    pub: {},
-    single: {},
-    integrative: {},
+    pub: {url:"",max_page:""},
+    single: {url:"",max_page:""},
+    integrative: {url:"",max_page:""},
     manager: {add_url:"",groups_api:""},
-    collection: {},
-    managemark: {},
-    key: {},
-    marklist: {},
+    collection: {url:"",max_page:""},
+    managemark: {url:"",max_page:""},
+    key: {url:"",max_page:""},
+    marklist: {url:"",max_page:""},
     online: {},
     log: {},
     //菜单的内容，用数组表示
@@ -364,6 +364,8 @@ var ctrl = {
 
 					success: function(json) {
 						$(".single-content").empty();
+						model.single.max_page = json.max_page;
+						model.single.url = json.url;
 						var s = json.result;
 						for(var i = 0; i < s.length; i++) {
 							$(".single-content").append('<div class="single-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
@@ -373,7 +375,7 @@ var ctrl = {
 							$(".single-contentDet"+i).append('<span class="single-mark">'+s[i].score+'</span>');
 							$(".single-contentDet"+i).append('<span class="single-unit">'+s[i].schname+'</span>');
 							$(".single-contentDet"+i).append('<span class="single-time">'+s[i].createtime+'</span>');
-							$(".single-contentDet"+i).append('<span class="single-operation"><a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a><a onclick="ctrl.siup('+s[i].messageid+')">置顶</a><a onclick="ctrl.sidele('+s[i].messageid+')">删除</a></span>');
+							$(".single-contentDet"+i).append('<span class="single-operation"><a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a><a onclick="ctrl.siup('+s[i].messageid+')">收藏</a><a onclick="ctrl.sidele('+s[i].messageid+')">删除</a></span>');
 						}
 					}
 				})
@@ -382,15 +384,17 @@ var ctrl = {
 	},
 
 	sidetail: function(index) {
+
+
 		view.transform();
 	},
 
 	siedit: function(index) {
 		$.ajax({
-			url: "",
-			type: "GET",
+			url: model.identity.root + model.single.url.single_update,
+			type: "POST",
 			datatype: "json",
-
+            data: {"messageid":index},
 			success: function() {
 				view.transform();
 			}
@@ -399,16 +403,16 @@ var ctrl = {
 
 	siup: function(index) {
 		$.ajax({
-			url: "",
-			type: "GET",
+			url: model.identity.root + model.single.url.single_love,
+			type: "POST",
 			datatype: "json",
-
+			data: {"messageid":index},
 			success: function(json) {
 				if(json.is_err == 0) {
-					alert("置顶成功！");
+					alert("收藏成功！");
 					ctrl.getSingle();
 				} else {
-					alert("失败，请重试！");
+					alert(json.result);
 				}
 			}
 		})
@@ -416,16 +420,16 @@ var ctrl = {
 
 	sidele: function(index) {
 		$.ajax({
-			url: "",
-			type: "GET",
+			url: model.identity.root + model.single.url.single_del,
+			type: "POST",
 			datatype: "json",
-
+            data: {"messageid":index},
 			success: function(json) {
 				if(json.is_err == 0) {
 					alert("删除成功！");
 					ctrl.getSingle();
 				} else {
-					alert("失败，请重试！");
+                    alert(json.result);
 				}
 			}
 		})
@@ -443,6 +447,8 @@ var ctrl = {
 					success: function(json) {
 						$(".integrative-content").empty();
 						var s = json.result;
+						model.integrative.url = json.url;
+						model.integrative.max_page = json.max_page;
 						for(var i = 0; i < s.length; i++) {
 							$(".integrative-content").append('<div class="integrative-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
 							$(".integrative-contentDet"+i).append('<span class="integrative-number">'+s[i].messageid+'</span>');
@@ -451,7 +457,15 @@ var ctrl = {
 							$(".integrative-contentDet"+i).append('<span class="integrative-mark">'+s[i].score+'</span>');
 							$(".integrative-contentDet"+i).append('<span class="integrative-unit">'+s[i].schname+'</span>');
 							$(".integrative-contentDet"+i).append('<span class="integrative-time">'+s[i].createtime+'</span>');
-							$(".integrative-contentDet"+i).append('<span class="integrative-operation"><a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a><a onclick="ctrl.inup('+s[i].messageid+')">置顶</a><a onclick="ctrl.indele('+s[i].messageid+')">删除</a></span>');
+							var str = '<span class="integrative-operation">';
+							if(s[i].flag == 1){
+                                str += '<a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a>';
+							}
+							str += '<a onclick="ctrl.inup('+s[i].messageid+')">收藏</a>' ;
+                            if(s[i].flag == 1){
+                                '<a onclick="ctrl.indele('+s[i].messageid+')">删除</a></span>';
+                            }
+							$(".integrative-contentDet"+i).append(str);
 						}
 					}
 				})
@@ -465,10 +479,10 @@ var ctrl = {
 
 	inedit: function(index) {
 		$.ajax({
-			url: "",
-			type: "GET",
+			url: model.identity.root + model.integrative.url.overall_update,
+			type: "POST",
 			datatype: "json",
-
+            data: {"messageid":index},
 			success: function() {
 				view.transform();
 			}
@@ -477,16 +491,16 @@ var ctrl = {
 
 	inup: function(index) {
 		$.ajax({
-			url: "",
-			type: "GET",
+			url: model.identity.root + model.integrative.url.overall_love,
+			type: "POST",
 			datatype: "json",
-
+            data: {"messageid":index},
 			success: function(json) {
 				if(json.is_err == 0) {
-					alert("置顶成功！");
+					alert("收藏成功！");
 				ctrl.getIntegrative();
 				} else {
-					alert("失败，请重试！");
+                    alert(json.result);
 				}
 			}
 		})
@@ -494,16 +508,16 @@ var ctrl = {
 
 	indele: function(index) {
 		$.ajax({
-			url: "",
-			type: "GET",
+			url: model.identity.root + model.integrative.url.overall_del,
+			type: "POST",
 			datatype: "json",
-
+            data: {"messageid":index},
 			success: function(json) {
 				if(json.is_err == 0) {
 					alert("删除成功！");
 					ctrl.getIntegrative();
 				} else {
-					alert("失败，请重试！");
+					alert(json.result);
 				}
 			}
 		})
@@ -567,6 +581,8 @@ var ctrl = {
 					success: function(json) {
 						$(".collection-content").empty();
 						var s = json.result;
+						model.collection.url = json.url;
+						model.collection.max_page = json.max_page;
 						for(var i = 0; i < s.length; i++) {
 							$(".collection-content").append('<div class="collection-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
 							$(".collection-contentDet"+i).append('<span class="collection-number">'+s[i].messageid+'</span>');
@@ -589,7 +605,20 @@ var ctrl = {
 	},
 
 	codele: function(index) {
-
+        $.ajax({
+            url: model.identity.root + model.collection.url.collect_del,
+            type: "POST",
+            datatype: "json",
+            data:{'messageid':index},
+            success: function(json) {
+                if(json.is_err == 0) {
+                    alert("删除成功！");
+                    ctrl.getCollection();
+                } else {
+                    alert("失败，请重试！");
+                }
+            }
+        })
 	},
 
 	//获得管理积分的内容

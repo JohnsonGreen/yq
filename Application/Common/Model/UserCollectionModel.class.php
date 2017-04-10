@@ -6,8 +6,8 @@
  * Time: 8:46
  */
 namespace Common\Model;
-use Think\Model;
-class UserCollectionModel extends Model {
+
+class UserCollectionModel extends BaseModel{
 
     //收藏
     public function love($id){
@@ -49,5 +49,15 @@ class UserCollectionModel extends Model {
             return false;
         }
     }
+
+    public function delAllByid($id){
+        $map['messageid'] = $id;
+        if($this->where($map)->delete()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 
 }

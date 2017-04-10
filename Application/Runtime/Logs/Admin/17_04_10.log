@@ -1,0 +1,275 @@
+[ 2017-04-10T14:24:13+08:00 ] ::1 /yq/index.php/Admin/Message/single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002914s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009670s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0245s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0221s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0178s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0014s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\MessageController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0213s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `userid` = '1' AND `product` <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0261s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0306s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0022s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0021s ]
+
+[ 2017-04-10T14:24:14+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000961s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008122s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006194s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011299s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0205s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0176s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0196s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0488s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `product` = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0231s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0245s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0023s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 2 LIMIT 1   [ RunTime:0.0025s ]
+
+[ 2017-04-10T14:24:14+08:00 ] ::1 /yq/index.php/Admin/Message/single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000838s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005992s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009693s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0226s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0260s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0273s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0019s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\MessageController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0224s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `userid` = '1' AND `product` <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0173s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0185s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0014s ]
+
+[ 2017-04-10T14:24:15+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001545s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008019s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0283s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0263s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0214s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0154s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `product` = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0204s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0235s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 2 LIMIT 1   [ RunTime:0.0015s ]
+
+[ 2017-04-10T14:24:15+08:00 ] ::1 /yq/index.php/Admin/Message/single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.003212s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010841s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012208s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0161s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0201s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0178s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0014s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\MessageController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0231s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `userid` = '1' AND `product` <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0171s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0188s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-04-10T14:24:15+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000808s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.024215s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0257s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0148s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0182s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0131s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `product` = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0165s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0191s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 2 LIMIT 1   [ RunTime:0.0012s ]
+
+[ 2017-04-10T14:24:16+08:00 ] ::1 /yq/index.php/Admin/Message/single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001527s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007559s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0211s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0169s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0119s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0008s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\MessageController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0123s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `userid` = '1' AND `product` <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0117s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0115s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2017-04-10T14:24:16+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000506s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005637s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0184s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0256s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0163s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0120s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `product` = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0115s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0111s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 2 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-04-10T14:24:16+08:00 ] ::1 /yq/index.php/Admin/Message/single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000567s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006263s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012413s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0161s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0174s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0082s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0010s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\MessageController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0088s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `userid` = '1' AND `product` <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0071s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-04-10T14:24:16+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000523s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006339s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0112s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0124s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0108s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0097s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `product` = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0077s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 2 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-04-10T14:24:17+08:00 ] ::1 /yq/index.php/Admin/Message/single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000356s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002927s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004464s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0111s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0108s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0088s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0010s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\MessageController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0091s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `userid` = '1' AND `product` <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0078s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2017-04-10T14:24:17+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000514s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006141s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0091s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0070s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0077s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0086s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `product` = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 2 LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2017-04-10T14:24:17+08:00 ] ::1 /yq/index.php/Admin/Message/single
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001163s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008997s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003239s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0081s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0078s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0065s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0010s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\MessageController.class.php 第 32 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0086s ]
+SQL: SELECT `messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid  WHERE `userid` = '1' AND `product` <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0076s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0007s ]
+

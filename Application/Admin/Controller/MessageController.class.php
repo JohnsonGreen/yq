@@ -10,7 +10,7 @@ class MessageController extends AdminBaseController{
 	 * 报送条目的详情页
 	 */
 	public function index(){
-		$id = I('post.message_id');
+		$id = I('post.messageid');
 //		$id = 1;
 		$result = D('Message')->getMessage($id);
 		//访问量加一
@@ -32,13 +32,18 @@ class MessageController extends AdminBaseController{
 		@session_start();
 		$map['userid'] = $_SESSION['user']['userid'];
 		$page = I('post.page');
-		$page = 1;
-
+		//$page = 1;
 		$map['product'] = array('neq', 1);
 		$result = D('Message')->getData($map, $page);
 		$response['result'] = $result;
 		$response['is_err'] = 0;
 		$response['max_page'] = count($result)/10;
+		$response['url'] = array(
+		    'overall_del'=>'Admin/Message/del_message',
+            'overall_love'=>'Admin/Message/love',
+            'overall_update'=>'Admin/Message/update_message',
+            'overall_add'=>'Admin/Message/add_message'
+        );
 		echo json_encode($response);
 		exit;
 	}
@@ -54,6 +59,12 @@ class MessageController extends AdminBaseController{
 		$response['result'] = $result;
 		$response['max_page'] = count($result)/10;
 		$response['is_err'] = 0;
+        $response['url'] = array(
+            'overall_del'=>'Admin/Message/del_message_admin',
+            'overall_love'=>'Admin/Message/love',
+            'overall_update'=>'Admin/Message/update_message',
+            'overall_add'=>'Admin/Message/add_message'
+        );
 		echo json_encode($response);
 		exit;
 	}
@@ -94,24 +105,39 @@ class MessageController extends AdminBaseController{
 
 		//删除
 	public function del_message(){
-		$id = trim(I('post.message_id'));
+        @session_start();
+		$id = trim(I('post.messageid'));
 		$result = array();
-		if(D('Message')->del($id)){
+		if(D('Message')->del($id,$_SESSION['user']['userid'])){
 			$result['is_err'] = 0;
-			$result['result'] = 'is_ok';
+			$result['result'] = '删除成功！';
 		}else{
 			$result['is_err'] = 1;
-			$result['result'] = '数据库错误，请重试！';
+			$result['result'] = '删除失败！';
 		}
 		echo json_encode($result);
 		exit;
 	}
 
+    public function del_message_admin(){
+        $id = trim(I('post.messageid'));
+        $result = array();
+        if(D('Message')->del($id)){
+            $result['is_err'] = 0;
+            $result['result'] = 'is_ok';
+        }else{
+            $result['is_err'] = 1;
+            $result['result'] = '数据库错误，请重试！';
+        }
+        echo json_encode($result);
+        exit;
+    }
+
 	//收藏
 	public function love(){
-		$id = trim(I('post.message_id'));
+		$id = trim(I('post.messageid'));
 		$result = array();
-		if(D('User_collection')->love($id)){
+		if(D('UserCollection')->love($id)){
 			$result['result'] = 'is_ok';
 			$result['is_err'] = 0;
 		}

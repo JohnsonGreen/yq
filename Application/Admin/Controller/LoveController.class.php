@@ -16,6 +16,7 @@ class LoveController extends AdminBaseController{
 		$response['is_err'] = 0;
 		$response['result'] = $result;
 		$response['max_page'] = count($result)/10;
+		$response['url']=array('collect_del'=>'Admin/Love/del');
 		echo json_encode($response);
 		exit;
 	}
@@ -66,7 +67,7 @@ class LoveController extends AdminBaseController{
 		$p = I('post.page');
 		$map['type'] = I('post.type');
 
-		$result = D('User_collection')->getData($map, $p);
+		$result = D('UserCollection')->getData($map, $p);
 		$response['is_err'] = 0;
 		$response['result'] = $result;
 		$response['max_page'] = count($result)/10;
@@ -75,10 +76,10 @@ class LoveController extends AdminBaseController{
 	}
 	//删除
 	public function del(){
-		$id = I('post.id');
-		if(D('User_collection')->del($id)){
+		$id = I('post.messageid');
+		if(D('UserCollection')->del($id)){
 			$response['is_err'] = 0;
-			$response['result'] = 'is_ok';
+			$response['result'] = '删除成功';
 		}else{
 			$response['is_err'] = 1;
 			$response['result'] = '数据库错误，请重试！';

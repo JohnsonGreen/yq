@@ -114,9 +114,16 @@ class MessageModel extends BaseModel{
         return $message;
     }
     //软删除舆情
-    public function del($id){
+    public function del($id,$userid=null){
         $data['messageid'] = $id;
-        $data['is_delelte'] = 1;
+        if(!empty($userid)){
+            $res = $this->where($data)->field('userid')->find();
+            if($res['userid'] != $userid){
+                return false;
+            }
+        }
+        $data['is_delete'] = 1;
+        D('UserCollection')->delAllByid($id);   //删除所有收藏
         if($this->save($data)){
             return true;
         }else{
@@ -128,6 +135,7 @@ class MessageModel extends BaseModel{
         $res = $this->where(array('messageid'=>$messageid))->field('userid')->find();
         return $res['userid']; 
     }
+
     public function getMessage($id){
         $map['messageid'] = $id;
         $message = $this
