@@ -1,5 +1,6 @@
 <?php
 namespace Admin\Controller;
+use Think\Controller;
 use Common\Controller\AdminBaseController;
 header('content-type:application/json;charset=utf8');
 /**
@@ -15,13 +16,13 @@ class SingleController extends AdminBaseController{
         $id = I('post.messageid');
 //		$id = 1;
         $result = D('Message')->getMessage($id);
+
         //访问量加一
         $map['messageid'] = $id;
         D('Message')->where($map)->setInc('click');
-
         $response['is_err'] = 0;
-        $response['result'] = $result;
-        $response['max_page'] = count($result)/10;
+        $response['result'] = $result[0];
+        $response['max_page'] = ceil(count($result)/10);
         echo json_encode($response);
         exit;
     }
@@ -36,14 +37,14 @@ class SingleController extends AdminBaseController{
 		@session_start();
 		$map['userid'] = $_SESSION['user']['userid'];
 		$page = I('post.page');
-		$map['product'] = 1;
+		$map['yq_message.product'] = 1;
 		$result = D('Message')->getData($map, $page);
 		$cnt = count($result);
 		for($i = 0; $i < $cnt;$i++){
 		   $result[$i]['flag'] = 1;
         }
 		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
+		$response['max_page'] = ceil(count($result)/10);
 		$response['is_err'] = 0;
 		$response['url'] = array(
 			'single_del'=>'Admin/Single/del_message',
@@ -61,7 +62,7 @@ class SingleController extends AdminBaseController{
     public function single_teacher(){
         @session_start();
         $page = I('post.page');
-        $map['product'] = 1;
+        $map['yq_message.product'] = 1;
         $result = D('Message')->getData($map, $page);
         $cnt = count($result);
         for($i = 0; $i < $cnt;$i++){
@@ -72,7 +73,7 @@ class SingleController extends AdminBaseController{
             }
         }
         $response['result'] = $result;
-        $response['max_page'] = count($result)/10;
+        $response['max_page'] = ceil(count($result)/10);
         $response['is_err'] = 0;
         $response['url'] = array(
             'single_del'=>'Admin/Single/del_message',
@@ -89,14 +90,14 @@ class SingleController extends AdminBaseController{
 	//单条信息报送（管理员）
 	public function single_admin(){
 		$page = I('post.page');
-		$map['product'] = 1;
+        $map['yq_message.product'] = 1;
 		$result = D('Message')->getData($map, $page);
         $cnt = count($result);
         for($i = 0; $i < $cnt;$i++){
             $result[$i]['flag'] = 1;
         }
 		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
+		$response['max_page'] = ceil(count($result)/10);
 		$response['is_err'] = 0;
 		$response['url'] = array(
 			'single_del'=>'Admin/Single/del_message_admin',
@@ -381,8 +382,11 @@ class SingleController extends AdminBaseController{
 	 * elements
 	 */
     public function add_single_message(){
+
+
+
 		//判断在中文逗号
-		$keys = trim(I('post.keywords'));
+		$keys = trim(I('post.keyword'));
 		$pos = strpos($keys, '，');
 		$response = array();
 		if($pos){
@@ -395,21 +399,19 @@ class SingleController extends AdminBaseController{
 			$result = D('User')->where($map)->find();
 
 			//舆情信息输入
-
 			$data['userid'] = $user_id;
 			$data['schoolid'] = $result['schoolid'];
 			$data['title'] = trim(I('post.title'));
-
 			$data['product'] = 1;
 			$data['typeid'] = trim(I('post.typeid'));
-			$data['base'] = 5;
-
 			$data['source'] = trim(I('post.source'));
 			$data['url'] = trim(I('post.url'));
-
+            $data['keyword'] = $keys;
 			$data['title'] = trim(I('post.title'));
 			$data['content'] = I('post.content');
+
 			$data['createtime'] = time();
+            $data['base'] = 5;
 			$data['select'] = 0;
 			$data['approval'] = 0;
 			$data['warning'] = 0;
@@ -418,7 +420,6 @@ class SingleController extends AdminBaseController{
 			$data['substract'] = 0;
 			$data['add'] = 0;
 			$data['score'] = $data['base'] + $data['select'] + $data['approval'] + $data['warning'] + $data['quality'] + $data['special'] - $data['substract'] + $data['add'];
-
 			$data['is_delete'] = 0;
 
 			//UPLOAD
@@ -451,7 +452,6 @@ class SingleController extends AdminBaseController{
 			}
 
 			//关键字
-
 			$key_arr = explode(",",$keys);
 			foreach($key_arr as $i => $item){
 				$key_data['keyname'] = $item;

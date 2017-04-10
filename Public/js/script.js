@@ -139,10 +139,10 @@ var ctrl = {
 	//获得舆情的详细信息
 	getDetail: function(index) {
 		$.ajax({
-			url: "message.json",
-			type: "GET",
+			url: model.identity.root + model.single.url.single_details,
+			type: "POST",
 			datatype: "json",
-
+            data:{'messageid':index},
 			success: function(json) {
 				var s = json.result;
 				$(".details-username").empty();
@@ -385,23 +385,16 @@ var ctrl = {
 
 	sidetail: function(index) {
 
-
 		view.transform();
+        ctrl.getDetail(index);
+
 	},
 
 	siedit: function(index) {
-		$.ajax({
-			url: model.identity.root + model.single.url.single_update,
-			type: "POST",
-			datatype: "json",
-            data: {"messageid":index},
-			success: function() {
-				view.transform();
-			}
-		})
+
 	},
 
-	siup: function(index) {
+    siup: function(index) {
 		$.ajax({
 			url: model.identity.root + model.single.url.single_love,
 			type: "POST",
@@ -876,7 +869,7 @@ var ctrl = {
 	},
 
 	//上传用户评论的信息
-	comments: function() {
+	comment: function() {
 		$.ajax({
 			url: "",
 			type: "POST",
@@ -887,14 +880,26 @@ var ctrl = {
 				$(".contain").css("display", "block");
 			}
 		})
+
+
+        $.ajax({
+            url: model.identity.root + model.single.url.single_update,
+            type: "POST",
+            datatype: "json",
+            data: {"messageid":index},
+            success: function() {
+                view.transform();
+            }
+        })
+
 	},
 
 	//上传用户发表的舆情信息
 	send: function() {
 		$.ajax({
-			url: "",
+			url: model.identity.root + model.single.url.single_add,
 			type: "POST",
-
+            data: $('#send').serialize(),
 			success: function() {
 				alert("推送成功！");
 				$(".send").css("display", "none");

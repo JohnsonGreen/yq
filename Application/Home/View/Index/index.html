@@ -119,39 +119,39 @@
 </div>
 
 <!--上报舆情-->
-<form class="send" method="POST" enctype="multipart/form-data" style="display: none;">
+<form id="send" class="send" method="POST" enctype="multipart/form-data" style="display: none;">
     <div class="send-items correct">
         <span>舆情类型</span>
-        <select class="type" name="choose_type">
+        <select class="type" name="typeid">
         
         </select>
     </div>
 
     <div class="send-items correct">
-			<span>舆情标题<span>
-			<input type="text" name="otitle">
+			<span>舆情标题</span>
+			<input type="text" name="title"/>
     </div>
 
     <div class="send-items correct">
-			<span>舆情关键字<span>
-			<input type="text" name="okeyword">
+			<span>舆情关键字</span>
+			<input type="text" name="keyword"/>
     </div>
 
     <div class="send-items correct">
-			<span>来源网站<span>
-			<input type="text" name="osource">
+			<span>来源网站</span>
+			<input type="text" name="source"/>
     </div>
 
     <div class="send-items correct">
-			<span>来源网址<span>
-			<input type="text" name="ourl">
+			<span>来源网址</span>
+			<input type="text" name="url"/>
     </div>
 
     <div class="send-items correct">
-			<span>上传文件<span>
+			<span>上传文件</span>
 			<input type="text" id="a" readonly="readonly"/>
 			 <a href="javascript:void(0);" class="input">浏览
-			  <input type="file" id="file">
+			  <input type="file" id="file" name="file"/>
 			 </a><br>
     		<label style="font-size: 12px;">请上传txt,pdf,doc,jpeg,docx,jpg,png,jpg格式</label>
     		<script type="text/javascript">
@@ -166,11 +166,11 @@
 
     <div class="send-items correct">
         <span style="vertical-align: top;">编辑正文</span>
-        <textarea>
+        <textarea name="content">
 				
-			</textarea>
+        </textarea>
     </div>
-    <button type="submit" onclick="return ctrl.send()">发布</button>
+    <button type="button" onclick="return ctrl.send()">发布</button>
 </form>
 
 <!--添加用户-->

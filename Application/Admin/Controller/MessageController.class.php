@@ -13,10 +13,11 @@ class MessageController extends AdminBaseController{
 		$id = I('post.messageid');
 //		$id = 1;
 		$result = D('Message')->getMessage($id);
+
 		//访问量加一
 		$map['messageid'] = $id;
 		D('Message')->where($map)->setInc('click');
-
+        $result['createtime'] = date('Y-m-d H:i:s', $result['createtime']);
 		$response['is_err'] = 0;
 		$response['result'] = $result;
 		$response['max_page'] = count($result)/10;
@@ -33,7 +34,7 @@ class MessageController extends AdminBaseController{
 		$map['userid'] = $_SESSION['user']['userid'];
 		$page = I('post.page');
 		//$page = 1;
-		$map['product'] = array('neq', 1);
+        $map['yq_message.product'] = array('neq', 1);
 		$result = D('Message')->getData($map, $page);
 		$response['result'] = $result;
 		$response['is_err'] = 0;
@@ -53,7 +54,7 @@ class MessageController extends AdminBaseController{
 	//日期搜索
 	//综合信息报送（管理员）
 	public function single_admin(){
-		$map['product'] = array('neq', 1);
+        $map['yq_message.product'] = array('neq', 1);
 		$page = I('post.page');
 		$result = D('Message')->getData($map, $page);
 		$response['result'] = $result;
