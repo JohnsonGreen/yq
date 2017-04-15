@@ -1,0 +1,199 @@
+[ 2017-04-15T19:13:04+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000787s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005304s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0116s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0117s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0092s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0015s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `yq_message` ORDER BY createtime desc  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0127s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 24 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 23 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 22 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 21 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 20 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 19 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 18 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 17 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 16 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 15 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 14 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 13 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 12 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 2 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 3 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 6 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 9 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 10 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+
+[ 2017-04-15T19:13:04+08:00 ] ::1 /yq/index.php/Admin/Announce/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000622s ]
+INFO: [ app_init ] --END-- [ RunTime:0.034376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005962s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0072s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0066s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0069s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0008s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\AnnounceController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `yq_announce` left join yq_user on yq_announce.userid = yq_user.userid  ORDER BY yq_announce.createtime desc, stick desc  [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+
+[ 2017-04-15T19:13:05+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003704s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003918s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0074s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0082s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0082s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0011s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `yq_message` ORDER BY createtime desc  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 24 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 23 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 22 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 21 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 20 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 19 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 18 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 17 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 16 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 15 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 14 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 13 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 12 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 2 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 3 LIMIT 1   [ RunTime:0.0022s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 4 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 5 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 6 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 7 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 8 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 9 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 10 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 11 LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 53 行.
+

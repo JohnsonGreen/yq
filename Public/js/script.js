@@ -313,10 +313,9 @@ var ctrl = {
 
 	//舆情公告获取详情页
 	opdetail: function(index) {
-		alert(1);
-		view.transform();alert(1);
-		ctrl.getDetail(index);alert(1);
-        ctrl.lookArticle();alert(1);
+		view.transform();
+		ctrl.getDetail(index);
+        ctrl.lookArticle();
 	},
 
 	//对自己的舆情公告进行编辑，跳转到编辑页

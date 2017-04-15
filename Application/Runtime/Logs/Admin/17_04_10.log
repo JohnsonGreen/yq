@@ -7175,3 +7175,66 @@ NOTIC: [8] Undefined index: messageid F:\Tools\WampServer\wamp\www\yq\Applicatio
 NOTIC: [8] Undefined index: yq_message.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 49 行.
 NOTIC: [8] Undefined index: a.messageid F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 52 行.
 
+[ 2017-04-10T22:14:38+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000516s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006240s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0127s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0097s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0107s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0122s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid INNER JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0148s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0144s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 24 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 23 LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 22 LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 18 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 17 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 6 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 2 LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2017-04-10T22:15:09+08:00 ] ::1 /yq/index.php/Admin/Single/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001098s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010636s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010427s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0167s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0121s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0139s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0134s ]
+SQL: SELECT yq_message.messageid,yq_message.keyword,`url`,`base`,`select`,`approval`,`warning`,`quality`,`special`,`substract`,yq_message.userid,`schname`,yq_message.score,yq_message.title,yq_message.content,yq_message.createtime,`click`,`type`,`username` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid INNER JOIN yq_user on yq_message.userid = yq_user.userid  WHERE `messageid` = '1'  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0122s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 1 LIMIT 1   [ RunTime:0.0012s ]
+SQL: UPDATE `yq_message` SET `click`=click+1 WHERE `messageid` = 1 [ RunTime:0.0038s ]
+
+[ 2017-04-10T22:16:24+08:00 ] ::1 /yq/index.php/Admin/Single/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001401s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010867s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009976s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0149s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0164s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0120s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0138s ]
+SQL: SELECT yq_message.messageid,yq_message.keyword,`url`,`base`,`select`,`approval`,`warning`,`quality`,`special`,`substract`,yq_message.userid,`schname`,yq_message.score,yq_message.title,yq_message.content,yq_message.createtime,`click`,`type`,`username` FROM `yq_message` INNER JOIN yq_school on yq_message.schoolid = yq_school.schoolid INNER JOIN yq_type on yq_message.typeid = yq_type.typeid INNER JOIN yq_user on yq_message.userid = yq_user.userid  WHERE `messageid` = '3'  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0108s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` WHERE `messageid` = 3 LIMIT 1   [ RunTime:0.0011s ]
+SQL: UPDATE `yq_message` SET `click`=click+1 WHERE `messageid` = 3 [ RunTime:0.0031s ]
+
