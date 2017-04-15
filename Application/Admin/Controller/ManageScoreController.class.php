@@ -158,6 +158,22 @@ class ManageScoreController extends AdminBaseController{
         }
         $data['pages'] = $pages;
         $this->returnJson($data);
+
+    }
+
+    private function getScorePage(){
+        $map = I('post.');
+        $type = array();
+        if (!empty($map['schoolid']))
+            $type['schoolid'] = $map['schoolid'];
+        if (!empty($map['typeid']))
+            $type['typeid'] = $map['typeid'];
+        $count = D('Message')->getMessageCount($type);
+        $pages = 0;
+        if(!empty($count)){
+            $pages += intval($count/10) + 1;          //10个一页
+        }
+        return $pages;
     }
 
     /**
@@ -216,8 +232,19 @@ class ManageScoreController extends AdminBaseController{
             $res['is_err'] = '0';
             $res['result'] = $data;
         }
+        $res['max_page'] = $this->getScorePage();
         echo json_encode($res);
         exit;
+    }
+
+    public function getScoreDetails(){
+        $p = I('post.page');
+        $schoolid = trim(I('post.schoolid'));
+        $result = D('Message')->getDetail($schoolid, $p);
+        $response['is_err'] = 0;
+        $response['result'] = $result;
+        $response['max_page'] = max_page($result);
+        echo json_encode($response);
     }
 
 

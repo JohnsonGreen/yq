@@ -44,6 +44,9 @@ class SchoolModel extends BaseModel{
     public function getSchoolNames(){
         return  $this->field('schoolid,schname')->select();
     }
+    public function getMaxPage($map = null){
+        return max_page($this->where($map)->select());
+    }
 
 
 }

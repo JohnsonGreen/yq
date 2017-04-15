@@ -40,7 +40,7 @@
             if($arr[$i]['title']){
                 $arr[$i]['title_detail'] = $arr[$i]['title'];
                 if(strlen($arr[$i]['title']) > 45)
-                $arr[$i]['title'] = mb_substr($arr[$i]['title'], 0, 45)."...";
+                    $arr[$i]['title'] = mb_substr($arr[$i]['title'], 0, 45)."···";
             }
 
             //获取回复数
@@ -65,5 +65,9 @@
             }
         }
         return 1;
+    }
+
+    function max_page($arr){
+        return  ceil(count($arr)/10);
     }
 

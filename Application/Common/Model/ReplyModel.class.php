@@ -13,6 +13,9 @@ class ReplyModel extends Model {
         $map['messageid'] = $id;
         return $this->where($map)->count();
     }
+    public function getMaxPage($map = null){
+        return max_page($this->where($map)->select());
+    }
 
 
 }

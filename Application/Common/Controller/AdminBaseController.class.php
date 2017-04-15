@@ -14,14 +14,14 @@ class AdminBaseController extends BaseController{
 		$rule_name=MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME;
 		$result=$auth->check($rule_name,$_SESSION['user']['userid']);
 
-//		if(!$result){
+		if(!$result){
 //            echo json_encode(array(
 //                'is_err' => '1',
 //                'result' => '您没有权限访问'
 //            ));
 //            exit;
-//            //$this->error('您没有权限访问');
-//		}
+            //$this->error('您没有权限访问');
+		}
 	}
 }
 

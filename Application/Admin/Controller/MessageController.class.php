@@ -10,8 +10,8 @@ class MessageController extends AdminBaseController{
 	 * 报送条目的详情页
 	 */
 	public function index(){
-		$id = I('post.messageid');
-//		$id = 1;
+		echo $id = I('post.messageid');
+		$id = 1;
 		$result = D('Message')->getMessage($id);
 
 		//访问量加一
@@ -19,7 +19,7 @@ class MessageController extends AdminBaseController{
 		D('Message')->where($map)->setInc('click');
 		$response['is_err'] = 0;
 		$response['result'] = $result;
-		$response['max_page'] = ceil(count($result)/10);
+
 		echo json_encode($response);
 		exit;
 	}
@@ -33,6 +33,7 @@ class MessageController extends AdminBaseController{
 		$page = I('post.page');
         $map['yq_message.product'] = array('neq', 1);
 		$result = D('Message')->getData($map, $page);
+
         $cnt = count($result);
         for($i = 0; $i < $cnt;$i++){
             if($result[$i]['userid'] == $_SESSION['user']['userid']){
@@ -44,7 +45,7 @@ class MessageController extends AdminBaseController{
 
 		$response['result'] = $result;
 		$response['is_err'] = 0;
-		$response['max_page'] = count($result)/10;
+		$response['max_page'] = D('Message')->getMessagePage($map);
 		$response['url'] = array(
 		    'overall_del'=>'Admin/Message/del_message',
             'overall_love'=>'Admin/Message/love',
@@ -55,6 +56,49 @@ class MessageController extends AdminBaseController{
         );
 		echo json_encode($response);
 		exit;
+	}
+	//?????????????学生搜索怎么办？？？
+	public function search(){
+
+		$date1 = strtotime(I('post.date1'));
+		$date2 = strtotime(I('post.date2'));
+		if($date1 && $date2)
+			$map['createtime'] = array(array('gt', $date1), array('lt', $date2));
+
+		//关键字
+		$key = I('post.keywords');
+		if($key)
+			$map['title'] = array('like', $key);
+
+		//学院
+		$school = I('post.school');
+		if($school && $school != "全部")
+			$map['schname'] = $school;
+
+		//类别
+		$type = I('post.type');
+		if($type && $type != "全部")
+			$map['type'] = $type;
+
+		$map['yq_message.product'] = array('neq', 1);
+		$page = I('post.page');
+		$result = D('Message')->getData($map, $page);
+
+		$cnt = count($result);
+		for($i = 0; $i < $cnt;$i++){
+			if($result[$i]['userid'] == $_SESSION['user']['userid']){
+				$result[$i]['flag'] = 1;
+			}else{
+				$result[$i]['flag'] = 0;
+			}
+		}
+
+		$response['result'] = $result;
+		$response['max_page'] = D('Message')->getMessagePage($map);
+		$response['is_err'] = 0;
+		echo json_encode($response);
+		exit;
+
 	}
 
 	//管理员
@@ -70,7 +114,7 @@ class MessageController extends AdminBaseController{
             $result[$i]['flag'] = 1;
         }
 		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
+		$response['max_page'] = D('Message')->getMessagePage($map);
 		$response['is_err'] = 0;
         $response['url'] = array(
             'overall_del'=>'Admin/Message/del_message_admin',
@@ -85,12 +129,11 @@ class MessageController extends AdminBaseController{
 	}
 
     public function search_admin(){
+
         $date1 = strtotime(I('post.date1'));
         $date2 = strtotime(I('post.date2'));
-        if($date1)
-            $map['createtime'] = array('gt', $date1);
-        if($date2)
-            $map['createtime'] = array('lt', $date2);
+        if($date1 && $date2)
+            $map['createtime'] = array(array('gt', $date1), array('lt', $date2));
 
         //关键字
         $key = I('post.keywords');
@@ -99,21 +142,20 @@ class MessageController extends AdminBaseController{
 
         //学院
         $school = I('post.school');
-        if($school)
+        if($school && $school != "全部")
             $map['schname'] = $school;
 
         //类别
         $type = I('post.type');
-        if($type)
+        if($type && $type != "全部")
             $map['type'] = $type;
-
-        $map['product'] = array('neq', 1);
+		$map['yq_message.product'] = array('neq', 1);
         $page = I('post.page');
         $result = D('Message')->getData($map, $page);
         $response['result'] = $result;
-        $response['max_page'] = count($result)/10;
+        $response['max_page'] = D('Message')->getMessagePage($map);
         $response['is_err'] = 0;
-        echo json_encode($result);
+        echo json_encode($response);
         exit;
 
     }

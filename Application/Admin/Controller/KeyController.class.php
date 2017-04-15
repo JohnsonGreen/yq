@@ -17,10 +17,11 @@ class KeyController extends AdminBaseController{
 		$response['is_er'] = 0;
 		$result = D('Key')->getKeys($p);
 		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
+		$response['max_page'] = D('Key')->getMaxPage();
 		echo json_encode($response);
 		exit;
 	}
+
 
 
 }

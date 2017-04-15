@@ -22,7 +22,7 @@ class SingleController extends AdminBaseController{
         D('Message')->where($map)->setInc('click');
         $response['is_err'] = 0;
         $response['result'] = $result[0];
-        $response['max_page'] = ceil(count($result)/10);
+        $response['max_page'] = D('Message')->getMessagePage($map);
         echo json_encode($response);
         exit;
     }
@@ -44,7 +44,7 @@ class SingleController extends AdminBaseController{
 		   $result[$i]['flag'] = 1;
         }
 		$response['result'] = $result;
-		$response['max_page'] = ceil(count($result)/10);
+		$response['max_page'] =D('Message')->getMessagePage($map);
 		$response['is_err'] = 0;
 		$response['url'] = array(
 			'single_del'=>'Admin/Single/del_message',
@@ -73,7 +73,7 @@ class SingleController extends AdminBaseController{
             }
         }
         $response['result'] = $result;
-        $response['max_page'] = ceil(count($result)/10);
+        $response['max_page'] = D('Message')->getMessagePage($map);
         $response['is_err'] = 0;
         $response['url'] = array(
             'single_del'=>'Admin/Single/del_message',
@@ -97,7 +97,7 @@ class SingleController extends AdminBaseController{
             $result[$i]['flag'] = 1;
         }
 		$response['result'] = $result;
-		$response['max_page'] = ceil(count($result)/10);
+		$response['max_page'] = D('Message')->getMessagePage($map);
 		$response['is_err'] = 0;
 		$response['url'] = array(
 			'single_del'=>'Admin/Single/del_message_admin',
@@ -143,7 +143,7 @@ class SingleController extends AdminBaseController{
         $page = I('post.page');
         $result = D('Message')->getData($map, $page);
         $response['result'] = $result;
-        $response['max_page'] = count($result)/10;
+        $response['max_page'] = D('Message')->getMessagePage($map);
         $response['is_err'] = 0;
         echo json_encode($response);
         exit;
@@ -163,7 +163,7 @@ class SingleController extends AdminBaseController{
 		$page = I('post.page');
 		$result = D('Message')->getData($map, $page);
 		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
+		$response['max_page'] = D('Message')->getMessagePage($map);
 		$response['is_err'] = 0;
 		echo json_encode($response);
 		exit;

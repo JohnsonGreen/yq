@@ -2,13 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>天津大学舆情系统</title>
+    <title>天津大学学工信系统</title>
     <link href="__PUBLIC__/css/style.css?<?php echo rand(3000,4000); ?>" rel="stylesheet">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
 <header>
-    <span>天津大学舆情系统</span>
+    <span>天津大学学工信系统</span>
 </header>
 
 <!--移动端导航栏-->
@@ -57,40 +57,26 @@
     </div>
 </div>
 
+
+
 <!--个人设置-->
 <div class="settings" style="display: none;">
     <form id="settings">
-
-        <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span
-                style="margin-left: 8%;">基本资料</span></div>
-        <div class="settings-content"><span>账号</span><span
-                style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-account"></span>
-        </div>
-
-        <div class="settings-content"><span>积分</span><span
-                style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-mark"></span></div>
-
-        <div class="settings-content"><span>真实姓名</span><input class="settings-realname settings-input" type="text"
-                                                              name="realname"></div>
-        <div class="settings-content"><span>邮箱</span><input class="settings-mail settings-input" type="text"
-                                                            name="email"></div>
+        <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span style="margin-left: 8%;">基本资料</span></div>
+        <div class="settings-content"><span>账号</span><span style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-account"></span></div>
+        <div class="settings-content"><span>积分</span><span style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-mark"></span></div>
+        <div class="settings-content"><span>真实姓名</span><input class="settings-realname settings-input" type="text" name="realname"></div>
+        <div class="settings-content"><span>邮箱</span><input class="settings-mail settings-input" type="text" name="email"></div>
         <div class="settings-content"><span>所属单位</span>
-            <select style="float: right; margin-right: 35%; width: 40%;" class="school" name="choose_school">
-                <option value="全部">全部</option>
+            <select style="float: right; margin-right: 35%; width: 40%;" class="school" name="school">
+                <option value="0">全部</option>
             </select>
         </div>
-        <div class="settings-content"><span>手机号码</span><input class="settings-phone settings-input" type="text"
-                                                              name="phone"></div>
-
-
-        <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span
-                style="margin-left: 8%;">修改密码</span></div>
-        <div class="settings-content"><span>原始密码</span><input class="originpassword settings-input" type="password"
-                                                              name="originpassword"></div>
-        <div class="settings-content"><span>新密码</span><input class="newpassword settings-input" type="password"
-                                                             name="password"></div>
-        <div class="settings-content"><span>确认密码</span><input class="confirmpassword settings-input" type="password"
-                                                              name="confirmpassword"></div>
+        <div class="settings-content"><span>手机号码</span><input class="settings-phone settings-input" type="text" name="phone"></div>
+        <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span style="margin-left: 8%;">修改密码</span></div>
+        <div class="settings-content"><span>原始密码</span><input class="originpassword settings-input" type="password" name="originpassword"></div>
+        <div class="settings-content"><span>新密码</span><input class="newpassword settings-input" type="password" name="password"></div>
+        <div class="settings-content"><span>确认密码</span><input class="confirmpassword settings-input" type="password" name="confirmpassword"></div>
         <button type="button" onclick="return ctrl.save()">保存</button>
     </form>
 </div>
@@ -102,7 +88,7 @@
         <span class="details-schname">上报单位：</span>
         <span class="details-createtime">上报时间：</span>
         <span class="details-type">舆情类型：</span>
-        <span><a href="">编辑</a><a style="margin-left: 5px;" href="">删除</a></span>
+        <span style="margin-left: 2px;"><a href="">编辑</a><a style="margin-left: 5px;" href="">删除</a></span>
     </div>
     <div class="details-mark">
         <span class="details-base correct">报送分：</span>
@@ -120,15 +106,15 @@
 
     <h3 style="margin-bottom: 5px; margin-left: 5px;">回复</h3>
 
-    <textarea class="details-comments">
-			
+		<textarea class="details-comments">
+
 		</textarea>
 
     <button type="button" onclick="return ctrl.comment()">发表</button>
 </div>
 
 <!--上报舆情-->
-<form id="send" class="send single-send" method="POST" enctype="multipart/form-data" style="display: none;">
+<form id="send" class="send single-send" enctype="multipart/form-data" style="display: none;">
     <div class="send-product send-items correct">
         <span>产品类型</span>
         <select onchange="return toggleProduct()" class="product" name="pronameid">
@@ -136,10 +122,10 @@
             <option value="3">舆情扫描</option>
         </select>
     </div>
+
     <div class="send-type send-items correct">
         <span>舆情类型</span>
         <select class="type" name="typeid">
-
         </select>
     </div>
 
@@ -183,7 +169,7 @@
     <div class="send-items correct">
         <span style="vertical-align: top;">编辑正文</span>
         <textarea name="content">
-				
+
         </textarea>
     </div>
     <button type="button" onclick="return ctrl.singlesend()">发布</button>
@@ -245,15 +231,15 @@
         <input id="searchSomething" type="text" name="keywords">
         <div class="opinion-hide">
             <span>学院搜索</span>
-            <select class="school" name="choose_school">
-                <option value="全部" selected>全部</option>
+            <select class="school" name="school">
+                <option value="0" selected>全部</option>
             </select>
             <span>类别</span>
-            <select class="type" name="choose_type">
-                <option value="全部" selected>全部</option>
+            <select class="type" name="type">
+                <option value="0" selected>全部</option>
             </select>
         </div>
-        <button>搜索</button>
+        <button type="button" onclick="return search()">搜索</button>
     </div>
     <table id="i_am_a_table" border="0" cellpadding="0" cellspacing="0" width="180">
         <tr>
@@ -278,11 +264,11 @@
 
         </div>
         <div class="opinion-page">
-            <a href="">首页</a>
-            <a href="" onclick="return ceshi(i)">上一页</a>
-            <span>1</span>
-            <a href="">下一页</a>
-            <a href="">末页</a>
+            <a onclick="return pubFirstPage()">首页</a>
+            <a onclick="return pubFrontPage()">上一页</a>
+            <span id="pub-currentPage">1</span>
+            <a onclick="return pubNextPage()">下一页</a>
+            <a onclick="return pubMaxPage()">末页</a>
             <div class="opinion-output">
                 <img src="__PUBLIC__/images//feedback_write.png">
                 <a href="">发布公告</a>
@@ -310,13 +296,13 @@
 
         </div>
         <div class="single-page">
-            <a href="">首页</a>
-            <a href="">上一页</a>
-            <span>1</span>
-            <a href="">下一页</a>
-            <a href="">末页</a>
+            <a onclick="return singleFirstPage()">首页</a>
+            <a onclick="return singleFrontPage()">上一页</a>
+            <span id="single-currentPage">1</span>
+            <a onclick="return singleNextPage()">下一页</a>
+            <a onclick="return singleMaxPage()">末页</a>
             <div class="single-output">
-                <img src="__PUBLIC__/images//feedback_write.png">
+                <img src="__PUBLIC__/images/feedback_write.png">
                 <a style="cursor: pointer;" onclick="return singlesend()">上报舆情</a>
             </div>
         </div>
@@ -343,13 +329,13 @@
 
         </div>
         <div class="integrative-page">
-            <a href="">首页</a>
-            <a href="">上一页</a>
-            <span>1</span>
-            <a href="">下一页</a>
-            <a href="">末页</a>
+            <a onclick="return integrativeFirstPage()">首页</a>
+            <a onclick="return integrativeFrontPage()">上一页</a>
+            <span id="integrative-currentPage">1</span>
+            <a onclick="return integrativeNextPage()">下一页</a>
+            <a onclick="return integrativeMaxPage()">末页</a>
             <div class="integrative-output">
-                <img src="__PUBLIC__/images//feedback_write.png">
+                <img src="__PUBLIC__/images/feedback_write.png">
                 <a style="cursor: pointer;" onclick="return integrativesend()">上报舆情</a>
             </div>
         </div>
@@ -360,7 +346,7 @@
 <div class="manager" style="display: none;">
     <form>
         <span>学院搜索</span>
-        <select class="school" name="choose_school">
+        <select class="school" name="school">
             <option value="全部" selected>全部</option>
         </select>
 
@@ -389,11 +375,11 @@
         </div>
 
         <div class="manager-page">
-            <a href="">首页</a>
-            <a href="">上一页</a>
-            <span>1</span>
-            <a href="">下一页</a>
-            <a href="">末页</a>
+            <a onclick="return managerFirstPage()">首页</a>
+            <a onclick="return managerFrontPage()">上一页</a>
+            <span id="manager-currentPage">1</span>
+            <a onclick="return managerNextPage()">下一页</a>
+            <a onclick="return managerMaxPage()">末页</a>
             <div class="manager-output">
                 <a style="cursor: pointer;" onclick="return add()">+添加用户</a>
             </div>
@@ -422,11 +408,11 @@
         </div>
 
         <div class="collection-page">
-            <a href="">首页</a>
-            <a href="">上一页</a>
-            <span>1</span>
-            <a href="">下一页</a>
-            <a href="">末页</a>
+            <a onclick="return collectionFirstPage()">首页</a>
+            <a onclick="return collectionFrontPage()">上一页</a>
+            <span id="collection-currentPage">1</span>
+            <a onclick="return collectionNextPage()">下一页</a>
+            <a onclick="return collectionMaxPage()">末页</a>
         </div>
     </div>
 </div>
@@ -435,7 +421,7 @@
 <div class="managemark" style="display: none;">
     <form>
         <span>学院搜索</span>
-        <select class="school" name="choose_school">
+        <select class="school" name="school">
             <option value="全部" selected>全部</option>
         </select>
         <div class="managemark-secondchoose">
@@ -470,11 +456,11 @@
         </div>
 
         <div class="managemark-page">
-            <a href="">首页</a>
-            <a href="">上一页</a>
-            <span>1</span>
-            <a href="">下一页</a>
-            <a href="">末页</a>
+            <a onclick="managemarkFirstPage()">首页</a>
+            <a onclick="managemarkFrontPage()">上一页</a>
+            <span id="managemark-currentPage">1</span>
+            <a onclick="managemarkNextPage()">下一页</a>
+            <a onclick="managemarkMaxPage()">末页</a>
         </div>
     </div>
 </div>
@@ -490,11 +476,11 @@
         <div class="managekeyword-content"></div>
 
         <div class="managekeyword-page">
-            <a href="">首页</a>
-            <a href="">上一页</a>
-            <span>1</span>
-            <a href="">下一页</a>
-            <a href="">末页</a>
+            <a onclick="keyFirstPage()">首页</a>
+            <a onclick="keyFrontPage()">上一页</a>
+            <span id="key-currentPage">1</span>
+            <a onclick="keyNextPage()">下一页</a>
+            <a onclick="keyMaxPage()">末页</a>
         </div>
     </div>
 </div>
@@ -510,11 +496,11 @@
         <div class="marklist-content"></div>
 
         <div class="marklist-page">
-            <a href="">首页</a>
-            <a href="">上一页</a>
-            <span>1</span>
-            <a href="">下一页</a>
-            <a href="">末页</a>
+            <a onclick="return listFirstPage()">首页</a>
+            <a onclick="return listFrontPage()">上一页</a>
+            <span id="list-currentPage">1</span>
+            <a onclick="return listNextPage()">下一页</a>
+            <a onclick="return listMaxPage()">末页</a>
         </div>
     </div>
 </div>
@@ -540,14 +526,15 @@
         <div class="schdet-content"></div>
 
         <div class="schdet-page">
-            <a href="">首页</a>
-            <a href="">上一页</a>
-            <span>1</span>
-            <a href="">下一页</a>
-            <a href="">末页</a>
+            <a onclick="return schdetFirstPage()">首页</a>
+            <a onclick="return schdetFrontPage()">上一页</a>
+            <span id="schdet-currentPage">1</span>
+            <a onclick="return schdetNextPage()">下一页</a>
+            <a onclick="return schdetMaxPage()">末页</a>
         </div>
     </div>
 </div>
+
 <!--在线人数页-->
 <div class="online" style="display: none;">
     <div class="online-all">
@@ -560,11 +547,11 @@
         <div class="online-content"></div>
 
         <div class="online-page">
-            <a href="">首页</a>
-            <a href="">上一页</a>
-            <span>1</span>
-            <a href="">下一页</a>
-            <a href="">末页</a>
+            <a onclick="return onlineFirstPage()">首页</a>
+            <a onclick="return onlineFrontPage()">上一页</a>
+            <span id="online-currentPage">1</span>
+            <a onclick="return onlineNextPage()">下一页</a>
+            <a onclick="return onlineMaxPage()">末页</a>
         </div>
     </div>
 </div>
@@ -580,18 +567,20 @@
         <div class="log-content"></div>
 
         <div class="log-page">
-            <a href="">首页</a>
-            <a href="">上一页</a>
-            <span>1</span>
-            <a href="">下一页</a>
-            <a href="">末页</a>
+            <a onclick="return logFirstPage()">首页</a>
+            <a onclick="return logFrontPage()">上一页</a>
+            <span id="log-currentPage">1</span>
+            <a onclick="return logNextPage()">下一页</a>
+            <a onclick="return logMaxPage()">末页</a>
         </div>
     </div>
 </div>
 
+
+
 <!--底页-->
 <footer>
-    <span>&copy;天津大学舆情系统</span>
+    <span>&copy;天津大学学工信系统</span>
 </footer>
 <script type="text/javascript" src="__PUBLIC__/js/jQuery.js"></script>
 <script>
@@ -619,7 +608,6 @@
 
                 //登录成功时需要渲染的函数
                 if (json.is_err == 0) {
-
                     $("body").css("background-image", "none");
                     model.identity = json.result;
                     $(".navigation").css("display", "block");
@@ -633,7 +621,6 @@
             }
         })
     }
-
     //注销用户
     function logout() {
         $.ajax({
@@ -645,7 +632,6 @@
             }
         })
     }
-
     //移动端推拉菜单栏
     function showMenu() {
         var k = $(".navigation");
@@ -654,7 +640,6 @@
         else
             k.css('left', "0px");
     }
-
     //上报舆情按钮
     function singlesend() {
         $(ctrl.getCurrentClass()).css("display", "none");
@@ -667,9 +652,7 @@
         $(".send-webpage").css("display", "block");
         $(".send-type").css("display", "block");
     }
-
     function integrativesend() {
-
         $(ctrl.getCurrentClass()).css("display", "none");
         $(".single-send").css("display", "block");
         $(".opinion-search").css("display", "none");
@@ -679,7 +662,6 @@
         $(".send-website").css("display", "none");
         $(".send-webpage").css("display", "none");
     }
-
     function add() {
         $(ctrl.getCurrentClass()).css("display", "none");
         $(".add").css("display", "block");
@@ -689,7 +671,6 @@
             url: model.identity.root + model.manager.groups_api,
             type: "GET",
             datatype: "json",
-
             success: function (json) {
                 if (json.is_err == 0) {
                     $(".user_identity").empty();
@@ -710,22 +691,93 @@
         if (temp == 3)
             $(".send-type").css("display", "none");
     }
+
+    function search() {
+        var s = ctrl.getCurrentClass();
+        if(s == ".single-post") {
+            $.ajax({
+                url: model.identity.root + model.single.url.overall_search,
+                type: "POST",
+                data: {
+                    date1: $("#startDate").val(),
+                    date2: $("#endDate").val(),
+                    keywords: $("#searchSomething").text(),
+                    school: $(".school").eq(2).find("option:selected").text(),
+                    type: $(".type").eq(1).find("option:selected").text()
+                },
+
+                success: function(json) {
+                    view.showSingle(json);
+                }
+            })
+        } else if (s == ".integrative-post") {
+            $.ajax({
+                url: model.identity.root + model.integrative.url.overall_search,
+                type: "POST",
+                data: {
+                    date1: $("#startDate").val(),
+                    date2: $("#endDate").val(),
+                    keywords: $("#searchSomething").val(),
+                    school: $(".school").eq(2).find("option:selected").text(),
+                    type: $(".type").eq(1).find("option:selected").text()
+                },
+
+                success: function(json) {
+                    view.showIntegrative(json);
+                }
+            })
+        } else if(s == ".pub") {
+            $.ajax({
+                url: model.identity.root + model.pub.url.overall_search,
+                type: "POST",
+                data: {
+                    date1: $("#startDate").val(),
+                    date2: $("#endDate").val(),
+                    keywords: $("#searchSomething").text(),
+                    school: $(".school").eq(2).find("option:selected").text(),
+                    type: $(".type").eq(1).find("option:selected").text()
+                },
+
+                success: function(json) {
+                    view.showPub(json);
+                }
+            })
+        } else if(s == ".collection") {
+            $.ajax({
+                url: model.identity.root + model.collection.url.overall_search,
+                type: "POST",
+                data: {
+                    date1: $("#startDate").val(),
+                    date2: $("#endDate").val(),
+                    keywords: $("#searchSomething").val(),
+                    school: $(".school").eq(2).find("option:selected").text(),
+                    type: $(".type").eq(1).find("option:selected").text()
+                },
+
+                success: function(json) {
+                    view.showCollection(json);
+                }
+            })
+        }
+    }
 </script>
 <script type="text/javascript" src="__PUBLIC__/js/arrowctrl.js"></script>
-<script type="text/javascript" src="__PUBLIC__/js/calendar.js">
-    //生成日历的脚本
+<script type="text/javascript" src="__PUBLIC__/js/calendar.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/pageProcess.js">
 </script>
+
+
 <script type="text/javascript">
-    //生成日历的脚本控制
-    var The_Year, The_Day, The_Month;
-    var today;
-    var Firstday;
-    today = new Date();
-    The_Year = today.getYear();
-    The_Month = today.getMonth() + 1;
-    The_Day = today.getDate();
-    Firstday = GetWeekday(The_Year, The_Month);
-    ShowCalender(The_Year, The_Month, The_Day, Firstday);
+//生成日历的脚本控制
+var The_Year, The_Day, The_Month;
+var today;
+var Firstday;
+today = new Date();
+The_Year = today.getYear();
+The_Month = today.getMonth() + 1;
+The_Day = today.getDate();
+Firstday = GetWeekday(The_Year, The_Month);
+ShowCalender(The_Year, The_Month, The_Day, Firstday);
 </script>
 </body>
 </html>

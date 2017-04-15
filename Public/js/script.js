@@ -1,6 +1,6 @@
 $(document).ready(function() {
-
-    $("body").css("background-image", "url("+ImgPath+"login.png)");
+	view.showMenu();
+	$("body").css("background-image", "url("+ImgPath+"login.png)");
 
 	$.ajax({
 		url: login ,
@@ -10,6 +10,7 @@ $(document).ready(function() {
 		success: function(json) {
 			//登录成功时需要渲染的函数
 			if(json.is_err == 0) {
+
 				model.identity = json.result;
 				$("body").css("background-image", "none");
 				$(".person").css("display", "block");
@@ -28,7 +29,7 @@ $(document).ready(function() {
 		url: schools_url,
 		type: "GET",
 		datatype: "json",
-    
+
 		success: function(json) {
 			for(var i = 0; i < json.length; i++) {
 				$(".school").append('<option value="'+json[i].schoolid+'">'+json[i].schname+'</option>');
@@ -41,7 +42,7 @@ $(document).ready(function() {
 		url: types_url,
 		type: "GET",
 		datatype: "json",
-    
+
 		success: function(json) {
 			for(var i = 0; i < json.length; i++) {
 				$(".type").append('<option value="'+json[i].typeid+'">'+json[i].type+'</option>');
@@ -51,32 +52,34 @@ $(document).ready(function() {
 })
 
 var model = {
+	//新点击时渲染
+	currentPage: 1,
 	identity: {},
-    pub: {url:"",max_page:""},
-    single: {url:"",max_page:""},
-    integrative: {url:"",max_page:""},
-    manager: {add_url:"",groups_api:""},
-    collection: {url:"",max_page:""},
-    managemark: {url:"",max_page:""},
-    key: {url:"",max_page:""},
-    marklist: {url:"",max_page:""},
-    online: {},
-    log: {},
-    //菜单的内容，用数组表示
-	menu: ["首页", "舆情公告", "单条信息报送", "综合信息报送", "管理用户", "我的收藏", "管理积分", "管理关键字", "积分列表", "在线人数", "日志"],
-	ranks: ["化工学院", "机械学院", "建工学院"],
+	pub: {url:"",max_page:""},
+	single: {url:"",max_page:""},
+	integrative: {url:"",max_page:""},
+	manager: {add_url:"",groups_api:""},
+	collection: {url:"",max_page:""},
+	managemark: {url:"",max_page:""},
+	key: {url:"",max_page:""},
+	marklist: {url:"",max_page:""},
+	online: {url:"",max_page:""},
+	log: {url:"",max_page:""},
+	//菜单的内容，用数组表示
+	menu: [],
+	ranks: [],
 }
 
 //判断数据是否为空
-function isNull(data){ 
-  return (data == "" || data == undefined || data == null) ? true : false; 
+function isNull(data){
+	return (data == "" || data == undefined || data == null) ? true : false;
 }
 
 var view = {
 	//初始化渲染菜单界面
 	showMenu: function() {
 		for(var i = 0; i < model.menu.length; i++) {
-			$(".menu").append('<li class="menu-items" onclick="return ctrl.getTitle('+i+')">'+'<span>'+model.menu[i]+'</span>'+'</li>');
+			$(".menu").append('<li class="menu'+i+' menu-items" onclick="return ctrl.getTitle('+i+')">'+'<span>'+model.menu[i]+'</span>'+'</li>');
 		}
 	},
 	//渲染前三的排名
@@ -91,7 +94,7 @@ var view = {
 		$(".details").css("display", "block");
 		$(".opinion-search").css("display", "none");
 	},
-	
+
 	lookArticle: function() {
 		$("#article1").css("display", "block");
 		$("#article2").css("display", "none");
@@ -100,23 +103,181 @@ var view = {
 	editArticle: function() {
 		$("#article1").css("display", "none");
 		$("#article2").css("display", "block");
+	},
+
+	showPub: function(json) {
+		$("#pub-currentPage").text(model.currentPage);
+		$(".opinion-content").empty();
+		var s = json.result;
+		for(var i = 0; i < s.length; i++) {
+			$(".opinion-content").append('<div class="opinion-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
+			$(".opinion-contentDet"+i).append('<span class="opinion-callback">'+s[i].reply+'</span>');
+			if(s[i].file == null)
+				$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'content.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail('+s[i].anoceid+')">'+s[i].title+'</a></span>');
+			else
+				$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'clip.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail('+s[i].anoceid+')">'+s[i].title+'</a></span>');
+
+			$(".opinion-contentDet"+i).append('<span class="opinion-author">'+s[i].realname+'</span>');
+			$(".opinion-contentDet"+i).append('<span class="opinion-time">'+s[i].createtime+'</span>');
+			$(".opinion-contentDet"+i).append('<span class="opinion-operation"><a onclick="ctrl.opedit('+s[i].anoceid+')">编辑</a><a onclick="ctrl.opup('+s[i].anoceid+')">置顶</a><a onclick="ctrl.opdele('+s[i].anoceid+')">删除</a></span>');
+		}
+	},
+
+	showSingle: function(json) {
+		$("#single-currentPage").text(model.currentPage);
+		$(".single-content").empty();
+		var s = json.result;
+		for(var i = 0; i < s.length; i++) {
+			$(".single-content").append('<div class="single-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
+			$(".single-contentDet"+i).append('<span class="single-number">'+s[i].messageid+'</span>');
+			$(".single-contentDet"+i).append('<span class="single-type">'+s[i].type+'</span>');
+			$(".single-contentDet"+i).append('<span class="single-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.sidetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
+			$(".single-contentDet"+i).append('<span class="single-mark">'+s[i].score+'</span>');
+			$(".single-contentDet"+i).append('<span class="single-unit">'+s[i].schname+'</span>');
+			$(".single-contentDet"+i).append('<span class="single-time">'+s[i].createtime+'</span>');
+			$(".single-contentDet"+i).append('<span class="single-operation"><a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a><a onclick="ctrl.silove('+s[i].messageid+')">收藏</a><a onclick="ctrl.sidele('+s[i].messageid+')">删除</a></span>');
+		}
+	},
+
+	showIntegrative: function(json) {
+		$("#integrative-currentPage").text(model.currentPage);
+		$(".integrative-content").empty();
+		var s = json.result;
+		for(var i = 0; i < s.length; i++) {
+			$(".integrative-content").append('<div class="integrative-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
+			$(".integrative-contentDet"+i).append('<span class="integrative-number">'+s[i].messageid+'</span>');
+			$(".integrative-contentDet"+i).append('<span class="integrative-type">'+s[i].type+'</span>');
+			$(".integrative-contentDet"+i).append('<span class="integrative-product">'+s[i].proname+'</span>');
+			$(".integrative-contentDet"+i).append('<span class="integrative-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.indetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
+			$(".integrative-contentDet"+i).append('<span class="integrative-mark">'+s[i].score+'</span>');
+			$(".integrative-contentDet"+i).append('<span class="integrative-unit">'+s[i].schname+'</span>');
+			$(".integrative-contentDet"+i).append('<span class="integrative-time">'+s[i].createtime+'</span>');
+			$(".integrative-contentDet"+i).append('<span class="integrative-operation"><a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a><a onclick="ctrl.inlove('+s[i].messageid+')">收藏</a><a onclick="ctrl.indele('+s[i].messageid+')">删除</a></span>');
+		}
+	},
+
+	showManager: function(json) {
+		$("#manager-currentPage").text(model.currentPage);
+		$(".manager-content").empty();
+		var s = json.result;
+		for(var i = 0; i < s.length; i++) {
+			$(".manager-content").append('<div class="manager-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
+			$(".manager-contentDet"+i).append('<span class="manager-number">'+s[i].userid+'</span>');
+			$(".manager-contentDet"+i).append('<span class="manager-account">'+s[i].username+'</span>');
+			$(".manager-contentDet"+i).append('<span class="manager-unit">'+s[i].schname+'</span>');
+			$(".manager-contentDet"+i).append('<span class="manager-attribute">'+s[i].groupname+'</span>');
+			$(".manager-contentDet"+i).append('<span class="manager-realname">'+s[i].realname+'</span>');
+			if(s[i].groupname.indexOf("管理员") >= 0)
+				$(".manager-contentDet"+i).append('<span class="manager-operation">无</span>');
+			else//注意有权限的设置要求到时候商量更改
+				$(".manager-contentDet"+i).append('<span class="manager-operation"><a onclick="ctrl.maedit('+s[i].userid+')">编辑</a><a onclick="ctrl.madele('+s[i].userid+')">删除</a><a onclick="ctrl.machange('+s[i].userid+')">修改密码</a></span>');
+		}
+	},
+
+	showCollection: function(json) {
+		$("#collection-currentPage").text(model.currentPage);
+		$(".collection-content").empty();
+		var s = json.result;
+		for(var i = 0; i < s.length; i++) {
+			$(".collection-content").append('<div class="collection-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
+			$(".collection-contentDet"+i).append('<span class="collection-number">'+s[i].messageid+'</span>');
+			$(".collection-contentDet"+i).append('<span class="collection-type">'+s[i].type+'</span>');
+			$(".collection-contentDet"+i).append('<span class="collection-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.codetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
+			$(".collection-contentDet"+i).append('<span class="collection-mark">'+s[i].score+'</span>');
+			$(".collection-contentDet"+i).append('<span class="collection-unit">'+s[i].schname+'</span>');
+			$(".collection-contentDet"+i).append('<span class="collection-time">'+s[i].createtime+'</span>');
+			$(".collection-contentDet"+i).append('<span class="collection-click">'+s[i].click+'</span>');
+			$(".collection-contentDet"+i).append('<span class="collection-operation"><a onclick="ctrl.codele('+s[i].messageid+')">删除</a></span>');
+		}
+	},
+
+	showManagemark: function(json) {
+		$("#managemark-currentPage").text(model.currentPage);
+		$(".managemark-content").empty();
+		var s = json.result;
+		for(var i = 0; i < s.length; i++) {
+			$(".managemark-content").append('<div class="managemark-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-number">'+s[i].messageid+'</span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-origin">'+s[i].schname+'</span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.markdet('+s[i].messageid+')">'+s[i].title+'</a></span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-total">'+s[i].score+'</span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-mark">'+s[i].base+'</span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-xuanyong"><input name="select" value="'+s[i].select+'"></span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-pishi"><input name="approval" value="'+s[i].approval+'"></span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-yujing"><input name="warning" value="'+s[i].warning+'"></span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-zhiliang"><input name="quality" value="'+s[i].quality+'"></span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-zhuanxiang"><input name="special" value="'+s[i].special+'"></span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-minus"><input name="substract" value="'+s[i].substract+'"></span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-operation"><a onclick="ctrl.markJudge('+s[i].messageid+')">打分</a></span>');
+		}
+	},
+
+	showKey: function(json) {
+		$("#key-currentPage").text(model.currentPage);
+		$(".managekeyword-content").empty();
+		var s = json.result;
+		for(var i = 0; i < s.length; i++) {
+			$(".managekeyword-content").append('<div class="managekeyword-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
+			$(".managekeyword-contentDet"+i).append('<span class="managekeyword-number">'+s[i].keyid+'</span>');
+			$(".managekeyword-contentDet"+i).append('<span class="managekeyword-keyword">'+s[i].keyname+'</span>');
+			$(".managekeyword-contentDet"+i).append('<span class="managekeyword-time">'+s[i].createtime+'</span>');
+			$(".managekeyword-contentDet"+i).append('<span class="managekeyword-operation"><a onclick="ctrl.keydele('+s[i].keyid+')">删除</a></span>');
+		}
+	},
+
+	showList: function(json) {
+		$("#list-currentPage").text(model.currentPage);
+		$(".marklist-content").empty();
+		var s = json.result;
+		for(var i = 0; i < s.length; i++) {
+			$(".marklist-content").append('<div class="marklist-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
+			$(".marklist-contentDet"+i).append('<span class="marklist-rank">'+s[i].schoolid+'</span>');
+			$(".marklist-contentDet"+i).append('<span class="marklist-school">'+s[i].schname+'</span>');
+			$(".marklist-contentDet"+i).append('<span class="marklist-total">'+s[i].score+'</span>');
+			$(".marklist-contentDet"+i).append('<span class="marklist-detail"><a onclick="ctrl.listdet('+s[i].schoolid+')">查看详情</a></span>');
+		}
+	},
+
+	showOnline: function(json) {
+		$("#online-currentPage").text(model.currentPage);
+		$(".online-content").empty();
+		var s = json.result;
+		for(var i = 0; i < s.length; i++) {
+			$(".online-content").append('<div class="online-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
+			$(".online-contentDet"+i).append('<span class="online-number">'+s[i].userid+'</span>');
+			$(".online-contentDet"+i).append('<span class="online-account">'+s[i].username+'</span>');
+			$(".online-contentDet"+i).append('<span class="online-school">'+s[i].schname+'</span>');
+			$(".online-contentDet"+i).append('<span class="online-type">'+s[i].groupname+'</span>');
+			$(".online-contentDet"+i).append('<span class="online-realname">'+s[i].realname+'</span>');
+		}
+	},
+
+	showLog: function(json) {
+		$("#log-currentPage").text(model.currentPage);
+		$(".log-content").empty();
+		var s = json.result;
+		for(var i = 0; i < s.length; i++) {
+			$(".log-content").append('<div class="log-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
+			$(".log-contentDet"+i).append('<span class="log-number">'+s[i].userid+'</span>');
+			$(".log-contentDet"+i).append('<span class="log-admin">'+s[i].username+'</span>');
+			$(".log-contentDet"+i).append('<span class="log-ip">'+s[i].lastip+'</span>');
+			$(".log-contentDet"+i).append('<span class="log-time">'+s[i].lastlogintime+'</span>');
+		}
 	}
 }
-
-
 
 var ctrl = {
 	//个人设置
 	setting: function(index) {
 		$(ctrl.getCurrentClass()).css("display", "none");
 		$(".details").css("display", "none");
-		$(".send").css("display", "none");
+		$(".single-send").css("display", "none");
 		$(".add").css("display", "none");
 		$(".opinion-search").css("display", "none");
 		$(".school-detail").css("display", "none");
 		$(".settings").css("display", "block");
-       
-        $('select option[value='+model.identity.schoolid+']').prop('selected', true);
+
+		$('select option[value='+model.identity.schoolid+']').prop('selected', true);
 		$(".settings-account").empty();
 		$(".settings-account").text(model.identity.username);
 		$(".settings-mark").empty();
@@ -151,31 +312,32 @@ var ctrl = {
 	getDetail: function(index) {
 		$.ajax({
 			url: model.identity.root + model.single.url.single_details,
-			type: "POST",
+			type: "GET",
 			datatype: "json",
-            data:{'messageid':index},
+			async: false,
+			data:{'messageid':index},
 			success: function(json) {
 				var s = json.result;
 				$(".details-username").empty();
-				$(".details-username").append('上报人：' + s.username);
+				$(".details-username").append('上报人：' + s.username + " ");
 				$(".details-schname").empty();
 				$(".details-schname").append('上报单位：' + s.schname);
 				$(".details-createtime").empty();
-				$(".details-createtime").append('上报时间：' + s.createtime);
+				$(".details-createtime").append('上报时间：' + s.createtime + " ");
 				$(".details-type").empty();
-				$(".details-type").append('舆情类型：' + s.type);
+				$(".details-type").append('舆情类型：' + s.type + " ");
 				$(".details-base").empty();
-				$(".details-base").append('报送分：' + s.base);
+				$(".details-base").append('报送分：' + s.base + "  ");
 				$(".details-select").empty();
-				$(".details-select").append('选用分：' + s.select);
+				$(".details-select").append('选用分：' + s.select + "  ");
 				$(".details-approval").empty();
-				$(".details-approval").append('批示分：' + s.approval);
+				$(".details-approval").append('批示分：' + s.approval + "  ");
 				$(".details-warning").empty();
-				$(".details-warning").append('预警分：' + s.warning);
+				$(".details-warning").append('预警分：' + s.warning + "  ");
 				$(".details-quality").empty();
-				$(".details-quality").append('质量分：' + s.quality);
+				$(".details-quality").append('质量分：' + s.quality + "  ");
 				$(".details-special").empty();
-				$(".details-special").append('专项分：' + s.special);
+				$(".details-special").append('专项分：' + s.special + "  ");
 				$(".details-substract").empty();
 				$(".details-substract").append('减分：' + s.substract);
 				$(".details-content").empty();
@@ -188,16 +350,21 @@ var ctrl = {
 		})
 	},
 
-	//获得当前的主页面,调整各个部分的布局方式  
+	//获得当前的主页面,调整各个部分的布局方式
 	getTitle: function(i) {
+		//$(ctrl.getCurrentMenu()).css("background-color", "#e5e5e5");
+		//$(ctrl.getCurrentMenu()).css("color", "black");
 		$(ctrl.getCurrentClass()).css("display", "none");
 		$(ctrl.getClickMenu(model.menu[i])).css("display", "block");
 		showMenu();
-		$(".send").css("display", "none");
+		$(".single-send").css("display", "none");
 		$(".details").css("display", "none");
 		$(".settings").css("display", "none");
 		$(".add").css("display", "none");
 		$(".school-detail").css("display", "none");
+		//$(ctrl.getCurrentMenu()).css("background-color", "#4d8aa8");
+		//$(ctrl.getCurrentMenu()).css("color", "white");
+		model.currentPage = 1;
 		var current = ctrl.getCurrentClass();
 		switch (current) {
 			case ".contain":
@@ -283,46 +450,38 @@ var ctrl = {
 
 	//获取舆情公告的具体内容
 	getPub: function() {
+
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
 			if(model.identity.leftBar[i].keybind == 0) {
-					$.ajax({
-					url: model.identity.root + model.identity.leftBar[i].api,
+
+				$.ajax({
+					url:  model.identity.root + model.identity.leftBar[i].api,
 					type: "GET",
 					datatype: "json",
 
 					success: function(json) {
-						$(".opinion-content").empty();
-						var s = json.result;
-						for(var i = 0; i < s.length; i++) {
-							$(".opinion-content").append('<div class="opinion-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
-							$(".opinion-contentDet"+i).append('<span class="opinion-callback">'+s[i].reply+'</span>');
-							if(s[i].file == null)
-								$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'content.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail('+s[i].anoceid+')">'+s[i].title+'</a></span>');
-							else
-								$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'clip.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail('+s[i].anoceid+')">'+s[i].title+'</a></span>');
-
-							$(".opinion-contentDet"+i).append('<span class="opinion-author">'+s[i].realname+'</span>');
-							$(".opinion-contentDet"+i).append('<span class="opinion-time">'+s[i].createtime+'</span>');
-							$(".opinion-contentDet"+i).append('<span class="opinion-operation"><a onclick="ctrl.opedit('+s[i].anoceid+')">编辑</a><a onclick="ctrl.opup('+s[i].anoceid+')">置顶</a><a onclick="ctrl.opdele('+s[i].anoceid+')">删除</a></span>');
-						}
+						model.pub.max_page = json.max_page;
+						model.single.url = json.url;
+						view.showPub(json);
 					}
 				})
 			}
 		}
+
 	},
 
 	//舆情公告获取详情页
 	opdetail: function(index) {
 		view.transform();
 		ctrl.getDetail(index);
-        ctrl.lookArticle();
+		view.lookArticle();
 	},
 
 	//对自己的舆情公告进行编辑，跳转到编辑页
 	opedit: function(index) {
 		view.transform();
 		ctrl.getDetail(index);
-		ctrl.editArticle();
+		view.editArticle();
 	},
 
 	//对自己的舆情公告页进行置顶发，成功重新加载此页
@@ -371,20 +530,9 @@ var ctrl = {
 					datatype: "json",
 
 					success: function(json) {
-						$(".single-content").empty();
 						model.single.max_page = json.max_page;
 						model.single.url = json.url;
-						var s = json.result;
-						for(var i = 0; i < s.length; i++) {
-							$(".single-content").append('<div class="single-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
-							$(".single-contentDet"+i).append('<span class="single-number">'+s[i].messageid+'</span>');
-							$(".single-contentDet"+i).append('<span class="single-type">'+s[i].type+'</span>');
-							$(".single-contentDet"+i).append('<span class="single-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.sidetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
-							$(".single-contentDet"+i).append('<span class="single-mark">'+s[i].score+'</span>');
-							$(".single-contentDet"+i).append('<span class="single-unit">'+s[i].schname+'</span>');
-							$(".single-contentDet"+i).append('<span class="single-time">'+s[i].createtime+'</span>');
-							$(".single-contentDet"+i).append('<span class="single-operation"><a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a><a onclick="ctrl.silove('+s[i].messageid+')">收藏</a><a onclick="ctrl.sidele('+s[i].messageid+')">删除</a></span>');
-						}
+						view.showSingle(json);
 					}
 				})
 			}
@@ -392,31 +540,30 @@ var ctrl = {
 	},
 
 	sidetail: function(index) {
-
 		view.transform();
-        ctrl.getDetail(index);
-		ctrl.lookArticle();
-
+		ctrl.getDetail(index);
+		view.lookArticle();
 	},
 
 	siedit: function(index) {
 		view.transform();
 		ctrl.getDetail(index);
-		ctrl.editArticle();
+		view.editArticle();
 	},
 
-    silove: function(index) {
+	silove: function(index) {
 		$.ajax({
 			url: model.identity.root + model.single.url.single_love,
 			type: "POST",
 			datatype: "json",
 			data: {"messageid":index},
+
 			success: function(json) {
 				if(json.is_err == 0) {
 					alert("收藏成功！");
 					ctrl.getSingle();
 				} else {
-					alert(json.result);
+					alert("失败，请重试！");
 				}
 			}
 		})
@@ -427,13 +574,14 @@ var ctrl = {
 			url: model.identity.root + model.single.url.single_del,
 			type: "POST",
 			datatype: "json",
-            data: {"messageid":index},
+			data: {"messageid":index},
+
 			success: function(json) {
 				if(json.is_err == 0) {
 					alert("删除成功！");
 					ctrl.getSingle();
 				} else {
-                    alert(json.result);
+					alert("失败，请重试！");
 				}
 			}
 		})
@@ -449,29 +597,9 @@ var ctrl = {
 					datatype: "json",
 
 					success: function(json) {
-						$(".integrative-content").empty();
-						var s = json.result;
-						model.integrative.url = json.url;
 						model.integrative.max_page = json.max_page;
-						for(var i = 0; i < s.length; i++) {
-							$(".integrative-content").append('<div class="integrative-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
-							$(".integrative-contentDet"+i).append('<span class="integrative-number">'+s[i].messageid+'</span>');
-							$(".integrative-contentDet"+i).append('<span class="integrative-type">'+s[i].type+'</span>');
-							$(".integrative-contentDet"+i).append('<span class="integrative-product">'+s[i].proname+'</span>');
-							$(".integrative-contentDet"+i).append('<span class="integrative-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.indetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
-							$(".integrative-contentDet"+i).append('<span class="integrative-mark">'+s[i].score+'</span>');
-							$(".integrative-contentDet"+i).append('<span class="integrative-unit">'+s[i].schname+'</span>');
-							$(".integrative-contentDet"+i).append('<span class="integrative-time">'+s[i].createtime+'</span>');
-							var str = '<span class="integrative-operation">';
-							if(s[i].flag == 1){
-                                str += '<a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a>';
-							}
-							str += '<a onclick="ctrl.inlove('+s[i].messageid+')">收藏</a>' ;
-                            if(s[i].flag == 1){
-                               str += '<a onclick="ctrl.indele('+s[i].messageid+')">删除</a></span>';
-                            }
-							$(".integrative-contentDet"+i).append(str);
-						}
+						model.integrative.url = json.url;
+						view.showIntegrative(json);
 					}
 				})
 			}
@@ -480,21 +608,14 @@ var ctrl = {
 
 	indetail: function(index) {
 		view.transform();
-		ctrl.lookArticle();
+		ctrl.getDetail(index);
+		view.lookArticle();
 	},
 
 	inedit: function(index) {
-		$.ajax({
-			url: model.identity.root + model.integrative.url.overall_update,
-			type: "POST",
-			datatype: "json",
-            data: {"messageid":index},
-			success: function() {
-				view.transform();
-				ctrl.getDetail(index);
-				ctrl.editArticle();
-			}
-		})
+		view.transform();
+		ctrl.getDetail(index);
+		view.editArticle();
 	},
 
 	inlove: function(index) {
@@ -502,13 +623,14 @@ var ctrl = {
 			url: model.identity.root + model.integrative.url.overall_love,
 			type: "POST",
 			datatype: "json",
-            data: {"messageid":index},
+			data: {"messageid":index},
+
 			success: function(json) {
 				if(json.is_err == 0) {
 					alert("收藏成功！");
-				ctrl.getIntegrative();
+					ctrl.getIntegrative();
 				} else {
-                    alert(json.result);
+					alert("失败，请重试！");
 				}
 			}
 		})
@@ -519,13 +641,14 @@ var ctrl = {
 			url: model.identity.root + model.integrative.url.overall_del,
 			type: "POST",
 			datatype: "json",
-            data: {"messageid":index},
+			data: {"messageid":index},
+
 			success: function(json) {
 				if(json.is_err == 0) {
 					alert("删除成功！");
 					ctrl.getIntegrative();
 				} else {
-					alert(json.result);
+					alert("失败，请重试！");
 				}
 			}
 		})
@@ -541,25 +664,9 @@ var ctrl = {
 					datatype: "json",
 
 					success: function(json) {
+						model.manager.max_page = json.max_page;
 						model.manager.url = json.addurl;
-						$(".manager-content").empty();
-						model.manager.add_url = json.add_url;
-						model.manager.groups_api = json.groups_api;
-						var s = json.result;
-						for(var i = 0; i < s.length; i++) {
-							$(".manager-content").append('<div class="manager-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
-							$(".manager-contentDet"+i).append('<span class="manager-number">'+s[i].userid+'</span>');
-							$(".manager-contentDet"+i).append('<span class="manager-account">'+s[i].username+'</span>');
-							$(".manager-contentDet"+i).append('<span class="manager-unit">'+s[i].schname+'</span>');
-							$(".manager-contentDet"+i).append('<span class="manager-attribute">'+s[i].groupname+'</span>');
-							$(".manager-contentDet"+i).append('<span class="manager-realname">'+s[i].realname+'</span>');
-							if(!isNull(s[i].groupname) && s[i].groupname.indexOf("管理员") >= 0){
-                                 $(".manager-contentDet"+i).append('<span class="manager-operation">无</span>');
-							}else{
-                                  //注意有权限的设置要求到时候商量更改
-								$(".manager-contentDet"+i).append('<span class="manager-operation"><a onclick="ctrl.maedit('+s[i].userid+')">编辑</a><a onclick="ctrl.madele('+s[i].userid+')">删除</a><a onclick="ctrl.machange('+s[i].userid+')">修改密码</a></span>');
-							}
-						}
+						view.showManager(json);
 					}
 				})
 			}
@@ -588,21 +695,9 @@ var ctrl = {
 					datatype: "json",
 
 					success: function(json) {
-						$(".collection-content").empty();
-						var s = json.result;
-						model.collection.url = json.url;
 						model.collection.max_page = json.max_page;
-						for(var i = 0; i < s.length; i++) {
-							$(".collection-content").append('<div class="collection-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
-							$(".collection-contentDet"+i).append('<span class="collection-number">'+s[i].messageid+'</span>');
-							$(".collection-contentDet"+i).append('<span class="collection-type">'+s[i].type+'</span>');
-							$(".collection-contentDet"+i).append('<span class="collection-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.codetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
-							$(".collection-contentDet"+i).append('<span class="collection-mark">'+s[i].score+'</span>');
-							$(".collection-contentDet"+i).append('<span class="collection-unit">'+s[i].schname+'</span>');
-							$(".collection-contentDet"+i).append('<span class="collection-time">'+s[i].createtime+'</span>');
-							$(".collection-contentDet"+i).append('<span class="collection-click">'+s[i].click+'</span>');
-							$(".collection-contentDet"+i).append('<span class="collection-operation"><a onclick="ctrl.codele('+s[i].messageid+')">删除</a></span>');
-						}
+						model.collection.url = json.url;
+						view.showCollection(json);
 					}
 				})
 			}
@@ -611,24 +706,24 @@ var ctrl = {
 
 	codetail: function(index) {
 		view.transform();
-		ctrl.lookArticle();
+		ctrl.getDetail(index);
 	},
 
 	codele: function(index) {
-        $.ajax({
-            url: model.identity.root + model.collection.url.collect_del,
-            type: "POST",
-            datatype: "json",
-            data:{'messageid':index},
-            success: function(json) {
-                if(json.is_err == 0) {
-                    alert("删除成功！");
-                    ctrl.getCollection();
-                } else {
-                    alert("失败，请重试！");
-                }
-            }
-        })
+		$.ajax({
+			url: model.identity.root + model.collection.url.collect_del,
+			type: "POST",
+			datatype: "json",
+			data:{'messageid':index},
+			success: function(json) {
+				if(json.is_err == 0) {
+					alert("删除成功！");
+					ctrl.getCollection();
+				} else {
+					alert("失败，请重试！");
+				}
+			}
+		})
 	},
 
 	//获得管理积分的内容
@@ -641,23 +736,9 @@ var ctrl = {
 					datatype: "json",
 
 					success: function(json) {
-						$(".managemark-content").empty();
-						var s = json.result;
-						for(var i = 0; i < s.length; i++) {
-							$(".managemark-content").append('<div class="managemark-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-number">'+s[i].messageid+'</span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-origin">'+s[i].schname+'</span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.markdet('+s[i].messageid+')">'+s[i].title+'</a></span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-total">'+s[i].score+'</span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-mark">'+s[i].base+'</span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-xuanyong"><input name="select" value="'+s[i].select+'"></span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-pishi"><input name="approval" value="'+s[i].approval+'"></span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-yujing"><input name="warning" value="'+s[i].warning+'"></span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-zhiliang"><input name="quality" value="'+s[i].quality+'"></span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-zhuanxiang"><input name="special" value="'+s[i].special+'"></span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-minus"><input name="substract" value="'+s[i].substract+'"></span>');
-							$(".managemark-contentDet"+i).append('<span class="managemark-operation"><a onclick="ctrl.markJudge('+s[i].messageid+')">打分</a></span>');
-						}
+						model.managemark.max_page = json.max_page;
+						model.managemark.url = json.url;
+						view.showManagemark(json);
 					}
 				})
 			}
@@ -667,10 +748,10 @@ var ctrl = {
 	markdet: function(index) {
 		view.transform();
 		ctrl.getDetail(index);
-		ctrl.lookArticle();
+		view.lookArticle();
 	},
 
-	markdele: function(index) {
+	markJudge: function(index) {
 
 	},
 
@@ -684,15 +765,9 @@ var ctrl = {
 					datatype: "json",
 
 					success: function(json) {
-						$(".managekeyword-content").empty();
-						var s = json.result;
-						for(var i = 0; i < s.length; i++) {
-							$(".managekeyword-content").append('<div class="managekeyword-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
-							$(".managekeyword-contentDet"+i).append('<span class="managekeyword-number">'+s[i].keyid+'</span>');
-							$(".managekeyword-contentDet"+i).append('<span class="managekeyword-keyword">'+s[i].keyname+'</span>');
-							$(".managekeyword-contentDet"+i).append('<span class="managekeyword-time">'+s[i].createtime+'</span>');
-							$(".managekeyword-contentDet"+i).append('<span class="managekeyword-operation"><a onclick="ctrl.keydele('+s[i].keyid+')">删除</a></span>');
-						}
+						model.key.max_page = json.max_page;
+						model.key.url = json.url;
+						view.showKey(json);
 					}
 				})
 			}
@@ -713,15 +788,9 @@ var ctrl = {
 					datatype: "json",
 
 					success: function(json) {
-						$(".marklist-content").empty();
-						var s = json.result;
-						for(var i = 0; i < s.length; i++) {
-							$(".marklist-content").append('<div class="marklist-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
-							$(".marklist-contentDet"+i).append('<span class="marklist-rank">'+s[i].schoolid+'</span>');
-							$(".marklist-contentDet"+i).append('<span class="marklist-school">'+s[i].schname+'</span>');
-							$(".marklist-contentDet"+i).append('<span class="marklist-total">'+s[i].score+'</span>');
-							$(".marklist-contentDet"+i).append('<span class="marklist-detail"><a onclick="ctrl.listdet('+s[i].schoolid+')">查看详情</a></span>');
-						}
+						model.marklist.max_page = json.max_page;
+						model.marklist.url = json.url;
+						view.showList(json);
 					}
 				})
 			}
@@ -757,16 +826,9 @@ var ctrl = {
 					datatype: "json",
 
 					success: function(json) {
-						$(".online-content").empty();
-						var s = json.result;
-						for(var i = 0; i < s.length; i++) {
-							$(".online-content").append('<div class="online-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
-							$(".online-contentDet"+i).append('<span class="online-number">'+s[i].userid+'</span>');
-							$(".online-contentDet"+i).append('<span class="online-account">'+s[i].username+'</span>');
-							$(".online-contentDet"+i).append('<span class="online-school">'+s[i].schname+'</span>');
-							$(".online-contentDet"+i).append('<span class="online-type">'+s[i].groupname+'</span>');
-							$(".online-contentDet"+i).append('<span class="online-realname">'+s[i].realname+'</span>');
-						}
+						model.online.max_page = json.max_page;
+						model.online.url = json.url;
+						view.showOnline(json);
 					}
 				})
 			}
@@ -783,15 +845,9 @@ var ctrl = {
 					datatype: "json",
 
 					success: function(json) {
-						$(".log-content").empty();
-						var s = json.result;
-						for(var i = 0; i < s.length; i++) {
-							$(".log-content").append('<div class="log-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
-							$(".log-contentDet"+i).append('<span class="log-number">'+s[i].userid+'</span>');
-							$(".log-contentDet"+i).append('<span class="log-admin">'+s[i].username+'</span>');
-							$(".log-contentDet"+i).append('<span class="log-ip">'+s[i].lastip+'</span>');
-							$(".log-contentDet"+i).append('<span class="log-time">'+s[i].lastlogintime+'</span>');
-						}
+						model.log.max_page = json.max_page;
+						model.online.url = json.url;
+						view.showLog(json);
 					}
 				})
 			}
@@ -862,26 +918,27 @@ var ctrl = {
 
 	//保存用户更改的信息
 	save:function() {
-       if(!($(".originpassword").val() == "" && $(".newpassword").val() == "" && $(".confirmpassword").val() == "")){
+		if(!($(".originpassword").val() == "" && $(".newpassword").val() == "" && $(".confirmpassword").val() == "")){
 			if(!($(".newpassword").val() == $(".confirmpassword").val() && $(".originpassword").val() != "")){
 				alert("错误的用户密码，请重新清空或者输入!");
 				return;
-			}	
-		} 
+			}
+		}
 		$.ajax({
 			url: model.identity.root + model.identity.update,
 			type: "POST",
 			data: $("#settings").serialize(),
+
 			success: function(json) {
-				if(json.is_err == 0){
-                    alert("保存成功！");
-                    model.identity.realname = $(".settings-realname").val();
-                    model.identity.email = $(".settings-mail").val();
-                    model.identity.phone = $(".settings-phone").val();
-                    $(".settings").css("display", "none");
-                    $(".contain").css("display", "block");
-				}else{
-                    alert(json.result);
+				if(json.is_err == 0) {
+					alert("保存成功！");
+					model.identity.realname = $(".settings-realname").val();
+					model.identity.email = $(".settings-mail").val();
+					model.identity.phone = $(".settings-phone").val();
+					$(".settings").css("display", "none");
+					$(".contain").css("display", "block");
+				} else {
+					alert(json.result);
 				}
 			}
 		})
@@ -900,17 +957,15 @@ var ctrl = {
 			}
 		})
 
-
-        $.ajax({
-            url: model.identity.root + model.single.url.single_update,
-            type: "POST",
-            datatype: "json",
-            data: {"messageid":index},
-            success: function() {
-                view.transform();
-            }
-        })
-
+		//$.ajax({
+		//	url: model.identity.root + model.single.url.single_update,
+		//	type: "POST",
+		//	datatype: "json",
+		//	data: {"messageid":index},
+		//	success: function() {
+		//		view.transform();
+		//	}
+		//})
 	},
 
 	//上传用户发表的舆情信息
@@ -918,7 +973,7 @@ var ctrl = {
 		$.ajax({
 			url: model.identity.root + model.single.url.single_add,
 			type: "POST",
-            data: $('#send').serialize(),
+			data: $('#send').serialize(),
 			success: function() {
 				alert("推送成功！");
 				$(".single-send").css("display", "none");
@@ -926,7 +981,7 @@ var ctrl = {
 			}
 		})
 	},
-	
+
 	integrativesend: function() {
 		$.ajax({
 			url: model.identity.root + model.integrative.url.integrative_add,
@@ -948,17 +1003,17 @@ var ctrl = {
 				$.ajax({
 					url: model.identity.root + model.manager.add_url,
 					type: "POST",
-					
+
 					data: $("#add").serialize(),
 
 					success: function() {
-                       if(json.is_err == 0){
-						 alert("添加成功！");
-						 $(".add").css("display", "none");
-						 $(".contain").css("display", "block");
-                       }else{
-					     alert(json.result);
-				       }  
+						if(json.is_err == 0){
+							alert("添加成功！");
+							$(".add").css("display", "none");
+							$(".contain").css("display", "block");
+						}else{
+							alert(json.result);
+						}
 					}
 				})
 			else
@@ -967,7 +1022,7 @@ var ctrl = {
 			alert("密码不相同！");
 	},
 
-    lookArticle: function() {
+	lookArticle: function() {
 		$("#article1").css("display", "block");
 		$("#article2").css("display", "none");
 	},
@@ -975,5 +1030,33 @@ var ctrl = {
 	editArticle: function() {
 		$("#article1").css("display", "none");
 		$("#article2").css("display", "block");
+	},
+
+	getCurrentMenu: function () {
+		var s = ctrl.getCurrentClass();
+		switch (s) {
+			case ".contain":
+				return ".menu0";
+			case ".opinion":
+				return ".menu1";
+			case ".single-post":
+				return ".menu2";
+			case ".integrative-post":
+				return ".menu3";
+			case ".manager":
+				return ".menu4";
+			case ".collection":
+				return ".menu5";
+			case ".managemark":
+				return ".menu6";
+			case ".managekeyword":
+				return ".menu7";
+			case ".marklist":
+				return ".menu8";
+			case ".online":
+				return ".menu9";
+			case ".log":
+				return ".menu10";
+		}
 	}
 }

@@ -11,36 +11,49 @@ class AnnounceController extends AdminBaseController{
 	 */
 
 	public function index(){
-		@session_start();
-		$announcement = D('Announce')->join('left join yq_user on yq_announce.userid = yq_user.userid')
-										->order('yq_announce.createtime desc, stick desc')->select();
 
-		$announcement = stand_date($announcement);
-//		cout($announcement);
+		$p = I('post.page');
+		if(empty($p))
+			$p = 1;
+
+		$announcement = D('Announce')->getData($p, null);
+
 		$res['is_err'] = 1;
 		if($announcement)
 			$res['is_err'] = 0;
 		$res['result'] = $announcement;
-		$res['max_page'] = count($announcement)/10;
+		$res['max_page'] = D('Announce')->getMaxPage(null);
+		//权限问题管理员才能有添加公告权限，我没判断
+		$res['url'] = array(
+			'announce_search'=>'Admin/Announce/search',
+			'add_announce'=>'Admin/Announce/add_announce',
+		);
 		echo json_encode($res);
 		exit;
 	}
 
 	public function search(){
+		$p = I('post.page');
+		if(empty($p))
+			$p = 1;
+
 		$date1 = strtotime(I('post.date1'));
 		$date2 = strtotime(I('post.date2'));
-		$map['createtime'] = array('gt', $date1);
-		$map['createtime'] = array('lt', $date2);
-		$result = D('Announce')	->join('yq_user on yq_announce.userid = yq_user.userid')
-								->where($map)
-								->order('yq_announce.createtime desc, stick desc')->select();
-		$result = stand_date($result);
+		if($date1 && $date2)
+			$map['createtime'] = array(array('gt', $date1), array('lt', $date2));
+
+		$key = I('post.keywords');
+		if($key)
+			$map['title'] = array('like', $key);
+
+		$result = D('Announce')->getData($p, $map);
+
 		$res['is_err'] = 1;
 		if($result)
 			$res['is_err'] = 0;
 
 		$res['result'] = $result;
-		$res['max_page'] = count($result)/10;
+		$res['max_page'] = D('Announce')->getMaxPage($map);
 		echo json_encode($res);
 		exit;
 
@@ -56,7 +69,7 @@ class AnnounceController extends AdminBaseController{
 		if($result)
 			$res['is_err'] = 0;
 		$res['result'] = $result;
-		$res['max_page'] = count($result)/10;
+		$res['max_page'] =max_page($result);
 		echo json_encode($res);
 		exit;
 	}

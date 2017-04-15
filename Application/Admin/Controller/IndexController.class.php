@@ -25,9 +25,9 @@ class IndexController extends AdminBaseController{
             $message = D('Message')->where($map)->order('createtime desc')->select();
         }
         else{
-            $message = D('Message')->order('createtime desc')->select();
+            $message = D('Message')->order('createtime desc')->limit(10)->select();
         }
-        $announcement = D('Announce')->order('createtime desc')->order('stick')->select();
+        $announcement = D('Announce')->order('createtime desc')->order('stick')->limit(10)->select();
         $score = D('School')->order('score desc')->limit(3)->select();
 
         $message = stand_date($message);

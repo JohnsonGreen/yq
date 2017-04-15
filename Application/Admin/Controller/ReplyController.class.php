@@ -11,7 +11,7 @@ class ReplyController extends AdminBaseController{
 		$map['messageid'] = trim(I('post.id'));
 		$result = D('Reply')->where($map)->select();
 		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
+		$response['max_page'] = max_page($result);
 		$response['is_err'] = 1;
 		echo json_encode($response);
 		exit;

@@ -19,6 +19,9 @@ class KeyModel extends Model {
 
         return $result;
     }
+    public function getMaxPage($map = null){
+        return max_page($this->where($map)->select());
+    }
 
 
 }

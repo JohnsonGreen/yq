@@ -73,22 +73,25 @@ class UserController extends AdminBaseController{
 		$result = D('User')->getOnline($p);
 		$response['result'] = $result;
 		$response['is_err'] = 0;
-		$response['max_page'] = count($result)/10;
-		echo json_encode($result);
+		$response['max_page'] = D('User')->getOnlinePage();
+		$response['url'] = array(
+			'online_user'=>'Admin/User/online'
+		);
+		echo json_encode($response);
 		exit;
 	}
 
 
 	//日志
-	public function user(){
+	public function log(){
 		$p = I('post.page');
-        if(!empty($p)){
-            $p = 1;
-        }
-		$result = D('User')->getUser($p);
+		$result = D('User')->getUser($p, null);
 		$response['is_err'] = 0;
-		$response['result'  ] = $result;
-		$response['max_page'] = count($result)/10;
+		$response['result'] = $result;
+		$response['max_page'] = D('User')->getLogPage();
+		$response['url'] = array(
+			'log_user'=>'Admin/User/index'
+		);
 		echo json_encode($response);
 		exit;
 	}
@@ -96,15 +99,16 @@ class UserController extends AdminBaseController{
 	//user
 	public function index(){
 		$p = I('post.page');
-        if(!empty($p)){
-            $p = 1;
-        }
-		$result = D('User')->getUser($p);
+		$result = D('User')->getUser($p, null);
 		$response['is_err'] = 0;
 		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
+		$response['max_page'] = D('User')->getLogPage();
         $response['add_url'] = 'Admin/User/add_user';
         $response['groups_api'] = 'Admin/User/getGroups';
+		$response['url'] = array(
+			'maguser'=>'Admin/User/index',
+			'user_search'=>'Admin/User/search'
+		);
 		echo json_encode($response);
 		exit;
 	}
@@ -122,27 +126,35 @@ class UserController extends AdminBaseController{
 		exit;
 	}
 
-	public function school_search(){
-		$map['schname'] = trim(I('post.school'));
+	public function search(){
+		$school = trim(I('post.school'));
+		$username = trim(I('post.username'));
+		if($school && $school != "全部")
+			$map['schname'] = $school;
+		if($username)
+			$map['username'] = $username;
+
 		$p = I('post.page');
+		if(empty($p))
+			$p = 1;
 		$result = D('User')->getUser($p, $map);
 		$response['is_err'] = 0;
 		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
+		$response['max_page'] = D('User')->getLogPage($map);
 		echo json_encode($response);
 		exit;
 	}
 
-	public function user_search(){
-		$map['username'] = trim(I('post.username'));
-		$p = I('post.page');
-		$result = D('User')->getUser($p, $map);
-		$response['is_err'] = 0;
-		$response['result'] = $result;
-		$response['max_page'] = count($result)/10;
-		echo json_encode($response);
-		exit;
-	}
+//	public function user_search(){
+//		$map['username'] = trim(I('post.username'));
+//		$p = I('post.page');
+//		$result = D('User')->getUser($p, $map);
+//		$response['is_err'] = 0;
+//		$response['result'] = $result;
+//		$response['max_page'] = count($result)/10;
+//		echo json_encode($response);
+//		exit;
+//	}
 
     public function add_user(){
         $username = trim(I('post.username'));
@@ -160,7 +172,7 @@ class UserController extends AdminBaseController{
             $confirm_pass = trim(I('post.confirm_password'));
             if(!empty($pass) && $pass == $confirm_pass){
                 $data['username'] = $username;
-                $data['stunum'] = $stunum;
+//                $data['stunum'] = $stunum;
                 $data['realname']   = trim(I('post.realname'));
                 $data['birthday'] 	= trim(I('post.birthday'));
                 $data['birthplace'] = trim(I('post.birthplace'));

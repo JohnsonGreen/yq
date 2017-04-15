@@ -103,15 +103,24 @@ class MessageModel extends BaseModel{
         if(!$page)
             $page = 1;
         $message = $this
-            ->join('yq_school on yq_message.schoolid = yq_school.schoolid')
-            ->join('yq_type on yq_message.typeid = yq_type.typeid')
-            ->join('yq_product on yq_message.product = yq_product.proid')
+            ->join('LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid')
+            ->join('LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid')
+            ->join('LEFT JOIN yq_product on yq_message.product = yq_product.proid')
             ->where($map)
             ->field('yq_product.proid ,yq_product.proname,messageid, userid, schname, yq_message.score, title, content, createtime, click, type')
-            ->order('createtime desc')
+            ->order('messageid')
             ->page($page.', 10')
             ->select();
         $message = stand_date($message);
+//        cout($message);
+        foreach($message as $i => $item){
+            $map_colllection['messageid'] = $message[$i]['messageid'];
+            $map_colllection['userid'] = I('session.user')['userid'];
+            $message[$i]['is_loved'] = 0;
+            if(D('User_collection')->where($map_colllection)->find()){
+                $message[$i]['is_loved'] = 1;
+            }
+        }
         return $message;
     }
     //软删除舆情
@@ -145,10 +154,34 @@ class MessageModel extends BaseModel{
             ->join('yq_user on yq_message.userid = yq_user.userid')
             ->where($map)
             ->field('yq_message.messageid,yq_message.keyword,url,base,select,approval,warning,quality,special,substract,yq_message.userid, schname, yq_message.score, yq_message.title, yq_message.content, yq_message.createtime, click, type, username')
+            ->find();
+//        cout($message);
+        $message = stand_date($message);
+        return $message;
+    }
+
+    public function getDetail($schoolid, $p = 1){
+        $map['yq_message.schoolid'] = $schoolid;
+//        $map['yq_message.schoolid'] = 1;
+//
+        $message = $this
+            ->join('yq_school on yq_message.schoolid = yq_school.schoolid')
+            ->join('yq_type on yq_message.typeid = yq_type.typeid')
+            ->join('yq_product on yq_message.product = yq_product.proid')
+            ->where($map)
+            ->field('yq_product.proid ,yq_product.proname,messageid, userid, schname, yq_message.score, title, content, createtime, click, type')
+            ->order('createtime desc')
+            ->page($p.', 10')
             ->select();
         $message = stand_date($message);
         return $message;
     }
+
+    public function getMessagePage($map = null){
+        $map['is_delete'] = 0;
+        return max_page($this->where($map)->select());
+    }
+
 
 
 
