@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>天津大学学工信系统</title>
-    <link href="/yq-g/Public/css/style.css?<?php echo rand(3000,4000); ?>" rel="stylesheet">
+    <link href="/yq/Public/css/style.css?<?php echo rand(3000,4000); ?>" rel="stylesheet">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
@@ -13,10 +13,10 @@
 
 <!--移动端导航栏-->
 <div class="showing">
-    <a href="javascript:void(0)" onclick="showMenu()"><img src="/yq-g/Public/images//menu.png"
+    <a href="javascript:void(0)" onclick="showMenu()"><img src="/yq/Public/images//menu.png"
                                                            alt="click this to open the menu"></a>
     <div class="person" style="display: none;">
-        <img style="position: relative; top: 5px;" src="/yq-g/Public/images//user.png">
+        <img style="position: relative; top: 5px;" src="/yq/Public/images//user.png">
         <span class="person-identity"></span>&nbsp;|&nbsp;
         <a class="logout" onclick="return logout()">注销</a>&nbsp;|&nbsp;
         <a class="person-setting" onclick="return ctrl.setting(model.identity.userid)">个人设置</a>
@@ -28,9 +28,9 @@
 <form class="login" id="login" method="POST">
     <div class="inner">
         <strong>用户登录</strong>
-        <img class="user_img" src="/yq-g/Public/images/user.png">
+        <img class="user_img" src="/yq/Public/images/user.png">
         <input class="user" type="text" name="username" placeholder="输入用户名">
-        <img class="password_img" src="/yq-g/Public/images/lock.png">
+        <img class="password_img" src="/yq/Public/images/lock.png">
         <input class="password" type="password" name="password" placeholder="输入密码">
         <button type="button" class="button" onclick="return sub()">登 录</button>
         <!--忘记密码的链接-->
@@ -270,8 +270,8 @@
             <a onclick="return pubNextPage()">下一页</a>
             <a onclick="return pubMaxPage()">末页</a>
             <div class="opinion-output">
-                <img src="/yq-g/Public/images//feedback_write.png">
-                <a href="">发布公告</a>
+                <img src="/yq/Public/images/feedback_write.png">
+				<a style="cursor: pointer;" onclick="return public()">发布公告</a>
             </div>
         </div>
     </div>
@@ -302,7 +302,7 @@
             <a onclick="return singleNextPage()">下一页</a>
             <a onclick="return singleMaxPage()">末页</a>
             <div class="single-output">
-                <img src="/yq-g/Public/images/feedback_write.png">
+                <img src="/yq/Public/images/feedback_write.png">
                 <a style="cursor: pointer;" onclick="return singlesend()">上报舆情</a>
             </div>
         </div>
@@ -335,7 +335,7 @@
             <a onclick="return integrativeNextPage()">下一页</a>
             <a onclick="return integrativeMaxPage()">末页</a>
             <div class="integrative-output">
-                <img src="/yq-g/Public/images/feedback_write.png">
+                <img src="/yq/Public/images/feedback_write.png">
                 <a style="cursor: pointer;" onclick="return integrativesend()">上报舆情</a>
             </div>
         </div>
@@ -419,17 +419,17 @@
 
 <!--管理积分页-->
 <div class="managemark" style="display: none;">
-    <form>
+    <form id="marksearch">
         <span>学院搜索</span>
-        <select class="school" name="school">
-            <option value="全部" selected>全部</option>
+        <select id="markschool" class="school" name="schoolid">
+            <option value="0" selected>全部</option>
         </select>
         <div class="managemark-secondchoose">
             <span>类别</span>
-            <select class="type" name="choose_type">
-                <option value="全部" selected>全部</option>
+            <select id="marktype" class="type" name="typeid">
+                <option value="0" selected>全部</option>
             </select>
-            <button>搜索</button>
+            <button type="button" onclick="return marksearch()">搜索</button>
         </div>
     </form>
 
@@ -443,11 +443,7 @@
         <span class="managemark-title">标题</span>
         <span class="managemark-total">总分</span>
         <span class="managemark-mark">评分</span>
-        <span class="managemark-xuanyong">选用分</span>
-        <span class="managemark-pishi">批示分</span>
-        <span class="managemark-yujing">预警分</span>
-        <span class="managemark-zhiliang">质量分</span>
-        <span class="managemark-zhuanxiang">专项分</span>
+        <span class="managemark-add">加分</span>
         <span class="managemark-minus">减分</span>
         <span class="managemark-operation">操作</span>
 
@@ -582,15 +578,15 @@
 <footer>
     <span>&copy;天津大学学工信系统</span>
 </footer>
-<script type="text/javascript" src="/yq-g/Public/js/jQuery.js"></script>
+<script type="text/javascript" src="/yq/Public/js/jQuery.js"></script>
 <script>
     var login = "<?php echo U('Home/Index/login');?>";
-    var ImgPath = "/yq-g/Public/images/";
+    var ImgPath = "/yq/Public/images/";
     var schools_url = "<?php echo U('Home/Index/school');?>";
     var types_url = "<?php echo U('Home/Index/type');?>";
 </script>
 <!-- ?<?php echo rand(3000,4000); ?> -->
-<script type="text/javascript" src="/yq-g/Public/js/script.js?<?php echo rand(3000,4000); ?>"></script>
+<script type="text/javascript" src="/yq/Public/js/script.js?<?php echo rand(3000,4000); ?>"></script>
 <script type="text/javascript">
     //验证表单
     function sub() {
@@ -683,6 +679,12 @@
             }
         })
     }
+      //管理员发布公告
+		function public() {
+			integrativesend();
+			$(".send-product").css("display", "none");
+			$(".send-type").css("display", "none");
+		}
     //改变产品类型时需要改变的舆情类型是否显示
     function toggleProduct() {
         var temp = $(".product").val();
@@ -692,11 +694,26 @@
             $(".send-type").css("display", "none");
     }
 
+    function marksearch(){
+        $.ajax({
+            url: model.identity.root + model.managemark.url.magscore_search,
+            type: "POST",
+            data: $("#marksearch").serialize(),
+
+            success: function(json) {
+                model.managemark.max_page = json.max_page;
+                model.currentPage = 1;
+                view.showManagemark(json);
+            }
+        })
+    }
+
     function search() {
         var s = ctrl.getCurrentClass();
+        console.log(s);
         if(s == ".single-post") {
             $.ajax({
-                url: model.identity.root + model.single.url.overall_search,
+                url: model.identity.root + model.single.url.single_search,
                 type: "POST",
                 data: {
                     date1: $("#startDate").val(),
@@ -707,6 +724,8 @@
                 },
 
                 success: function(json) {
+                    model.single.max_page = json.max_page;
+                    model.currentPage = 1;
                     view.showSingle(json);
                 }
             })
@@ -723,12 +742,14 @@
                 },
 
                 success: function(json) {
+                    model.integrative.max_page = json.max_page;
+                    model.currentPage = 1;
                     view.showIntegrative(json);
                 }
             })
-        } else if(s == ".pub") {
+        } else if(s == ".opinion") {
             $.ajax({
-                url: model.identity.root + model.pub.url.overall_search,
+                url: model.identity.root + model.pub.url.announce_search,
                 type: "POST",
                 data: {
                     date1: $("#startDate").val(),
@@ -739,12 +760,14 @@
                 },
 
                 success: function(json) {
+                    model.pub.max_page = json.max_page;
+                    model.currentPage = 1;
                     view.showPub(json);
                 }
             })
         } else if(s == ".collection") {
             $.ajax({
-                url: model.identity.root + model.collection.url.overall_search,
+                url: model.identity.root + model.collection.url.collect_search,
                 type: "POST",
                 data: {
                     date1: $("#startDate").val(),
@@ -755,15 +778,17 @@
                 },
 
                 success: function(json) {
+                    model.collection.max_page = json.max_page;
+                    model.currentPage = 1;
                     view.showCollection(json);
                 }
             })
         }
     }
 </script>
-<script type="text/javascript" src="/yq-g/Public/js/arrowctrl.js"></script>
-<script type="text/javascript" src="/yq-g/Public/js/calendar.js"></script>
-<script type="text/javascript" src="/yq-g/Public/js/pageProcess.js">
+<script type="text/javascript" src="/yq/Public/js/arrowctrl.js"></script>
+<script type="text/javascript" src="/yq/Public/js/calendar.js"></script>
+<script type="text/javascript" src="/yq/Public/js/pageProcess.js">
 </script>
 
 

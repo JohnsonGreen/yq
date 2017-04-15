@@ -26,7 +26,7 @@ class AnnounceModel extends Model {
             ->where($map)
             ->order('yq_announce.createtime desc, stick desc')
             ->select();
-        return $result;
+        return ceil(count($result)/10);
     }
 
 }

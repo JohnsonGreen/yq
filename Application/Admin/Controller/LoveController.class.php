@@ -33,10 +33,22 @@ class LoveController extends AdminBaseController{
 
 		$date1 = strtotime(I('post.date1'));
 		$date2 = strtotime(I('post.date2'));
-		if($date1 && $date2)
-			$map['createtime'] = array(array('gt', $date1), array('lt', $date2));
+//        $response['result'] = $date2;
+//       // $response['max_page'] = D('UserCollection')->getDataPage($map);
+//        echo json_encode($response);
+//        exit;
 
-		//关键字
+
+		$map = array();
+        if(empty($date1) && !empty($date2)){
+            $map['createtime'] =  array('lt', $date2  + 3600000*24);
+        }else if(!empty($date1) && empty($date2)){
+            $map['createtime'] = array('gt', $date1);
+        }else if($date1 && $date2){
+            $map['createtime'] = array(array('gt', $date1), array('lt', $date2  + 3600000*24));
+        }
+
+        //关键字
 		$key = I('post.keywords');
 		if($key)
 			$map['title'] = array('like', $key);
@@ -51,51 +63,14 @@ class LoveController extends AdminBaseController{
 		if($type && $type != "全部")
 			$map['type'] = $type;
 
-		$result = D('User_collection')->getData($map, $p);
+		$result = D('UserCollection')->getData($map, $p);
 		$response['is_err'] = 0;
 		$response['result'] = $result;
 		$response['max_page'] = D('UserCollection')->getDataPage($map);
 		echo json_encode($response);
 		exit;
 	}
-//	//关键字
-//	public function search_key(){
-//		$p = I('post.page');
-//		$key = I('post.keywords');
-//		$map['yq_message.title'] = array('like', $key);
-//
-//		$result = D('User_collection')->getData($map, $p);
-//		$response['is_err'] = 0;
-//		$response['result'] = $result;
-//		$response['max_page'] = max_page($result);
-//		echo json_encode($response);
-//		exit;
-//	}
-//	//学院
-//	public function search_school(){
-//		$p = I('post.page');
-//		$school = I('post.school');
-//		$map['schname'] = $school;
-//
-//		$result = D('User_collection')->getData($map, $p);
-//		$response['is_err'] = 0;
-//		$response['result'] = $result;
-//		$response['max_page'] = max_page($result);
-//		echo json_encode($response);
-//		exit;
-//	}
-//	//类别
-//	public function type(){
-//		$p = I('post.page');
-//		$map['type'] = I('post.type');
-//
-//		$result = D('UserCollection')->getData($map, $p);
-//		$response['is_err'] = 0;
-//		$response['result'] = $result;
-//		$response['max_page'] = max_page($result);
-//		echo json_encode($response);
-//		exit;
-//	}
+
 	//删除
 	public function del(){
 		$id = I('post.messageid');

@@ -80,7 +80,7 @@ class SingleController extends AdminBaseController{
             'single_update' => 'Admin/Single/update_message',
             'single_love' => 'Admin/Single/love',
             'single_add'=>'Admin/Single/add_single_message',
-            'single_search'=>'Admin/Single/search_admin',
+            'single_search'=>'Admin/Single/search_teacher',
             'single_details'=>'Admin/Single/index'
         );
         echo json_encode($response);
@@ -111,16 +111,63 @@ class SingleController extends AdminBaseController{
 		exit;
 	}
 
-
-    //搜索
+    //搜索(学生)
     public function search(){
         @session_start();
         $date1 = strtotime(I('post.date1'));
         $date2 = strtotime(I('post.date2'));
-        if($date1)
+        if(empty($date1) && !empty($date2)){
+            $map['createtime'] =  array('lt', $date2  + 3600000*24);
+        }else if(!empty($date1) && empty($date2)){
             $map['createtime'] = array('gt', $date1);
-        if($date2)
-            $map['createtime'] = array('lt', $date2);
+        }else if($date1 && $date2){
+            $map['createtime'] = array(array('gt', $date1), array('lt', $date2  + 3600000*24));
+        }
+
+        //关键字
+        $key = I('post.keywords');
+        if($key)
+            $map['title'] = array('like', $key);
+
+        //学生
+        $map['userid'] = $_SESSION['user']['userid'];
+
+        //类别
+        $type = I('post.type');
+        if($type && $type != "全部")
+            $map['type'] = $type;
+
+        $map['yq_message.product'] = array('eq', 1);
+
+        $page = I('post.page');
+        $result = D('Message')->getData($map, $page);
+
+        $cnt = count($result);
+        for($i = 0; $i < $cnt;$i++){
+            $result[$i]['flag'] = 1;
+        }
+
+        $response['result'] = $result;
+        $response['max_page'] = D('Message')->getMessagePage($map);
+        $response['is_err'] = 0;
+        echo json_encode($response);
+        exit;
+
+    }
+
+
+    //搜索
+    public function search_teacher(){
+        @session_start();
+        $date1 = strtotime(I('post.date1'));
+        $date2 = strtotime(I('post.date2'));
+        if(empty($date1) && !empty($date2)){
+            $map['createtime'] =  array('lt', $date2  + 3600000*24);
+        }else if(!empty($date1) && empty($date2)){
+            $map['createtime'] = array('gt', $date1);
+        }else if($date1 && $date2){
+            $map['createtime'] = array(array('gt', $date1), array('lt', $date2  + 3600000*24));
+        }
 
         //关键字
         $key = I('post.keywords');
@@ -129,19 +176,28 @@ class SingleController extends AdminBaseController{
 
         //学院
         $school = I('post.school');
-        if($school)
+        if($school && $school != "全部")
             $map['schname'] = $school;
 
         //类别
         $type = I('post.type');
-        if($type)
+        if($type && $type != "全部")
             $map['type'] = $type;
 
-        $map['userid'] = $_SESSION['user']['userid'];
+        $map['yq_message.product'] = array('eq', 1);
 
-        $map['product'] = 1;
         $page = I('post.page');
         $result = D('Message')->getData($map, $page);
+
+        $cnt = count($result);
+        for($i = 0; $i < $cnt;$i++){
+            if($result[$i]['userid'] == $_SESSION['user']['userid']){
+                $result[$i]['flag'] = 1;
+            }else{
+                $result[$i]['flag'] = 0;
+            }
+        }
+
         $response['result'] = $result;
         $response['max_page'] = D('Message')->getMessagePage($map);
         $response['is_err'] = 0;
@@ -154,19 +210,46 @@ class SingleController extends AdminBaseController{
 	 * 没有userid约束
 	 */
 	public function search_admin(){
-		$date1 = strtotime(I('post.date1'));
-		$date2 = strtotime(I('post.date2'));
-		$map['createtime'] = array('gt', $date1);
-		$map['createtime'] = array('lt', $date2);
 
-		$map['product'] = 1;
-		$page = I('post.page');
-		$result = D('Message')->getData($map, $page);
-		$response['result'] = $result;
-		$response['max_page'] = D('Message')->getMessagePage($map);
-		$response['is_err'] = 0;
-		echo json_encode($response);
-		exit;
+        @session_start();
+        $date1 = strtotime(I('post.date1'));
+        $date2 = strtotime(I('post.date2'));
+        if(empty($date1) && !empty($date2)){
+            $map['createtime'] =  array('lt', $date2 + 3600000*24);
+        }else if(!empty($date1) && empty($date2)){
+            $map['createtime'] = array('gt', $date1);
+        }else if($date1 && $date2){
+            $map['createtime'] = array(array('gt', $date1), array('lt', $date2 + 3600000*24));
+        }
+
+        //关键字
+        $key = I('post.keywords');
+        if($key)
+            $map['title'] = array('like', $key);
+        //学院
+        $school = I('post.school');
+        if($school && $school != "全部")
+            $map['schname'] = $school;
+
+        //类别
+        $type = I('post.type');
+        if($type && $type != "全部")
+            $map['type'] = $type;
+
+        $map['yq_message.product'] = array('eq', 1);
+
+        $page = I('post.page');
+        $result = D('Message')->getData($map, $page);
+
+        $cnt = count($result);
+        for($i = 0; $i < $cnt;$i++){
+            $result[$i]['flag'] = 1;
+        }
+        $response['result'] = $result;
+        $response['max_page'] = D('Message')->getMessagePage($map);
+        $response['is_err'] = 0;
+        echo json_encode($response);
+        exit;
 	}
 
 

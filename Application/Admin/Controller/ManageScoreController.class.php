@@ -17,7 +17,32 @@ class ManageScoreController extends AdminBaseController{
      * 默认全部学院和全部类别的积分
      */
     public function index(){
-        $this->getScores();
+        $map = I('post.');
+        $schoolid = $map['schoolid'];
+        $typeid = $map['typeid'];
+        $page = $map['page'];
+        $pagesize = $map['pagesize'];
+
+        $type = array();
+        if(!empty($schoolid) && $schoolid != '0')
+            $type['schoolid'] = $schoolid;
+        if(!empty($typeid) && $typeid != '0')
+            $type['typeid'] = $typeid;
+        if(empty($page))
+            $page=1;
+        if(empty($pagesize))
+            $pagesize=10;
+
+        $result['result'] = D('Message')->getScore($page,$pagesize,$type);
+        $result['max_page'] = $this->getScorePage();
+        $result['is_err'] = 0;
+        $result['url'] = array(
+            'magscore_search' => 'Admin/ManageScore/getScores',
+            'magscore_mark' => 'Admin/ManageScore/updateScore',
+            'scolist_details' => 'Admin/ManageScore/getScoreDetails'
+        );
+        echo json_encode($result);
+        exit;
     }
 
     /**
@@ -41,9 +66,11 @@ class ManageScoreController extends AdminBaseController{
         if(empty($pagesize))
             $pagesize=10;
 
-        $this->returnJson(
-            D('Message')->getScore($page,$pagesize,$type)
-        );
+        $result['result'] = D('Message')->getScore($page,$pagesize,$type);
+        $result['max_page'] = $this->getScorePage();
+        $result['is_err'] = 0;
+        echo json_encode($result);
+        exit;
     }
 
     /**
@@ -56,77 +83,42 @@ class ManageScoreController extends AdminBaseController{
         if(empty($map['messageid']))
              $this->returnJson();
 
-        $data['score'] = 0;
          foreach($map as $k => $val){
              if(!empty($val) && $k != 'messageid') {
                  $data[$k] = intval($val);
                  if($data[$k] < 0)  $data[$k] = 0;
-                 $data['score'] += $data[$k];
              }
          }
-
-//         if(!empty($map['base'])){
-//             $data['base'] = $map['base'];
-//             $data['score'] += intval($map['base']);
-//         }
-//         if(!empty($map['select'])){
-//             $data['select'] = $map['select'];
-//             $data['score'] += intval($map['select']);
-//         }
-//         if(!empty($map['approval'])){
-//             $data['approval'] = $map['approval'];
-//             $data['score'] += intval($map['approval']);
-//         }
-//         if(!empty($map['warning'])){
-//             $data['warning'] = $map['warning'];
-//             $data['score'] += intval($map['warning']);
-//         }
-//         if(!empty($map['quality'])){
-//             $data['quality'] = $map['quality'];
-//             $data['score'] += intval($map['quality']);
-//         }
-//         if(!empty($map['special'])){
-//             $data['special'] = $map['special'];
-//             $data['score'] += intval($map['special']);
-//         }
-//         if(!empty($map['substract'])){
-//             $data['substract'] = $map['substract'];
-//             $data['score'] += intval($map['substract']);
-//         }
-//         if(!empty($map['add'])){
-//             $data['add'] = $map['add'];
-//             $data['score'] += intval($map['add']);
-//         }
 
          $message = D('Message');
          $school = D('School');
          $user = D('User');
-         $score = $message->getSingleScore($map['messageid']);
-         $schoolid = $message->getSingleSchoolId($map['messageid']);
-         $userid = $message->getSingleUserid($map['messageid']);
+         $res = $message->where(array('messageid' =>$map['messageid']))->field('schoolid,userid,base,score')->find();
+
+         $data['score'] = intval($res['base']) + $data['add'] - $data['substract'];
+         if($data['score'] < 0)  $data['score'] = 0;
+         $change = $data['score'] - intval($res['score']);
 
          $sch = array();
          $usr = array();
          if($data['score'] < 0)  $data['score'] = 0;
 
-         $sch['score'] = $school->getSchoolScore($schoolid);   //学院分调整
-         $sch['score'] += $data['score'] - intval($score);
+         $sch['score'] = $school->getSchoolScore($res['schoolid']);   //学院分调整
+         $sch['score'] += $change;
          if($sch['score'] < 0)  $sch['score'] = 0;
-         $school->editData(array('schoolid' => $schoolid),$sch);
+         $school->editData(array('schoolid' =>$res['schoolid']),$sch);
 
-
-         $usr['score'] = $user->getSingleScore($userid);      //报送所属人的分数调整
-         var_dump($usr['score']);
-         $usr['score'] += $data['score'] - intval($score);
+         $usr['score'] = $user->getSingleScore($res['userid']);      //报送所属人的分数调整
+         $usr['score'] += $change;
          if($usr['score'] < 0)  $usr['score'] = 0;
-         $user->editData(array('userid' => $userid),$usr);
+         $user->editData(array('userid' => $res['userid']),$usr);
+         $message->editData(array('messageid' => $map['messageid']),$data);
 
-         var_dump($usr);
-         $this->returnJson(
-             $message->editData(array(
-                 'messageid' => $map['messageid']
-             ),$data)
-         );
+         echo json_encode(array(
+             'is_err' => 0,
+             'result' => array('score'=>$data['score'])
+         ));
+         exit;
 
     }
 
@@ -152,10 +144,7 @@ class ManageScoreController extends AdminBaseController{
         if (!empty($map['typeid']))
             $type['typeid'] = $map['typeid'];
         $count = D('Message')->getMessageCount($type);
-        $pages = 0;
-        if(!empty($count)){
-            $pages += intval($count/10) + 1;          //10个一页
-        }
+        $pages =  ceil($count/10);
         $data['pages'] = $pages;
         $this->returnJson($data);
 
@@ -169,11 +158,7 @@ class ManageScoreController extends AdminBaseController{
         if (!empty($map['typeid']))
             $type['typeid'] = $map['typeid'];
         $count = D('Message')->getMessageCount($type);
-        $pages = 0;
-        if(!empty($count)){
-            $pages += intval($count/10) + 1;          //10个一页
-        }
-        return $pages;
+        return ceil($count/10);
     }
 
     /**
@@ -216,7 +201,14 @@ class ManageScoreController extends AdminBaseController{
             $map['page']=1;
         if(empty($map['pagesize']))
             $map['pagesize']=10;
-        $this->returnJson(D('School')->getSchoolScoreList($map['page'],$map['pagesize']));
+
+        $result['is_err'] = 0;
+        $result['result'] = D('School')->getSchoolScoreList($map['page'],$map['pagesize']);
+        $result['url'] = array(
+            'scolist_details' => 'Admin/ManageScore/getScoreDetails'
+        );
+       echo json_encode($result);
+       exit;
     }
 
     /**
@@ -242,9 +234,11 @@ class ManageScoreController extends AdminBaseController{
         $schoolid = trim(I('post.schoolid'));
         $result = D('Message')->getDetail($schoolid, $p);
         $response['is_err'] = 0;
+        //$result['schoolid'] = $schoolid;
         $response['result'] = $result;
         $response['max_page'] = max_page($result);
         echo json_encode($response);
+        exit;
     }
 
 

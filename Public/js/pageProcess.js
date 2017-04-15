@@ -314,7 +314,10 @@ function logFirstPage() {
 			$.ajax({
 				url: temp,
 				type: "POST",
-				data: {"page": model.currentPage},
+                data: {"page": model.currentPage,
+                    "schoolid": $(".school").eq(4).find("option:selected").val(),
+                    "typeid": $(".type").eq(2).find("option:selected").val()
+                },
 
 				success: function(json) {
 					view.showManagemark(json);
@@ -333,7 +336,10 @@ function logFirstPage() {
 				$.ajax({
 					url: temp,
 					type: "POST",
-					data: {"page": model.currentPage},
+                    data: {"page": model.currentPage,
+                        "schoolid": $(".school").eq(4).find("option:selected").val(),
+                        "typeid": $(".type").eq(2).find("option:selected").val()
+                    },
 
 					success: function(json) {
 						view.showManagemark(json);
@@ -353,7 +359,10 @@ function logFirstPage() {
 				$.ajax({
 					url: temp,
 					type: "POST",
-					data: {"page": model.currentPage},
+                    data: {"page": model.currentPage,
+                        "schoolid": $(".school").eq(4).find("option:selected").val(),
+                        "typeid": $(".type").eq(2).find("option:selected").val()
+                    },
 
 					success: function(json) {
 						view.showManagemark(json);
@@ -372,7 +381,10 @@ function logFirstPage() {
 			$.ajax({
 					url: temp,
 					type: "POST",
-					data: {"page": model.currentPage},
+					data: {"page": model.currentPage,
+							"schoolid": $(".school").eq(4).find("option:selected").val(),
+							"typeid": $(".type").eq(2).find("option:selected").val()
+					},
 
 					success: function(json) {
 						view.showManagemark(json);
@@ -390,7 +402,13 @@ function logFirstPage() {
 			$.ajax({
 				url: temp,
 				type: "POST",
-				data: {"page": model.currentPage},
+                data: {"page": model.currentPage,
+                    "date1": $("#startDate").val(),
+                    "date2": $("#endDate").val(),
+                    "keywords": $("#searchSomething").val(),
+                    "school": $(".school").eq(2).find("option:selected").text(),
+                    "type": $(".type").eq(1).find("option:selected").text()
+                },
 
 				success: function(json) {
 					view.showCollection(json);
@@ -409,7 +427,13 @@ function logFirstPage() {
 				$.ajax({
 					url: temp,
 					type: "POST",
-					data: {"page": model.currentPage},
+                    data: {"page": model.currentPage,
+                        "date1": $("#startDate").val(),
+                        "date2": $("#endDate").val(),
+                        "keywords": $("#searchSomething").val(),
+                        "school": $(".school").eq(2).find("option:selected").text(),
+                        "type": $(".type").eq(1).find("option:selected").text()
+                    },
 
 					success: function(json) {
 						view.showCollection(json);
@@ -429,7 +453,13 @@ function logFirstPage() {
 				$.ajax({
 					url: temp,
 					type: "POST",
-					data: {"page": model.currentPage},
+                    data: {"page": model.currentPage,
+                        "date1": $("#startDate").val(),
+                        "date2": $("#endDate").val(),
+                        "keywords": $("#searchSomething").val(),
+                        "school": $(".school").eq(2).find("option:selected").text(),
+                        "type": $(".type").eq(1).find("option:selected").text()
+                    },
 
 					success: function(json) {
 						view.showCollection(json);
@@ -448,7 +478,13 @@ function logFirstPage() {
 			$.ajax({
 					url: temp,
 					type: "POST",
-					data: {"page": model.currentPage},
+					data: {"page": model.currentPage,
+						"date1": $("#startDate").val(),
+						"date2": $("#endDate").val(),
+						"keywords": $("#searchSomething").val(),
+						"school": $(".school").eq(2).find("option:selected").text(),
+						"type": $(".type").eq(1).find("option:selected").text()
+					},
 
 					success: function(json) {
 						view.showCollection(json);
@@ -542,7 +578,13 @@ function logFirstPage() {
 			$.ajax({
 				url: temp,
 				type: "POST",
-				data: {"page": model.currentPage},
+                data: {"page": model.currentPage,
+                    "date1": $("#startDate").val(),
+                    "date2": $("#endDate").val(),
+                    "keywords": $("#searchSomething").val(),
+                    "school": $(".school").eq(2).find("option:selected").text(),
+                    "type": $(".type").eq(1).find("option:selected").text()
+                },
 
 				success: function(json) {
 					view.showIntegrative(json);
@@ -561,7 +603,13 @@ function logFirstPage() {
 				$.ajax({
 					url: temp,
 					type: "POST",
-					data: {"page": model.currentPage},
+                    data: {"page": model.currentPage,
+                        "date1": $("#startDate").val(),
+                        "date2": $("#endDate").val(),
+                        "keywords": $("#searchSomething").val(),
+                        "school": $(".school").eq(2).find("option:selected").text(),
+                        "type": $(".type").eq(1).find("option:selected").text()
+                    },
 
 					success: function(json) {
 						view.showIntegrative(json);
@@ -581,7 +629,13 @@ function logFirstPage() {
 				$.ajax({
 					url: temp,
 					type: "POST",
-					data: {"page": model.currentPage},
+                    data: {"page": model.currentPage,
+                        "date1": $("#startDate").val(),
+                        "date2": $("#endDate").val(),
+                        "keywords": $("#searchSomething").val(),
+                        "school": $(".school").eq(2).find("option:selected").text(),
+                        "type": $(".type").eq(1).find("option:selected").text()
+                    },
 
 					success: function(json) {
 						view.showIntegrative(json);
@@ -600,7 +654,13 @@ function logFirstPage() {
 				$.ajax({
 					url: temp,
 					type: "POST",
-					data: {"page": model.currentPage},
+                    data: {"page": model.currentPage,
+                        "date1": $("#startDate").val(),
+                        "date2": $("#endDate").val(),
+                        "keywords": $("#searchSomething").val(),
+                        "school": $(".school").eq(2).find("option:selected").text(),
+                        "type": $(".type").eq(1).find("option:selected").text()
+                    },
 
 					success: function(json) {
 						view.showIntegrative(json);
@@ -619,7 +679,13 @@ function logFirstPage() {
 			$.ajax({
 				url: temp,
 				type: "POST",
-				data: {page: model.currentPage},
+                data: {"page": model.currentPage,
+                    "date1": $("#startDate").val(),
+                    "date2": $("#endDate").val(),
+                    "keywords": $("#searchSomething").val(),
+                    "school": $(".school").eq(2).find("option:selected").text(),
+                    "type": $(".type").eq(1).find("option:selected").text()
+                },
 
 				success: function(json) {
 					view.showSingle(json);
@@ -638,7 +704,13 @@ function logFirstPage() {
 				$.ajax({
 					url: temp,
 					type: "POST",
-					data: {page: model.currentPage},
+                    data: {"page": model.currentPage,
+                        "date1": $("#startDate").val(),
+                        "date2": $("#endDate").val(),
+                        "keywords": $("#searchSomething").val(),
+                        "school": $(".school").eq(2).find("option:selected").text(),
+                        "type": $(".type").eq(1).find("option:selected").text()
+                    },
 
 					success: function(json) {
 						view.showSingle(json);
@@ -659,14 +731,18 @@ function logFirstPage() {
 				$.ajax({
 					url: temp,
 					type: "POST",
-					data: {page: model.currentPage},
+                    data: {"page": model.currentPage,
+                        "date1": $("#startDate").val(),
+                        "date2": $("#endDate").val(),
+                        "keywords": $("#searchSomething").val(),
+                        "school": $(".school").eq(2).find("option:selected").text(),
+                        "type": $(".type").eq(1).find("option:selected").text()
+                    },
 
 					success: function(json) {
 						view.showSingle(json);
 					}
 				})
-			}	else {
-				console.log(model.currentPage);
 			}
 		}
 
@@ -680,7 +756,13 @@ function logFirstPage() {
 				$.ajax({
 					url: temp,
 					type: "POST",
-					data: {page: model.currentPage},
+                    data: {"page": model.currentPage,
+                        "date1": $("#startDate").val(),
+                        "date2": $("#endDate").val(),
+                        "keywords": $("#searchSomething").val(),
+                        "school": $(".school").eq(2).find("option:selected").text(),
+                        "type": $(".type").eq(1).find("option:selected").text()
+                    },
 
 					success: function(json) {
 						view.showSingle(json);
@@ -700,7 +782,13 @@ function logFirstPage() {
 			$.ajax({
 				url: temp,
 				type: "POST",
-				data: {"page": model.currentPage},
+                data: {"page": model.currentPage,
+                    "date1": $("#startDate").val(),
+                    "date2": $("#endDate").val(),
+                    "keywords": $("#searchSomething").val(),
+                    "school": $(".school").eq(2).find("option:selected").text(),
+                    "type": $(".type").eq(1).find("option:selected").text()
+                },
 
 				success: function(json) {
 					view.showPub(json);
@@ -717,7 +805,13 @@ function logFirstPage() {
 				$.ajax({
 					url: temp,
 					type: "POST",
-					data: {"page": model.currentPage},
+                    data: {"page": model.currentPage,
+                        "date1": $("#startDate").val(),
+                        "date2": $("#endDate").val(),
+                        "keywords": $("#searchSomething").val(),
+                        "school": $(".school").eq(2).find("option:selected").text(),
+                        "type": $(".type").eq(1).find("option:selected").text()
+                    },
 
 					success: function(json) {
 						view.showPub(json);
@@ -735,7 +829,13 @@ function logFirstPage() {
 				$.ajax({
 					url: temp,
 					type: "POST",
-					data: {"page": model.currentPage},
+                    data: {"page": model.currentPage,
+                        "date1": $("#startDate").val(),
+                        "date2": $("#endDate").val(),
+                        "keywords": $("#searchSomething").val(),
+                        "school": $(".school").eq(2).find("option:selected").text(),
+                        "type": $(".type").eq(1).find("option:selected").text()
+                    },
 
 					success: function(json) {
 						view.showPub(json);
@@ -753,7 +853,13 @@ function logFirstPage() {
 			$.ajax({
 				url: temp,
 				type: "POST",
-				data: {"page": model.currentPage},
+				data: {"page": model.currentPage,
+						"date1": $("#startDate").val(),
+						"date2": $("#endDate").val(),
+                    	"keywords": $("#searchSomething").val(),
+                    	"school": $(".school").eq(2).find("option:selected").text(),
+                    	"type": $(".type").eq(1).find("option:selected").text()
+				},
 
 				success: function(json) {
 					view.showPub(json);

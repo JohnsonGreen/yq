@@ -135,7 +135,17 @@ var view = {
 			$(".single-contentDet"+i).append('<span class="single-mark">'+s[i].score+'</span>');
 			$(".single-contentDet"+i).append('<span class="single-unit">'+s[i].schname+'</span>');
 			$(".single-contentDet"+i).append('<span class="single-time">'+s[i].createtime+'</span>');
-			$(".single-contentDet"+i).append('<span class="single-operation"><a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a><a onclick="ctrl.silove('+s[i].messageid+')">收藏</a><a onclick="ctrl.sidele('+s[i].messageid+')">删除</a></span>');
+
+            var str = '<span class="single-operation">';
+            if(!isNull(s[i].flag) && s[i].flag == 1){
+                str += '<a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a>';
+            }
+            str += '<a onclick="ctrl.silove('+s[i].messageid+')">收藏</a>';
+            if(!isNull(s[i].flag) && s[i].flag == 1){
+                str += '<a onclick="ctrl.sidele('+s[i].messageid+')">删除</a>';
+            }
+            str += '</span>';
+            $(".single-contentDet"+i).append(str);
 		}
 	},
 
@@ -200,15 +210,11 @@ var view = {
 			$(".managemark-contentDet"+i).append('<span class="managemark-number">'+s[i].messageid+'</span>');
 			$(".managemark-contentDet"+i).append('<span class="managemark-origin">'+s[i].schname+'</span>');
 			$(".managemark-contentDet"+i).append('<span class="managemark-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.markdet('+s[i].messageid+')">'+s[i].title+'</a></span>');
-			$(".managemark-contentDet"+i).append('<span class="managemark-total">'+s[i].score+'</span>');
-			$(".managemark-contentDet"+i).append('<span class="managemark-mark">'+s[i].base+'</span>');
-			$(".managemark-contentDet"+i).append('<span class="managemark-xuanyong"><input name="select" value="'+s[i].select+'"></span>');
-			$(".managemark-contentDet"+i).append('<span class="managemark-pishi"><input name="approval" value="'+s[i].approval+'"></span>');
-			$(".managemark-contentDet"+i).append('<span class="managemark-yujing"><input name="warning" value="'+s[i].warning+'"></span>');
-			$(".managemark-contentDet"+i).append('<span class="managemark-zhiliang"><input name="quality" value="'+s[i].quality+'"></span>');
-			$(".managemark-contentDet"+i).append('<span class="managemark-zhuanxiang"><input name="special" value="'+s[i].special+'"></span>');
-			$(".managemark-contentDet"+i).append('<span class="managemark-minus"><input name="substract" value="'+s[i].substract+'"></span>');
-			$(".managemark-contentDet"+i).append('<span class="managemark-operation"><a onclick="ctrl.markJudge('+s[i].messageid+')">打分</a></span>');
+			$(".managemark-contentDet"+i).append('<span id="marktotal'+i+'" class="managemark-total">'+s[i].score+'</span>');
+			$(".managemark-contentDet"+i).append('<span id="markbase'+i+'" class="managemark-mark">'+s[i].base+'</span>');
+	         $(".managemark-contentDet"+i).append('<span class="managemark-add"><input id="markadd'+i+'" name="add" value="'+s[i].add+'"></span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-minus"><input id="markminus'+i+'" name="substract" value="'+s[i].substract+'"></span>');
+			$(".managemark-contentDet"+i).append('<span class="managemark-operation"><a onclick="ctrl.markJudge('+s[i].messageid+','+i+')">打分</a></span>');
 		}
 	},
 
@@ -312,7 +318,7 @@ var ctrl = {
 	getDetail: function(index) {
 		$.ajax({
 			url: model.identity.root + model.single.url.single_details,
-			type: "GET",
+			type: "POST",
 			datatype: "json",
 			async: false,
 			data:{'messageid':index},
@@ -434,7 +440,7 @@ var ctrl = {
 		$(".public-content").empty();
 		$.ajax({
 			url: model.identity.root + model.identity.leftBar[0].api,
-			type: "GET",
+			type: "POST",
 			datatype: "json",
 
 			success: function(json) {
@@ -456,12 +462,12 @@ var ctrl = {
 
 				$.ajax({
 					url:  model.identity.root + model.identity.leftBar[i].api,
-					type: "GET",
+					type: "POST",
 					datatype: "json",
 
 					success: function(json) {
 						model.pub.max_page = json.max_page;
-						model.single.url = json.url;
+						model.pub.url = json.url;
 						view.showPub(json);
 					}
 				})
@@ -751,8 +757,26 @@ var ctrl = {
 		view.lookArticle();
 	},
 
-	markJudge: function(index) {
+	markJudge: function(index, number) {
+        $.ajax({
+            url: model.identity.root + model.managemark.url.magscore_mark,
+            type: "POST",
+            datatype: "json",
+            data: {
+            	"messageid": index,
+				"add": $("#markadd"+number).val(),
+                "substract": $("#markminus"+number).val(),
+			},
+            success: function(json) {
+            	if(json.is_err == 0){
+                    $("#marktotal"+number).text(json.result.score);
+            		//view.showKey(json);
+            	} else {
+            		alert(json.result);
+				}
 
+            }
+        })
 	},
 
 	//获得管理关键字的内容
@@ -800,22 +824,41 @@ var ctrl = {
 	//查看学院报送的详情页
 	listdet: function(index) {
 		$.ajax({
-			url: "",
-			type: "GET",
+			url: model.identity.root + model.marklist.url.scolist_details,
+			type: "POST",
 			datatype: "json",
-
+            data:{"schoolid":index},
 			success: function(json) {
 				$(".marklist").css("display", "none");
 				$(".school-detail").css("display", "block");
 				$(".schdet-content").empty();
 				var s = json.result;
-				for(var i = 0; i < 1; i++){
+				for(var i = 0; i < s.length; i++) {
 
+					$(".schdet-content").append('<div class="schdet-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
+					$(".schdet-contentDet"+i).append('<span class="schdet-number">'+s[i].proid+'</span>');
+					$(".schdet-contentDet"+i).append('<span class="schdet-type">'+s[i].type+'</span>');
+					$(".schdet-contentDet"+i).append('<span class="schdet-send">'+s[i].proname+'</span>');
+					$(".schdet-contentDet"+i).append('<span class="schdet-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.schdetdet('+s[i].messageid+')">'+s[i].title+'</a></span>');
+					$(".schdet-contentDet"+i).append('<span class="schdet-mark">'+s[i].score+'</span>');
+					$(".schdet-contentDet"+i).append('<span class="schdet-person">'+s[i].schname+'</span>');
+					$(".schdet-contentDet"+i).append('<span class="schdet-time">'+s[i].createtime+'</span>');
+					$(".schdet-contentDet"+i).append('<span class="schdet-operation"><a onclick="ctrl.schdetdele('+s[i].messageid+')">删除</a></span>');
 				}
 			}
 		})
 	},
 
+  schdetdet: function(index) {
+		$(".school-detail").css("display", "none");
+		view.transform();
+		ctrl.getDetail(index);
+		view.lookArticle();
+	},
+
+	schdetdele: function(index) {
+
+	},
 	//获得在线人数的内容
 	getOnline: function() {
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
@@ -970,16 +1013,40 @@ var ctrl = {
 
 	//上传用户发表的舆情信息
 	singlesend: function() {
-		$.ajax({
-			url: model.identity.root + model.single.url.single_add,
-			type: "POST",
-			data: $('#send').serialize(),
-			success: function() {
-				alert("推送成功！");
-				$(".single-send").css("display", "none");
-				$(".single").css("display", "block");
-			}
-		})
+		if($(".send-key").css("display") == "block") {
+            $.ajax({
+                url: model.identity.root + model.single.url.single_add,
+                type: "POST",
+                data: $('#send').serialize(),
+                success: function() {
+                    alert("推送成功！");
+                    $(".single-send").css("display", "none");
+                    $(".single-post").css("display", "block");
+                }
+            })
+		} else if($(".send-product").css("display") == "block") {
+            $.ajax({
+                url: model.identity.root + model.integrative.url.overall_add,
+                type: "POST",
+                data: $('#send').serialize(),
+                success: function() {
+                    alert("推送成功！");
+                    $(".single-send").css("display", "none");
+                    $(".integrative-post").css("display", "block");
+                }
+            })
+		} else {
+            $.ajax({
+                url: model.identity.root + model.pub.url.announce_add,
+                type: "POST",
+                data: $('#send').serialize(),
+                success: function() {
+                    alert("推送成功！");
+                    $(".single-send").css("display", "none");
+                    $(".opinion").css("display", "block");
+                }
+            })
+		}
 	},
 
 	integrativesend: function() {
@@ -991,7 +1058,7 @@ var ctrl = {
 			success: function() {
 				alert("推送成功！");
 				$(".single-send").css("display", "none");
-				$(".integrative").css("display", "block");
+				$(".integrative-post").css("display", "block");
 			}
 		})
 	},

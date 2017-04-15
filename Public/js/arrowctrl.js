@@ -116,15 +116,11 @@ function opinionLeft() {
 
 		function managemarkLeft() {
 			$(".managemark-number").css("display", "block");
-			$(".managemark-origin").css("display", "block");
+			$(".managemark-origin").css("display", "none");
 			$(".managemark-title").css("display", "block");
 			$(".managemark-total").css("display", "none");
 			$(".managemark-mark").css("display", "none");
-			$(".managemark-xuanyong").css("display", "none");
-			$(".managemark-pishi").css("display", "none");
-			$(".managemark-yujing").css("display", "none");
-			$(".managemark-zhiliang").css("display", "none");
-			$(".managemark-zhuanxiang").css("display", "none");
+			$(".managemark-add").css("display", "none");
 			$(".managemark-minus").css("display", "none");
 			$(".managemark-operation").css("display", "none");
 			$(".managemark-left").css("display", "none");
@@ -133,17 +129,39 @@ function opinionLeft() {
 
 		function managemarkRight() {
 			$(".managemark-number").css("display", "none");
-			$(".managemark-origin").css("display", "none");
+			$(".managemark-origin").css("display", "block");
 			$(".managemark-title").css("display", "none");
 			$(".managemark-total").css("display", "block");
 			$(".managemark-mark").css("display", "block");
-			$(".managemark-xuanyong").css("display", "block");
-			$(".managemark-pishi").css("display", "block");
-			$(".managemark-yujing").css("display", "block");
-			$(".managemark-zhiliang").css("display", "block");
-			$(".managemark-zhuanxiang").css("display", "block");
+			$(".managemark-add").css("display", "block");
 			$(".managemark-minus").css("display", "block");
 			$(".managemark-operation").css("display", "block");
 			$(".managemark-left").css("display", "block");
 			$(".managemark-right").css("display", "none");
+		}
+
+		function schdetLeft() {
+			$(".schdet-number").css("display", "block");
+			$(".schdet-type").css("display", "none");
+			$(".schdet-send").css("display", "none");
+			$(".schdet-title").css("display", "block");
+			$(".schdet-mark").css("display", "none");
+			$(".schdet-person").css("display", "none");
+			$(".schdet-time").css("display", "none");
+			$(".schdet-operation").css("display", "block");
+			$(".schdet-left").css("display", "none");
+			$(".schdet-right").css("display", "block");
+		}
+
+		function schdetRight() {
+			$(".schdet-number").css("display", "none");
+			$(".schdet-type").css("display", "block");
+			$(".schdet-send").css("display", "block");
+			$(".schdet-title").css("display", "none");
+			$(".schdet-mark").css("display", "block");
+			$(".schdet-person").css("display", "block");
+			$(".schdet-time").css("display", "block");
+			$(".schdet-operation").css("display", "none");
+			$(".schdet-left").css("display", "block");
+			$(".schdet-right").css("display", "none");
 		}

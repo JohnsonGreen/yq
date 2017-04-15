@@ -42,19 +42,15 @@ class MessageModel extends BaseModel{
      */
     public function getMessageCount($type){
 
-        $where = '';
+        $where = ' WHERE is_delete = 0 ';
         if(!empty($type)){
-            $where = ' WHERE ';
-            $flag=false;
             if(!empty($type['schoolid'])){
-                $where .= ' schoolid = '.$type['schoolid'];
-                $flag = true;
+                $where .= ' and schoolid = '.$type['schoolid'];
+            }
+            if(!empty($type['typeid'])){
+                $where .= ' and typeid = '.$type['typeid'];
             }
 
-            if(!empty($type['typeid'])){
-                $where .= $flag ?  ' && ' : '';
-                $where .= ' typeid = '.$type['typeid'];
-            }
         }
         $res = $this->query('SELECT COUNT(*)  count FROM __MESSAGE__ '.$where);
         return $res[0]['count'];
@@ -71,6 +67,20 @@ class MessageModel extends BaseModel{
         ))->find();
         return $res['score'];
     }
+
+    /**
+     * 根据报送id返回基础分
+     * @param $messageid
+     * @return mixed
+     */
+    public function getSingleBase($messageid){
+        $res = $this->field('base')->where(array(
+            'messageid' => $messageid
+        ))->find();
+        return $res['base'];
+    }
+
+
 
     /**
      *  根据报送id返回学院id
@@ -154,7 +164,9 @@ class MessageModel extends BaseModel{
             ->join('yq_user on yq_message.userid = yq_user.userid')
             ->where($map)
             ->field('yq_message.messageid,yq_message.keyword,url,base,select,approval,warning,quality,special,substract,yq_message.userid, schname, yq_message.score, yq_message.title, yq_message.content, yq_message.createtime, click, type, username')
-            ->find();
+            ->select();
+
+        //请不要再把select改成find了，OK?
 //        cout($message);
         $message = stand_date($message);
         return $message;

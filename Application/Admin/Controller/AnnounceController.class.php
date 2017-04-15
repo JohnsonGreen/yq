@@ -26,7 +26,7 @@ class AnnounceController extends AdminBaseController{
 		//权限问题管理员才能有添加公告权限，我没判断
 		$res['url'] = array(
 			'announce_search'=>'Admin/Announce/search',
-			'add_announce'=>'Admin/Announce/add_announce',
+			'announce_add'=>'Admin/Announce/add_announce',
 		);
 		echo json_encode($res);
 		exit;
@@ -39,8 +39,14 @@ class AnnounceController extends AdminBaseController{
 
 		$date1 = strtotime(I('post.date1'));
 		$date2 = strtotime(I('post.date2'));
-		if($date1 && $date2)
-			$map['createtime'] = array(array('gt', $date1), array('lt', $date2));
+
+        if(empty($date1) && !empty($date2)){
+            $map['createtime'] =  array('lt', $date2  + 3600000*24);
+        }else if(!empty($date1) && empty($date2)){
+            $map['createtime'] = array('gt', $date1);
+        }else if($date1 && $date2){
+            $map['createtime'] = array(array('gt', $date1), array('lt', $date2  + 3600000*24));
+        }
 
 		$key = I('post.keywords');
 		if($key)
@@ -58,6 +64,8 @@ class AnnounceController extends AdminBaseController{
 		exit;
 
 	}
+
+
 	public function key_search(){
 		$key = I('post.keywords');
 		$map['title'] = array('like', $key);
@@ -93,15 +101,39 @@ class AnnounceController extends AdminBaseController{
 	//增加
 	public function add_announce(){
 		//标题输入最长长度
+        @session_start();
 		$max_title_length = 10;
 
 
-		$data['userid'] = I('session.userid');
+
+		$data['userid'] = $_SESSION['usesr']['userid'];
 		$data['title'] = trim(I('post.title'));
 		$data['content'] = trim(I('post.content'));
 
 		$data['creattime'] = time();
-		if($data['userid'] && $data['title'] && $data['content'] && $data['creattime']){
+
+//
+//        $upload = new \Think\Upload();// 实例化上传类
+//        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+//        $upload->exts      =     array('pptx','ppt','xls','xlsx','pdf', 'txt', 'doc', 'jpeg', 'docx', 'png', 'jpg');// 设置附件上传类型
+//        $upload->rootPath  =     __ROOT__.'/Uploads/'; // 设置附件上传根目录
+//        $upload->savePath  =     ''; // 设置附件上传（子）目录
+//
+//        $info   =   $upload->upload();
+//        $imgPath = '';
+//        if(!$info) {// 上传错误提示错误信息
+//            $response['is_err'] = 1;
+//            $result['result'] = $upload->getError();
+//        }else{// 上传成功
+//            $response['is_err'] = 0;
+//            $result['result'] = "is_ok";
+//            $imgPath = $upload->rootPath.$info['content']['savepath'].$info['content']['savename'];
+//        }
+//        $data['file'] = $imgPath;
+
+
+
+       // if($data['userid'] && $data['title'] && $data['content'] && $data['creattime']){
 			if(strlen($data['title']) > $max_title_length ){
 				$result['is_err'] = 1;
 				$result['reusult'] = '标题太长，请重试！';
@@ -111,12 +143,12 @@ class AnnounceController extends AdminBaseController{
 				$result['reusult'] = 'is_ok';
 			}else{
 				$result['is_err'] = 1;
-				$result['reusult'] = '数据库错误，请重试！';
+				$result['reusult'] = 'kasdjfhds';
 			}
-		}else{
-			$result['is_err'] = 1;
-			$result['reusult'] = '所填资料不全，请重试！';
-		}
+		//}else{
+		//	$result['is_err'] = 1;
+		//	$result['reusult'] = '3333333333333';
+		//}
 
 		echo json_encode($result);
 		exit;

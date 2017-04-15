@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	padding: 0;
+	padding: 5px;
 	min-width: 300px;
 	background-color: #f9f9f9;
 	box-sizing: content-box;
@@ -9,7 +9,6 @@ body {
 }
 
 header {
-	display: flex;
 	background-color: #e5e5e5;
 	width: 100%;
 	height: 50px;
@@ -19,7 +18,9 @@ header {
 
 header span {
 	font-size: 22px;
-	margin: auto 10%;
+	margin-top: 10px;
+	margin-right: 10%;
+	float: right;
 }
 
 table {
@@ -38,10 +39,10 @@ table {
 .login {
 	background-color: #e5e5e5;
 	border-top: 2px solid #a27c4e;
-	width: 100%;
+	width: 90%;
 	height: 300px;
-	margin-top: 20px;
-	opacity: 0.8;
+	margin: 20px auto 0 auto;
+	opacity: 0.9;
 	border-radius: 10px;
 }
 
@@ -123,6 +124,7 @@ table {
 .showingimg {
 	position: relative;
 	top: 2px;
+	left: 3%;
 	display: inline-block;
 }
 
@@ -211,13 +213,15 @@ table {
 	background-color: white;
 	color: black;
 	margin-top: 10px;
+	font-size: 0.8em;
 }
 
 .news p, .public p {
+	font-size: 20px;
 	margin: 0;
-	font-weight: bold;
 	background-color: #f9f9f9;
 	border-bottom: 3px solid #4d8aa8;
+	padding-bottom: 5px;
 }
 
 /*搜索栏*/
@@ -239,10 +243,15 @@ input {
 	width: 80px;
 }
 
+.opinion-search span {
+	font-size: 14px;
+}
+
 .keysearch {
 	display: inline;
 	margin-top: 10px;
 	margin-left: 20px;
+	font-size: 14px;
 }
 
 button {
@@ -287,7 +296,7 @@ button:hover {
 .opinion-callback {
 	display: none;
 	text-align: center;
-	width: 28%;
+	width: 20%;
 }
 
 .opinion-title {
@@ -299,7 +308,7 @@ button:hover {
 .opinion-author {
 	display: none;
 	text-align: center;
-	width: 10%;
+	width: 18%;
 }
 
 .opinion-time {
@@ -347,6 +356,7 @@ button:hover {
 	color: #4d8aa8;
 	text-decoration: none;
 	margin: 0 5px;
+	cursor: pointer;
 }
 
 .opinion-page a:hover {
@@ -514,6 +524,7 @@ button:hover {
 	color: #4d8aa8;
 	text-decoration: none;
 	margin: 0 5px;
+	cursor: pointer;
 }
 
 .single-page a:hover,
@@ -745,13 +756,13 @@ select {
 }
 
 .managemark-origin {
-	display: inline-block;
+	display: none;
 	width: 20%;
 }
 
 .managemark-title {
 	display: inline-block;
-	width: 60%;
+	width: 80%;
 }
 
 .managemark-total {
@@ -764,29 +775,9 @@ select {
 	width: 10%;
 }
 
-.managemark-xuanyong {
+.managemark-add {
 	display: none;
-	width: 10%;
-}
-
-.managemark-pishi {
-	display: none;
-	width: 10%;
-}
-
-.managemark-yujing {
-	display: none;
-	width: 10%;
-}
-
-.managemark-zhiliang {
-	display: none;
-	width: 10%;
-}
-
-.managemark-zhuanxiang {
-	display: none;
-	width: 10%;
+	width: 30%;
 }
 
 .managemark-minus {
@@ -814,7 +805,7 @@ select {
 }
 
 /*查看学院详情页*/
-.schdet-number {
+	.schdet-number {
 		display: inline-block;
 		width: 10%;
 	}
@@ -852,6 +843,16 @@ select {
 	.schdet-operation {
 		display: inline-block;
 		width: 10%;
+	}
+
+	.schdet-content  a {
+		cursor: pointer;
+		color: #4d8aa8;
+		text-decoration: none;
+	}
+
+	.schdet-content a:hover {
+		text-decoration: underline;
 	}
 
 /*管理关键字开始*/
@@ -1136,6 +1137,10 @@ footer span {
 }
 
 @media screen and (min-width: 800px) {
+	body {
+		padding: 0;
+	}
+
 	header {
 		height: 60px;
 	}
@@ -1151,7 +1156,7 @@ footer span {
 	.login {
 		width: 400px;
 		float: right;
-		margin: 60px 100px 0 0;
+		margin: 5% 10% 0 0;
 	}
 
 	.navigation {
@@ -1193,11 +1198,11 @@ footer span {
 	}
 
 	.opinion-callback {
-		width: 12%;
+		width: 8%;
 	}
 
 	.opinion-author {
-		width: 5%;
+		width: 12%;
 	}
 
 	.opinion-time {
@@ -1248,7 +1253,10 @@ footer span {
 		width: 10%;
 	}
 
-	.single-title,
+	.single-title {
+		width: 40%;
+	}
+	
 	.integrative-title {
 		width: 30%;
 	}
@@ -1403,7 +1411,7 @@ footer span {
 
 	.managemark-title {
 		display: inline-block;
-		width: 30%;
+		width: 45%;
 	}
 
 	.managemark-total {
@@ -1416,29 +1424,9 @@ footer span {
 		width: 5%;
 	}
 
-	.managemark-xuanyong {
+	.managemark-add {
 		display: inline-block;
-		width: 5%;
-	}
-
-	.managemark-pishi {
-		display: inline-block;
-		width: 5%;
-	}
-
-	.managemark-yujing {
-		display: inline-block;
-		width: 5%;
-	}
-
-	.managemark-zhiliang {
-		display: inline-block;
-		width: 5%;
-	}
-
-	.managemark-zhuanxiang {
-		display: inline-block;
-		width: 5%;
+		width: 10%;
 	}
 
 	.managemark-minus {
@@ -1450,8 +1438,6 @@ footer span {
 		display: inline-block;
 		width: 8%;
 	}
-
-
 
 	.schdet-number {
 		display: inline-block;

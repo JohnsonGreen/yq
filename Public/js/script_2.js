@@ -136,7 +136,8 @@ var view = {
             $(".single-contentDet"+i).append('<span class="single-mark">'+s[i].score+'</span>');
             $(".single-contentDet"+i).append('<span class="single-unit">'+s[i].schname+'</span>');
             $(".single-contentDet"+i).append('<span class="single-time">'+s[i].createtime+'</span>');
-            $(".single-contentDet"+i).append('<span class="single-operation"><a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a><a onclick="ctrl.silove('+s[i].messageid+')">收藏</a><a onclick="ctrl.sidele('+s[i].messageid+')">删除</a></span>');
+
+
         }
     },
 

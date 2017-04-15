@@ -62,8 +62,13 @@ class MessageController extends AdminBaseController{
 
 		$date1 = strtotime(I('post.date1'));
 		$date2 = strtotime(I('post.date2'));
-		if($date1 && $date2)
-			$map['createtime'] = array(array('gt', $date1), array('lt', $date2));
+		if(empty($date1) && !empty($date2)){
+            $map['createtime'] =  array('lt', $date2);
+        }else if(!empty($date1) && empty($date2)){
+            $map['createtime'] = array('gt', $date1);
+        }else if($date1 && $date2){
+            $map['createtime'] = array(array('gt', $date1), array('lt', $date2));
+        }
 
 		//关键字
 		$key = I('post.keywords');
