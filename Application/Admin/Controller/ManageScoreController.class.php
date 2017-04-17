@@ -166,8 +166,7 @@ class ManageScoreController extends AdminBaseController{
      * @return int
      */
     public function getSchoolPages(){
-        $data['pages'] = intval((D('School')->getSchoolCount())/10) + 1;
-        $this->returnJson($data);
+        return  ceil((D('School')->getSchoolCount())/10);
     }
 
     /**
@@ -204,6 +203,7 @@ class ManageScoreController extends AdminBaseController{
 
         $result['is_err'] = 0;
         $result['result'] = D('School')->getSchoolScoreList($map['page'],$map['pagesize']);
+        $result['max_page'] = $this->getSchoolPages();
         $result['url'] = array(
             'scolist_details' => 'Admin/ManageScore/getScoreDetails'
         );
@@ -229,14 +229,54 @@ class ManageScoreController extends AdminBaseController{
         exit;
     }
 
+
     public function getScoreDetails(){
         $p = I('post.page');
+
+       // echo json_encode(I('post.'));
+       // exit;
+        if(empty($p))
+            $p = 1;
         $schoolid = trim(I('post.schoolid'));
         $result = D('Message')->getDetail($schoolid, $p);
         $response['is_err'] = 0;
-        //$result['schoolid'] = $schoolid;
         $response['result'] = $result;
-        $response['max_page'] = max_page($result);
+        $response['url'] = array(
+             'magscore_details' => 'Admin/ManageScore/allDetail',
+             'magscore_del'=>'Admin/ManageScore/delDetail'
+        );
+
+        $response['max_page'] = ceil($this->getAllDetailsPages($schoolid)/10);
+        echo json_encode($response);
+        exit;
+    }
+
+    private function getAllDetailsPages($schoolid){
+        $map['is_delete'] = 0;
+        $map['schoolid'] = $schoolid;
+        $res = D('Message')->where($map)->count('*');
+       return $res;
+    }
+
+
+    //返回点击标题出现的详情页
+    public function allDetail(){
+        $id = I('post.messageid');
+        $response['is_err'] = 0;
+        $response['result'] = D('Message')->getMessageDetails($id);
+        echo json_encode($response);
+        exit;
+    }
+
+    public function delDetail(){
+        $id = I('post.messageid');
+        if(D('Message')->del($id)){
+            $response['is_err'] = 0;
+            $response['result'] = '删除成功！';
+        }else{
+            $response['is_err'] = 0;
+            $response['result'] = '删除失败！';
+        }
         echo json_encode($response);
         exit;
     }

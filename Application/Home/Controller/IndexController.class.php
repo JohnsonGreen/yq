@@ -21,6 +21,9 @@ class IndexController extends HomeBaseController{
             // exit();
            // $map['password']=md5($map['password']);
             $data=M('User')->where($map)->find();
+
+
+
             if (empty($data)) {
                 echo json_encode(array(
                     'is_err' => '1',
@@ -44,6 +47,9 @@ class IndexController extends HomeBaseController{
                     'schoolid'=>$school['schoolid'],
                 );
 
+                $result = D('Announce')->getHint($data['userid']);
+
+
                 $_SESSION['user']=array(
                     'userid'=>$data['userid'],
                     'username'=>$data['username'],
@@ -58,7 +64,9 @@ class IndexController extends HomeBaseController{
                     'logout'=>$logout,
                     'update'=>$update,
                     'leftBar'=>$leftBar,
-                    'rank'=>$rank
+                    'rank'=>$rank,
+                    'hint_num'=>$result['num'],
+                    'hint_announce'=>$result['result']
                 );
 
                 echo json_encode(array(

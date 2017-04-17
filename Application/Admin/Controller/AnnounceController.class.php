@@ -27,6 +27,7 @@ class AnnounceController extends AdminBaseController{
 		$res['url'] = array(
 			'announce_search'=>'Admin/Announce/search',
 			'announce_add'=>'Admin/Announce/add_announce',
+            'announce_details'=>'Admin/Announce/detail'
 		);
 		echo json_encode($res);
 		exit;
@@ -103,8 +104,6 @@ class AnnounceController extends AdminBaseController{
 		//标题输入最长长度
         @session_start();
 		$max_title_length = 10;
-
-
 
 		$data['userid'] = $_SESSION['usesr']['userid'];
 		$data['title'] = trim(I('post.title'));
@@ -193,9 +192,17 @@ class AnnounceController extends AdminBaseController{
 	}
 
 	public function detail(){
-		$map['anoceid'] = I('post,id');
-		$result = D('Announce')->where($map)->find();
-		$result = stand_date($result);
+	
+		$result = D()->table('__ANNOUNCE__ a')->join('__USER__ b')->join('__SCHOOL__ c')->field('a.file,a.title,a.content,a.createtime,b.userid,b.username,c.schname')->where('a.anoceid='.I('post.anoceid').' and a.userid=b.userid and b.schoolid=c.schoolid')->find();
+		$result['createtime'] = date('Y-m-d H:i:s', $result['createtime']);
+		//$result = stand_date($result);
+
+        $data['userid'] = I('session.user')['userid'];
+        $data['announceid'] = I('post.anoceid');
+        if(!(D('Hint')->where($data)->find())){
+            D('Hint')->add($data);
+        }
+
 		$response['result'] = $result;
 		$response['is_err'] = 0;
 		echo json_encode($response);

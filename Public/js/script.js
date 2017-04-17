@@ -65,6 +65,7 @@ var model = {
 	marklist: {url:"",max_page:""},
 	online: {url:"",max_page:""},
 	log: {url:"",max_page:""},
+	listdet: {url: "", max_page: 1, schoolid: ""},
 	//菜单的内容，用数组表示
 	menu: [],
 	ranks: [],
@@ -269,6 +270,23 @@ var view = {
 			$(".log-contentDet"+i).append('<span class="log-ip">'+s[i].lastip+'</span>');
 			$(".log-contentDet"+i).append('<span class="log-time">'+s[i].lastlogintime+'</span>');
 		}
+	},
+
+	showschdet: function(json, index) {
+        $("#schdet-currentPage").text(model.currentPage);
+        $(".schdet-content").empty();
+        var s = json.result;
+        for(var i = 0; i < s.length; i++) {
+            $(".schdet-content").append('<div class="schdet-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
+            $(".schdet-contentDet"+i).append('<span class="schdet-number">'+s[i].proid+'</span>');
+            $(".schdet-contentDet"+i).append('<span class="schdet-type">'+s[i].type+'</span>');
+            $(".schdet-contentDet"+i).append('<span class="schdet-send">'+s[i].proname+'</span>');
+            $(".schdet-contentDet"+i).append('<span class="schdet-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.schdetdet('+s[i].messageid+')">'+s[i].title+'</a></span>');
+            $(".schdet-contentDet"+i).append('<span class="schdet-mark">'+s[i].score+'</span>');
+            $(".schdet-contentDet"+i).append('<span class="schdet-person">'+s[i].schname+'</span>');
+            $(".schdet-contentDet"+i).append('<span class="schdet-time">'+s[i].createtime+'</span>');
+            $(".schdet-contentDet"+i).append('<span class="schdet-operation"><a onclick="ctrl.schdetdele('+s[i].messageid+')">删除</a></span>');
+        }
 	}
 }
 
@@ -314,6 +332,36 @@ var ctrl = {
 		view.showMenu();
 	},
 
+	//获得公告页的详情
+    getPubDetail: function(index) {
+        $.ajax({
+            url: model.identity.root + model.pub.url.announce_details,
+            type: "POST",
+            datatype: "json",
+            async: false,
+            data:{'anoceid':index},
+            success: function(json) {
+                var s = json.result;
+                $(".details-base").empty();
+                $(".details-add").empty();
+                $(".details-substract").empty();
+                $(".details-type").empty();
+                $(".details-username").empty();
+                $(".details-username").append('上报人：' + s.username + " ");
+                $(".details-schname").empty();
+                $(".details-schname").append('上报单位：' + s.schname);
+                $(".details-createtime").empty();
+                $(".details-createtime").append('上报时间：' + s.createtime + " ");
+                $(".details-content").empty();
+                $(".details-content").append('<h3 style="margin-left:20px;">标题：'+s.title+'</h3>');
+                if(s.file != null)
+                	$(".details-content").append('<p style="margin-left:20px;">文件下载：<a href="'+s.file+'">'+s.file+'</p>');
+                $(".details-content").append('<article id="article1" style="margin-left:20px;">'+s.content+'</article>');
+                $(".details-content").append('<textarea name="content" id="article2" style="margin-left:20px;">'+s.content+'</textarea>');
+            }
+        })
+    },
+
 	//获得舆情的详细信息
 	getDetail: function(index) {
 		$.ajax({
@@ -334,16 +382,8 @@ var ctrl = {
 				$(".details-type").append('舆情类型：' + s.type + " ");
 				$(".details-base").empty();
 				$(".details-base").append('报送分：' + s.base + "  ");
-				$(".details-select").empty();
-				$(".details-select").append('选用分：' + s.select + "  ");
-				$(".details-approval").empty();
-				$(".details-approval").append('批示分：' + s.approval + "  ");
-				$(".details-warning").empty();
-				$(".details-warning").append('预警分：' + s.warning + "  ");
-				$(".details-quality").empty();
-				$(".details-quality").append('质量分：' + s.quality + "  ");
-				$(".details-special").empty();
-				$(".details-special").append('专项分：' + s.special + "  ");
+				$("details-add").empty();
+				$("details-add").append('加分：' + s.add);
 				$(".details-substract").empty();
 				$(".details-substract").append('减分：' + s.substract);
 				$(".details-content").empty();
@@ -355,6 +395,41 @@ var ctrl = {
 			}
 		})
 	},
+
+
+    //获得舆情的详细信息
+    getDetailMarkList: function(index) {
+        $.ajax({
+            url: model.identity.root + model.listdet.url.magscore_details,
+            type: "POST",
+            datatype: "json",
+            async: false,
+            data:{'messageid':index},
+            success: function(json) {
+                var s = json.result;
+                $(".details-username").empty();
+                $(".details-username").append('上报人：' + s.username + " ");
+                $(".details-schname").empty();
+                $(".details-schname").append('上报单位：' + s.schname);
+                $(".details-createtime").empty();
+                $(".details-createtime").append('上报时间：' + s.createtime + " ");
+                $(".details-type").empty();
+                $(".details-type").append('舆情类型：' + s.type + " ");
+                $(".details-base").empty();
+                $(".details-base").append('报送分：' + s.base + "  ");
+                $("details-add").empty();
+                $("details-add").append('加分：' + s.add);
+                $(".details-substract").empty();
+                $(".details-substract").append('减分：' + s.substract);
+                $(".details-content").empty();
+                $(".details-content").append('<h3 style="margin-left:20px;">标题：'+s.title+'</h3>');
+                $(".details-content").append('<p style="margin-left:20px;">关键字：'+s.keyword+'</p>');
+                $(".details-content").append('<p style="margin-left:20px;">来源网址：<a href="'+s.url+'">'+s.url+'</p>');
+                $(".details-content").append('<article id="article1" style="margin-left:20px;">'+s.content+'</article>');
+                $(".details-content").append('<textarea name="content" id="article2" style="margin-left:20px;">'+s.content+'</textarea>');
+            }
+        })
+    },
 
 	//获得当前的主页面,调整各个部分的布局方式
 	getTitle: function(i) {
@@ -479,7 +554,7 @@ var ctrl = {
 	//舆情公告获取详情页
 	opdetail: function(index) {
 		view.transform();
-		ctrl.getDetail(index);
+		ctrl.getPubDetail(index);
 		view.lookArticle();
 	},
 
@@ -829,22 +904,12 @@ var ctrl = {
 			datatype: "json",
             data:{"schoolid":index},
 			success: function(json) {
+                model.listdet.schoolid = index;
 				$(".marklist").css("display", "none");
 				$(".school-detail").css("display", "block");
-				$(".schdet-content").empty();
-				var s = json.result;
-				for(var i = 0; i < s.length; i++) {
-
-					$(".schdet-content").append('<div class="schdet-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
-					$(".schdet-contentDet"+i).append('<span class="schdet-number">'+s[i].proid+'</span>');
-					$(".schdet-contentDet"+i).append('<span class="schdet-type">'+s[i].type+'</span>');
-					$(".schdet-contentDet"+i).append('<span class="schdet-send">'+s[i].proname+'</span>');
-					$(".schdet-contentDet"+i).append('<span class="schdet-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.schdetdet('+s[i].messageid+')">'+s[i].title+'</a></span>');
-					$(".schdet-contentDet"+i).append('<span class="schdet-mark">'+s[i].score+'</span>');
-					$(".schdet-contentDet"+i).append('<span class="schdet-person">'+s[i].schname+'</span>');
-					$(".schdet-contentDet"+i).append('<span class="schdet-time">'+s[i].createtime+'</span>');
-					$(".schdet-contentDet"+i).append('<span class="schdet-operation"><a onclick="ctrl.schdetdele('+s[i].messageid+')">删除</a></span>');
-				}
+                model.listdet.url = json.url;
+                model.listdet.max_page = json.max_page;
+				view.showschdet(json, index);
 			}
 		})
 	},
@@ -852,12 +917,38 @@ var ctrl = {
   schdetdet: function(index) {
 		$(".school-detail").css("display", "none");
 		view.transform();
-		ctrl.getDetail(index);
+		ctrl.getDetailMarkList(index);
 		view.lookArticle();
 	},
 
 	schdetdele: function(index) {
+        $.ajax({
+            url: model.identity.root + model.listdet.url.magscore_del,
+            type: "POST",
+            datatype: "json",
+            data:{'messageid':index},
+            success: function(json) {
+               if(json.is_err == 0){
+               	   alert("删除成功！");
+                   $.ajax({
+                       url: model.identity.root + model.marklist.url.scolist_details,
+                       type: "POST",
+                       data: {"page": model.currentPage,
+                           "schoolid": model.listdet.schoolid},
 
+                       success: function(json) {
+                       	   if(json.is_err == 0){
+                               model.listdet.max_page = json.max_page;
+                              view.showschdet(json);
+						   }
+
+                       }
+                   });
+			   }else{
+               	  alert(json.result);
+			   }
+            }
+        })
 	},
 	//获得在线人数的内容
 	getOnline: function() {
@@ -995,8 +1086,7 @@ var ctrl = {
 
 			success: function() {
 				alert("发表成功！");
-				$(".details").css("display", "none");
-				$(".contain").css("display", "block");
+				$(".details-comments").val("");
 			}
 		})
 

@@ -1,4 +1,71 @@
 model.identity.root = "index.php/";
+
+
+
+function schdetFirstPage() {
+
+    model.currentPage = 1;
+    $.ajax({
+        url: model.identity.root + model.marklist.url.scolist_details,
+        type: "POST",
+        data: {"page": model.currentPage,
+				"schoolid": model.listdet.schoolid},
+
+        success: function(json) {
+            view.showschdet(json);
+        }
+    })
+}
+
+function schdetFrontPage(index) {
+
+    if(model.currentPage != 1) {
+        model.currentPage--;
+        $.ajax({
+            url: model.identity.root + model.marklist.url.scolist_details,
+            type: "POST",
+            data: {"page": model.currentPage,
+            "schoolid": model.listdet.schoolid},
+
+            success: function(json) {
+                view.showschdet(json);
+            }
+        })
+    }
+}
+
+function schdetNextPage() {
+    if(model.currentPage != model.listdet.max_page) {
+        model.currentPage++;
+        $.ajax({
+            url: model.identity.root + model.marklist.url.scolist_details,
+            type: "POST",
+            data: {"page": model.currentPage,
+            "schoolid": model.listdet.schoolid},
+
+            success: function(json) {
+                view.showschdet(json);
+            }
+        })
+    }
+}
+
+function schdetMaxPage() {
+
+    model.currentPage = model.listdet.max_page;
+    $.ajax({
+        url: model.identity.root + model.marklist.url.scolist_details,
+        type: "POST",
+        data: {"page": model.currentPage,
+            "schoolid": model.listdet.schoolid},
+
+        success: function(json) {
+            view.showschdet(json);
+        }
+    })
+}
+
+
 function logFirstPage() {
 			var temp;
 			for(var i = 0; i < model.identity.leftBar.length; i++)
