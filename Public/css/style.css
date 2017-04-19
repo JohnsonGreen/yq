@@ -855,6 +855,17 @@ select {
 		text-decoration: underline;
 	}
 
+	.front {
+		float: left;
+		color: #4d8aa8;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.front:hover {
+		text-decoration: underline;
+	}
+
 /*管理关键字开始*/
 .managekeyword-number {
 	display: inline-block;

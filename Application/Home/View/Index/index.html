@@ -104,7 +104,7 @@
 		<textarea class="details-comments">
 
 		</textarea>
-
+    <button style="float: left;" type="button" onclick="return view.back(model.lastpage)">返回</button>
     <button type="button" onclick="return ctrl.comment()">发表</button>
 </div>
 
@@ -503,7 +503,6 @@
         <span class="schdet-left" style="float: left; display: none;" onclick="schdetLeft()">&#8592;</span>
         <span class="schdet-right" style="float: right;" onclick="schdetRight()">&#8594;</span>
     </div>
-
     <div class="schdet-all">
         <span class="schdet-number">编号</span>
         <span class="schdet-type">舆情类别</span>
@@ -517,6 +516,7 @@
         <div class="schdet-content"></div>
 
         <div class="schdet-page">
+            <a class="front" onclick="return view.front()">返回上一级</a>
             <a onclick="return schdetFirstPage()">首页</a>
             <a onclick="return schdetFrontPage()">上一页</a>
             <span id="schdet-currentPage">1</span>

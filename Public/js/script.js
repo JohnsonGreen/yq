@@ -54,6 +54,7 @@ $(document).ready(function() {
 var model = {
 	//新点击时渲染
 	currentPage: 1,
+	lastpage: "",
 	identity: {},
 	pub: {url:"",max_page:""},
 	single: {url:"",max_page:""},
@@ -104,6 +105,16 @@ var view = {
 	editArticle: function() {
 		$("#article1").css("display", "none");
 		$("#article2").css("display", "block");
+	},
+
+	front: function() {
+		$(".school-detail").css("display", "none");
+		$(".marklist").css("display", "block");
+	},
+
+	back: function(index) {
+		$(".details").css("display", "none");
+		$(index).css("display", "block");
 	},
 
 	showPub: function(json) {
@@ -531,7 +542,7 @@ var ctrl = {
 
 	//获取舆情公告的具体内容
 	getPub: function() {
-
+		model.lastpage = ".opinion";
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
 			if(model.identity.leftBar[i].keybind == 0) {
 
@@ -603,6 +614,7 @@ var ctrl = {
 
 	//获得单条信息报送的具体内容
 	getSingle: function() {
+        model.lastpage = ".single-post";
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
 			if(model.identity.leftBar[i].keybind == 1) {
 				$.ajax({
@@ -670,6 +682,7 @@ var ctrl = {
 
 	//获得综合信息报送的内容
 	getIntegrative: function() {
+        model.lastpage = ".integrative-post";
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
 			if(model.identity.leftBar[i].keybind == 2) {
 				$.ajax({
@@ -737,6 +750,7 @@ var ctrl = {
 
 	//获得管理用户内容
 	getManager: function() {
+        model.lastpage = ".manager";
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
 			if(model.identity.leftBar[i].keybind == 3) {
 				$.ajax({
@@ -768,6 +782,7 @@ var ctrl = {
 
 	//获得我的收藏页的内容
 	getCollection: function() {
+        model.lastpage = ".collection";
 		for(var i = 0;i < model.identity.leftBar.length; i++) {
 			if(model.identity.leftBar[i].keybind == 4) {
 				$.ajax({
@@ -809,6 +824,7 @@ var ctrl = {
 
 	//获得管理积分的内容
 	getMark: function() {
+        model.lastpage = ".managemark";
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
 			if(model.identity.leftBar[i].keybind == 5) {
 				$.ajax({
@@ -856,6 +872,7 @@ var ctrl = {
 
 	//获得管理关键字的内容
 	getKeyword: function() {
+        model.lastpage = ".managekeyword";
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
 			if(model.identity.leftBar[i].keybind == 6) {
 				$.ajax({
@@ -879,6 +896,7 @@ var ctrl = {
 
 	//获取积分列表的内容
 	getList: function() {
+        model.lastpage = ".marklist";
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
 			if(model.identity.leftBar[i].keybind == 7) {
 				$.ajax({
@@ -898,6 +916,7 @@ var ctrl = {
 
 	//查看学院报送的详情页
 	listdet: function(index) {
+        model.lastpage = ".school-detail";
 		$.ajax({
 			url: model.identity.root + model.marklist.url.scolist_details,
 			type: "POST",
@@ -952,6 +971,7 @@ var ctrl = {
 	},
 	//获得在线人数的内容
 	getOnline: function() {
+        model.lastpage = ".online";
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
 			if(model.identity.leftBar[i].keybind == 8) {
 				$.ajax({
@@ -971,6 +991,7 @@ var ctrl = {
 
 	//获得日志的内容
 	getLog: function() {
+        model.lastpage = ".log";
 		for(var i = 0; i < model.identity.leftBar.length; i++) {
 			if(model.identity.leftBar[i].keybind == 9) {
 				$.ajax({

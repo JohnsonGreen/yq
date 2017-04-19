@@ -10,6 +10,9 @@ use Think\Model;
 class AnnounceModel extends Model {
     public function getData($p, $map = null)
     {
+        $hints = I('session.user')['hint_announce'];
+
+
         $result = $this
             -> join('yq_user on yq_announce.userid = yq_user.userid')
             ->where($map)
@@ -17,6 +20,13 @@ class AnnounceModel extends Model {
             ->page($p.',10')
             ->select();
 
+        foreach ($result as $i => $item){
+            if(array_search($result[$i]['anoceid'],$hints)){
+                $result[$i]['isread'] = 1;
+            }else{
+                $result[$i]['isread'] = 0;
+            }
+        }
         return $result;
     }
 
@@ -40,7 +50,7 @@ class AnnounceModel extends Model {
 
 
         $map_announce['anoceid'] = array('not in',$looked);
-        $result['result'] = $this->where($map_announce)->select();
+        $result['result'] = $looked;
 
         return $result;
     }
