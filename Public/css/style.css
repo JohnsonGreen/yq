@@ -84,6 +84,11 @@ table {
 	font-size: 18px;
 }
 
+.menuimg {
+	position: relative;
+	top: 2px;
+}
+
 .user_img {
 	position: absolute;
 	z-index: 1;
@@ -302,7 +307,7 @@ button:hover {
 .opinion-title {
 	display: inline-block;
 	text-align: center;
-	width: 100%;
+	width: 96%;
 }
 
 .opinion-author {
@@ -1182,6 +1187,10 @@ footer span {
 	}
 
 	.showingimg {
+		display: none;
+	}
+	
+	.menuimg {
 		display: none;
 	}
 

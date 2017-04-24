@@ -19,7 +19,8 @@ class LoveController extends AdminBaseController{
 		$response['max_page'] = D('UserCollection')->getDataPage(null);
 		$response['url']=array(
 			'collect_del'=>'Admin/Love/del',
-			'collect_search' => 'Admin/Love/search'
+			'collect_search' => 'Admin/Love/search',
+			'single_details' => 'Admin/Single/index'
 		);
 		echo json_encode($response);
 		exit;
@@ -51,7 +52,7 @@ class LoveController extends AdminBaseController{
         //关键字
 		$key = I('post.keywords');
 		if($key)
-			$map['title'] = array('like', $key);
+			$map['title'] = array('like', '%'.$key.'%');
 
 		//学院
 		$school = I('post.school');

@@ -99,6 +99,7 @@ class UserController extends AdminBaseController{
 	//user
 	public function index(){
 		$p = I('post.page');
+
 		$result = D('User')->getUser($p, null);
 		$response['is_err'] = 0;
 		$response['result'] = $result;
@@ -107,7 +108,9 @@ class UserController extends AdminBaseController{
         $response['groups_api'] = 'Admin/User/getGroups';
 		$response['url'] = array(
 			'maguser'=>'Admin/User/index',
-			'user_search'=>'Admin/User/search'
+			'user_search'=>'Admin/User/search',
+			'user_ban'=>'Admin/User/ban',
+			'groups_api'=>'Admin/User/getGroups'
 		);
 		echo json_encode($response);
 		exit;
@@ -117,7 +120,20 @@ class UserController extends AdminBaseController{
 		$id = I('post.id');
 		if(D('User')->ban($id)){
 			$response['is_err'] = 0;
-			$response['result'] = 'is_ok';
+			$p = I('post.page');
+
+			$result = D('User')->getUser($p, null);
+			$response['is_err'] = 0;
+			$response['result'] = $result;
+			$response['max_page'] = D('User')->getLogPage();
+			$response['add_url'] = 'Admin/User/add_user';
+			$response['groups_api'] = 'Admin/User/getGroups';
+			$response['url'] = array(
+				'maguser'=>'Admin/User/index',
+				'user_search'=>'Admin/User/search',
+				'user_ban'=>'Admin/User/ban',
+				'groups_api'=>'Admin/User/getGroups'
+			);
 		}else{
 			$response['is_err'] = 1;
 			$response['result'] = '数据库错误，请重试！';

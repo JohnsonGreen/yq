@@ -8,18 +8,18 @@ header('content-type:application/json;charset=utf8');
 class ReplyController extends AdminBaseController{
 
 	public function index(){
-		$map['messageid'] = trim(I('post.id'));
+		$map['anoceid'] = trim(I('post.announceid'));
 		$result = D('Reply')->where($map)->select();
 		$response['result'] = $result;
-		$response['max_page'] = max_page($result);
-		$response['is_err'] = 1;
+
+		$response['is_err'] = 0;
 		echo json_encode($response);
 		exit;
 	}
 	public function add(){
-		$data['userid'] = I('session.user_id');
+		$data['userid'] = I('session.user')['userid'];
 		$data['reply_content'] = trim(I('post.content'));
-		$data['reply_messageid'] = trim(I('post.id'));
+		$data['anoceid'] = trim(I('post.anoceid'));
 		$insert_id = D('Reply')->add($data);
 		$response = array();
 		if($insert_id){

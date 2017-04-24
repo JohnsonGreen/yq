@@ -52,7 +52,8 @@ class SingleController extends AdminBaseController{
 			'single_love' => 'Admin/Single/love',
             'single_add'=>'Admin/Single/add_single_message',
             'single_search'=>'Admin/Single/search',
-            'single_details'=>'Admin/Single/index'
+            'single_details'=>'Admin/Single/index',
+            'add_file'=>'Admin/Index/add_file'
 			);
 		echo json_encode($response);
 		exit;
@@ -81,7 +82,8 @@ class SingleController extends AdminBaseController{
             'single_love' => 'Admin/Single/love',
             'single_add'=>'Admin/Single/add_single_message',
             'single_search'=>'Admin/Single/search_teacher',
-            'single_details'=>'Admin/Single/index'
+            'single_details'=>'Admin/Single/index',
+            'add_file'=>'Admin/Index/add_file'
         );
         echo json_encode($response);
         exit;
@@ -105,7 +107,8 @@ class SingleController extends AdminBaseController{
 			'single_love' => 'Admin/Single/love',
             'single_add'=>'Admin/Single/add_single_message',
             'single_search'=>'Admin/Single/search_admin',
-            'single_details'=>'Admin/Single/index'
+            'single_details'=>'Admin/Single/index',
+            'add_file'=>'Admin/Index/add_file'
          );
 		echo json_encode($response);
 		exit;
@@ -127,7 +130,7 @@ class SingleController extends AdminBaseController{
         //关键字
         $key = I('post.keywords');
         if($key)
-            $map['title'] = array('like', $key);
+            $map['title'] = array('like', '%'.$key.'%');
 
         //学生
         $map['userid'] = $_SESSION['user']['userid'];
@@ -172,7 +175,7 @@ class SingleController extends AdminBaseController{
         //关键字
         $key = I('post.keywords');
         if($key)
-            $map['title'] = array('like', $key);
+            $map['title'] = array('like', '%'.$key.'%');
 
         //学院
         $school = I('post.school');
@@ -290,6 +293,8 @@ class SingleController extends AdminBaseController{
             $data['title'] = trim(I('post.title'));
             $data['content'] = I('post.content');
 
+
+
             //UPLOAD
             $upload = new \Think\Upload();// 实例化上传类
             $upload->maxSize   =     3145728 ;// 设置附件上传大小
@@ -346,37 +351,36 @@ class SingleController extends AdminBaseController{
 
             //舆情信息输入
             $data['messageid'] = trim(I('post.messageid'));
-            $data['userid'] = trim(I('post.userid'));
-            $data['schoolid'] = trim(I('post.schoolid'));
-            $data['title'] = trim(I('post.title'));
+//            $data['userid'] = trim(I('post.userid'));
+//            $data['schoolid'] = trim(I('post.schoolid'));
+//            $data['title'] = trim(I('post.title'));
             $data['product'] = 1;
-            $data['typeid'] = trim(I('post.typeid'));
+//            $data['typeid'] = trim(I('post.typeid'));
             $data['base'] = 5;
-            $data['source'] = trim(I('post.source'));
-            $data['url'] = trim(I('post.url'));
-            $data['title'] = trim(I('post.title'));
-            $data['content'] = I('post.content');
+//            $data['source'] = trim(I('post.source'));
+//            $data['url'] = trim(I('post.url'));
+//            $data['title'] = trim(I('post.title'));
+            $data['content'] = trim(I('post.content'));
 
             //UPLOAD
-            $upload = new \Think\Upload();// 实例化上传类
-            $upload->maxSize   =     3145728 ;// 设置附件上传大小
-            $upload->exts      =     array('pdf', 'txt', 'doc', 'jpeg', '.docx', 'png', 'jpg');// 设置附件上传类型
-            $upload->rootPath  =     __ROOT__.'/Uploads/'; // 设置附件上传根目录
-            $upload->savePath  =     ''; // 设置附件上传（子）目录
-            // 上传文件
+//            $upload = new \Think\Upload();// 实例化上传类
+//            $upload->maxSize   =     3145728 ;// 设置附件上传大小
+//            $upload->exts      =     array('pdf', 'txt', 'doc', 'jpeg', '.docx', 'png', 'jpg');// 设置附件上传类型
+//            $upload->rootPath  =     __ROOT__.'/Uploads/'; // 设置附件上传根目录
+//            $upload->savePath  =     ''; // 设置附件上传（子）目录
+//            // 上传文件
+//
+//            $info   =   $upload->upload();
 
-            $info   =   $upload->upload();
-            var_dump($info);
-            exit;
-            $imgPath = $upload->rootPath.$info['content']['savepath'].$info['content']['savename'];
-            if(!$info) {// 上传错误提示错误信息
-                $response['is_err'] = 1;
-                $response['result'] = $upload->getError();
-                echo json_encode($response);
-                exit;
+//            $imgPath = $upload->rootPath.$info['content']['savepath'].$info['content']['savename'];
+//            if(!$info) {// 上传错误提示错误信息
+//                $response['is_err'] = 1;
+//                $response['result'] = $upload->getError();
+//                echo json_encode($response);
+//                exit;
             }
 
-            $data['file'] = $imgPath;
+//            $data['file'] = $imgPath;
             $new_message = D('Message')->save($data);
             if($new_message){
                 $response['is_err'] = 0;
@@ -386,13 +390,13 @@ class SingleController extends AdminBaseController{
                 $response['result'] = "更新失败";
             }
 
-            $key_arr = explode(',',$keys);
-            foreach($key_arr as $i => $item){
-                $key_data['keyname'] = $item;
-                $key_data['messageid'] = $new_message;
-                D('Key')->add($key_data);
-            }
-        }
+//            $key_arr = explode(',',$keys);
+//            foreach($key_arr as $i => $item){
+//                $key_data['keyname'] = $item;
+//                $key_data['messageid'] = $new_message;
+//                D('Key')->add($key_data);
+//            }
+
 
         echo json_encode($response);
         exit;
@@ -465,82 +469,59 @@ class SingleController extends AdminBaseController{
 	/**
 	 * elements
 	 */
+
+
     public function add_single_message(){
 
-		//判断在中文逗号
 		$keys = trim(I('post.keyword'));
-		$pos = strpos($keys, '，');
-		$response = array();
-		if($pos){
-			$response['is_err'] = 1;
-			$response['result'] = "出现中文逗号";
-		}
-		else{
-			$user_id = trim($_SESSION['user']['userid']);
-			$map['userid'] = $user_id;
-			$result = D('User')->where($map)->find();
 
-			//舆情信息输入
-			$data['userid'] = $user_id;
-			$data['schoolid'] = $result['schoolid'];
-			$data['title'] = trim(I('post.title'));
-			$data['product'] = 1;
-			$data['typeid'] = trim(I('post.typeid'));
-			$data['source'] = trim(I('post.source'));
-			$data['url'] = trim(I('post.url'));
-            $data['keyword'] = $keys;
-			$data['title'] = trim(I('post.title'));
-			$data['content'] = I('post.content');
+        $user_id = trim($_SESSION['user']['userid']);
+        $map['userid'] = $user_id;
+        $result = D('User')->where($map)->find();
 
-			$data['createtime'] = time();
-            $data['base'] = 5;
-			$data['select'] = 0;
-			$data['approval'] = 0;
-			$data['warning'] = 0;
-			$data['quality'] = 0;
-			$data['special'] = 0;
-			$data['substract'] = 0;
-			$data['add'] = 0;
-			$data['score'] = $data['base'] + $data['select'] + $data['approval'] + $data['warning'] + $data['quality'] + $data['special'] - $data['substract'] + $data['add'];
-			$data['is_delete'] = 0;
+        //舆情信息输入
+        $data['userid'] = $user_id;
+        $data['schoolid'] = $result['schoolid'];
+        $data['title'] = trim(I('post.title'));
+        $data['product'] = 1;
+        $data['typeid'] = trim(I('post.typeid'));
+        $data['source'] = trim(I('post.source'));
+        $data['url'] = trim(I('post.url'));
+        $data['keyword'] = $keys;
+        $data['content'] = I('post.content');
 
-			//UPLOAD
-			$upload = new \Think\Upload();// 实例化上传类
-			$upload->maxSize   =     3145728 ;// 设置附件上传大小
-			$upload->exts      =     array('pptx','ppt','xls','xlsx','pdf', 'txt', 'doc', 'jpeg', 'docx', 'png', 'jpg');// 设置附件上传类型
-			$upload->rootPath  =     __ROOT__.'/Uploads/'; // 设置附件上传根目录
-			$upload->savePath  =     ''; // 设置附件上传（子）目录
-			// 上传文件
-			$info   =   $upload->upload();
-			$imgPath = "";
+        $data['createtime'] = time();
 
-			if(!$info) {// 上传错误提示错误信息
-				$response['is_err'] = 1;
-				$result['result'] = $upload->getError();
-			}else{// 上传成功
-				$response['is_err'] = 0;
-				$result['result'] = "is_ok";
-                $imgPath = $upload->rootPath.$info['content']['savepath'].$info['content']['savename'];
-			}
+        $data['base'] = 5;
+        $data['add'] = 0;
+        $data['score'] = $data['base']  - $data['substract'] + $data['add'];
+        $data['is_delete'] = 0;
 
-			$data['file'] = $imgPath;
 
-			$new_message = D('Message')->add($data);
-			if($new_message){
-				$response['is_err'] = 0;
-				$result['result'] = "is_ok";
-			}else{
-				$response['is_err'] = 1;
-			}
+        $judge = $data['userid'] && $data['schoolid'] && $data['title'] && $data['product'] && $data['typeid'] && $data['content'];
+        if($judge){
+            $new_message = D('Message')->add($data);
+            if($new_message){
+                $response['is_err'] = 0;
+                $response['result'] = "is_ok";
+                $response['newid'] = $new_message;
+            }else{
+                $response['is_err'] = 1;
+                $response['result'] = "数据库错误，请重试！";
+            }
 
-			//关键字
-			$key_arr = explode(",",$keys);
-			foreach($key_arr as $i => $item){
-				$key_data['keyname'] = $item;
-				$key_data['messageid'] = $new_message;
-				D('Key')->add($key_data);
-			}
-		}
+            //关键字
+            $keys = str_replace("　"," ",$keys);
+            $key_arr = explode(" ",$keys);
+            foreach($key_arr as $i => $item){
+                $key_data['keyname'] = $item;
+                $key_data['messageid'] = $new_message;
+                D('Key')->add($key_data);
+            }
+        }else{
+            $response['is_err'] = 1;
+            $response['result'] = "数据不完整请重试！";
+        }
 
 		echo json_encode($response);
 		exit;

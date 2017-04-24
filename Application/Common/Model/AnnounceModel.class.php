@@ -11,22 +11,23 @@ class AnnounceModel extends Model {
     public function getData($p, $map = null)
     {
         $hints = I('session.user')['hint_announce'];
-
+//        cout($hints);
 
         $result = $this
             -> join('yq_user on yq_announce.userid = yq_user.userid')
             ->where($map)
-            ->order('yq_announce.createtime desc, stick desc')
+            ->order('yq_announce.createtime desc, stick desc, yq_announce.updatetime desc')
             ->page($p.',10')
             ->select();
-
+//        cout($result);
         foreach ($result as $i => $item){
-            if(array_search($result[$i]['anoceid'],$hints)){
+            if(in_array($result[$i]['anoceid'],$hints)){
                 $result[$i]['isread'] = 1;
             }else{
                 $result[$i]['isread'] = 0;
             }
         }
+
         return $result;
     }
 

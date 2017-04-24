@@ -53,13 +53,14 @@ $(document).ready(function() {
 
 var model = {
 	//新点击时渲染
+	tempid: "",
 	currentPage: 1,
 	lastpage: "",
 	identity: {},
-	pub: {url:"",max_page:""},
-	single: {url:"",max_page:""},
-	integrative: {url:"",max_page:""},
-	manager: {add_url:"",groups_api:""},
+	pub: {url:"",max_page:"", currentid: ""},
+	single: {url:"",max_page:"", messageid: ""},
+	integrative: {url:"",max_page:"", messageid: ""},
+	manager: {url:"",groups_api:""},
 	collection: {url:"",max_page:""},
 	managemark: {url:"",max_page:""},
 	key: {url:"",max_page:""},
@@ -67,6 +68,7 @@ var model = {
 	online: {url:"",max_page:""},
 	log: {url:"",max_page:""},
 	listdet: {url: "", max_page: 1, schoolid: ""},
+	reply: {url:""},
 	//菜单的内容，用数组表示
 	menu: [],
 	ranks: [],
@@ -98,13 +100,13 @@ var view = {
 	},
 
 	lookArticle: function() {
-		$("#article1").css("display", "block");
-		$("#article2").css("display", "none");
+		$(".article1").css("display", "block");
+		$(".article2").css("display", "none");
 	},
 
 	editArticle: function() {
-		$("#article1").css("display", "none");
-		$("#article2").css("display", "block");
+		$(".article1").css("display", "none");
+		$(".article2").css("display", "block");
 	},
 
 	front: function() {
@@ -115,6 +117,8 @@ var view = {
 	back: function(index) {
 		$(".details").css("display", "none");
 		$(index).css("display", "block");
+		if(ctrl.getCurrentClass() == ".opinion" || ctrl.getCurrentClass() == ".single-post" || ctrl.getCurrentClass() == ".integrative-post" || ctrl.getCurrentClass() == ".collection")
+			$(".opinion-search").css("display", "block");
 	},
 
 	showPub: function(json) {
@@ -122,13 +126,15 @@ var view = {
 		$(".opinion-content").empty();
 		var s = json.result;
 		for(var i = 0; i < s.length; i++) {
+			console.log(s[i].isread);
 			$(".opinion-content").append('<div class="opinion-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
 			$(".opinion-contentDet"+i).append('<span class="opinion-callback">'+s[i].reply+'</span>');
-			if(s[i].file == null)
-				$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'content.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail('+s[i].anoceid+')">'+s[i].title+'</a></span>');
-			else
-				$(".opinion-contentDet"+i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'clip.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail('+s[i].anoceid+')">'+s[i].title+'</a></span>');
-
+			if(s[i].file == null) {
+				$(".opinion-contentDet" + i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="' + ImgPath + 'content.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail(' + s[i].anoceid + ')">' + s[i].title + '</a></span>');
+			}
+			else {
+				$(".opinion-contentDet" + i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="' + ImgPath + 'clip.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail(' + s[i].anoceid + ')">' + s[i].title + '</a></span>');
+			}
 			$(".opinion-contentDet"+i).append('<span class="opinion-author">'+s[i].realname+'</span>');
 			$(".opinion-contentDet"+i).append('<span class="opinion-time">'+s[i].createtime+'</span>');
 			$(".opinion-contentDet"+i).append('<span class="opinion-operation"><a onclick="ctrl.opedit('+s[i].anoceid+')">编辑</a><a onclick="ctrl.opup('+s[i].anoceid+')">置顶</a><a onclick="ctrl.opdele('+s[i].anoceid+')">删除</a></span>');
@@ -143,7 +149,10 @@ var view = {
 			$(".single-content").append('<div class="single-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
 			$(".single-contentDet"+i).append('<span class="single-number">'+s[i].messageid+'</span>');
 			$(".single-contentDet"+i).append('<span class="single-type">'+s[i].type+'</span>');
-			$(".single-contentDet"+i).append('<span class="single-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.sidetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
+			if(s[i].file == null)
+				$(".single-contentDet"+i).append('<span style="text-align: left;" class="single-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'content.png"><a style="margin-left: 20px;" onclick="ctrl.sidetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
+			else
+				$(".single-contentDet"+i).append('<span style="text-align: left;" class="single-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'clip.png"><a style="margin-left: 20px;" onclick="ctrl.sidetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
 			$(".single-contentDet"+i).append('<span class="single-mark">'+s[i].score+'</span>');
 			$(".single-contentDet"+i).append('<span class="single-unit">'+s[i].schname+'</span>');
 			$(".single-contentDet"+i).append('<span class="single-time">'+s[i].createtime+'</span>');
@@ -170,7 +179,10 @@ var view = {
 			$(".integrative-contentDet"+i).append('<span class="integrative-number">'+s[i].messageid+'</span>');
 			$(".integrative-contentDet"+i).append('<span class="integrative-type">'+s[i].type+'</span>');
 			$(".integrative-contentDet"+i).append('<span class="integrative-product">'+s[i].proname+'</span>');
-			$(".integrative-contentDet"+i).append('<span class="integrative-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.indetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
+			if(s[i].file == null)
+				$(".integrative-contentDet"+i).append('<span style="text-align: left;" class="integrative-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'content.png"><a style="margin-left: 20px;" onclick="ctrl.indetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
+			else
+				$(".integrative-contentDet"+i).append('<span style="text-align: left;" class="integrative-title"><img style="text-align: left; margin-left: 15%;" src="'+ImgPath+'clip.png"><a style="margin-left: 20px;" onclick="ctrl.indetail('+s[i].messageid+')">'+s[i].title+'</a></span>');
 			$(".integrative-contentDet"+i).append('<span class="integrative-mark">'+s[i].score+'</span>');
 			$(".integrative-contentDet"+i).append('<span class="integrative-unit">'+s[i].schname+'</span>');
 			$(".integrative-contentDet"+i).append('<span class="integrative-time">'+s[i].createtime+'</span>');
@@ -328,6 +340,8 @@ var ctrl = {
 		$(".person-identity").append(model.identity.group);
 		$(".person-mark").empty();
 		$(".person-mark").append(model.identity.score);
+		$(".system-message").empty();
+		$(".system-message").append(model.identity.hint_num);
 		ctrl.getRank();
 		ctrl.getNews();
 		ctrl.getPublics();
@@ -345,6 +359,7 @@ var ctrl = {
 
 	//获得公告页的详情
     getPubDetail: function(index) {
+		model.pub.currentid = index;
         $.ajax({
             url: model.identity.root + model.pub.url.announce_details,
             type: "POST",
@@ -366,17 +381,25 @@ var ctrl = {
                 $(".details-content").empty();
                 $(".details-content").append('<h3 style="margin-left:20px;">标题：'+s.title+'</h3>');
                 if(s.file != null)
-                	$(".details-content").append('<p style="margin-left:20px;">文件下载：<a href="'+s.file+'">'+s.file+'</p>');
-                $(".details-content").append('<article id="article1" style="margin-left:20px;">'+s.content+'</article>');
-                $(".details-content").append('<textarea name="content" id="article2" style="margin-left:20px;">'+s.content+'</textarea>');
+                	$(".details-content").append('<p style="margin-left:20px;">文件下载：<a target="_blank" href="'+s.file+'">'+s.file+'</p>');
+                $(".details-content").append('<article class="article1" style="margin-left:20px;">'+s.content+'</article>');
+                $(".details-content").append('<section class="article2" style="margin-left:20px; width: 90%; height: 150px; text-align: left;" id="editor"> <div id="edit" style="margin-top: 30px;"> </div> </section>');
+				$('#edit').editable({inlineMode: false, alwaysBlank: true});
+				$(".froala-element")[0].innerHTML = s.content;
             }
         })
     },
 
 	//获得舆情的详细信息
-	getDetail: function(index) {
+	getDetail: function(index, t) {
+		model.single.messageid = index;
+		model.integrative.messageid = index;
+		if(t == 0)
+			temp = model.identity.root + model.single.url.single_details;
+		else
+			temp = model.identity.root + model.collection.url.single_details;
 		$.ajax({
-			url: model.identity.root + model.single.url.single_details,
+			url: temp,
 			type: "POST",
 			datatype: "json",
 			async: false,
@@ -390,7 +413,7 @@ var ctrl = {
 				$(".details-createtime").empty();
 				$(".details-createtime").append('上报时间：' + s.createtime + " ");
 				$(".details-type").empty();
-				$(".details-type").append('舆情类型：' + s.type + " ");
+				$(".details-type").append('舆情类型：' + s.type + "&nbsp;");
 				$(".details-base").empty();
 				$(".details-base").append('报送分：' + s.base + "  ");
 				$("details-add").empty();
@@ -399,10 +422,14 @@ var ctrl = {
 				$(".details-substract").append('减分：' + s.substract);
 				$(".details-content").empty();
 				$(".details-content").append('<h3 style="margin-left:20px;">标题：'+s.title+'</h3>');
+				if(s.file != null)
+					$(".details-content").append('<p style="margin-left:20px;">文件下载：<a target="_blank" href="'+s.file+'">'+s.file+'</p>');
 				$(".details-content").append('<p style="margin-left:20px;">关键字：'+s.keyword+'</p>');
 				$(".details-content").append('<p style="margin-left:20px;">来源网址：<a href="'+s.url+'">'+s.url+'</p>');
-				$(".details-content").append('<article id="article1" style="margin-left:20px;">'+s.content+'</article>');
-				$(".details-content").append('<textarea name="content" id="article2" style="margin-left:20px;">'+s.content+'</textarea>');
+				$(".details-content").append('<article class="article1" style="margin-left:20px;">'+s.content+'</article>');
+				$(".details-content").append('<section class="article2" style="margin-left:20px; width: 90%; height: 150px; text-align: left;" id="editor"> <div id="edit" style="margin-top: 30px;"> </div> </section>');
+				$('#edit').editable({inlineMode: false, alwaysBlank: true});
+				$(".froala-element")[0].innerHTML = s.content;
 			}
 		})
 	},
@@ -572,16 +599,18 @@ var ctrl = {
 	//对自己的舆情公告进行编辑，跳转到编辑页
 	opedit: function(index) {
 		view.transform();
-		ctrl.getDetail(index);
+		ctrl.getPubDetail(index , 0);
 		view.editArticle();
 	},
 
 	//对自己的舆情公告页进行置顶发，成功重新加载此页
 	opup: function(index) {
+		model.currentPage = 1;
 		$.ajax({
-			url: "",
-			type: "GET",
-			datatype: "json",
+			url: model.identity.root + model.pub.url.announce_stick,
+			type: "POST",
+			data: {"id": index,
+			       "page": model.currentPage},
 
 			success: function(json) {
 				if(json.is_err == 0) {
@@ -596,20 +625,25 @@ var ctrl = {
 
 	//删除选择的信息，成功重新加载此页
 	opdele: function(index) {
-		$.ajax({
-			url: "",
-			type: "GET",
-			datatype: "json",
+		if(confirm("确定要删除吗？")) {
+			model.currentPage = 1;
+			$.ajax({
+				url: model.identity.root + model.pub.url.announce_del,
+				type: "POST",
+				data: {"id": index,
+					"page": model.currentPage},
 
-			success: function(json) {
-				if(json.is_err == 0) {
-					alert("删除成功！");
-					ctrl.getPub();
-				} else {
-					alert("失败，请重试！");
+
+				success: function(json) {
+					if(json.is_err == 0) {
+						alert("删除成功！");
+						ctrl.getPub();
+					} else {
+						alert("失败，请重试！");
+					}
 				}
-			}
-		})
+			})
+		}
 	},
 
 	//获得单条信息报送的具体内容
@@ -634,13 +668,14 @@ var ctrl = {
 
 	sidetail: function(index) {
 		view.transform();
-		ctrl.getDetail(index);
+		ctrl.getDetail(index, 0);
 		view.lookArticle();
 	},
 
 	siedit: function(index) {
+		//model.single.messageid = index;
 		view.transform();
-		ctrl.getDetail(index);
+		ctrl.getDetail(index , 0);
 		view.editArticle();
 	},
 
@@ -663,21 +698,25 @@ var ctrl = {
 	},
 
 	sidele: function(index) {
-		$.ajax({
-			url: model.identity.root + model.single.url.single_del,
-			type: "POST",
-			datatype: "json",
-			data: {"messageid":index},
+		if(confirm("确定要删除吗？")) {
+			model.currentPage = 1;
+			$.ajax({
+				url: model.identity.root + model.single.url.single_del,
+				type: "POST",
+				datatype: "json",
+				data: {"messageid":index,
+					"page": model.currentPage},
 
-			success: function(json) {
-				if(json.is_err == 0) {
-					alert("删除成功！");
-					ctrl.getSingle();
-				} else {
-					alert("失败，请重试！");
+				success: function(json) {
+					if(json.is_err == 0) {
+						alert("删除成功！");
+						ctrl.getSingle();
+					} else {
+						alert("失败，请重试！");
+					}
 				}
-			}
-		})
+			})
+		}
 	},
 
 	//获得综合信息报送的内容
@@ -702,13 +741,14 @@ var ctrl = {
 
 	indetail: function(index) {
 		view.transform();
-		ctrl.getDetail(index);
+		ctrl.getDetail(index, 0);
 		view.lookArticle();
 	},
 
 	inedit: function(index) {
+		//model.integrative.messageid = index;
 		view.transform();
-		ctrl.getDetail(index);
+		ctrl.getDetail(index, 0);
 		view.editArticle();
 	},
 
@@ -731,21 +771,25 @@ var ctrl = {
 	},
 
 	indele: function(index) {
-		$.ajax({
-			url: model.identity.root + model.integrative.url.overall_del,
-			type: "POST",
-			datatype: "json",
-			data: {"messageid":index},
+		if(confirm("确定要删除吗")) {
+			model.currentPage = 1;
+			$.ajax({
+				url: model.identity.root + model.integrative.url.overall_del,
+				type: "POST",
+				datatype: "json",
+				data: {"messageid":index,
+					"page": model.currentPage},
 
-			success: function(json) {
-				if(json.is_err == 0) {
-					alert("删除成功！");
-					ctrl.getIntegrative();
-				} else {
-					alert("失败，请重试！");
+				success: function(json) {
+					if(json.is_err == 0) {
+						alert("删除成功！");
+						ctrl.getIntegrative();
+					} else {
+						alert("失败，请重试！");
+					}
 				}
-			}
-		})
+			})
+		}
 	},
 
 	//获得管理用户内容
@@ -760,7 +804,8 @@ var ctrl = {
 
 					success: function(json) {
 						model.manager.max_page = json.max_page;
-						model.manager.url = json.addurl;
+						model.manager.url = json.url;
+						model.manager.groups_api = json.groups_api;
 						view.showManager(json);
 					}
 				})
@@ -773,7 +818,19 @@ var ctrl = {
 	},
 
 	madele: function(index) {
+		if(confirm("确定要删除吗？")) {
+			model.currentPage = 1;
+			$.ajax({
+				url: model.identity.root + model.manager.url.user_ban,
+				type: "post",
+				data:{"id": index,
+					"page": model.currentPage},
 
+				success: function(json) {
+					view.showManager(json);
+				}
+			})
+		}
 	},
 
 	machange: function(index) {
@@ -802,24 +859,28 @@ var ctrl = {
 
 	codetail: function(index) {
 		view.transform();
-		ctrl.getDetail(index);
+		ctrl.getDetail(index, 1);
+		view.lookArticle();
 	},
 
 	codele: function(index) {
-		$.ajax({
-			url: model.identity.root + model.collection.url.collect_del,
-			type: "POST",
-			datatype: "json",
-			data:{'messageid':index},
-			success: function(json) {
-				if(json.is_err == 0) {
-					alert("删除成功！");
-					ctrl.getCollection();
-				} else {
-					alert("失败，请重试！");
+		if(confirm("确定要删除吗？")) {
+			model.currentPage = 1;
+			$.ajax({
+				url: model.identity.root + model.collection.url.collect_del,
+				type: "POST",
+				data:{'messageid':index,
+					"page": model.currentPage},
+				success: function(json) {
+					if(json.is_err == 0) {
+						alert("删除成功！");
+						ctrl.getCollection();
+					} else {
+						alert("失败，请重试！");
+					}
 				}
-			}
-		})
+			})
+		}
 	},
 
 	//获得管理积分的内容
@@ -844,7 +905,7 @@ var ctrl = {
 
 	markdet: function(index) {
 		view.transform();
-		ctrl.getDetail(index);
+		ctrl.getDetail(index, 0);
 		view.lookArticle();
 	},
 
@@ -891,7 +952,19 @@ var ctrl = {
 	},
 
 	keydele: function(index) {
+		if(confirm("确定要删除吗？")) {
+			model.currentPage = 1;
+			$.ajax({
+				url: model.identity.root + model.key.url.key_del,
+				type: "post",
+				data: {"id": index,
+					"page": model.currentPage},
 
+				success: function(json) {
+					view.showKey(json);
+				}
+			})
+		}
 	},
 
 	//获取积分列表的内容
@@ -941,33 +1014,36 @@ var ctrl = {
 	},
 
 	schdetdele: function(index) {
-        $.ajax({
-            url: model.identity.root + model.listdet.url.magscore_del,
-            type: "POST",
-            datatype: "json",
-            data:{'messageid':index},
-            success: function(json) {
-               if(json.is_err == 0){
-               	   alert("删除成功！");
-                   $.ajax({
-                       url: model.identity.root + model.marklist.url.scolist_details,
-                       type: "POST",
-                       data: {"page": model.currentPage,
-                           "schoolid": model.listdet.schoolid},
+		if(confirm("确定要删除吗？")) {
+			model.currentPage = 1;
+			$.ajax({
+				url: model.identity.root + model.listdet.url.magscore_del,
+				type: "POST",
+				data:{'messageid':index,
+					"page": model.currentPage},
+				success: function(json) {
+					if(json.is_err == 0){
+						alert("删除成功！");
+						$.ajax({
+							url: model.identity.root + model.marklist.url.scolist_details,
+							type: "POST",
+							data: {"page": model.currentPage,
+								"schoolid": model.listdet.schoolid},
 
-                       success: function(json) {
-                       	   if(json.is_err == 0){
-                               model.listdet.max_page = json.max_page;
-                              view.showschdet(json);
-						   }
+							success: function(json) {
+								if(json.is_err == 0){
+									model.listdet.max_page = json.max_page;
+									view.showschdet(json);
+								}
 
-                       }
-                   });
-			   }else{
-               	  alert(json.result);
-			   }
-            }
-        })
+							}
+						});
+					}else{
+						alert(json.result);
+					}
+				}
+			})
+		}
 	},
 	//获得在线人数的内容
 	getOnline: function() {
@@ -1101,15 +1177,52 @@ var ctrl = {
 
 	//上传用户评论的信息
 	comment: function() {
-		$.ajax({
-			url: "",
-			type: "POST",
+		if($(".details-add").text() == "")
+			$.ajax({
+				url: model.identity.root + model.pub.url.announce_update,
+				type: "POST",
+				data: {"content": $(".froala-element")[0].innerHTML,
+					   "announceid": model.pub.currentid},
 
-			success: function() {
-				alert("发表成功！");
-				$(".details-comments").val("");
-			}
-		})
+				success: function() {
+					alert("发表成功！");
+					$(".details-comments").val("");
+					$(".details").css("display", "none");
+					$(".opinion-search").css("display", "block");
+					$(".opinion").css("display", "block");
+				}
+			})
+		else if(model.lastpage == ".single-post") {
+			$.ajax({
+				url: model.identity.root + model.single.url.single_update,
+				type: "POST",
+				data: {"content": $("#article2").val(),
+					"messageid": model.single.messageid},
+
+				success: function() {
+					alert("发表成功！");
+					$(".details-comments").val("");
+					$(".details").css("display", "none");
+					$(".opinion-search").css("display", "block");
+					$(".single-post").css("display", "block");
+				}
+			})
+		} else if(model.lastpage == ".integrative-post") {
+			$.ajax({
+				url: model.identity.root + model.integrative.url.overall_update,
+				type: "POST",
+				data: {"content": $("#article2").val(),
+					"messageid": model.integrative.messageid},
+
+				success: function() {
+					alert("发表成功！");
+					$(".details-comments").val("");
+					$(".details").css("display", "none");
+					$(".opinion-search").css("display", "block");
+					$(".integrative-post").css("display", "block");
+				}
+			})
+		}
 
 		//$.ajax({
 		//	url: model.identity.root + model.single.url.single_update,
@@ -1125,36 +1238,112 @@ var ctrl = {
 	//上传用户发表的舆情信息
 	singlesend: function() {
 		if($(".send-key").css("display") == "block") {
-            $.ajax({
+			$.ajax({
                 url: model.identity.root + model.single.url.single_add,
                 type: "POST",
-                data: $('#send').serialize(),
-                success: function() {
-                    alert("推送成功！");
-                    $(".single-send").css("display", "none");
-                    $(".single-post").css("display", "block");
+				cache: false,
+				data: {
+					"typeid": $(".type").val(),
+					"title": $(".send-title input").val(),
+					"keyword": $(".send-key input").val(),
+					"source": $(".send-webpage input").val(),
+					"url": $(".send-website input").val(),
+					"content": $(".froala-element")[0].innerHTML
+				},
+
+                success: function(json){
+					model.tempid = json.newid;
+					alert("推送成功！");
+					$(".single-send").css("display", "none");
+					$(".single-post").css("display", "block");
+					$(".send-title input").val("");
+					$(".send-key input").val("");
+					$(".send-webpage input").val("");
+					$(".send-website input").val("");
+					$(".froala-element")[0].innerHTML = "";
+					ctrl.getSingle();
+					if(ctrl.getCurrentClass() == ".opinion" || ctrl.getCurrentClass() == ".single-post" || ctrl.getCurrentClass() == ".integrative-post" || ctrl.getCurrentClass() == ".collection")
+						$(".opinion-search").css("display", "block");
+
+					$.ajax({
+						url: model.identity.root + model.single.url.add_file + "/?id="+model.tempid,
+						type: "POST",
+						data: new FormData($('#send')[0]),
+						processData: false,
+						contentType: false,
+						success: function(json) {
+							alert(json.result);
+						}
+					})
                 }
             })
+
 		} else if($(".send-product").css("display") == "block") {
             $.ajax({
                 url: model.identity.root + model.integrative.url.overall_add,
                 type: "POST",
-                data: $('#send').serialize(),
-                success: function() {
+				cache: false,
+				data: {
+					"pronameid": $(".product").val(),
+					"typeid": $(".type").val(),
+					"title": $(".send-title input").val(),
+					"content": $(".froala-element")[0].innerHTML
+				},
+                success: function(json) {
+					model.tempid = json.newid;
                     alert("推送成功！");
                     $(".single-send").css("display", "none");
                     $(".integrative-post").css("display", "block");
+					$(".send-title input").val("");
+					$(".send-key input").val("");
+					$(".send-webpage input").val("");
+					$(".send-website input").val("");
+					$(".froala-element")[0].innerHTML = "";
+					ctrl.getIntegrative();
+					if(ctrl.getCurrentClass() == ".opinion" || ctrl.getCurrentClass() == ".single-post" || ctrl.getCurrentClass() == ".integrative-post" || ctrl.getCurrentClass() == ".collection")
+						$(".opinion-search").css("display", "block");
+
+					$.ajax({
+						url: model.identity.root + model.integrative.url.add_file + "/?id="+model.tempid,
+						type: "POST",
+						data: new FormData($('#send')[0]),
+						processData: false,
+						contentType: false,
+						success: function(json) {
+							alert(json.result);
+						}
+					})
                 }
             })
 		} else {
             $.ajax({
                 url: model.identity.root + model.pub.url.announce_add,
                 type: "POST",
-                data: $('#send').serialize(),
-                success: function() {
+                data: {
+					"title": $(".send-title input").val(),
+					"content": $(".froala-element")[0].innerHTML,
+				},
+                success: function(json) {
+					model.tempid = json.newid;
                     alert("推送成功！");
                     $(".single-send").css("display", "none");
                     $(".opinion").css("display", "block");
+					$(".send-title input").val("");
+					$(".froala-element")[0].innerHTML = "";
+					ctrl.getPub();
+					if(ctrl.getCurrentClass() == ".opinion" || ctrl.getCurrentClass() == ".single-post" || ctrl.getCurrentClass() == ".integrative-post" || ctrl.getCurrentClass() == ".collection")
+						$(".opinion-search").css("display", "block");
+
+					$.ajax({
+						url: model.identity.root + model.pub.url.add_file + "/?id="+model.tempid + "&ispub=1",
+						type: "POST",
+						data: new FormData($('#send')[0]),
+						processData: false,
+						contentType: false,
+						success: function(json) {
+							alert(json.result);
+						}
+					})
                 }
             })
 		}
@@ -1164,7 +1353,11 @@ var ctrl = {
 		$.ajax({
 			url: model.identity.root + model.integrative.url.integrative_add,
 			type: "POST",
-			data: $('#send').serialize(),
+			data: {
+				"file" :new FormData($("#send")[0]),
+				"title": $(".send-title input").val(""),
+				"content": $(".froala-element")[0].innerHTML
+			},
 
 			success: function() {
 				alert("推送成功！");

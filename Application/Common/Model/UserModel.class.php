@@ -24,6 +24,7 @@ class UserModel extends BaseModel{
 
     //日志
     public function getUser($page = 1, $map = null){
+        $map['ban'] = 0;
         if(empty($page))
             $page = 1;
         $result = $this

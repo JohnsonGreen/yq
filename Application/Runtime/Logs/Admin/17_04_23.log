@@ -1,0 +1,1287 @@
+[ 2017-04-23T00:01:44+08:00 ] ::1 /yq/index.php/Admin/Single/add_single_message
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0045s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876904' WHERE `userid` = 1 [ RunTime:0.1021s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0034s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0037s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0043s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: substract D:\xampp\htdocs\yq\Application\Admin\Controller\SingleController.class.php 第 497 行.
+
+[ 2017-04-23T00:01:45+08:00 ] ::1 /yq/index.php/Admin/Index/add_file/?id=undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000791s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001102s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001201s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0302s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876905' WHERE `userid` = 1 [ RunTime:0.0846s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0046s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0042s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0053s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0041s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\yq\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+SQL: UPDATE `yq_message` SET `file`='Public/Upload/' WHERE `messageid` = 0 [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: response D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 183 行.
+
+[ 2017-04-23T00:01:46+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002011s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0054s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876905' WHERE `userid` = 1 [ RunTime:0.1542s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0037s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0506s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0052s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0044s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 104 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 102 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 101 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 100 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 99 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 98 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 97 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 96 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 95 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 94 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product = 1 AND `is_delete` = 0  [ RunTime:0.0008s ]
+
+[ 2017-04-23T00:01:47+08:00 ] ::1 /yq/index.php/Admin/Message/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000452s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.1573s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876907' WHERE `userid` = 1 [ RunTime:0.0712s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0042s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0049s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0041s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0054s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 103 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 91 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 90 AND `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 89 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 88 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 83 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 80 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 79 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 78 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 77 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product <> 1 AND `is_delete` = 0  [ RunTime:0.0006s ]
+
+[ 2017-04-23T00:01:51+08:00 ] ::1 /yq/index.php/Admin/Message/add_message
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000411s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0045s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876911' WHERE `userid` = 1 [ RunTime:0.1039s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0033s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0035s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0047s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: base D:\xampp\htdocs\yq\Application\Admin\Controller\MessageController.class.php 第 267 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0043s ]
+SQL: INSERT INTO `yq_message` (`userid`,`schoolid`,`title`,`content`,`createtime`,`substract`,`add`,`score`,`is_delete`) VALUES ('1','1','dsadasdasdasdasdsa','&lt;p&gt;sdfsdf sdfsdf sdf dsf&amp;nbsp;&lt;/p&gt;','1492876911','0','0','0','0') [ RunTime:0.2595s ]
+
+[ 2017-04-23T00:01:54+08:00 ] ::1 /yq/index.php/Admin/Message/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001092s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0086s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876914' WHERE `userid` = 1 [ RunTime:0.1246s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0042s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0039s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0034s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0065s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0290s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0048s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 105 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 103 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 91 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 90 AND `userid` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 89 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 88 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 83 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 80 AND `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 79 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 78 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product <> 1 AND `is_delete` = 0  [ RunTime:0.0007s ]
+
+[ 2017-04-23T00:01:54+08:00 ] ::1 /yq/index.php/Admin/Index/add_file/?id=105
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000673s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000920s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001007s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0063s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876914' WHERE `userid` = 1 [ RunTime:0.0801s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0038s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0054s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0043s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0036s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\yq\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+SQL: UPDATE `yq_message` SET `file`='Public/Upload/' WHERE `messageid` = 105 [ RunTime:0.0823s ]
+
+[ 2017-04-23T00:02:13+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000698s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000845s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0046s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876933' WHERE `userid` = 1 [ RunTime:0.1054s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0060s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0041s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0037s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0053s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0218s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 104 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 102 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 101 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 100 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 99 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 98 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 97 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 96 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 95 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 94 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product = 1 AND `is_delete` = 0  [ RunTime:0.0008s ]
+
+[ 2017-04-23T00:02:13+08:00 ] ::1 /yq/index.php/Admin/Message/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0053s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876933' WHERE `userid` = 1 [ RunTime:0.0886s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0039s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0038s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0049s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0041s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 105 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 103 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 91 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 90 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 89 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 88 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 83 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 80 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 79 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 78 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product <> 1 AND `is_delete` = 0  [ RunTime:0.0007s ]
+
+[ 2017-04-23T00:02:15+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000837s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0044s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876934' WHERE `userid` = 1 [ RunTime:0.1599s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0036s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0041s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0054s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0040s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0045s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 104 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 102 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 101 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 100 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 99 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 98 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 97 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 96 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 95 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 94 AND `userid` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product = 1 AND `is_delete` = 0  [ RunTime:0.0011s ]
+
+[ 2017-04-23T00:02:21+08:00 ] ::1 /yq/index.php/Admin/Single/add_single_message
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0046s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876941' WHERE `userid` = 1 [ RunTime:0.0654s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0037s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0048s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0052s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: substract D:\xampp\htdocs\yq\Application\Admin\Controller\SingleController.class.php 第 497 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0049s ]
+SQL: INSERT INTO `yq_message` (`userid`,`schoolid`,`title`,`product`,`typeid`,`source`,`url`,`keyword`,`content`,`createtime`,`base`,`add`,`score`,`is_delete`) VALUES ('1','1','xcvxcxcv','1','2','vxzcv','vxcvzxcv','xzcv','&lt;p&gt;sdfsdf sdfsdf sdf dsf&amp;nbsp;&lt;/p&gt;','1492876941','5','0','5','0') [ RunTime:0.1982s ]
+SQL: SHOW COLUMNS FROM `yq_key` [ RunTime:0.0044s ]
+SQL: INSERT INTO `yq_key` (`keyname`,`messageid`) VALUES ('xzcv','106') [ RunTime:0.0827s ]
+
+[ 2017-04-23T00:02:23+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001149s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.1355s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876942' WHERE `userid` = 1 [ RunTime:0.0886s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0204s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0055s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0040s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0046s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0051s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 106 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 104 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 102 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 101 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 100 AND `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 99 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 98 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 97 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 96 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 95 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product = 1 AND `is_delete` = 0  [ RunTime:0.0008s ]
+
+[ 2017-04-23T00:02:23+08:00 ] ::1 /yq/index.php/Admin/Index/add_file/?id=106
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001101s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0056s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876943' WHERE `userid` = 1 [ RunTime:0.2281s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0034s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0039s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0060s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0045s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\yq\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+SQL: UPDATE `yq_message` SET `file`='Public/Upload/' WHERE `messageid` = 106 [ RunTime:0.1176s ]
+
+[ 2017-04-23T00:02:27+08:00 ] ::1 /yq/index.php/Admin/Message/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000886s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001071s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001117s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0040s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876947' WHERE `userid` = 1 [ RunTime:0.1192s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0039s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0043s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0042s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0048s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 105 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 103 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 91 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 90 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 89 AND `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 88 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 83 AND `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 80 AND `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 79 AND `userid` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 78 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product <> 1 AND `is_delete` = 0  [ RunTime:0.0007s ]
+
+[ 2017-04-23T00:02:37+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001082s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0060s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876957' WHERE `userid` = 1 [ RunTime:0.1011s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0050s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0041s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0055s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0050s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 106 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 104 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 102 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 101 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 100 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 99 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 98 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 97 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 96 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 95 AND `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product = 1 AND `is_delete` = 0  [ RunTime:0.0013s ]
+
+[ 2017-04-23T00:02:45+08:00 ] ::1 /yq/index.php/Admin/Single/add_single_message
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000987s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001031s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0046s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876964' WHERE `userid` = 1 [ RunTime:0.1157s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0041s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0043s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0044s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: substract D:\xampp\htdocs\yq\Application\Admin\Controller\SingleController.class.php 第 497 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0051s ]
+SQL: INSERT INTO `yq_message` (`userid`,`schoolid`,`title`,`product`,`typeid`,`source`,`url`,`keyword`,`content`,`createtime`,`base`,`add`,`score`,`is_delete`) VALUES ('1','1','xvzcvxcvx','1','2','vzxcvzxcv','xczvzxcvzxcvxczv','cvzxcvxzc','&lt;p&gt;sdfsdf sdfsdf sdf dsf&amp;nbsp;&lt;/p&gt;','1492876964','5','0','5','0') [ RunTime:0.1676s ]
+SQL: SHOW COLUMNS FROM `yq_key` [ RunTime:0.0492s ]
+SQL: INSERT INTO `yq_key` (`keyname`,`messageid`) VALUES ('cvzxcvxzc','107') [ RunTime:0.1118s ]
+
+[ 2017-04-23T00:02:46+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000714s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002533s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0194s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876966' WHERE `userid` = 1 [ RunTime:0.1222s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0047s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0040s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0043s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0067s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 107 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 106 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 104 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 102 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 101 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 100 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 99 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 98 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 97 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 96 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product = 1 AND `is_delete` = 0  [ RunTime:0.0009s ]
+
+[ 2017-04-23T00:02:46+08:00 ] ::1 /yq/index.php/Admin/Index/add_file/?id=107
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001007s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0069s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876966' WHERE `userid` = 1 [ RunTime:0.1853s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0044s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0034s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0039s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0063s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\yq\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+SQL: UPDATE `yq_message` SET `file`='Public/Upload/' WHERE `messageid` = 107 [ RunTime:0.1258s ]
+
+[ 2017-04-23T00:02:48+08:00 ] ::1 /yq/index.php/Admin/Message/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000777s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000850s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0058s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492876968' WHERE `userid` = 1 [ RunTime:0.1699s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0035s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0044s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0046s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0054s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0049s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 105 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 103 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 91 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 90 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 89 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 88 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 83 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 80 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 79 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 78 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product <> 1 AND `is_delete` = 0  [ RunTime:0.0007s ]
+
+[ 2017-04-23T00:03:44+08:00 ] ::1 /yq/index.php/Admin/Message/add_message
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:1.6492s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877022' WHERE `userid` = 1 [ RunTime:0.0794s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0034s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0043s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0043s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: base D:\xampp\htdocs\yq\Application\Admin\Controller\MessageController.class.php 第 267 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0042s ]
+SQL: INSERT INTO `yq_message` (`userid`,`schoolid`,`title`,`content`,`createtime`,`substract`,`add`,`score`,`is_delete`) VALUES ('1','1','cxvxcv','&lt;p&gt;sdfsdf sdfsdf sdf dsf&amp;nbsp;&lt;/p&gt;','1492877024','0','0','0','0') [ RunTime:0.1935s ]
+
+[ 2017-04-23T00:03:46+08:00 ] ::1 /yq/index.php/Admin/Message/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001063s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001162s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.2402s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877026' WHERE `userid` = 1 [ RunTime:0.1210s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0216s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0764s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0042s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0055s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product <> 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 108 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 105 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 103 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 91 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 90 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 89 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 88 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 83 AND `userid` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 80 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 79 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product <> 1 AND `is_delete` = 0  [ RunTime:0.0010s ]
+
+[ 2017-04-23T00:03:47+08:00 ] ::1 /yq/index.php/Admin/Index/add_file/?id=108
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000831s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001587s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0056s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877026' WHERE `userid` = 1 [ RunTime:0.2302s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0034s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0040s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0061s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0051s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\yq\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+SQL: UPDATE `yq_message` SET `file`='Public/Upload/' WHERE `messageid` = 108 [ RunTime:0.1589s ]
+
+[ 2017-04-23T00:06:41+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000987s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0044s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877201' WHERE `userid` = 1 [ RunTime:0.0853s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0049s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0042s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0039s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0007s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `yq_message` ORDER BY createtime desc LIMIT 10   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick LIMIT 10   [ RunTime:0.0209s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+
+[ 2017-04-23T00:06:41+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000988s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0072s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877201' WHERE `userid` = 1 [ RunTime:0.2174s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0042s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0046s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0052s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `yq_message` ORDER BY createtime desc LIMIT 10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick LIMIT 10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0284s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+
+[ 2017-04-23T00:06:42+08:00 ] ::1 /yq/index.php/Admin/Announce/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000812s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001535s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0048s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877201' WHERE `userid` = 1 [ RunTime:0.1542s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0049s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0074s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0057s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `yq_announce` INNER JOIN yq_user on yq_announce.userid = yq_user.userid  ORDER BY yq_announce.createtime desc, stick desc, yq_announce.updatetime desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `yq_announce` INNER JOIN yq_user on yq_announce.userid = yq_user.userid  ORDER BY yq_announce.createtime desc, stick desc  [ RunTime:0.0010s ]
+
+[ 2017-04-23T00:06:42+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000938s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0058s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877202' WHERE `userid` = 1 [ RunTime:0.0900s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0052s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0036s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0040s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0069s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0041s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 107 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 106 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 104 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 102 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 101 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 100 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 99 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 98 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 97 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 96 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product = 1 AND `is_delete` = 0  [ RunTime:0.0008s ]
+
+[ 2017-04-23T00:06:50+08:00 ] ::1 /yq/index.php/Admin/Single/add_single_message
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0047s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877210' WHERE `userid` = 1 [ RunTime:0.0643s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0035s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0043s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0037s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `yq_user` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: substract D:\xampp\htdocs\yq\Application\Admin\Controller\SingleController.class.php 第 497 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0043s ]
+SQL: INSERT INTO `yq_message` (`userid`,`schoolid`,`title`,`product`,`typeid`,`source`,`url`,`keyword`,`content`,`createtime`,`base`,`add`,`score`,`is_delete`) VALUES ('1','1','sdfds','1','2','dsfsdf','sdfsdf','sdfsdf','&lt;p&gt;sdfsdfsdf&lt;/p&gt;','1492877210','5','0','5','0') [ RunTime:0.1718s ]
+SQL: SHOW COLUMNS FROM `yq_key` [ RunTime:0.0043s ]
+SQL: INSERT INTO `yq_key` (`keyname`,`messageid`) VALUES ('sdfsdf','109') [ RunTime:0.0565s ]
+
+[ 2017-04-23T00:06:51+08:00 ] ::1 /yq/index.php/Admin/Single/single_admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000912s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0067s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877211' WHERE `userid` = 1 [ RunTime:0.1322s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0044s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0042s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0056s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0040s ]
+SQL: SELECT yq_product.proid,yq_product.proname,`messageid`,`userid`,`schname`,yq_message.score,`title`,`content`,`createtime`,`click`,`type` FROM `yq_message` LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid LEFT JOIN yq_product on yq_message.product = yq_product.proid  WHERE yq_message.product = 1 AND `is_delete` = 0 ORDER BY createtime desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yq_user_collection` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 109 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 107 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 106 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 104 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 102 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 101 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 100 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 99 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 98 AND `userid` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `yq_user_collection` WHERE `messageid` = 97 AND `userid` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `yq_message` WHERE yq_message.product = 1 AND `is_delete` = 0  [ RunTime:0.0012s ]
+
+[ 2017-04-23T00:06:52+08:00 ] ::1 /yq/index.php/Admin/Index/add_file/?id=109
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001005s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001308s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0070s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877211' WHERE `userid` = 1 [ RunTime:0.2335s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0047s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0059s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0040s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0060s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\yq\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+SQL: UPDATE `yq_message` SET `file`='Public/Upload/' WHERE `messageid` = 109 [ RunTime:0.1810s ]
+
+[ 2017-04-23T00:15:40+08:00 ] ::1 /yq/index.php/Admin/Announce/add_announce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000819s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0046s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877740' WHERE `userid` = 1 [ RunTime:0.1096s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0043s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0036s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0042s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\yq\Application\Admin\Controller\AnnounceController.class.php 第 113 行.
+NOTIC: [8] Undefined index: usesr D:\xampp\htdocs\yq\Application\Admin\Controller\AnnounceController.class.php 第 116 行.
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0037s ]
+ERR: 1048:Column 'userid' cannot be null
+ [ SQL语句 ] : INSERT INTO `yq_announce` (`userid`,`title`,`content`) VALUES (NULL,'fsdfsdfasdfsdaf','&lt;p&gt;fsdfsdfsdfsdfsdfsadfdsfsdfsd&lt;/p&gt;')
+ERR: 1048:Column 'userid' cannot be null
+ [ SQL语句 ] : INSERT INTO `yq_announce` (`userid`,`title`,`content`) VALUES (NULL,'fsdfsdfasdfsdaf','&lt;p&gt;fsdfsdfsdfsdfsdfsadfdsfsdfsd&lt;/p&gt;')
+
+[ 2017-04-23T00:15:42+08:00 ] ::1 /yq/index.php/Admin/Announce/add_announce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000732s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0046s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877742' WHERE `userid` = 1 [ RunTime:0.0939s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0039s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0039s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0037s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\yq\Application\Admin\Controller\AnnounceController.class.php 第 113 行.
+NOTIC: [8] Undefined index: usesr D:\xampp\htdocs\yq\Application\Admin\Controller\AnnounceController.class.php 第 116 行.
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0042s ]
+ERR: 1048:Column 'userid' cannot be null
+ [ SQL语句 ] : INSERT INTO `yq_announce` (`userid`,`title`,`content`) VALUES (NULL,'fsdfsdfasdfsdaf','&lt;p&gt;fsdfsdfsdfsdfsdfsadfdsfsdfsd&lt;/p&gt;')
+ERR: 1048:Column 'userid' cannot be null
+ [ SQL语句 ] : INSERT INTO `yq_announce` (`userid`,`title`,`content`) VALUES (NULL,'fsdfsdfasdfsdaf','&lt;p&gt;fsdfsdfsdfsdfsdfsadfdsfsdfsd&lt;/p&gt;')
+
+[ 2017-04-23T00:15:43+08:00 ] ::1 /yq/index.php/Admin/Announce/add_announce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0045s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877743' WHERE `userid` = 1 [ RunTime:0.1283s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0034s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0040s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0043s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\yq\Application\Admin\Controller\AnnounceController.class.php 第 113 行.
+NOTIC: [8] Undefined index: usesr D:\xampp\htdocs\yq\Application\Admin\Controller\AnnounceController.class.php 第 116 行.
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0037s ]
+ERR: 1048:Column 'userid' cannot be null
+ [ SQL语句 ] : INSERT INTO `yq_announce` (`userid`,`title`,`content`) VALUES (NULL,'fsdfsdfasdfsdaf','&lt;p&gt;fsdfsdfsdfsdfsdfsadfdsfsdfsd&lt;/p&gt;')
+ERR: 1048:Column 'userid' cannot be null
+ [ SQL语句 ] : INSERT INTO `yq_announce` (`userid`,`title`,`content`) VALUES (NULL,'fsdfsdfasdfsdaf','&lt;p&gt;fsdfsdfsdfsdfsdfsadfdsfsdfsd&lt;/p&gt;')
+
+[ 2017-04-23T00:16:42+08:00 ] ::1 /yq/index.php/Admin/Announce/add_announce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000823s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0046s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877802' WHERE `userid` = 1 [ RunTime:0.1463s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0038s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0040s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0042s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\yq\Application\Admin\Controller\AnnounceController.class.php 第 113 行.
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0041s ]
+SQL: INSERT INTO `yq_announce` (`userid`,`title`,`content`) VALUES ('1','fsdfsdfasdfsdaf','&lt;p&gt;fsdfsdfsdfsdfsdfsadfdsfsdfsd&lt;/p&gt;') [ RunTime:0.1921s ]
+
+[ 2017-04-23T00:16:44+08:00 ] ::1 /yq/index.php/Admin/Announce/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000828s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001413s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0075s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877804' WHERE `userid` = 1 [ RunTime:0.0803s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0045s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0044s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0038s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `yq_announce` INNER JOIN yq_user on yq_announce.userid = yq_user.userid  ORDER BY yq_announce.createtime desc, stick desc, yq_announce.updatetime desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `yq_announce` INNER JOIN yq_user on yq_announce.userid = yq_user.userid  ORDER BY yq_announce.createtime desc, stick desc  [ RunTime:0.0047s ]
+
+[ 2017-04-23T00:17:12+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000581s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0074s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877832' WHERE `userid` = 1 [ RunTime:0.0558s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0041s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0042s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0045s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0003s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `yq_message` ORDER BY createtime desc LIMIT 10   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick LIMIT 10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 37 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+
+[ 2017-04-23T00:17:12+08:00 ] ::1 /yq/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000676s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001151s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001350s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0088s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877832' WHERE `userid` = 1 [ RunTime:0.2182s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0047s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0036s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0040s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `yq_message` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `yq_message` ORDER BY createtime desc LIMIT 10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `yq_announce` ORDER BY stick LIMIT 10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `yq_reply` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_reply` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 37 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+NOTIC: [8] Undefined index: messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 47 行.
+NOTIC: [8] Undefined index: yq_message.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 50 行.
+NOTIC: [8] Undefined index: a.messageid D:\xampp\htdocs\yq\Application\Common\Common\function.php 第 53 行.
+
+[ 2017-04-23T00:17:12+08:00 ] ::1 /yq/index.php/Admin/Announce/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001408s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0086s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877832' WHERE `userid` = 1 [ RunTime:0.0972s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0043s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0035s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0044s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yq_announce` INNER JOIN yq_user on yq_announce.userid = yq_user.userid  ORDER BY yq_announce.createtime desc, stick desc, yq_announce.updatetime desc LIMIT 0,10   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `yq_announce` INNER JOIN yq_user on yq_announce.userid = yq_user.userid  ORDER BY yq_announce.createtime desc, stick desc  [ RunTime:0.0048s ]
+
+[ 2017-04-23T00:17:23+08:00 ] ::1 /yq/index.php/Admin/Announce/add_announce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000913s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001348s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0056s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877842' WHERE `userid` = 1 [ RunTime:0.1089s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0034s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0039s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0040s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+NOTIC: [8] A session had already been started - ignoring session_start() D:\xampp\htdocs\yq\Application\Admin\Controller\AnnounceController.class.php 第 113 行.
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0041s ]
+SQL: INSERT INTO `yq_announce` (`userid`,`title`,`content`) VALUES ('1','fsdfsdafsdafsdaf','&lt;p&gt;dsfsdfsdfsdfsad&lt;/p&gt;') [ RunTime:0.2013s ]
+
+[ 2017-04-23T00:17:24+08:00 ] ::1 /yq/index.php/Admin/Announce/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001216s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001315s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0070s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877844' WHERE `userid` = 1 [ RunTime:0.1219s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0044s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0038s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0039s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `yq_announce` INNER JOIN yq_user on yq_announce.userid = yq_user.userid  ORDER BY yq_announce.createtime desc, stick desc, yq_announce.updatetime desc LIMIT 0,10   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `yq_announce` INNER JOIN yq_user on yq_announce.userid = yq_user.userid  ORDER BY yq_announce.createtime desc, stick desc  [ RunTime:0.0046s ]
+
+[ 2017-04-23T00:17:24+08:00 ] ::1 /yq/index.php/Admin/Index/add_file/?id=15&ispub=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000808s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001309s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0061s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1492877844' WHERE `userid` = 1 [ RunTime:0.1712s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0035s ]
+SQL: SELECT a.userid,a.groupid,g.groupname FROM yq_user_group a INNER JOIN yq_group g ON a.groupid=g.groupid  WHERE ( a.userid=1 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_group_permission` [ RunTime:0.0042s ]
+SQL: SELECT a.permid,a.groupid,p.permname,p.action FROM yq_group_permission a INNER JOIN yq_permission p on a.permid=p.permid  WHERE ( a.groupid='3' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `yq_permission` [ RunTime:0.0039s ]
+SQL: SELECT `action` FROM `yq_permission` WHERE `permid` IN ('1','3','4','5','6','7','8','9','10','11','12')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0048s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\yq\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\yq\Application\Admin\Controller\IndexController.class.php 第 175 行.
+SQL: UPDATE `yq_announce` SET `file`='Public/Upload/' WHERE `anoceid` = 15 [ RunTime:0.1610s ]
+

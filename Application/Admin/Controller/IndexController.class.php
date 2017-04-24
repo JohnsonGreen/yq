@@ -143,6 +143,46 @@ class IndexController extends AdminBaseController{
         echo json_encode($right);
         exit;
     }
+
+    public function add_file(){
+        $id = I('get.id');
+        $table = I('get.ispub');
+        $data = array();
+
+        if($table == 1){
+            $link = D('Announce');
+            $data['anoceid'] = $id;
+        }
+        else{
+            $link = D('Message');
+            $data['messageid'] = $id;
+        }
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+        $upload->exts      =     array('pdf', 'txt', 'doc', 'jpeg', 'docx', 'png', 'jpg','xls','xlsx');// 设置附件上传类型
+        $upload->rootPath  =     'Public/Upload/'; // 设置附件上传根目录
+        $upload->savePath  =     ''; // 设置附件上传（子）目录
+        // 上传文件
+
+        $info   =   $upload->upload();
+
+
+        $imgPath = "";
+        if(!$info) {// 上传错误提示错误信息
+            $response['is_err'] = 1;
+            $response['result'] = $upload->getError();
+        }else{// 上传成功
+            $imgPath = $upload->rootPath.$info['content']['savepath'].$info['content']['savename'];
+            $data['file'] = $imgPath;
+            if($link->save($data)){
+                $response['is_err'] = 0;
+                $response['result'] = "文件上传成功";
+            }
+        }
+
+        echo json_encode($response);
+        exit;
+    }
     
 
 }

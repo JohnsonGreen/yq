@@ -118,7 +118,7 @@ class MessageModel extends BaseModel{
             ->join('LEFT JOIN yq_product on yq_message.product = yq_product.proid')
             ->where($map)
             ->field('yq_product.proid ,yq_product.proname,messageid, userid, schname, yq_message.score, title, content, createtime, click, type')
-            ->order('messageid')
+            ->order('createtime desc')
             ->page($page.', 10')
             ->select();
         $message = stand_date($message);
