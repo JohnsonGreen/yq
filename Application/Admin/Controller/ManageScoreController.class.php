@@ -191,6 +191,10 @@ class ManageScoreController extends AdminBaseController{
         $this->returnJson($res);
     }
 
+
+
+
+
     /**
      * 返回积分列表
      */
@@ -205,10 +209,27 @@ class ManageScoreController extends AdminBaseController{
         $result['result'] = D('School')->getSchoolScoreList($map['page'],$map['pagesize']);
         $result['max_page'] = $this->getSchoolPages();
         $result['url'] = array(
-            'scolist_details' => 'Admin/ManageScore/getScoreDetails'
+            'scolist_schdetail' => 'Admin/ManageScore/getScoreDetails'
         );
        echo json_encode($result);
        exit;
+    }
+
+    public function getSchoolScoreList_teacher(){
+        $map = I('post.');
+        if(empty($map['page']))
+            $map['page']=1;
+        if(empty($map['pagesize']))
+            $map['pagesize']=10;
+
+        $result['is_err'] = 0;
+        $result['result'] = D('School')->getSchoolScoreList($map['page'],$map['pagesize']);
+        $result['max_page'] = $this->getSchoolPages();
+        $result['url'] = array(
+            'scolist_schdetail' => 'Admin/ManageScore/getScoreDetails_teacher'
+        );
+        echo json_encode($result);
+        exit;
     }
 
     /**
@@ -239,11 +260,44 @@ class ManageScoreController extends AdminBaseController{
             $p = 1;
         $schoolid = trim(I('post.schoolid'));
         $result = D('Message')->getDetail($schoolid, $p);
+        $cnt = count($result);
+        for($i = 0; $i < $cnt;$i++) {
+                $result[$i]['flag'] = 1;
+        }
         $response['is_err'] = 0;
         $response['result'] = $result;
         $response['url'] = array(
-             'magscore_details' => 'Admin/ManageScore/allDetail',
-             'magscore_del'=>'Admin/ManageScore/delDetail'
+             'scolist_details' => 'Admin/ManageScore/allDetail',
+             'scolist_del'=>'Admin/ManageScore/delDetail'
+        );
+
+        $response['max_page'] = ceil($this->getAllDetailsPages($schoolid)/10);
+        echo json_encode($response);
+        exit;
+    }
+
+
+    public function getScoreDetails_teacher(){
+        $p = I('post.page');
+
+        // echo json_encode(I('post.'));
+        // exit;
+        if(empty($p))
+            $p = 1;
+        $schoolid = trim(I('post.schoolid'));
+        $result = D('Message')->getDetail($schoolid, $p);
+        $cnt = count($result);
+        for($i = 0; $i < $cnt;$i++) {
+            if($result[$i]['userid'] == I('session.user')['userid'])
+                $result[$i]['flag'] = 1;
+            else
+                $result[$i]['flag'] = 0;
+        }
+        $response['is_err'] = 0;
+        $response['result'] = $result;
+        $response['url'] = array(
+            'scolist_details' => 'Admin/ManageScore/allDetail',
+            'scolist_del'=>'Admin/ManageScore/delDetail_teacher'
         );
 
         $response['max_page'] = ceil($this->getAllDetailsPages($schoolid)/10);
@@ -281,6 +335,31 @@ class ManageScoreController extends AdminBaseController{
         exit;
     }
 
+    public function delDetail_teacher(){
+        $id = I('post.messageid');
+        $ids = D('Message')->where(array('userid'=>I('session.user')['userid']))->field('messageid')->select();
+        $flag = false;
+        foreach($ids as $item) {
+            if($id == $item['messageid']){
+                $flag = true;
+            }
+        }
+        if($flag) {
+            if(D('Message')->del($id)){
+                $response['is_err'] = 0;
+                $response['result'] = '删除成功！';
+            }else{
+                $response['is_err'] = 1;
+                $response['result'] = '删除失败！';
+            }
+        }else {
+                $response['is_err'] = 1;
+                $response['result'] = '只能删除自己的条目！';
+        }
+
+        echo json_encode($response);
+        exit;
+    }
 
 
 

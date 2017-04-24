@@ -117,7 +117,7 @@ class MessageModel extends BaseModel{
             ->join('LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid')
             ->join('LEFT JOIN yq_product on yq_message.product = yq_product.proid')
             ->where($map)
-            ->field('yq_product.proid ,yq_product.proname,messageid, userid, schname, yq_message.score, title, content, createtime, click, type')
+            ->field('yq_product.proid ,yq_product.proname,messageid, file, userid, schname, yq_message.score, title, content, createtime, click, type')
             ->order('createtime desc')
             ->page($page.', 10')
             ->select();
@@ -163,7 +163,7 @@ class MessageModel extends BaseModel{
             ->join('yq_type on yq_message.typeid = yq_type.typeid')
             ->join('yq_user on yq_message.userid = yq_user.userid')
             ->where($map)
-            ->field('yq_message.messageid,yq_message.keyword,url,base,select,approval,warning,quality,special,substract,add,yq_message.userid, schname, yq_message.score, yq_message.title, yq_message.content, yq_message.createtime, click, type, username')
+            ->field('yq_message.messageid,yq_message.keyword,url,base,substract,add,yq_message.userid, schname, yq_message.score, yq_message.title, yq_message.content, yq_message.createtime, click, type, username, file')
             ->select();
 
         //请不要再把select改成find了，OK?

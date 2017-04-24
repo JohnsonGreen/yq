@@ -291,7 +291,7 @@ class SingleController extends AdminBaseController{
             $data['source'] = trim(I('post.source'));
             $data['url'] = trim(I('post.url'));
             $data['title'] = trim(I('post.title'));
-            $data['content'] = I('post.content');
+            $data['content'] = trim($_POST['content']);
 
 
 
@@ -360,7 +360,7 @@ class SingleController extends AdminBaseController{
 //            $data['source'] = trim(I('post.source'));
 //            $data['url'] = trim(I('post.url'));
 //            $data['title'] = trim(I('post.title'));
-            $data['content'] = trim(I('post.content'));
+            $data['content'] = trim($_POST['content']);
 
             //UPLOAD
 //            $upload = new \Think\Upload();// 实例化上传类
@@ -473,6 +473,9 @@ class SingleController extends AdminBaseController{
 
     public function add_single_message(){
 
+//        echo json_encode($_POST);
+//        exit;
+
 		$keys = trim(I('post.keyword'));
 
         $user_id = trim($_SESSION['user']['userid']);
@@ -488,7 +491,7 @@ class SingleController extends AdminBaseController{
         $data['source'] = trim(I('post.source'));
         $data['url'] = trim(I('post.url'));
         $data['keyword'] = $keys;
-        $data['content'] = I('post.content');
+        $data['content'] = trim($_POST['content']);
 
         $data['createtime'] = time();
 

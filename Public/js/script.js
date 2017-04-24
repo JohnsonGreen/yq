@@ -53,6 +53,7 @@ $(document).ready(function() {
 
 var model = {
 	//新点击时渲染
+	kepa: 0,
 	tempid: "",
 	currentPage: 1,
 	lastpage: "",
@@ -83,7 +84,7 @@ var view = {
 	//初始化渲染菜单界面
 	showMenu: function() {
 		for(var i = 0; i < model.menu.length; i++) {
-			$(".menu").append('<li class="menu'+i+' menu-items" onclick="return ctrl.getTitle('+i+')">'+'<span>'+model.menu[i]+'</span>'+'</li>');
+			$(".menu").append('<li class="menu'+i+' menu-items" onmouseover="return ctrl.mouseover('+i+')" onmouseout="ctrl.mouseout('+i+')" onclick="return ctrl.getTitle('+i+')">'+'<span>'+model.menu[i]+'</span>'+'</li>');
 		}
 	},
 	//渲染前三的排名
@@ -128,7 +129,7 @@ var view = {
 		for(var i = 0; i < s.length; i++) {
 			console.log(s[i].isread);
 			$(".opinion-content").append('<div class="opinion-contentDet'+i+'" style="color:black; width: 100%; height: 38px;"></div>');
-			$(".opinion-contentDet"+i).append('<span class="opinion-callback">'+s[i].reply+'</span>');
+			$(".opinion-contentDet"+i).append('<span class="opinion-callback">'+(i-(-1))+'</span>');
 			if(s[i].file == null) {
 				$(".opinion-contentDet" + i).append('<span style="text-align: left;" class="opinion-title"><img style="text-align: left; margin-left: 15%;" src="' + ImgPath + 'content.png"><a style="margin-left: 20px;" onclick="ctrl.opdetail(' + s[i].anoceid + ')">' + s[i].title + '</a></span>');
 			}
@@ -137,7 +138,10 @@ var view = {
 			}
 			$(".opinion-contentDet"+i).append('<span class="opinion-author">'+s[i].realname+'</span>');
 			$(".opinion-contentDet"+i).append('<span class="opinion-time">'+s[i].createtime+'</span>');
-			$(".opinion-contentDet"+i).append('<span class="opinion-operation"><a onclick="ctrl.opedit('+s[i].anoceid+')">编辑</a><a onclick="ctrl.opup('+s[i].anoceid+')">置顶</a><a onclick="ctrl.opdele('+s[i].anoceid+')">删除</a></span>');
+			if(model.identity.groupid == "3")
+				$(".opinion-contentDet"+i).append('<span class="opinion-operation"><a onclick="ctrl.opedit('+s[i].anoceid+')">编辑</a><a onclick="ctrl.opup('+s[i].anoceid+')">置顶</a><a onclick="ctrl.opdele('+s[i].anoceid+')">删除</a></span>');
+			else
+                $(".opinion-contentDet"+i).append('<span class="opinion-operation">无</span>');
 		}
 	},
 
@@ -186,7 +190,19 @@ var view = {
 			$(".integrative-contentDet"+i).append('<span class="integrative-mark">'+s[i].score+'</span>');
 			$(".integrative-contentDet"+i).append('<span class="integrative-unit">'+s[i].schname+'</span>');
 			$(".integrative-contentDet"+i).append('<span class="integrative-time">'+s[i].createtime+'</span>');
-			$(".integrative-contentDet"+i).append('<span class="integrative-operation"><a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a><a onclick="ctrl.inlove('+s[i].messageid+')">收藏</a><a onclick="ctrl.indele('+s[i].messageid+')">删除</a></span>');
+
+            var str = '<span class="single-operation">';
+            if(!isNull(s[i].flag) && s[i].flag == 1){
+                str += '<a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a>';
+            }
+            str += '<a onclick="ctrl.inlove('+s[i].messageid+')">收藏</a>';
+            if(!isNull(s[i].flag) && s[i].flag == 1){
+                str += '<a onclick="ctrl.indele('+s[i].messageid+')">删除</a>';
+            }
+            str += '</span>';
+            $(".integrative-contentDet"+i).append(str);
+
+			//$(".integrative-contentDet"+i).append('<span class="integrative-operation"><a onclick="ctrl.siedit('+s[i].messageid+')">编辑</a><a onclick="ctrl.inlove('+s[i].messageid+')">收藏</a><a onclick="ctrl.indele('+s[i].messageid+')">删除</a></span>');
 		}
 	},
 
@@ -308,12 +324,25 @@ var view = {
             $(".schdet-contentDet"+i).append('<span class="schdet-mark">'+s[i].score+'</span>');
             $(".schdet-contentDet"+i).append('<span class="schdet-person">'+s[i].schname+'</span>');
             $(".schdet-contentDet"+i).append('<span class="schdet-time">'+s[i].createtime+'</span>');
-            $(".schdet-contentDet"+i).append('<span class="schdet-operation"><a onclick="ctrl.schdetdele('+s[i].messageid+')">删除</a></span>');
+
+            if(!isNull(s[i].flag) && s[i].flag == 1)
+               $(".schdet-contentDet"+i).append('<span class="schdet-operation"><a onclick="ctrl.schdetdele('+s[i].messageid+')">删除</a></span>');
         }
 	}
 }
 
 var ctrl = {
+	mouseover: function(i) {
+		$(".menu"+i).css("background-color", "#4d8aa8");
+        $(".menu"+i).css("color", "white");
+    },
+
+    mouseout: function(i) {
+        $(".menu"+i).css("background-color", "#e5e5e5");
+        $(".menu"+i).css("color", "black");
+        $(ctrl.getCurrentMenu()).css("background-color", "#4d8aa8");
+        $(ctrl.getCurrentMenu()).css("color", "white");
+	},
 	//个人设置
 	setting: function(index) {
 		$(ctrl.getCurrentClass()).css("display", "none");
@@ -329,9 +358,13 @@ var ctrl = {
 		$(".settings-account").text(model.identity.username);
 		$(".settings-mark").empty();
 		$(".settings-mark").text(model.identity.score);
+		$(".settings-unit").empty();
+        $(".settings-unit").text(model.identity.school);
 		$(".settings-realname").val(model.identity.realname);
 		$(".settings-mail").val(model.identity.email);
 		$(".settings-phone").val(model.identity.phone);
+        if(model.identity.groupid == "1" || model.identity.groupid == "2")
+            $(".change-password").css("display", "none");
 	},
 
 	//获得首页的内容信息
@@ -359,6 +392,7 @@ var ctrl = {
 
 	//获得公告页的详情
     getPubDetail: function(index) {
+		model.kepa = 1;
 		model.pub.currentid = index;
         $.ajax({
             url: model.identity.root + model.pub.url.announce_details,
@@ -392,12 +426,14 @@ var ctrl = {
 
 	//获得舆情的详细信息
 	getDetail: function(index, t) {
+		model.kepa = 1;
 		model.single.messageid = index;
 		model.integrative.messageid = index;
 		if(t == 0)
 			temp = model.identity.root + model.single.url.single_details;
 		else
-			temp = model.identity.root + model.collection.url.single_details;
+			temp = model.identity.root + model.integrative.url.overall_details;
+		//if(model.)
 		$.ajax({
 			url: temp,
 			type: "POST",
@@ -425,7 +461,7 @@ var ctrl = {
 				if(s.file != null)
 					$(".details-content").append('<p style="margin-left:20px;">文件下载：<a target="_blank" href="'+s.file+'">'+s.file+'</p>');
 				$(".details-content").append('<p style="margin-left:20px;">关键字：'+s.keyword+'</p>');
-				$(".details-content").append('<p style="margin-left:20px;">来源网址：<a href="'+s.url+'">'+s.url+'</p>');
+				$(".details-content").append('<p style="margin-left:20px;">来源网址：<a target="_blank" href="'+s.url+'">'+s.url+'</p>');
 				$(".details-content").append('<article class="article1" style="margin-left:20px;">'+s.content+'</article>');
 				$(".details-content").append('<section class="article2" style="margin-left:20px; width: 90%; height: 150px; text-align: left;" id="editor"> <div id="edit" style="margin-top: 30px;"> </div> </section>');
 				$('#edit').editable({inlineMode: false, alwaysBlank: true});
@@ -438,7 +474,7 @@ var ctrl = {
     //获得舆情的详细信息
     getDetailMarkList: function(index) {
         $.ajax({
-            url: model.identity.root + model.listdet.url.magscore_details,
+            url: model.identity.root + model.listdet.url.scolist_details,
             type: "POST",
             datatype: "json",
             async: false,
@@ -471,8 +507,8 @@ var ctrl = {
 
 	//获得当前的主页面,调整各个部分的布局方式
 	getTitle: function(i) {
-		//$(ctrl.getCurrentMenu()).css("background-color", "#e5e5e5");
-		//$(ctrl.getCurrentMenu()).css("color", "black");
+		$(ctrl.getCurrentMenu()).css("background-color", "#e5e5e5");
+		$(ctrl.getCurrentMenu()).css("color", "black");
 		$(ctrl.getCurrentClass()).css("display", "none");
 		$(ctrl.getClickMenu(model.menu[i])).css("display", "block");
 		showMenu();
@@ -481,8 +517,8 @@ var ctrl = {
 		$(".settings").css("display", "none");
 		$(".add").css("display", "none");
 		$(".school-detail").css("display", "none");
-		//$(ctrl.getCurrentMenu()).css("background-color", "#4d8aa8");
-		//$(ctrl.getCurrentMenu()).css("color", "white");
+		$(ctrl.getCurrentMenu()).css("background-color", "#4d8aa8");
+		$(ctrl.getCurrentMenu()).css("color", "white");
 		model.currentPage = 1;
 		var current = ctrl.getCurrentClass();
 		switch (current) {
@@ -586,7 +622,8 @@ var ctrl = {
 				})
 			}
 		}
-
+        if(model.identity.groupid == "1")
+            $(".opinion-output").css("display", "none");
 	},
 
 	//舆情公告获取详情页
@@ -741,14 +778,14 @@ var ctrl = {
 
 	indetail: function(index) {
 		view.transform();
-		ctrl.getDetail(index, 0);
+		ctrl.getDetail(index, 1);
 		view.lookArticle();
 	},
 
 	inedit: function(index) {
 		//model.integrative.messageid = index;
 		view.transform();
-		ctrl.getDetail(index, 0);
+		ctrl.getDetail(index, 1);
 		view.editArticle();
 	},
 
@@ -991,7 +1028,7 @@ var ctrl = {
 	listdet: function(index) {
         model.lastpage = ".school-detail";
 		$.ajax({
-			url: model.identity.root + model.marklist.url.scolist_details,
+			url: model.identity.root + model.marklist.url.scolist_schdetail,
 			type: "POST",
 			datatype: "json",
             data:{"schoolid":index},
@@ -1017,7 +1054,7 @@ var ctrl = {
 		if(confirm("确定要删除吗？")) {
 			model.currentPage = 1;
 			$.ajax({
-				url: model.identity.root + model.listdet.url.magscore_del,
+				url: model.identity.root + model.listdet.url.scolist_del,
 				type: "POST",
 				data:{'messageid':index,
 					"page": model.currentPage},
@@ -1025,7 +1062,7 @@ var ctrl = {
 					if(json.is_err == 0){
 						alert("删除成功！");
 						$.ajax({
-							url: model.identity.root + model.marklist.url.scolist_details,
+							url: model.identity.root + model.marklist.url.scolist_schdetail,
 							type: "POST",
 							data: {"page": model.currentPage,
 								"schoolid": model.listdet.schoolid},
@@ -1237,115 +1274,119 @@ var ctrl = {
 
 	//上传用户发表的舆情信息
 	singlesend: function() {
-		if($(".send-key").css("display") == "block") {
-			$.ajax({
-                url: model.identity.root + model.single.url.single_add,
-                type: "POST",
-				cache: false,
-				data: {
-					"typeid": $(".type").val(),
-					"title": $(".send-title input").val(),
-					"keyword": $(".send-key input").val(),
-					"source": $(".send-webpage input").val(),
-					"url": $(".send-website input").val(),
-					"content": $(".froala-element")[0].innerHTML
-				},
-
-                success: function(json){
-					model.tempid = json.newid;
-					alert("推送成功！");
-					$(".single-send").css("display", "none");
-					$(".single-post").css("display", "block");
-					$(".send-title input").val("");
-					$(".send-key input").val("");
-					$(".send-webpage input").val("");
-					$(".send-website input").val("");
-					$(".froala-element")[0].innerHTML = "";
-					ctrl.getSingle();
-					if(ctrl.getCurrentClass() == ".opinion" || ctrl.getCurrentClass() == ".single-post" || ctrl.getCurrentClass() == ".integrative-post" || ctrl.getCurrentClass() == ".collection")
-						$(".opinion-search").css("display", "block");
-
-					$.ajax({
-						url: model.identity.root + model.single.url.add_file + "/?id="+model.tempid,
-						type: "POST",
-						data: new FormData($('#send')[0]),
-						processData: false,
-						contentType: false,
-						success: function(json) {
-							alert(json.result);
-						}
-					})
-                }
-            })
-
-		} else if($(".send-product").css("display") == "block") {
-            $.ajax({
-                url: model.identity.root + model.integrative.url.overall_add,
-                type: "POST",
-				cache: false,
-				data: {
-					"pronameid": $(".product").val(),
-					"typeid": $(".type").val(),
-					"title": $(".send-title input").val(),
-					"content": $(".froala-element")[0].innerHTML
-				},
-                success: function(json) {
-					model.tempid = json.newid;
-                    alert("推送成功！");
-                    $(".single-send").css("display", "none");
-                    $(".integrative-post").css("display", "block");
-					$(".send-title input").val("");
-					$(".send-key input").val("");
-					$(".send-webpage input").val("");
-					$(".send-website input").val("");
-					$(".froala-element")[0].innerHTML = "";
-					ctrl.getIntegrative();
-					if(ctrl.getCurrentClass() == ".opinion" || ctrl.getCurrentClass() == ".single-post" || ctrl.getCurrentClass() == ".integrative-post" || ctrl.getCurrentClass() == ".collection")
-						$(".opinion-search").css("display", "block");
-
-					$.ajax({
-						url: model.identity.root + model.integrative.url.add_file + "/?id="+model.tempid,
-						type: "POST",
-						data: new FormData($('#send')[0]),
-						processData: false,
-						contentType: false,
-						success: function(json) {
-							alert(json.result);
-						}
-					})
-                }
-            })
+		if($(".send-title input").val() == "" || $(".froala-element")[0].innerHTML == ""){
+			alert("请完成基本的标题和内容！");
 		} else {
-            $.ajax({
-                url: model.identity.root + model.pub.url.announce_add,
-                type: "POST",
-                data: {
-					"title": $(".send-title input").val(),
-					"content": $(".froala-element")[0].innerHTML,
-				},
-                success: function(json) {
-					model.tempid = json.newid;
-                    alert("推送成功！");
-                    $(".single-send").css("display", "none");
-                    $(".opinion").css("display", "block");
-					$(".send-title input").val("");
-					$(".froala-element")[0].innerHTML = "";
-					ctrl.getPub();
-					if(ctrl.getCurrentClass() == ".opinion" || ctrl.getCurrentClass() == ".single-post" || ctrl.getCurrentClass() == ".integrative-post" || ctrl.getCurrentClass() == ".collection")
-						$(".opinion-search").css("display", "block");
+            if($(".send-key").css("display") == "block") {
+                $.ajax({
+                    url: model.identity.root + model.single.url.single_add,
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        "typeid": $(".type").val(),
+                        "title": $(".send-title input").val(),
+                        "keyword": $(".send-key input").val(),
+                        "source": $(".send-webpage input").val(),
+                        "url": $(".send-website input").val(),
+                        "content": $(".froala-element")[model.kepa].innerHTML
+                    },
 
-					$.ajax({
-						url: model.identity.root + model.pub.url.add_file + "/?id="+model.tempid + "&ispub=1",
-						type: "POST",
-						data: new FormData($('#send')[0]),
-						processData: false,
-						contentType: false,
-						success: function(json) {
-							alert(json.result);
-						}
-					})
-                }
-            })
+                    success: function(json){
+                        model.tempid = json.newid;
+                        alert("推送成功！");
+                        $(".single-send").css("display", "none");
+                        $(".single-post").css("display", "block");
+                        $(".send-title input").val("");
+                        $(".send-key input").val("");
+                        $(".send-webpage input").val("");
+                        $(".send-website input").val("");
+                        $(".froala-element")[model.kepa].innerHTML = "";
+                        ctrl.getSingle();
+                        if(ctrl.getCurrentClass() == ".opinion" || ctrl.getCurrentClass() == ".single-post" || ctrl.getCurrentClass() == ".integrative-post" || ctrl.getCurrentClass() == ".collection")
+                            $(".opinion-search").css("display", "block");
+
+                        $.ajax({
+                            url: model.identity.root + model.single.url.add_file + "/?id="+model.tempid,
+                            type: "POST",
+                            data: new FormData($('#send')[0]),
+                            processData: false,
+                            contentType: false,
+                            success: function(json) {
+                                alert(json.result);
+                            }
+                        })
+                    }
+                })
+
+            } else if($(".send-product").css("display") == "block") {
+                $.ajax({
+                    url: model.identity.root + model.integrative.url.overall_add,
+                    type: "POST",
+                    cache: false,
+                    data: {
+                        "proid": $(".product").val(),
+                        "typeid": $(".type").val(),
+                        "title": $(".send-title input").val(),
+                        "content": $(".froala-element")[model.kepa].innerHTML
+                    },
+                    success: function(json) {
+                        model.tempid = json.newid;
+                        alert("推送成功！");
+                        $(".single-send").css("display", "none");
+                        $(".integrative-post").css("display", "block");
+                        $(".send-title input").val("");
+                        $(".send-key input").val("");
+                        $(".send-webpage input").val("");
+                        $(".send-website input").val("");
+                        $(".froala-element")[model.kepa].innerHTML = "";
+                        ctrl.getIntegrative();
+                        if(ctrl.getCurrentClass() == ".opinion" || ctrl.getCurrentClass() == ".single-post" || ctrl.getCurrentClass() == ".integrative-post" || ctrl.getCurrentClass() == ".collection")
+                            $(".opinion-search").css("display", "block");
+
+                        $.ajax({
+                            url: model.identity.root + model.integrative.url.add_file + "/?id="+model.tempid,
+                            type: "POST",
+                            data: new FormData($('#send')[0]),
+                            processData: false,
+                            contentType: false,
+                            success: function(json) {
+                                alert(json.result);
+                            }
+                        })
+                    }
+                })
+            } else {
+                $.ajax({
+                    url: model.identity.root + model.pub.url.announce_add,
+                    type: "POST",
+                    data: {
+                        "title": $(".send-title input").val(),
+                        "content": $(".froala-element")[model.kepa].innerHTML,
+                    },
+                    success: function(json) {
+                        model.tempid = json.newid;
+                        alert("推送成功！");
+                        $(".single-send").css("display", "none");
+                        $(".opinion").css("display", "block");
+                        $(".send-title input").val("");
+                        $(".froala-element")[model.kepa].innerHTML = "";
+                        ctrl.getPub();
+                        if(ctrl.getCurrentClass() == ".opinion" || ctrl.getCurrentClass() == ".single-post" || ctrl.getCurrentClass() == ".integrative-post" || ctrl.getCurrentClass() == ".collection")
+                            $(".opinion-search").css("display", "block");
+
+                        $.ajax({
+                            url: model.identity.root + model.pub.url.add_file + "/?id="+model.tempid + "&ispub=1",
+                            type: "POST",
+                            data: new FormData($('#send')[0]),
+                            processData: false,
+                            contentType: false,
+                            success: function(json) {
+                                alert(json.result);
+                            }
+                        })
+                    }
+                })
+            }
 		}
 	},
 
@@ -1356,7 +1397,7 @@ var ctrl = {
 			data: {
 				"file" :new FormData($("#send")[0]),
 				"title": $(".send-title input").val(""),
-				"content": $(".froala-element")[0].innerHTML
+				"content": $(".froala-element")[model.kepa].innerHTML
 			},
 
 			success: function() {

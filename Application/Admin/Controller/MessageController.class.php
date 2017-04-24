@@ -231,25 +231,25 @@ class MessageController extends AdminBaseController{
 
 	//增加
 	public function add_message(){
-
+        
 		$user_id = trim($_SESSION['user']['userid']);
 		$map['userid'] = $user_id;
 		$result = D('User')->where($map)->find();
 
 		//舆情信息输入
-
 		$data['userid'] = $user_id;
 		$data['schoolid'] = $result['schoolid'];
 		$data['title'] = trim(I('post.title'));
-		$product = trim(I('post.product'));
+		$proid = trim(I('post.proid'));
 		$response = array();
 
-		if($product == "舆情专报"){
+		//舆情专报
+		if($proid == 2){
 			$data['product'] = 2;
 			$data['typeid'] = trim(I('post.typeid'));
 			$data['base'] = 10;
 		}
-		elseif($product == "舆情扫描"){
+		elseif($proid == 3){
 			$data['product'] = 3;
 			$data['base'] = 5;
 		}
@@ -259,7 +259,7 @@ class MessageController extends AdminBaseController{
 		}
 
 		$data['title'] = trim(I('post.title'));
-		$data['content'] = I('post.content');
+		$data['content'] = trim($_POST['content']);
 		$data['createtime'] = time();
 
 		$data['substract'] = 0;
@@ -289,52 +289,14 @@ class MessageController extends AdminBaseController{
 
 		//舆情信息输入
 		$data['userid'] = $user_id;
-//		$data['schoolid'] = $result['schoolid'];
-//		$data['title'] = trim(I('post.title'));
 		$product = trim(I('post.product'));
 		$response = array();
+        $data['content'] = trim($_POST['content']);
+        $response['is_err'] = 0;
+        $result['result'] = "is_ok";
 
-//		if($product == "舆情专报"){
-//			$data['product'] = 2;
-//			$data['typeid'] = trim(I('post.typeid'));
-//			$data['base'] = 10;
-//		}
-//		elseif($product == "舆情扫描"){
-//			$data['product'] = 3;
-//			$data['base'] = 5;
-//		}
-//		else{
-//			$response['is_err'] = 1;
-//			$response['result'] = "数据库错误，请重试！";
-//		}
-
-//		$data['title'] = trim(I('post.title'));
-		$data['content'] = trim(I('post.content'));
-//		$data['createtime'] = time();
-//
-
-		//UPLOAD
-//		$upload = new \Think\Upload();// 实例化上传类
-//		$upload->maxSize   =     3145728 ;// 设置附件上传大小
-//		$upload->exts      =     array('pdf', 'txt', 'doc', 'jpeg', '.docx', 'png', 'jpg');// 设置附件上传类型
-//		$upload->rootPath  =     __ROOT__.'/Uploads/'; // 设置附件上传根目录
-//		$upload->savePath  =     ''; // 设置附件上传（子）目录
-//		// 上传文件
-//
-//		$info   =   $upload->upload();
-//		$imgPath = $upload->rootPath.$info['content']['savepath'].$info['content']['savename'];
-//		if(!$info) {// 上传错误提示错误信息
-//			$response['is_err'] = 1;
-//			$result['result'] = $upload->getError();
-//		}else{// 上传成功
-			$response['is_err'] = 0;
-			$result['result'] = "is_ok";
-//		}
-
-		//
-//		$data['file'] = $imgPath;
 		$data['messageid']=I('post.messageid');
-//		cout($data);
+
 		if(D('Message')->save($data)){
 			$response['is_err'] = 0;
 			$result['result'] = "is_ok";

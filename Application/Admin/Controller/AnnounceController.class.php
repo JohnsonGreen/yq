@@ -10,6 +10,7 @@ class AnnounceController extends AdminBaseController{
 	 * 首页
 	 */
 
+	//管理员的
 	public function index(){
 
 		$p = I('post.page');
@@ -35,6 +36,60 @@ class AnnounceController extends AdminBaseController{
 		echo json_encode($res);
 		exit;
 	}
+
+	//老师
+    public function index_teacher(){
+
+        $p = I('post.page');
+        if(empty($p))
+            $p = 1;
+        $announcement = D('Announce')->getData($p, null);
+
+        $res['is_err'] = 1;
+        if($announcement)
+            $res['is_err'] = 0;
+        $res['result'] = $announcement;
+        $res['max_page'] = D('Announce')->getMaxPage(null);
+        //权限问题管理员才能有添加公告权限，我没判断
+        $res['url'] = array(
+            'announce_search'=>'Admin/Announce/search',
+            'announce_add'=>'Admin/Announce/add_announce',
+            'announce_details'=>'Admin/Announce/detail',
+            'announce_update'=>'Admin/Announce/update_announce',
+            'announce_stick'=>'',
+            'announce_del'=>'Admin/Announce/del',
+            'add_file'=>'Admin/Index/add_file'
+        );
+        echo json_encode($res);
+        exit;
+    }
+
+    //学生
+    public function index_student(){
+
+        $p = I('post.page');
+        if(empty($p))
+            $p = 1;
+        $announcement = D('Announce')->getData($p, null);
+
+        $res['is_err'] = 1;
+        if($announcement)
+            $res['is_err'] = 0;
+        $res['result'] = $announcement;
+        $res['max_page'] = D('Announce')->getMaxPage(null);
+        //权限问题管理员才能有添加公告权限，我没判断
+        $res['url'] = array(
+            'announce_search'=>'Admin/Announce/search',
+            'announce_add'=>'',
+            'announce_details'=>'Admin/Announce/detail',
+            'announce_update'=>'',
+            'announce_stick'=>'',
+            'announce_del'=>'',
+            'add_file'=>''
+        );
+        echo json_encode($res);
+        exit;
+    }
 
 	public function search(){
 		$p = I('post.page');
@@ -112,11 +167,9 @@ class AnnounceController extends AdminBaseController{
 		//标题输入最长长度
         @session_start();
 		$max_title_length = 20;
-
 		$data['userid'] = $_SESSION['user']['userid'];
 		$data['title'] = trim(I('post.title'));
-		$data['content'] = trim(I('post.content'));
-
+		$data['content'] = trim($_POST['content']);
 		$data['creattime'] = time();
 
 		if($data['title'] && $data['content']){
@@ -135,9 +188,13 @@ class AnnounceController extends AdminBaseController{
 				}
 
 			}
-		}
-		echo json_encode($result);
-		exit;
+		}else{
+            $result['is_err'] = 1;
+            $result['result'] = "请完善标题和正文！";
+        }
+
+        echo json_encode($result);
+        exit;
 
 	}
 

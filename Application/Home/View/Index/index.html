@@ -69,16 +69,14 @@
         <div class="settings-content"><span>积分</span><span style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-mark"></span></div>
         <div class="settings-content"><span>真实姓名</span><input class="settings-realname settings-input" type="text" name="realname"></div>
         <div class="settings-content"><span>邮箱</span><input class="settings-mail settings-input" type="text" name="email"></div>
-        <div class="settings-content"><span>所属单位</span>
-            <select style="float: right; margin-right: 35%; width: 40%;" class="school" name="school">
-                <option value="0">全部</option>
-            </select>
-        </div>
+        <div class="settings-content"><span>所属单位</span><span style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-unit"></span></div>
         <div class="settings-content"><span>手机号码</span><input class="settings-phone settings-input" type="text" name="phone"></div>
         <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span style="margin-left: 8%;">修改密码</span></div>
-        <div class="settings-content"><span>原始密码</span><input class="originpassword settings-input" type="password" name="originpassword"></div>
-        <div class="settings-content"><span>新密码</span><input class="newpassword settings-input" type="password" name="password"></div>
-        <div class="settings-content"><span>确认密码</span><input class="confirmpassword settings-input" type="password" name="confirmpassword"></div>
+        <div class="change-password">
+            <div class="settings-content"><span>原始密码</span><input class="originpassword settings-input" type="password" name="originpassword"></div>
+            <div class="settings-content"><span>新密码</span><input class="newpassword settings-input" type="password" name="password"></div>
+            <div class="settings-content"><span>确认密码</span><input class="confirmpassword settings-input" type="password" name=""></div>
+        </div>
         <button type="button" onclick="return ctrl.save()">保存</button>
     </form>
 </div>
@@ -168,7 +166,7 @@
         <!--<textarea name="content">-->
 
         <!--</textarea>-->
-        <section style="width: 90%; text-align: left;" id="editor">
+        <section style="width: 80%; text-align: left;" id="editor">
             <div id="edit" style="margin-top: 30px;">
 
             </div>
@@ -257,7 +255,7 @@
         <span class="opinion-right" style="float: right;" onclick="opinionRight()">&#8594;</span>
     </div>
     <div class="opinion-all">
-        <div class="opinion-callback">回复</div>
+        <div class="opinion-callback">序号</div>
         <div class="opinion-title">主题</div>
         <div class="opinion-author">作者</div>
         <div class="opinion-time">发表时间</div>
@@ -722,7 +720,7 @@
                     date1: $("#startDate").val(),
                     date2: $("#endDate").val(),
                     keywords: $("#searchSomething").text(),
-                    school: $(".school").eq(2).find("option:selected").text(),
+                    school: $(".school").eq(1).find("option:selected").text(),
                     type: $(".type").eq(1).find("option:selected").text()
                 },
 
@@ -740,7 +738,7 @@
                     date1: $("#startDate").val(),
                     date2: $("#endDate").val(),
                     keywords: $("#searchSomething").val(),
-                    school: $(".school").eq(2).find("option:selected").text(),
+                    school: $(".school").eq(1).find("option:selected").text(),
                     type: $(".type").eq(1).find("option:selected").text()
                 },
 
@@ -758,7 +756,7 @@
                     date1: $("#startDate").val(),
                     date2: $("#endDate").val(),
                     keywords: $("#searchSomething").val(),
-                    school: $(".school").eq(2).find("option:selected").text(),
+                    school: $(".school").eq(1).find("option:selected").text(),
                     type: $(".type").eq(1).find("option:selected").text()
                 },
 
@@ -776,7 +774,7 @@
                     date1: $("#startDate").val(),
                     date2: $("#endDate").val(),
                     keywords: $("#searchSomething").val(),
-                    school: $(".school").eq(2).find("option:selected").text(),
+                    school: $(".school").eq(1).find("option:selected").text(),
                     type: $(".type").eq(1).find("option:selected").text()
                 },
 

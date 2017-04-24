@@ -36,9 +36,10 @@ class IndexController extends HomeBaseController{
                 $rank =  $sch->order('score desc')->limit(3)->select();    //首页学院分数排名
                 $group = M()->table('__USER_GROUP__ a')->field('b.groupid,b.groupname')->join('__GROUP__ b')->where('a.userid='.$data['userid'].'&&a.groupid=b.groupid')->find();
                 $leftBar = D('GroupLeftbarPermission')->getLeftBar($group['groupid']);
-                $root = 'index.php/';
+                $root = __ROOT__.'/index.php/';
                 $logout = 'Home/Index/logout';
                 $update = 'Admin/Index/update';
+                $imgUpload = 'Home/Index/uploadImag';
                 $other_data = array(
                     'realname'=>$data['realname'],
                     'email'=>$data['email'],
@@ -63,6 +64,7 @@ class IndexController extends HomeBaseController{
                     'root'=>$root,
                     'logout'=>$logout,
                     'update'=>$update,
+                    'imageUpload'=>$imgUpload,
                     'leftBar'=>$leftBar,
                     'rank'=>$rank,
                     'hint_num'=>$result['num'],
@@ -130,6 +132,46 @@ class IndexController extends HomeBaseController{
         $result = D('Type')->select();
         echo json_encode($result);
         exit;
+    }
+
+    public function uploadImag(){
+
+//        $upload = new \Think\Upload();//实例化上传类
+//        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+//        $upload->exts      =     array('xls');// 设置附件上传类型
+//        $upload->rootPath = './Public/Uploads/';
+//        $info   =   $upload->upload(I('post.excel_name'));
+//        if(!$info) {// 上传错误提示错误信息
+//            $this->error($upload->getError(),U('Manager/index'));
+//        }
+
+
+     //   echo json_encode(I('post.file'));
+      // exit;
+
+
+        //UPLOAD
+        $upload = new \Think\Upload();// 实例化上传类
+        $upload->maxSize   =     3145728 ;// 设置附件上传大小
+        $upload->exts      =     array('gif',  'jpeg', 'png', 'jpg','JPG');// 设置附件上传类型
+        //$upload->rootPath  =     __ROOT__.'/Uploads/TextImage/'.date('Y-m-d', time()); // 设置附件上传根目录
+        $upload->rootPath  =    './Uploads/'; // 设置附件上传根目录
+        $upload->savePath  =   'TextImage/'; // 设置附件上传（子）目录
+        // 上传文件
+        $info  =  $upload->upload();
+//        cout($info);
+        $imgPath = $upload->rootPath.$info['file']['savepath'].$info['file']['savename'];
+
+//        echo json_encode($imgPath);
+//        exit;
+
+        if($info) {
+            $response['link'] = $imgPath;
+            echo json_encode($response);
+            exit;
+        }
+        exit;
+
     }
 
 

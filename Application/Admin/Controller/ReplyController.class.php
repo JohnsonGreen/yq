@@ -8,10 +8,9 @@ header('content-type:application/json;charset=utf8');
 class ReplyController extends AdminBaseController{
 
 	public function index(){
-		$map['anoceid'] = trim(I('post.announceid'));
+		$map['anoceid'] = trim(I('post.id'));
 		$result = D('Reply')->where($map)->select();
 		$response['result'] = $result;
-
 		$response['is_err'] = 0;
 		echo json_encode($response);
 		exit;
@@ -19,7 +18,7 @@ class ReplyController extends AdminBaseController{
 	public function add(){
 		$data['userid'] = I('session.user')['userid'];
 		$data['reply_content'] = trim(I('post.content'));
-		$data['anoceid'] = trim(I('post.anoceid'));
+		$data['anoceid'] = trim(I('post.id'));
 		$insert_id = D('Reply')->add($data);
 		$response = array();
 		if($insert_id){

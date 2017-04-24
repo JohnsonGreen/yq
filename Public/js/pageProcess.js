@@ -6,7 +6,7 @@ function schdetFirstPage() {
 
     model.currentPage = 1;
     $.ajax({
-        url: model.identity.root + model.marklist.url.scolist_details,
+        url: model.identity.root + model.marklist.url.scolist_schdetail,
         type: "POST",
         data: {"page": model.currentPage,
 				"schoolid": model.listdet.schoolid},
@@ -22,7 +22,7 @@ function schdetFrontPage(index) {
     if(model.currentPage != 1) {
         model.currentPage--;
         $.ajax({
-            url: model.identity.root + model.marklist.url.scolist_details,
+            url: model.identity.root + model.marklist.url.scolist_schdetail,
             type: "POST",
             data: {"page": model.currentPage,
             "schoolid": model.listdet.schoolid},
@@ -38,7 +38,7 @@ function schdetNextPage() {
     if(model.currentPage != model.listdet.max_page) {
         model.currentPage++;
         $.ajax({
-            url: model.identity.root + model.marklist.url.scolist_details,
+            url: model.identity.root + model.marklist.url.scolist_schdetail,
             type: "POST",
             data: {"page": model.currentPage,
             "schoolid": model.listdet.schoolid},
@@ -54,7 +54,7 @@ function schdetMaxPage() {
 
     model.currentPage = model.listdet.max_page;
     $.ajax({
-        url: model.identity.root + model.marklist.url.scolist_details,
+        url: model.identity.root + model.marklist.url.scolist_schdetail,
         type: "POST",
         data: {"page": model.currentPage,
             "schoolid": model.listdet.schoolid},

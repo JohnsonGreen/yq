@@ -10,15 +10,11 @@ class IndexController extends AdminBaseController{
      * 首页
      */
     public function index(){
-       // echo ceil(20/10);
+
         @session_start();
         //获取组的id以及对应权限
         $group_id = $_SESSION['user']['groupid'];
         $user_id = $_SESSION['user']['userid'];
-
-
-//		$group_id = 3;
-//		$user_id = 3;
 
         if($group_id == 1){
             $map['userid'] = $user_id;
@@ -161,7 +157,7 @@ class IndexController extends AdminBaseController{
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
         $upload->exts      =     array('pdf', 'txt', 'doc', 'jpeg', 'docx', 'png', 'jpg','xls','xlsx');// 设置附件上传类型
         $upload->rootPath  =     'Public/Upload/'; // 设置附件上传根目录
-        $upload->savePath  =     ''; // 设置附件上传（子）目录
+        $upload->savePath  =     'Files/'; // 设置附件上传（子）目录
         // 上传文件
 
         $info   =   $upload->upload();
@@ -172,7 +168,7 @@ class IndexController extends AdminBaseController{
             $response['is_err'] = 1;
             $response['result'] = $upload->getError();
         }else{// 上传成功
-            $imgPath = $upload->rootPath.$info['content']['savepath'].$info['content']['savename'];
+            $imgPath = $upload->rootPath.$info['file']['savepath'].$info['file']['savename'];
             $data['file'] = $imgPath;
             if($link->save($data)){
                 $response['is_err'] = 0;
