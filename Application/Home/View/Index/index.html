@@ -711,7 +711,6 @@
 
     function search() {
         var s = ctrl.getCurrentClass();
-        console.log(s);
         if(s == ".single-post") {
             $.ajax({
                 url: model.identity.root + model.single.url.single_search,

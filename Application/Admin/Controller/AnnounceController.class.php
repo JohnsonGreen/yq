@@ -31,6 +31,7 @@ class AnnounceController extends AdminBaseController{
 			'announce_update'=>'Admin/Announce/update_announce',
 			'announce_stick'=>'Admin/Announce/stick',
 			'announce_del'=>'Admin/Announce/del',
+            'announce_down'=>'Admin/Announce/down',
 			'add_file'=>'Admin/Index/add_file'
 		);
 		echo json_encode($res);
@@ -53,12 +54,13 @@ class AnnounceController extends AdminBaseController{
         //权限问题管理员才能有添加公告权限，我没判断
         $res['url'] = array(
             'announce_search'=>'Admin/Announce/search',
-            'announce_add'=>'Admin/Announce/add_announce',
+            'announce_add'=>'',
             'announce_details'=>'Admin/Announce/detail',
-            'announce_update'=>'Admin/Announce/update_announce',
+            'announce_update'=>'',
             'announce_stick'=>'',
-            'announce_del'=>'Admin/Announce/del',
-            'add_file'=>'Admin/Index/add_file'
+            'announce_del'=>'',
+            'announce_down'=>'',
+            'add_file'=>''
         );
         echo json_encode($res);
         exit;
@@ -85,6 +87,7 @@ class AnnounceController extends AdminBaseController{
             'announce_update'=>'',
             'announce_stick'=>'',
             'announce_del'=>'',
+            'announce_down'=>'',
             'add_file'=>''
         );
         echo json_encode($res);
@@ -143,8 +146,7 @@ class AnnounceController extends AdminBaseController{
 		$id = I('post.id');
 		$data['anoceid'] = $id;
 		$data['stick'] = 1;
-		$data['yq_announce.updatetime']=time();
-
+		$data['updatetime']=time();
 
 		if(D('Announce')->save($data)){
 			$result['is_err'] = 0;
@@ -161,6 +163,29 @@ class AnnounceController extends AdminBaseController{
 		echo json_encode($result);
 		exit;
 	}
+
+	//取消置顶
+    public function down(){
+        $id = I('post.id');
+        $data['anoceid'] = $id;
+        $data['stick'] = 0;
+        $data['updatetime']=0;
+
+        if(D('Announce')->save($data)){
+            $result['is_err'] = 0;
+            $p = I('post.page');
+            if(empty($p))
+                $p = 1;
+            $announcement = D('Announce')->getData($p, null);
+            $result['result'] = $announcement;
+            $result['max_page'] = D('Announce')->getMaxPage(null);
+        }else{
+            $result['is_err'] = 1;
+            $result['result'] = '数据库错误，请重试！';
+        }
+        echo json_encode($result);
+        exit;
+    }
 
 	//增加
 	public function add_announce(){

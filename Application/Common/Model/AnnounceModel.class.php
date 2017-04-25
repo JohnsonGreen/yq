@@ -16,7 +16,7 @@ class AnnounceModel extends Model {
         $result = $this
             -> join('yq_user on yq_announce.userid = yq_user.userid')
             ->where($map)
-            ->order('yq_announce.createtime desc, stick desc, yq_announce.updatetime desc')
+            ->order('yq_announce.stick desc,yq_announce.updatetime desc, yq_announce.createtime desc')
             ->page($p.',10')
             ->select();
 //        cout($result);

@@ -138,10 +138,16 @@ var view = {
             }
             $(".opinion-contentDet" + i).append('<span class="opinion-author">' + s[i].realname + '</span>');
             $(".opinion-contentDet" + i).append('<span class="opinion-time">' + s[i].createtime + '</span>');
-            if (model.identity.groupid == "3")
-                $(".opinion-contentDet" + i).append('<span class="opinion-operation"><a onclick="ctrl.opedit(' + s[i].anoceid + ')">编辑</a><a onclick="ctrl.opup(' + s[i].anoceid + ')">置顶</a><a onclick="ctrl.opdele(' + s[i].anoceid + ')">删除</a></span>');
-            else
+            if (model.identity.groupid == "3"){
+                if(!isNull(s[i].stick) && s[i].stick == '1')
+                    $(".opinion-contentDet" + i).append('<span class="opinion-operation"><a onclick="ctrl.opedit(' + s[i].anoceid + ')">编辑</a><a onclick="ctrl.opdown(' + s[i].anoceid + ')">取消</a><a onclick="ctrl.opdele(' + s[i].anoceid + ')">删除</a></span>');
+                else
+                    $(".opinion-contentDet" + i).append('<span class="opinion-operation"><a onclick="ctrl.opedit(' + s[i].anoceid + ')">编辑</a><a onclick="ctrl.opup(' + s[i].anoceid + ')">置顶</a><a onclick="ctrl.opdele(' + s[i].anoceid + ')">删除</a></span>');
+            }
+            else{
                 $(".opinion-contentDet" + i).append('<span class="opinion-operation">无</span>');
+            }
+
         }
     },
 
@@ -149,6 +155,7 @@ var view = {
         $("#single-currentPage").text(model.currentPage);
         $(".single-content").empty();
         var s = json.result;
+
         for (var i = 0; i < s.length; i++) {
             $(".single-content").append('<div class="single-contentDet' + i + '" style="color:black; width: 100%; height: 38px;"></div>');
             $(".single-contentDet" + i).append('<span class="single-number">' + s[i].messageid + '</span>');
@@ -637,6 +644,27 @@ var ctrl = {
             $(".opinion-output").css("display", "none");
     },
 
+    pubCurrentPage: function() {
+        var temp;
+        for (var i = 0; i < model.identity.leftBar.length; i++)
+            if (model.identity.leftBar[i].keybind == 0)
+                temp = model.identity.root + model.identity.leftBar[i].api;
+            $.ajax({
+                url: temp,
+                type: "POST",
+                data: {
+                    "page": model.currentPage,
+                    "date1": $("#startDate").val(),
+                    "date2": $("#endDate").val(),
+                },
+
+                success: function (json) {
+                    model.pub.max_page = json.max_page;
+                    view.showPub(json);
+                }
+            })
+    },
+
     //舆情公告获取详情页
     opdetail: function (index) {
         view.transform();
@@ -653,7 +681,6 @@ var ctrl = {
 
     //对自己的舆情公告页进行置顶发，成功重新加载此页
     opup: function (index) {
-        model.currentPage = 1;
         $.ajax({
             url: model.identity.root + model.pub.url.announce_stick,
             type: "POST",
@@ -673,10 +700,30 @@ var ctrl = {
         })
     },
 
+    //对自己的舆情公告页进行取消置顶发，成功重新加载此页
+    opdown: function (index) {
+        $.ajax({
+            url: model.identity.root + model.pub.url.announce_down,
+            type: "POST",
+            data: {
+                "id": index,
+                "page": model.currentPage
+            },
+
+            success: function (json) {
+                if (json.is_err == 0) {
+                    alert("取消置顶成功！");
+                    ctrl.getPub();
+                } else {
+                    alert("失败，请重试！");
+                }
+            }
+        })
+    },
+
     //删除选择的信息，成功重新加载此页
     opdele: function (index) {
         if (confirm("确定要删除吗？")) {
-            model.currentPage = 1;
             $.ajax({
                 url: model.identity.root + model.pub.url.announce_del,
                 type: "POST",
@@ -685,11 +732,10 @@ var ctrl = {
                     "page": model.currentPage
                 },
 
-
                 success: function (json) {
                     if (json.is_err == 0) {
                         alert("删除成功！");
-                        ctrl.getPub();
+                        ctrl.pubCurrentPage();
                     } else {
                         alert("失败，请重试！");
                     }
@@ -734,7 +780,7 @@ var ctrl = {
                     "date1": $("#startDate").val(),
                     "date2": $("#endDate").val(),
                     "keywords": $("#searchSomething").val(),
-                    "school": $(".school").eq(2).find("option:selected").text(),
+                    "school": $(".school").eq(1).find("option:selected").text(),
                     "type": $(".type").eq(1).find("option:selected").text()
                 },
                 success: function (json) {
@@ -782,8 +828,7 @@ var ctrl = {
                 type: "POST",
                 datatype: "json",
                 data: {
-                    "messageid": index,
-                    "page": model.currentPage
+                    "messageid": index
                 },
                 success: function (json) {
                     if (json.is_err == 0) {
@@ -832,7 +877,7 @@ var ctrl = {
                 "date1": $("#startDate").val(),
                 "date2": $("#endDate").val(),
                 "keywords": $("#searchSomething").val(),
-                "school": $(".school").eq(2).find("option:selected").text(),
+                "school": $(".school").eq(1).find("option:selected").text(),
                 "type": $(".type").eq(1).find("option:selected").text()
             },
 
