@@ -79,5 +79,13 @@ class UserCollectionModel extends BaseModel{
         return max_page($this->where($map)->select());
     }
 
+    public function getUserCollection(){
+        $res = $this->where(array('userid'=>I('session.user')['userid']))->field('messageid')->select();
+        $coll = array();
+        foreach ($res as $item){
+            array_push($coll,$item['messageid']);
+        }
+        return $coll;
+    }
 
 }

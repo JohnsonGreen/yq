@@ -113,9 +113,9 @@ class MessageModel extends BaseModel{
         if(!$page)
             $page = 1;
         $message = $this
-            ->join('LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid')
-            ->join('LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid')
-            ->join('LEFT JOIN yq_product on yq_message.product = yq_product.proid')
+            ->join('yq_school on yq_message.schoolid = yq_school.schoolid')
+            ->join('yq_type on yq_message.typeid = yq_type.typeid')
+            ->join('yq_product on yq_message.product = yq_product.proid')
             ->where($map)
             ->field('yq_product.proid ,yq_product.proname,messageid, file, userid, schname, yq_message.score, title, content, createtime, click, type')
             ->order('createtime desc')
@@ -123,14 +123,7 @@ class MessageModel extends BaseModel{
             ->select();
         $message = stand_date($message);
 //        cout($message);
-        foreach($message as $i => $item){
-            $map_colllection['messageid'] = $message[$i]['messageid'];
-            $map_colllection['userid'] = I('session.user')['userid'];
-            $message[$i]['is_loved'] = 0;
-            if(D('User_collection')->where($map_colllection)->find()){
-                $message[$i]['is_loved'] = 1;
-            }
-        }
+
         return $message;
     }
     //软删除舆情
@@ -210,8 +203,18 @@ class MessageModel extends BaseModel{
     }
 
     public function getMessagePage($map = null){
+
         $map['is_delete'] = 0;
-        return max_page($this->where($map)->select());
+        $cnt = $this
+            ->join(' yq_school on yq_message.schoolid = yq_school.schoolid')
+            ->join(' yq_type on yq_message.typeid = yq_type.typeid')
+            ->join(' yq_product on yq_message.product = yq_product.proid')
+            ->where($map)
+            ->count('*');
+        $pages = ceil($cnt/10);
+        if($pages == 0)
+            $pages = 1;
+        return $pages;
     }
 
 

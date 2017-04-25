@@ -58,7 +58,7 @@ class IndexController extends HomeBaseController{
                     'groupid' => $group['groupid'],
                     'score'=>$data['score'],
                     'lastip'=>$data['lastip'],
-                    'ip'=>get_client_ip(1),
+                    'ip'=>getIP(),
                     'currentLoginTime'=> time(),
                     'lastlogintime' => date("Y-m-d H:i:s", $data['lastlogintime']),
                     'root'=>$root,

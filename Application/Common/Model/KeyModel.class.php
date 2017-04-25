@@ -14,6 +14,7 @@ class KeyModel extends Model {
             ->join('LEFT JOIN yq_message on yq_key.messageid = yq_message.messageid')
             ->field('keyid, keyname, yq_message.createtime')
             ->page($p.',10')
+            ->order('keyid desc')
             ->select();
         $result = stand_date($result);
 

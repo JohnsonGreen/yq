@@ -27,20 +27,49 @@ class MessageController extends AdminBaseController{
 
 	/**
 	 * 综合信息报送
-	 * 有userid约束
 	 */
 	public function single(){
 		@session_start();
 		$page = I('post.page');
+        $date1 = strtotime(I('post.date1'));
+        $date2 = strtotime(I('post.date2'));
+        if(empty($date1) && !empty($date2)){
+            $map['createtime'] =  array('lt', $date2 + 3600000*24);
+        }else if(!empty($date1) && empty($date2)){
+            $map['createtime'] = array('gt', $date1);
+        }else if($date1 && $date2){
+            $map['createtime'] = array(array('gt', $date1), array('lt', $date2 + 3600000*24));
+        }
+
+        //关键字
+        $key = I('post.keywords');
+        if($key)
+            $map['title'] = array('like', '%'.$key.'%');
+
+        //学院
+        $school = I('post.school');
+        if($school && $school != "全部")
+            $map['schname'] = $school;
+
+        //类别
+        $type = I('post.type');
+        if($type && $type != "全部")
+            $map['type'] = $type;
+
         $map['yq_message.product'] = array('neq', 1);
 		$result = D('Message')->getData($map, $page);
-
+        $coll=D('UserCollection')->getUserCollection();
         $cnt = count($result);
         for($i = 0; $i < $cnt;$i++){
             if($result[$i]['userid'] == $_SESSION['user']['userid']){
                 $result[$i]['flag'] = 1;
             }else{
                 $result[$i]['flag'] = 0;
+            }
+            if(in_array($result[$i]['messageid'],$coll)){
+                $result[$i]['coflag'] = 0;
+            }else{
+                $result[$i]['coflag'] = 1;
             }
         }
 
@@ -59,17 +88,17 @@ class MessageController extends AdminBaseController{
 		echo json_encode($response);
 		exit;
 	}
-	//?????????????学生搜索怎么办？？？
-	public function search(){
 
+	public function search(){
+        @session_start();
 		$date1 = strtotime(I('post.date1'));
 		$date2 = strtotime(I('post.date2'));
 		if(empty($date1) && !empty($date2)){
-            $map['createtime'] =  array('lt', $date2);
+            $map['createtime'] =  array('lt', $date2 + 3600000*24);
         }else if(!empty($date1) && empty($date2)){
             $map['createtime'] = array('gt', $date1);
         }else if($date1 && $date2){
-            $map['createtime'] = array(array('gt', $date1), array('lt', $date2));
+            $map['createtime'] = array(array('gt', $date1), array('lt', $date2 + 3600000*24));
         }
 
 		//关键字
@@ -90,6 +119,7 @@ class MessageController extends AdminBaseController{
 		$map['yq_message.product'] = array('neq', 1);
 		$page = I('post.page');
 		$result = D('Message')->getData($map, $page);
+        $coll=D('UserCollection')->getUserCollection();
 
 		$cnt = count($result);
 		for($i = 0; $i < $cnt;$i++){
@@ -98,6 +128,11 @@ class MessageController extends AdminBaseController{
 			}else{
 				$result[$i]['flag'] = 0;
 			}
+            if(in_array($result[$i]['messageid'],$coll)){
+                $result[$i]['coflag'] = 0;
+            }else{
+                $result[$i]['coflag'] = 1;
+            }
 		}
 
 		$response['result'] = $result;
@@ -113,12 +148,44 @@ class MessageController extends AdminBaseController{
 	//日期搜索
 	//综合信息报送（管理员）
 	public function single_admin(){
+
+        $date1 = strtotime(I('post.date1'));
+        $date2 = strtotime(I('post.date2'));
+        if(empty($date1) && !empty($date2)){
+            $map['createtime'] =  array('lt', $date2 + 3600000*24);
+        }else if(!empty($date1) && empty($date2)){
+            $map['createtime'] = array('gt', $date1);
+        }else if($date1 && $date2){
+            $map['createtime'] = array(array('gt', $date1), array('lt', $date2 + 3600000*24));
+        }
+
+        //关键字
+        $key = I('post.keywords');
+        if($key)
+            $map['title'] = array('like', '%'.$key.'%');
+
+        //学院
+        $school = I('post.school');
+        if($school && $school != "全部")
+            $map['schname'] = $school;
+
+        //类别
+        $type = I('post.type');
+        if($type && $type != "全部")
+            $map['type'] = $type;
+
         $map['yq_message.product'] = array('neq', 1);
 		$page = I('post.page');
 		$result = D('Message')->getData($map, $page);
+        $coll=D('UserCollection')->getUserCollection();
         $cnt = count($result);
         for($i = 0; $i < $cnt;$i++){
             $result[$i]['flag'] = 1;
+            if(in_array($result[$i]['messageid'],$coll)){
+                $result[$i]['coflag'] = 0;
+            }else{
+                $result[$i]['coflag'] = 1;
+            }
         }
 		$response['result'] = $result;
 		$response['max_page'] = D('Message')->getMessagePage($map);
@@ -140,8 +207,13 @@ class MessageController extends AdminBaseController{
 
         $date1 = strtotime(I('post.date1'));
         $date2 = strtotime(I('post.date2'));
-        if($date1 && $date2)
-            $map['createtime'] = array(array('gt', $date1), array('lt', $date2));
+        if(empty($date1) && !empty($date2)){
+            $map['createtime'] =  array('lt', $date2 + 3600000*24);
+        }else if(!empty($date1) && empty($date2)){
+            $map['createtime'] = array('gt', $date1);
+        }else if($date1 && $date2){
+            $map['createtime'] = array(array('gt', $date1), array('lt', $date2 + 3600000*24));
+        }
 
         //关键字
         $key = I('post.keywords');
@@ -157,9 +229,21 @@ class MessageController extends AdminBaseController{
         $type = I('post.type');
         if($type && $type != "全部")
             $map['type'] = $type;
+
 		$map['yq_message.product'] = array('neq', 1);
         $page = I('post.page');
         $result = D('Message')->getData($map, $page);
+        $coll=D('UserCollection')->getUserCollection();
+        $cnt = count($result);
+        for($i = 0; $i < $cnt;$i++){
+            $result[$i]['flag'] = 1;
+            if(in_array($result[$i]['messageid'],$coll)){
+                $result[$i]['coflag'] = 0;
+            }else{
+                $result[$i]['coflag'] = 1;
+            }
+        }
+
         $response['result'] = $result;
         $response['max_page'] = D('Message')->getMessagePage($map);
         $response['is_err'] = 0;

@@ -48,6 +48,10 @@ class UserModel extends BaseModel{
             ->field('yq_user.userid, yq_user.username, lastip, lastlogintime, schname, groupname, realname')
             ->where($map)
             ->select();
+        foreach($result as $i => $item){
+            $result[$i]['lastlogintime'] = date('Y-m-d H:i:s', $result[$i]['lastlogintime']);
+
+        }
         return max_page($result);
     }
 
