@@ -110,7 +110,8 @@ class UserController extends AdminBaseController{
 			'maguser'=>'Admin/User/index',
 			'user_search'=>'Admin/User/search',
 			'user_ban'=>'Admin/User/ban',
-			'groups_api'=>'Admin/User/getGroups'
+			'groups_api'=>'Admin/User/getGroups',
+            'maguser_add'=>'Admin/User/add_user'
 		);
 		echo json_encode($response);
 		exit;
@@ -132,7 +133,8 @@ class UserController extends AdminBaseController{
 				'maguser'=>'Admin/User/index',
 				'user_search'=>'Admin/User/search',
 				'user_ban'=>'Admin/User/ban',
-				'groups_api'=>'Admin/User/getGroups'
+				'groups_api'=>'Admin/User/getGroups',
+                'maguser_add'=>'Admin/User/add_user'
 			);
 		}else{
 			$response['is_err'] = 1;
@@ -161,24 +163,10 @@ class UserController extends AdminBaseController{
 		exit;
 	}
 
-//	public function user_search(){
-//		$map['username'] = trim(I('post.username'));
-//		$p = I('post.page');
-//		$result = D('User')->getUser($p, $map);
-//		$response['is_err'] = 0;
-//		$response['result'] = $result;
-//		$response['max_page'] = count($result)/10;
-//		echo json_encode($response);
-//		exit;
-//	}
 
     public function add_user(){
         $username = trim(I('post.username'));
         $map['username'] = $username;
-
-        //不知道添加用户会不会有学号
-       // $stunum = trim(I('post.stunum'));
-        //$map['stunum'] = $stunum;
 
         if(!empty(D('User')->field('username')->where($map)->find())){
             $response['is_err'] = 1;
@@ -188,10 +176,7 @@ class UserController extends AdminBaseController{
             $confirm_pass = trim(I('post.confirm_password'));
             if(!empty($pass) && $pass == $confirm_pass){
                 $data['username'] = $username;
-//                $data['stunum'] = $stunum;
                 $data['realname']   = trim(I('post.realname'));
-                $data['birthday'] 	= trim(I('post.birthday'));
-                $data['birthplace'] = trim(I('post.birthplace'));
                 $data['email'] 		= trim(I('post.email'));
                 $data['schoolid']   = trim(I('post.schoolid'));
                 $data['phone'] 		= trim(I('post.phone'));
@@ -203,11 +188,10 @@ class UserController extends AdminBaseController{
                 $data['lastlogintime'] = 0;
                 $data['updatetime']    = 0;
                 $userid = D('User')->add($data);
-                 $groupid = trim(I('post.groupid'));
+                $groupid = trim(I('post.groupid'));
                 
                 $id = D('UserGroup')->addGroupUser($userid,$groupid);
-                // echo json_encode(array($userid, $groupid, $id));
-                // exit;
+
                
                 if(!empty($id)){
                     $response['is_err'] = 0;

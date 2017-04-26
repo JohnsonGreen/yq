@@ -68,11 +68,13 @@ class IndexController extends AdminBaseController{
               ));
               exit;
            }
+            $data['updatetime']=time();
             $us->editData(array('userid'=>$data['userid']),$data);
         }else{
             $dta['realname'] = $data['realname'];
             $dta['email'] = $data['email'];
             $dta['phone'] = $data['phone'];
+            $dta['updatetime']=time();
             if($_SESSION['user']['groupid'] == '3'){                      //管理员
                 $us->editData(array('userid'=>$data['userid']),$dta);
             }else{
@@ -93,9 +95,6 @@ class IndexController extends AdminBaseController{
         @session_start();
         $map['username'] = trim(I('post.username'));
         $map['password'] = md5(trim(I('post.password')));
-
-//		$map['username'] = "admin";
-//		$map['password'] = "123456";
 
         $data = $map;
         $res = D('User')->where($map)->find();

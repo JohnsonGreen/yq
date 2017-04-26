@@ -1631,12 +1631,10 @@ var ctrl = {
         if ($(".add-newpassword").val() == $(".add-confirmpassword").val())
             if ($(".add-newpassword").val() != "" && $(".add-confirmpassword").val() != "")
                 $.ajax({
-                    url: model.identity.root + model.manager.add_url,
+                    url: model.identity.root + model.manager.url.maguser_add,
                     type: "POST",
-
                     data: $("#add").serialize(),
-
-                    success: function () {
+                    success: function (json) {
                         if (json.is_err == 0) {
                             alert("添加成功！");
                             $(".add").css("display", "none");

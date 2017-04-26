@@ -1,0 +1,1366 @@
+[ 2017-04-27T00:06:00+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000665s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008139s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0104s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222760' WHERE `userid` = 1 [ RunTime:0.0026s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001279s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003203s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.098081s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.101257s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001942s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003781s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005076s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011656s ]
+
+[ 2017-04-27T00:06:01+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000602s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004067s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006513s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0100s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222761' WHERE `userid` = 1 [ RunTime:0.0056s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0115s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=1 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-04-27T00:06:01+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000531s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007686s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0112s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222761' WHERE `userid` = 1 [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0010s ]
+
+[ 2017-04-27T00:06:01+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000984s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005003s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002904s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005351s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0112s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222761' WHERE `userid` = 1 [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0011s ]
+
+[ 2017-04-27T00:07:18+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000620s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005647s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0126s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222838' WHERE `userid` = 1 [ RunTime:0.0045s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001605s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004142s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.112374s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.116177s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002569s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005035s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005410s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009914s ]
+
+[ 2017-04-27T00:07:19+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000893s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009009s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0148s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222838' WHERE `userid` = 1 [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0173s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0017s ]
+
+[ 2017-04-27T00:07:19+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000931s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008974s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008476s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0155s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222839' WHERE `userid` = 1 [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0017s ]
+
+[ 2017-04-27T00:07:19+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000959s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006185s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014073s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0173s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222839' WHERE `userid` = 1 [ RunTime:0.0035s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0178s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0168s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=18 ) LIMIT 1   [ RunTime:0.0011s ]
+
+[ 2017-04-27T00:09:15+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000469s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003980s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002874s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005469s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0158s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222954' WHERE `userid` = 1 [ RunTime:0.0036s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001608s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004189s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.105128s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.107611s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005191s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007774s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004989s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010349s ]
+
+[ 2017-04-27T00:09:16+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000878s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004913s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015557s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0365s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222955' WHERE `userid` = 1 [ RunTime:0.0053s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0230s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0234s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=18 ) LIMIT 1   [ RunTime:0.0017s ]
+
+[ 2017-04-27T00:09:16+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000971s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012805s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0202s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222956' WHERE `userid` = 1 [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0194s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0017s ]
+
+[ 2017-04-27T00:09:16+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.009012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017801s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010890s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0152s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222956' WHERE `userid` = 1 [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0011s ]
+
+[ 2017-04-27T00:09:26+08:00 ] ::1 /yq/index.php/Home/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000497s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005197s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0170s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493222966' WHERE `userid` = 1 [ RunTime:0.0037s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 113 行.
+SQL: UPDATE `yq_user` SET `lastip`='::1',`lastlogintime`='1493214529' WHERE `userid` = 1 [ RunTime:0.0035s ]
+
+[ 2017-04-27T00:09:27+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000912s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015663s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003090s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006975s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.006786s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.131169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.135461s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003286s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005879s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008654s ]
+
+[ 2017-04-27T00:09:28+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002692s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008857s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0194s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0016s ]
+
+[ 2017-04-27T00:09:28+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.007155s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018999s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0194s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0015s ]
+
+[ 2017-04-27T00:09:28+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001332s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007953s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009315s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+
+[ 2017-04-27T00:09:29+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000938s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007012s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002987s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006114s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0204s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' AND `password` = '123456' LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0138s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=18 ) LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0181s ]
+SQL: SELECT b.groupid,b.groupname FROM yq_user_group a INNER JOIN yq_group b  WHERE ( a.userid=1&&a.groupid=b.groupid ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0162s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0157s ]
+SQL: SELECT b.itemname as name,c.action as api,b.keybind FROM yq_group_leftbar_permission  a INNER JOIN yq_leftbar  b INNER JOIN yq_permission c  WHERE ( a.groupid=3 and a.itemid=b.itemid and a.permid=c.permid ) ORDER BY a.itemid asc  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0144s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_announce` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `yq_hint` [ RunTime:0.0141s ]
+SQL: SELECT `anoceid` FROM `yq_hint` WHERE `userid` = 1  [ RunTime:0.0012s ]
+NOTIC: [8] Undefined index: HTTP_X_FORWARDED_FOR F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_CLIENT_IP F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 14 行.
+
+[ 2017-04-27T00:10:46+08:00 ] ::1 /yq/index.php/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000476s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004568s ]
+ERR: 无法加载控制器:Undefined
+
+[ 2017-04-27T00:10:50+08:00 ] ::1 /yq/index.php/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000841s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006916s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005718s ]
+ERR: 无法加载控制器:Undefined
+
+[ 2017-04-27T00:11:54+08:00 ] ::1 /yq/index.php/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000467s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002869s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004897s ]
+ERR: 无法加载控制器:Undefined
+
+[ 2017-04-27T00:11:55+08:00 ] ::1 /yq/index.php/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000830s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006806s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004081s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007078s ]
+ERR: 无法加载控制器:Undefined
+
+[ 2017-04-27T00:11:56+08:00 ] ::1 /yq/index.php/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000576s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004440s ]
+ERR: 无法加载控制器:Undefined
+
+[ 2017-04-27T00:12:28+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000529s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005080s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008434s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0207s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223148' WHERE `userid` = 2 [ RunTime:0.0021s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.008671s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.012740s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.128703s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.132062s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004263s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007864s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005217s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009846s ]
+
+[ 2017-04-27T00:12:31+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001901s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018841s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0249s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223151' WHERE `userid` = 2 [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0228s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0020s ]
+
+[ 2017-04-27T00:12:31+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001578s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008813s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009486s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0229s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223151' WHERE `userid` = 2 [ RunTime:0.0013s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0213s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'student' LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0201s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid= ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid= ) LIMIT 1  
+
+[ 2017-04-27T00:12:32+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000962s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011194s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0224s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223152' WHERE `userid` = 2 [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0168s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0016s ]
+
+[ 2017-04-27T00:12:38+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000487s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004510s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0167s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223158' WHERE `userid` = 2 [ RunTime:0.0013s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0164s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' AND `password` = '123456' LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0165s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=18 ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0127s ]
+SQL: SELECT b.groupid,b.groupname FROM yq_user_group a INNER JOIN yq_group b  WHERE ( a.userid=1&&a.groupid=b.groupid ) LIMIT 1   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0138s ]
+SQL: SELECT b.itemname as name,c.action as api,b.keybind FROM yq_group_leftbar_permission  a INNER JOIN yq_leftbar  b INNER JOIN yq_permission c  WHERE ( a.groupid=3 and a.itemid=b.itemid and a.permid=c.permid ) ORDER BY a.itemid asc  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0168s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_announce` LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_hint` [ RunTime:0.0152s ]
+SQL: SELECT `anoceid` FROM `yq_hint` WHERE `userid` = 1  [ RunTime:0.0012s ]
+NOTIC: [8] Undefined index: HTTP_X_FORWARDED_FOR F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_CLIENT_IP F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 14 行.
+
+[ 2017-04-27T00:13:29+08:00 ] ::1 /yq/index.php/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000669s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008173s ]
+ERR: 无法加载控制器:Undefined
+
+[ 2017-04-27T00:13:42+08:00 ] ::1 /yq/index.php/undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001215s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008841s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004458s ]
+ERR: 无法加载控制器:Undefined
+
+[ 2017-04-27T00:23:13+08:00 ] ::1 /yq/index.php/Home/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000319s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002819s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014864s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0100s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223793' WHERE `userid` = 1 [ RunTime:0.0026s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 113 行.
+SQL: UPDATE `yq_user` SET `lastip`='::1',`lastlogintime`='1493223158' WHERE `userid` = 1 [ RunTime:0.0025s ]
+
+[ 2017-04-27T00:23:14+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000486s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005325s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001744s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004793s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.124516s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.127016s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004060s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007804s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003488s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005979s ]
+
+[ 2017-04-27T00:23:21+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001249s ]
+INFO: [ app_init ] --END-- [ RunTime:0.025147s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.017554s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+
+[ 2017-04-27T00:23:21+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000982s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007996s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010118s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0221s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0019s ]
+
+[ 2017-04-27T00:23:21+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000858s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007742s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012747s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0228s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0020s ]
+
+[ 2017-04-27T00:23:24+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.011754s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011703s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0212s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' AND `password` = '123456' LIMIT 1   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0163s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=18 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0179s ]
+SQL: SELECT b.groupid,b.groupname FROM yq_user_group a INNER JOIN yq_group b  WHERE ( a.userid=1&&a.groupid=b.groupid ) LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0182s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0179s ]
+SQL: SELECT b.itemname as name,c.action as api,b.keybind FROM yq_group_leftbar_permission  a INNER JOIN yq_leftbar  b INNER JOIN yq_permission c  WHERE ( a.groupid=3 and a.itemid=b.itemid and a.permid=c.permid ) ORDER BY a.itemid asc  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0171s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_announce` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_hint` [ RunTime:0.0161s ]
+SQL: SELECT `anoceid` FROM `yq_hint` WHERE `userid` = 1  [ RunTime:0.0016s ]
+NOTIC: [8] Undefined index: HTTP_X_FORWARDED_FOR F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_CLIENT_IP F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 14 行.
+
+[ 2017-04-27T00:24:10+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000557s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009237s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0199s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223850' WHERE `userid` = 1 [ RunTime:0.0043s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001687s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004464s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.135727s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.139140s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003653s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006839s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005536s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008148s ]
+
+[ 2017-04-27T00:24:14+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000926s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016385s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0237s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223854' WHERE `userid` = 1 [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0157s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0013s ]
+
+[ 2017-04-27T00:24:15+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000943s ]
+INFO: [ app_init ] --END-- [ RunTime:0.026119s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011149s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015366s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0184s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223854' WHERE `userid` = 1 [ RunTime:0.0041s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0205s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0208s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=18 ) LIMIT 1   [ RunTime:0.0019s ]
+
+[ 2017-04-27T00:24:15+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000938s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011167s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015269s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0215s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223855' WHERE `userid` = 1 [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0161s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0016s ]
+
+[ 2017-04-27T00:25:54+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000382s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002128s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003970s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0116s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223954' WHERE `userid` = 1 [ RunTime:0.0028s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001245s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003712s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.074582s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076478s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003827s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005671s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002233s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004085s ]
+
+[ 2017-04-27T00:26:02+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011786s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010706s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0253s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223962' WHERE `userid` = 1 [ RunTime:0.0038s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0202s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0177s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=18 ) LIMIT 1   [ RunTime:0.0014s ]
+
+[ 2017-04-27T00:26:02+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000986s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010944s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0181s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223962' WHERE `userid` = 1 [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0188s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0017s ]
+
+[ 2017-04-27T00:26:02+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000887s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014406s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0171s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223962' WHERE `userid` = 1 [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0206s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0018s ]
+
+[ 2017-04-27T00:26:09+08:00 ] ::1 /yq/index.php/Home/Index/finduserByid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001371s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008594s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004162s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007973s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0223s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223969' WHERE `userid` = 1 [ RunTime:0.0047s ]
+SQL: SELECT `schname`,yq_user.score,`userid`,`username`,`email`,`phone`,`realname` FROM `yq_user` INNER JOIN yq_school ON yq_school.schoolid = yq_user.schoolid  WHERE `ban` = 0 AND `userid` = '12' LIMIT 1   [ RunTime:0.0015s ]
+
+[ 2017-04-27T00:26:38+08:00 ] ::1 /yq/index.php/Home/Index/finduserByid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000467s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004201s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006559s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0196s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493223998' WHERE `userid` = 1 [ RunTime:0.0035s ]
+SQL: SELECT `schname`,yq_user.score,`userid`,`username`,`email`,`phone`,`realname` FROM `yq_user` INNER JOIN yq_school ON yq_school.schoolid = yq_user.schoolid  WHERE `ban` = 0 AND `userid` = '12' LIMIT 1   [ RunTime:0.0027s ]
+
+[ 2017-04-27T00:26:44+08:00 ] ::1 /yq/index.php/Home/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000469s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003964s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004586s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0215s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493224004' WHERE `userid` = 1 [ RunTime:0.0061s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 113 行.
+SQL: UPDATE `yq_user` SET `lastip`='::1',`lastlogintime`='1493223804' WHERE `userid` = 1 [ RunTime:0.0043s ]
+
+[ 2017-04-27T00:26:46+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000486s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005158s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005256s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.006944s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.132551s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.136299s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002736s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006381s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005363s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010261s ]
+
+[ 2017-04-27T00:26:50+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001465s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007867s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009930s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+
+[ 2017-04-27T00:26:50+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000863s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005233s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011360s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0169s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0012s ]
+
+[ 2017-04-27T00:26:50+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001242s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008951s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014747s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0018s ]
+
+[ 2017-04-27T00:27:10+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000469s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005126s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009223s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0207s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'teacher' AND `password` = '123456' LIMIT 1   [ RunTime:0.0019s ]
+
+[ 2017-04-27T00:27:12+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000505s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003113s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005909s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0214s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'teacher' AND `password` = '123456' LIMIT 1   [ RunTime:0.0021s ]
+
+[ 2017-04-27T00:28:04+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000819s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008023s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0214s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'teacher' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0186s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=19 ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0179s ]
+SQL: SELECT b.groupid,b.groupname FROM yq_user_group a INNER JOIN yq_group b  WHERE ( a.userid=12&&a.groupid=b.groupid ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0179s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0226s ]
+SQL: SELECT b.itemname as name,c.action as api,b.keybind FROM yq_group_leftbar_permission  a INNER JOIN yq_leftbar  b INNER JOIN yq_permission c  WHERE ( a.groupid=2 and a.itemid=b.itemid and a.permid=c.permid ) ORDER BY a.itemid asc  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0221s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_announce` LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_hint` [ RunTime:0.0201s ]
+SQL: SELECT `anoceid` FROM `yq_hint` WHERE `userid` = 12  [ RunTime:0.0017s ]
+NOTIC: [8] Undefined index: HTTP_X_FORWARDED_FOR F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_CLIENT_IP F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 14 行.
+
+[ 2017-04-27T00:28:26+08:00 ] ::1 /yq/index.php/Home/Index/finduserByid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000478s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004137s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005513s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0201s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493224106' WHERE `userid` = 12 [ RunTime:0.0041s ]
+SQL: SELECT `schname`,yq_user.score,`userid`,`username`,`email`,`phone`,`realname` FROM `yq_user` INNER JOIN yq_school ON yq_school.schoolid = yq_user.schoolid  WHERE `ban` = 0 AND `userid` = '12' LIMIT 1   [ RunTime:0.0021s ]
+
+[ 2017-04-27T00:28:52+08:00 ] ::1 /yq/index.php/Home/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000838s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010559s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0216s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493224132' WHERE `userid` = 12 [ RunTime:0.0042s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 109 行.
+SQL: UPDATE `yq_user` SET `lastip`='::1',`lastlogintime`='1493224084' WHERE `userid` = 12 [ RunTime:0.0035s ]
+
+[ 2017-04-27T00:28:55+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000530s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008023s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001750s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004221s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.137403s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.140506s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002528s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005114s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008964s ]
+
+[ 2017-04-27T00:29:00+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000994s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010094s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+
+[ 2017-04-27T00:29:00+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000920s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009194s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005153s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009290s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0204s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0014s ]
+
+[ 2017-04-27T00:29:00+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002630s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010872s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008474s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0186s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0014s ]
+
+[ 2017-04-27T00:29:07+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000865s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007204s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004476s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0213s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'teacher' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0213s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=19 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0227s ]
+SQL: SELECT b.groupid,b.groupname FROM yq_user_group a INNER JOIN yq_group b  WHERE ( a.userid=12&&a.groupid=b.groupid ) LIMIT 1   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0260s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0199s ]
+SQL: SELECT b.itemname as name,c.action as api,b.keybind FROM yq_group_leftbar_permission  a INNER JOIN yq_leftbar  b INNER JOIN yq_permission c  WHERE ( a.groupid=2 and a.itemid=b.itemid and a.permid=c.permid ) ORDER BY a.itemid asc  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0186s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_announce` LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_hint` [ RunTime:0.0208s ]
+SQL: SELECT `anoceid` FROM `yq_hint` WHERE `userid` = 12  [ RunTime:0.0015s ]
+NOTIC: [8] Undefined index: HTTP_X_FORWARDED_FOR F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_CLIENT_IP F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 14 行.
+
+[ 2017-04-27T00:29:10+08:00 ] ::1 /yq/index.php/Home/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000889s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006808s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009246s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0234s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493224150' WHERE `userid` = 12 [ RunTime:0.0041s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 109 行.
+SQL: UPDATE `yq_user` SET `lastip`='::1',`lastlogintime`='1493224147' WHERE `userid` = 12 [ RunTime:0.0057s ]
+
+[ 2017-04-27T00:29:18+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002253s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.024613s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008943s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.223903s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.229365s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003864s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008371s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003343s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006571s ]
+
+[ 2017-04-27T00:29:24+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000834s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008437s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+
+[ 2017-04-27T00:29:24+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000990s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007900s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004825s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012677s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0199s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0014s ]
+
+[ 2017-04-27T00:29:24+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000962s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010809s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006370s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0163s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0015s ]
+
+[ 2017-04-27T00:34:21+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000553s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006005s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006933s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0227s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'teacher' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0230s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=19 ) LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0166s ]
+SQL: SELECT b.groupid,b.groupname FROM yq_user_group a INNER JOIN yq_group b  WHERE ( a.userid=12&&a.groupid=b.groupid ) LIMIT 1   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0227s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0165s ]
+SQL: SELECT b.itemname as name,c.action as api,b.keybind FROM yq_group_leftbar_permission  a INNER JOIN yq_leftbar  b INNER JOIN yq_permission c  WHERE ( a.groupid=2 and a.itemid=b.itemid and a.permid=c.permid ) ORDER BY a.itemid asc  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0196s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_announce` LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_hint` [ RunTime:0.0176s ]
+SQL: SELECT `anoceid` FROM `yq_hint` WHERE `userid` = 12  [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: HTTP_X_FORWARDED_FOR F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_CLIENT_IP F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 14 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\ThinkPHP\Common\functions.php 第 1263 行.
+NOTIC: [8] Undefined index: user F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 74 行.
+NOTIC: [2] array_merge(): Argument #1 is not an array F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 74 行.
+
+[ 2017-04-27T00:40:03+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000872s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008151s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006814s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001758s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.004270s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.117614s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.120172s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002512s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005411s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005532s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009807s ]
+
+[ 2017-04-27T00:40:08+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000864s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007982s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008157s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015802s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 18 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+
+[ 2017-04-27T00:40:08+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001372s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008599s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006141s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010229s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0207s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0014s ]
+
+[ 2017-04-27T00:40:08+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000929s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008658s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009524s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0181s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0016s ]
+
+[ 2017-04-27T00:40:22+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000480s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004137s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008642s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0192s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'teacher' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0157s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=19 ) LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0207s ]
+SQL: SELECT b.groupid,b.groupname FROM yq_user_group a INNER JOIN yq_group b  WHERE ( a.userid=12&&a.groupid=b.groupid ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0164s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0188s ]
+SQL: SELECT b.itemname as name,c.action as api,b.keybind FROM yq_group_leftbar_permission  a INNER JOIN yq_leftbar  b INNER JOIN yq_permission c  WHERE ( a.groupid=2 and a.itemid=b.itemid and a.permid=c.permid ) ORDER BY a.itemid asc  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0171s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_announce` LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_hint` [ RunTime:0.0171s ]
+SQL: SELECT `anoceid` FROM `yq_hint` WHERE `userid` = 12  [ RunTime:0.0015s ]
+NOTIC: [8] Undefined index: HTTP_X_FORWARDED_FOR F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_CLIENT_IP F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 14 行.
+
+[ 2017-04-27T00:41:48+08:00 ] ::1 /yq/index.php/Home/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004725s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0156s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493224907' WHERE `userid` = 12 [ RunTime:0.0032s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 111 行.
+SQL: UPDATE `yq_user` SET `lastip`='::1',`lastlogintime`='1493224822' WHERE `userid` = 12 [ RunTime:0.0034s ]
+
+[ 2017-04-27T00:41:49+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006860s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009336s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002462s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.006662s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.165312s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.167853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.008468s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005898s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011010s ]
+
+[ 2017-04-27T00:41:55+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000873s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008099s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013289s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0016s ]
+
+[ 2017-04-27T00:41:55+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000990s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009234s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0019s ]
+
+[ 2017-04-27T00:41:55+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000935s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008055s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010162s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 18 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+
+[ 2017-04-27T00:41:58+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000470s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004026s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006088s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'teacher' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0142s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=19 ) LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0101s ]
+SQL: SELECT b.groupid,b.groupname FROM yq_user_group a INNER JOIN yq_group b  WHERE ( a.userid=12&&a.groupid=b.groupid ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0132s ]
+SQL: SELECT b.itemname as name,c.action as api,b.keybind FROM yq_group_leftbar_permission  a INNER JOIN yq_leftbar  b INNER JOIN yq_permission c  WHERE ( a.groupid=2 and a.itemid=b.itemid and a.permid=c.permid ) ORDER BY a.itemid asc  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0322s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_announce` LIMIT 1   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `yq_hint` [ RunTime:0.0126s ]
+SQL: SELECT `anoceid` FROM `yq_hint` WHERE `userid` = 12  [ RunTime:0.0016s ]
+NOTIC: [8] Undefined index: HTTP_X_FORWARDED_FOR F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_CLIENT_IP F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 14 行.
+
+[ 2017-04-27T00:50:18+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000710s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005780s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006213s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0038s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493225418' WHERE `userid` = 1 [ RunTime:0.0134s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001384s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003897s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.088678s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.091178s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002718s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004818s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004134s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007651s ]
+
+[ 2017-04-27T00:50:19+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000444s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002056s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003863s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0040s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493225419' WHERE `userid` = 1 [ RunTime:0.0194s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0051s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=18 ) LIMIT 1   [ RunTime:0.0028s ]
+
+[ 2017-04-27T00:50:19+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000596s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003971s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003952s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0037s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493225419' WHERE `userid` = 1 [ RunTime:0.0152s ]
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0048s ]
+
+[ 2017-04-27T00:50:19+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000418s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002837s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004475s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0039s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493225419' WHERE `userid` = 1 [ RunTime:0.0164s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0028s ]
+
+[ 2017-04-27T00:50:21+08:00 ] ::1 /yq/index.php/Home/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000480s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004060s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007630s ]
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0049s ]
+SQL: UPDATE `yq_user` SET `updatetime`='1493225421' WHERE `userid` = 1 [ RunTime:0.0157s ]
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 109 行.
+SQL: UPDATE `yq_user` SET `lastip`='::1',`lastlogintime`='1493222969' WHERE `userid` = 1 [ RunTime:0.0154s ]
+
+[ 2017-04-27T00:50:22+08:00 ] ::1 /yq/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000488s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005795s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001611s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003997s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.126793s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.129278s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002664s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006087s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010014s ]
+
+[ 2017-04-27T00:50:24+08:00 ] ::1 /yq/index.php/Home/Index/school
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000769s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007691s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004804s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011473s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yq_school`  [ RunTime:0.0057s ]
+
+[ 2017-04-27T00:50:24+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000844s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007958s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010407s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 6 行.
+
+[ 2017-04-27T00:50:24+08:00 ] ::1 /yq/index.php/Home/Index/type
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000709s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006948s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004125s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008049s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+SQL: SHOW COLUMNS FROM `yq_type` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `yq_type`  [ RunTime:0.0037s ]
+
+[ 2017-04-27T00:50:25+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000713s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002886s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006075s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'admin' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0139s ]
+
+[ 2017-04-27T00:50:40+08:00 ] ::1 /yq/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000575s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004943s ]
+NOTIC: [2] Illegal string offset 'userid' F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] Uninitialized string offset: 0 F:\Tools\WampServer\wamp\www\yq\Application\Common\Controller\BaseController.class.php 第 12 行.
+NOTIC: [8] A session had already been started - ignoring session_start() F:\Tools\WampServer\wamp\www\yq\Application\Home\Controller\IndexController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yq_user` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `yq_user` WHERE `username` = 'teacher' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `yq_school` [ RunTime:0.0037s ]
+SQL: SELECT `schoolid`,`schname` FROM `yq_school` WHERE ( schoolid=19 ) LIMIT 1   [ RunTime:0.0032s ]
+SQL: SELECT * FROM `yq_school` ORDER BY score desc LIMIT 3   [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `yq_user_group` [ RunTime:0.0037s ]
+SQL: SELECT b.groupid,b.groupname FROM yq_user_group a INNER JOIN yq_group b  WHERE ( a.userid=12&&a.groupid=b.groupid ) LIMIT 1   [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0089s ]
+SQL: SHOW COLUMNS FROM `yq_group_leftbar_permission` [ RunTime:0.0051s ]
+SQL: SELECT b.itemname as name,c.action as api,b.keybind FROM yq_group_leftbar_permission  a INNER JOIN yq_leftbar  b INNER JOIN yq_permission c  WHERE ( a.groupid=2 and a.itemid=b.itemid and a.permid=c.permid ) ORDER BY a.itemid asc  [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `yq_announce` [ RunTime:0.0072s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yq_announce` LIMIT 1   [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `yq_hint` [ RunTime:0.0041s ]
+SQL: SELECT `anoceid` FROM `yq_hint` WHERE `userid` = 12  [ RunTime:0.0034s ]
+NOTIC: [8] Undefined index: HTTP_X_FORWARDED_FOR F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 12 行.
+NOTIC: [8] Undefined index: HTTP_CLIENT_IP F:\Tools\WampServer\wamp\www\yq\Application\Common\Common\function.php 第 14 行.
+
