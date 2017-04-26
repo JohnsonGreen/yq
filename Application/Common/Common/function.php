@@ -68,6 +68,7 @@
     }
 
     function max_page($arr){
-        return  ceil(count($arr)/10);
+        $cnt = ceil(count($arr)/10);
+        return  $cnt == 0 ? 1:$cnt;
     }
 

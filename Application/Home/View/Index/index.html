@@ -101,13 +101,13 @@
 
     </div>
 
-    <h3 style="margin-bottom: 5px; margin-left: 5px;">回复</h3>
+    <!--<h3 style="margin-bottom: 5px; margin-left: 5px;">回复</h3>-->
 
-		<textarea width="80%" height="200px " class="details-comments">
+		<!--<textarea width="80%" height="200px " class="details-comments">-->
 
-		</textarea>
+		<!--</textarea>-->
     <button style="float: left;" type="button" onclick="return view.back(model.lastpage)">返回</button>
-    <button type="button" onclick="return ctrl.comment()">发表</button>
+    <button id="pubButton" type="button" onclick="return ctrl.comment()">发表</button>
 </div>
 
 <!--上报舆情-->
@@ -227,13 +227,13 @@
     <span>至</span>
     <input id="endDate" type="text" name="date2" onclick="endDate()">
     <div class="keysearch">
-        <span>关键字搜索</span>
-        <input id="searchSomething" type="text" name="keywords">
+          <span>关键字搜索</span>
+          <input id="searchSomething" type="text" name="keywords">
         <div class="opinion-hide">
-            <span>学院搜索</span>
-            <select class="school" name="school">
-                <option value="0" selected>全部</option>
-            </select>
+                <span>学院搜索</span>
+               <select class="school" name="school">
+                  <option value="0" selected>全部</option>
+               </select>
             <span>类别</span>
             <select class="type" name="type">
                 <option value="0" selected>全部</option>

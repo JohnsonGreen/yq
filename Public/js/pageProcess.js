@@ -390,7 +390,7 @@ function managemarkFirstPage() {
         type: "POST",
         data: {
             "page": model.currentPage,
-            "schoolid": $(".school").eq(4).find("option:selected").val(),
+            "schoolid": $(".school").eq(3).find("option:selected").val(),
             "typeid": $(".type").eq(2).find("option:selected").val()
         },
 
@@ -413,7 +413,7 @@ function managemarkFrontPage() {
             type: "POST",
             data: {
                 "page": model.currentPage,
-                "schoolid": $(".school").eq(4).find("option:selected").val(),
+                "schoolid": $(".school").eq(3).find("option:selected").val(),
                 "typeid": $(".type").eq(2).find("option:selected").val()
             },
 
@@ -437,7 +437,7 @@ function managemarkNextPage() {
             type: "POST",
             data: {
                 "page": model.currentPage,
-                "schoolid": $(".school").eq(4).find("option:selected").val(),
+                "schoolid": $(".school").eq(3).find("option:selected").val(),
                 "typeid": $(".type").eq(2).find("option:selected").val()
             },
 
@@ -460,7 +460,7 @@ function managemarkMaxPage() {
         type: "POST",
         data: {
             "page": model.currentPage,
-            "schoolid": $(".school").eq(4).find("option:selected").val(),
+            "schoolid": $(".school").eq(3).find("option:selected").val(),
             "typeid": $(".type").eq(2).find("option:selected").val()
         },
 

@@ -121,7 +121,6 @@ var view = {
         if (ctrl.getCurrentClass() == ".opinion" || ctrl.getCurrentClass() == ".single-post" || ctrl.getCurrentClass() == ".integrative-post" || ctrl.getCurrentClass() == ".collection")
             $(".opinion-search").css("display", "block");
     },
-
     showPub: function (json) {
         $("#pub-currentPage").text(model.currentPage);
         $(".opinion-content").empty();
@@ -336,7 +335,7 @@ var view = {
             $(".schdet-contentDet" + i).append('<span class="schdet-send">' + s[i].proname + '</span>');
             $(".schdet-contentDet" + i).append('<span class="schdet-title"><a style="margin-left: 15%; float: left;" onclick="ctrl.schdetdet(' + s[i].messageid + ')">' + s[i].title + '</a></span>');
             $(".schdet-contentDet" + i).append('<span class="schdet-mark">' + s[i].score + '</span>');
-            $(".schdet-contentDet" + i).append('<span class="schdet-person">' + s[i].schname + '</span>');
+            $(".schdet-contentDet" + i).append('<span class="schdet-person">' + s[i].username + '</span>');
             $(".schdet-contentDet" + i).append('<span class="schdet-time">' + s[i].createtime + '</span>');
 
             if (!isNull(s[i].flag) && s[i].flag == 1)
@@ -513,7 +512,7 @@ var ctrl = {
                 $(".details-content").append('<h3 style="margin-left:20px;">标题：' + s.title + '</h3>');
                 $(".details-content").append('<p style="margin-left:20px;">关键字：' + s.keyword + '</p>');
                 $(".details-content").append('<p style="margin-left:20px;">来源网址：<a href="' + s.url + '">' + s.url + '</p>');
-                $(".details-content").append('<div id="article1" style="margin-left:20px;">' + s.content + '</div>');
+                $(".details-content").append('<div id="article1 " class="froala-element1" style="margin-left:20px;">' + s.content + '</div>');
 
             }
         })
@@ -667,6 +666,7 @@ var ctrl = {
 
     //舆情公告获取详情页
     opdetail: function (index) {
+        $('#pubButton').css('display','none');
         view.transform();
         ctrl.getPubDetail(index);
         view.lookArticle();
@@ -791,13 +791,14 @@ var ctrl = {
     },
 
     sidetail: function (index) {
+        $('#pubButton').css('display','none');
         view.transform();
         ctrl.getDetail(index, 0);
         view.lookArticle();
     },
 
     siedit: function (index) {
-        //model.single.messageid = index;
+        $('#pubButton').css('display','block');
         view.transform();
         ctrl.getDetail(index, 0);
         view.editArticle();
@@ -891,13 +892,14 @@ var ctrl = {
 
 
     indetail: function (index) {
+        $('#pubButton').css('display','none');
         view.transform();
         ctrl.getDetail(index, 1);
         view.lookArticle();
     },
 
     inedit: function (index) {
-        //model.integrative.messageid = index;
+        $('#pubButton').css('display','block');
         view.transform();
         ctrl.getDetail(index, 1);
         view.editArticle();
@@ -1061,6 +1063,26 @@ var ctrl = {
         }
     },
 
+    managemarkCurrentPage : function(){
+    var temp;
+    for (var i = 0; i < model.identity.leftBar.length; i++)
+        if (model.identity.leftBar[i].keybind == 5)
+            temp = model.identity.root + model.identity.leftBar[i].api;
+        $.ajax({
+            url: temp,
+            type: "POST",
+            data: {
+                "page": model.currentPage,
+                "schoolid": $(".school").eq(4).find("option:selected").val(),
+                "typeid": $(".type").eq(2).find("option:selected").val()
+            },
+
+            success: function (json) {
+                view.showManagemark(json);
+            }
+        })
+},
+
     markdet: function (index) {
         view.transform();
         ctrl.getDetail(index, 0);
@@ -1119,8 +1141,8 @@ var ctrl = {
                     "id": index,
                     "page": model.currentPage
                 },
-
                 success: function (json) {
+                    model.key.max_page = json.max_page;
                     view.showKey(json);
                 }
             })
@@ -1175,7 +1197,6 @@ var ctrl = {
 
     schdetdele: function (index) {
         if (confirm("确定要删除吗？")) {
-            model.currentPage = 1;
             $.ajax({
                 url: model.identity.root + model.listdet.url.scolist_del,
                 type: "POST",
@@ -1193,13 +1214,11 @@ var ctrl = {
                                 "page": model.currentPage,
                                 "schoolid": model.listdet.schoolid
                             },
-
                             success: function (json) {
                                 if (json.is_err == 0) {
                                     model.listdet.max_page = json.max_page;
                                     view.showschdet(json);
                                 }
-
                             }
                         });
                     } else {

@@ -190,11 +190,12 @@ class MessageModel extends BaseModel{
 //        $map['yq_message.schoolid'] = 1;
         $map['yq_message.is_delete'] = 0;
         $message = $this
+            ->join('yq_user on yq_message.userid = yq_user.userid')
             ->join('yq_school on yq_message.schoolid = yq_school.schoolid')
             ->join('yq_type on yq_message.typeid = yq_type.typeid')
             ->join('yq_product on yq_message.product = yq_product.proid')
             ->where($map)
-            ->field('yq_product.proid ,yq_product.proname,yq_message.messageid, userid, schname, yq_message.score, title, content, createtime, click, type')
+            ->field('yq_product.proid ,yq_product.proname,yq_message.messageid, yq_message.userid, yq_user.username,schname, yq_message.score, title, content, yq_message.createtime, click, type')
             ->order('createtime desc')
             ->page($p.', 10')
             ->select();

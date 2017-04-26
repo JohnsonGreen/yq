@@ -392,6 +392,33 @@ class MessageController extends AdminBaseController{
 		exit;
 	}
 
+	//带userid约束
+    public function update_message_admin(){
+        $user_id = trim($_SESSION['user']['userid']);
+        $map['userid'] = $user_id;
+        $result = D('User')->where($map)->find();
+
+        //舆情信息输入
+        $data['userid'] = $user_id;
+        $product = trim(I('post.product'));
+        $response = array();
+        $data['content'] = trim($_POST['content']);
+        $response['is_err'] = 0;
+        $result['result'] = "is_ok";
+
+        $data['messageid']=I('post.messageid');
+
+        if(D('Message')->save($data)){
+            $response['is_err'] = 0;
+            $result['result'] = "is_ok";
+        }else{
+            $response['is_err'] = 1;
+        }
+
+        echo json_encode($response);
+        exit;
+    }
+
 
 
 }
