@@ -2,6 +2,13 @@ $(document).ready(function () {
     view.showMenu();
     $("body").css("background-image", "url(" + ImgPath + "login.png)");
 
+    document.onkeydown = function(e){
+        var ev = document.all ? window.event : e;
+        if(ev.keyCode==13) {
+            sub();
+        }
+    }
+
     $.ajax({
         url: login,
         type: "GET",
@@ -61,7 +68,7 @@ var model = {
     pub: {url: "", max_page: "", currentid: ""},
     single: {url: "", max_page: "", messageid: ""},
     integrative: {url: "", max_page: "", messageid: ""},
-    manager: {url: "", groups_api: ""},
+    manager: {url: "", groups_api: "",target:""},
     collection: {url: "", max_page: ""},
     managemark: {url: "", max_page: ""},
     key: {url: "", max_page: ""},
@@ -358,6 +365,7 @@ var ctrl = {
     },
     //个人设置
     setting: function (index) {
+
         $(ctrl.getCurrentClass()).css("display", "none");
         $(".details").css("display", "none");
         $(".single-send").css("display", "none");
@@ -366,18 +374,17 @@ var ctrl = {
         $(".school-detail").css("display", "none");
         $(".settings").css("display", "block");
 
-        $('select option[value=' + model.identity.schoolid + ']').prop('selected', true);
+        $('select option[value=' + index.schoolid + ']').prop('selected', true);
         $(".settings-account").empty();
-        $(".settings-account").text(model.identity.username);
+        $(".settings-account").text(index.username);
         $(".settings-mark").empty();
-        $(".settings-mark").text(model.identity.score);
+        $(".settings-mark").text(index.score);
         $(".settings-unit").empty();
-        $(".settings-unit").text(model.identity.school);
-        $(".settings-realname").val(model.identity.realname);
-        $(".settings-mail").val(model.identity.email);
-        $(".settings-phone").val(model.identity.phone);
-        if (model.identity.groupid == "1" || model.identity.groupid == "2")
-            $(".change-password").css("display", "none");
+        $(".settings-unit").text(index.schname);
+        $(".settings-realname").val(index.realname);
+        $(".settings-mail").val(index.email);
+        $(".settings-phone").val(index.phone);
+        $("#userid").val(index.userid);
     },
 
     //获得首页的内容信息
@@ -522,8 +529,10 @@ var ctrl = {
     getTitle: function (i) {
         $(".school").val(0);
         $(".type").val(0);
-        if(i == 1)
+        if(i == 1) {
             model.lastpage = ".opinion";
+            $('.opinion-hide').css('display','none');
+        }
         $(ctrl.getCurrentMenu()).css("background-color", "#e5e5e5");
         $(ctrl.getCurrentMenu()).css("color", "black");
         $(ctrl.getCurrentClass()).css("display", "none");
@@ -534,8 +543,8 @@ var ctrl = {
         $(".settings").css("display", "none");
         $(".add").css("display", "none");
         $(".school-detail").css("display", "none");
-        $(ctrl.getCurrentMenu()).css("background-color", "#4d8aa8");
-        $(ctrl.getCurrentMenu()).css("color", "white");
+        $(".menu" + i).css("background-color", "#4d8aa8");
+        $(".menu" + i).css("color", "white");
         model.currentPage = 1;
         var current = ctrl.getCurrentClass();
         switch (current) {
@@ -639,7 +648,7 @@ var ctrl = {
                 })
             }
         }
-        if (model.identity.groupid == "1")
+        if (model.identity.groupid != "3")
             $(".opinion-output").css("display", "none");
     },
 
@@ -667,6 +676,7 @@ var ctrl = {
     //舆情公告获取详情页
     opdetail: function (index) {
         $('#pubButton').css('display','none');
+
         view.transform();
         ctrl.getPubDetail(index);
         view.lookArticle();
@@ -746,6 +756,7 @@ var ctrl = {
 
     //获得单条信息报送的具体内容
     getSingle: function () {
+        $('.opinion-hide').css('display','inline');
         model.lastpage = ".single-post";
         for (var i = 0; i < model.identity.leftBar.length; i++) {
             if (model.identity.leftBar[i].keybind == 1) {
@@ -759,6 +770,7 @@ var ctrl = {
                         // $(".type").val(0);
                         model.single.max_page = json.max_page;
                         model.single.url = json.url;
+
                         view.showSingle(json);
                     }
                 })
@@ -846,6 +858,7 @@ var ctrl = {
     //获得综合信息报送的内容
     getIntegrative: function () {
         model.lastpage = ".integrative-post";
+        $('.opinion-hide').css('display','inline');
         for (var i = 0; i < model.identity.leftBar.length; i++) {
             if (model.identity.leftBar[i].keybind == 2) {
                 $.ajax({
@@ -858,6 +871,7 @@ var ctrl = {
                         // $(".type").val(0);
                         model.integrative.max_page = json.max_page;
                         model.integrative.url = json.url;
+
                         view.showIntegrative(json);
                     }
                 })
@@ -968,12 +982,29 @@ var ctrl = {
     },
 
     maedit: function (index) {
-        ctrl.setting(index);
+        model.manager.target = 'mapers';
+        $('#settings > div:not(.change-password)').css('display','block');
+        $('.change-password').css('display','none');
+        $.ajax({
+            url: model.identity.root + model.identity.findinfo,
+            type: "post",
+            data: {
+                "userid": index,
+            },
+            success: function (json) {
+                if(json.is_err==0){
+                    ctrl.setting(json.result);
+                }else{
+                    alert(json.result);
+                }
+            }
+        });
+
     },
 
     madele: function (index) {
         if (confirm("确定要删除吗？")) {
-            model.currentPage = 1;
+
             $.ajax({
                 url: model.identity.root + model.manager.url.user_ban,
                 type: "post",
@@ -990,12 +1021,30 @@ var ctrl = {
     },
 
     machange: function (index) {
-        ctrl.setting(index);
+        model.manager.target = 'machan';
+        $('#settings > div:not(.change-password)').css('display','none');
+        $('.change-password').css('display','block');
+        $.ajax({
+            url: model.identity.root + model.identity.findinfo,
+            type: "post",
+            data: {
+                "userid": index,
+            },
+            success: function (json) {
+                if(json.is_err==0){
+                    ctrl.setting(json.result);
+                }else{
+                    alert(json.result);
+                }
+            }
+        });
+
     },
 
     //获得我的收藏页的内容
     getCollection: function () {
         model.lastpage = ".collection";
+        $('.opinion-hide').css('display','inline');
         for (var i = 0; i < model.identity.leftBar.length; i++) {
             if (model.identity.leftBar[i].keybind == 4) {
                 $.ajax({
@@ -1008,6 +1057,7 @@ var ctrl = {
                         // $(".type").val(0);
                         model.collection.max_page = json.max_page;
                         model.collection.url = json.url;
+
                         view.showCollection(json);
                     }
                 })
@@ -1189,10 +1239,12 @@ var ctrl = {
     },
 
     schdetdet: function (index) {
+        $("#pubButton").css("display", "none");
         $(".school-detail").css("display", "none");
         view.transform();
         ctrl.getDetailMarkList(index);
         view.lookArticle();
+
     },
 
     schdetdele: function (index) {
@@ -1332,25 +1384,39 @@ var ctrl = {
 
     //保存用户更改的信息
     save: function () {
-        if (!($(".originpassword").val() == "" && $(".newpassword").val() == "" && $(".confirmpassword").val() == "")) {
-            if (!($(".newpassword").val() == $(".confirmpassword").val() && $(".originpassword").val() != "")) {
-                alert("错误的用户密码，请重新清空或者输入!");
-                return;
+
+        da = {};
+        if( model.manager.target == 'machan'){    //修改密碼
+            if (!($(".newpassword").val() != "" && $(".newpassword").val() == $(".confirmpassword").val() && $(".originpassword").val() != "")) {
+                    alert("请检查您的输入！");
+                    return;
             }
+           da = {
+                "password":$('#newpass').val(),
+                "originpassword":$('#oldpass').val(),
+                 "userid":$('#userid').val()
+                };
+        }else if( model.manager.target = 'mapers'){   //修改個人信息
+           da = {
+                "realname":$('#realname').val(),
+                "email":$('#email').val(),
+                "phone":$('#phone').val(),
+                "userid":$('#userid').val()
+           }
+
         }
         $.ajax({
             url: model.identity.root + model.identity.update,
             type: "POST",
-            data: $("#settings").serialize(),
-
+            data: da,
             success: function (json) {
                 if (json.is_err == 0) {
                     alert("保存成功！");
-                    model.identity.realname = $(".settings-realname").val();
-                    model.identity.email = $(".settings-mail").val();
-                    model.identity.phone = $(".settings-phone").val();
                     $(".settings").css("display", "none");
                     $(".contain").css("display", "block");
+                    $('#newpass').val("");
+                    $('#oldpass').val("");
+                    $('#conpass').val("");
                 } else {
                     alert(json.result);
                 }
@@ -1610,13 +1676,21 @@ var ctrl = {
             case ".manager":
                 return ".menu4";
             case ".collection":
-                return ".menu5";
+                if(model.identity.groupid == 3)
+                    return ".menu5";
+                else if(model.identity.groupid == 2)
+                    return ".menu4";
+                else if(model.identity.groupid == 1)
+                    return ".menu3";
             case ".managemark":
                 return ".menu6";
             case ".managekeyword":
                 return ".menu7";
             case ".marklist":
-                return ".menu8";
+                if(model.identity.groupid == 3)
+                    return ".menu8";
+                else
+                    return ".menu5";
             case ".online":
                 return ".menu9";
             case ".log":

@@ -273,6 +273,7 @@ var view = {
 var ctrl = {
     //个人设置
     setting: function(index) {
+
         $(ctrl.getCurrentClass()).css("display", "none");
         $(".details").css("display", "none");
         $(".single-send").css("display", "none");
@@ -920,6 +921,7 @@ var ctrl = {
 
     //保存用户更改的信息
     save:function() {
+        if()
         if(!($(".originpassword").val() == "" && $(".newpassword").val() == "" && $(".confirmpassword").val() == "")){
             if(!($(".newpassword").val() == $(".confirmpassword").val() && $(".originpassword").val() != "")){
                 alert("错误的用户密码，请重新清空或者输入!");

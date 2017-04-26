@@ -39,6 +39,7 @@ class IndexController extends HomeBaseController{
                 $root = __ROOT__.'/index.php/';
                 $logout = 'Home/Index/logout';
                 $update = 'Admin/Index/update';
+                $findinfo = 'Home/Index/finduserByid';
                 $imgUpload = 'Home/Index/uploadImag';
                 $other_data = array(
                     'realname'=>$data['realname'],
@@ -64,6 +65,7 @@ class IndexController extends HomeBaseController{
                     'root'=>$root,
                     'logout'=>$logout,
                     'update'=>$update,
+                    'findinfo'=>$findinfo,
                     'imageUpload'=>$imgUpload,
                     'leftBar'=>$leftBar,
                     'rank'=>$rank,
@@ -134,23 +136,10 @@ class IndexController extends HomeBaseController{
         exit;
     }
 
+
+
     public function uploadImag(){
 
-//        $upload = new \Think\Upload();//实例化上传类
-//        $upload->maxSize   =     3145728 ;// 设置附件上传大小
-//        $upload->exts      =     array('xls');// 设置附件上传类型
-//        $upload->rootPath = './Public/Uploads/';
-//        $info   =   $upload->upload(I('post.excel_name'));
-//        if(!$info) {// 上传错误提示错误信息
-//            $this->error($upload->getError(),U('Manager/index'));
-//        }
-
-
-     //   echo json_encode(I('post.file'));
-      // exit;
-
-
-        //UPLOAD
         $upload = new \Think\Upload();// 实例化上传类
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
         $upload->exts      =     array('gif',  'jpeg', 'png', 'jpg','JPG');// 设置附件上传类型
@@ -174,6 +163,25 @@ class IndexController extends HomeBaseController{
 
     }
 
+    //根据userid找到具体信息
+    public function finduserByid(){
+        $userid = I('post.userid');
+        $info=array();
+        $self=I('session.user');
+        if($self['groupid'] == '3' ){
+          if(!empty($userid)){
+             $info = D('User')->findInfo($userid);
+          }
+        }
+       if(empty($info)){
+           $info = D('User')->findInfo($self['userid']);
+       }
+       echo json_encode(array(
+            'result'=>$info,
+            'is_err'=>'0'
+        ));
+       exit;
+    }
 
 }
 

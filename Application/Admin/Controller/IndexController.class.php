@@ -51,8 +51,15 @@ class IndexController extends AdminBaseController{
         $data = I('post.');
         $us = D('User');
         if(!empty($data['originpassword'])){
-           $user = $us->findByUserId($_SESSION['user']['userid']);
-           if(empty($user) && $user['password'] == md5(trim($data['originpassword']))){
+            if($_SESSION['user']['groupid'] != '3'){
+                echo json_encode(array(
+                    'is_err' => '1',
+                    'result' => '没有权限删除密码！'
+                ));
+                exit;
+            }
+           $user = $us->findByUserId($data['userid']);
+           if(!empty($user) && $user['password'] == md5(trim($data['originpassword']))){
                $data['password'] = md5($data['password']);
            }else{
               echo json_encode(array(
@@ -61,8 +68,17 @@ class IndexController extends AdminBaseController{
               ));
               exit;
            }
+            $us->editData(array('userid'=>$data['userid']),$data);
+        }else{
+            $dta['realname'] = $data['realname'];
+            $dta['email'] = $data['email'];
+            $dta['phone'] = $data['phone'];
+            if($_SESSION['user']['groupid'] == '3'){                      //管理员
+                $us->editData(array('userid'=>$data['userid']),$dta);
+            }else{
+                $us->editData(array('userid'=>$_SESSION['userid']),$dta);
+            }
         }
-        $us->editData(array('userid'=>$_SESSION['user']['userid']),$data);
         echo json_encode(array(
             'is_err' => '0',
             'result' => '修改信息成功'

@@ -23,7 +23,7 @@
         <img style="position: relative; top: 5px;" src="/yq/Public/images//user.png">
         <span class="person-identity"></span>&nbsp;|&nbsp;
         <a class="logout" onclick="return logout()">注销</a>&nbsp;|&nbsp;
-        <a class="person-setting" onclick="return ctrl.setting(model.identity.userid)">个人设置</a>
+        <a class="person-setting" onclick="return ctrl.maedit(model.identity.userid)">个人设置</a>
         &nbsp;|&nbsp;积分<span class="person-mark"></span>
     </div>
 </div>
@@ -69,16 +69,17 @@
         <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span style="margin-left: 8%;">基本资料</span></div>
         <div class="settings-content"><span>账号</span><span style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-account"></span></div>
         <div class="settings-content"><span>积分</span><span style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-mark"></span></div>
-        <div class="settings-content"><span>真实姓名</span><input class="settings-realname settings-input" type="text" name="realname"></div>
-        <div class="settings-content"><span>邮箱</span><input class="settings-mail settings-input" type="text" name="email"></div>
+        <div class="settings-content"><span>真实姓名</span><input id="realname" class="settings-realname settings-input" type="text" name="realname"></div>
+        <div class="settings-content"><span>邮箱</span><input id="email" class="settings-mail settings-input" type="text" name="email"></div>
         <div class="settings-content"><span>所属单位</span><span style="height: 20px; width: 40%; margin-right: 35%; float: right;" class="settings-unit"></span></div>
-        <div class="settings-content"><span>手机号码</span><input class="settings-phone settings-input" type="text" name="phone"></div>
-        <div style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span style="margin-left: 8%;">修改密码</span></div>
+        <div class="settings-content"><span>手机号码</span><input id="phone" class="settings-phone settings-input" type="text" name="phone"></div>
+        <div class="change-password" style="background-color: #e5e5e5; width: 100%; height: 6%; padding-top: 4px; padding-bottom: 4px;"><span style="margin-left: 8%;">修改密码</span></div>
         <div class="change-password">
-            <div class="settings-content"><span>原始密码</span><input class="originpassword settings-input" type="password" name="originpassword"></div>
-            <div class="settings-content"><span>新密码</span><input class="newpassword settings-input" type="password" name="password"></div>
-            <div class="settings-content"><span>确认密码</span><input class="confirmpassword settings-input" type="password" name=""></div>
+            <div class="settings-content"><span>原始密码</span><input id="oldpass" class="originpassword settings-input" type="password" name="originpassword"></div>
+            <div class="settings-content"><span>新密码</span><input id="newpass" class="newpassword settings-input" type="password" name="password"></div>
+            <div class="settings-content"><span>确认密码</span><input id="conpass" class="confirmpassword settings-input" type="password" name=""></div>
         </div>
+        <input type="hidden" id="userid" name="userid" value=""/>
         <button type="button" onclick="return ctrl.save()">保存</button>
     </form>
 </div>
@@ -227,17 +228,13 @@
     <span>至</span>
     <input id="endDate" type="text" name="date2" onclick="endDate()">
     <div class="keysearch">
-        <div class="key-school">
           <span>关键字搜索</span>
           <input id="searchSomething" type="text" name="keywords">
-        </div>
         <div class="opinion-hide">
-            <div class="key-school">
                 <span>学院搜索</span>
                <select class="school" name="school">
                   <option value="0" selected>全部</option>
                </select>
-            </div>
             <span>类别</span>
             <select class="type" name="type">
                 <option value="0" selected>全部</option>
@@ -348,18 +345,18 @@
 
 <!--管理用户页-->
 <div class="manager" style="display: none;">
-    <form>
-        <span>学院搜索</span>
-        <select class="school" name="school">
-            <option value="全部" selected>全部</option>
-        </select>
+    <!--<form>-->
+        <!--<span>学院搜索</span>-->
+        <!--<select class="school" name="school">-->
+            <!--<option value="全部" selected>全部</option>-->
+        <!--</select>-->
 
-        <div class="manager-search">
-            <span>账号</span>
-            <input type="text" name="account">
-            <button>搜索</button>
-        </div>
-    </form>
+        <!--<div class="manager-search">-->
+            <!--<span>账号</span>-->
+            <!--<input type="text" name="account">-->
+            <!--<button>搜索</button>-->
+        <!--</div>-->
+    <!--</form>-->
 
     <div class="manager-ctrl" style="width: 100%; height: 20px; font-size: 20px;">
         <span class="manager-left" style="float: left; display: none;" onclick="managerLeft()">&#8592;</span>

@@ -97,8 +97,18 @@ class UserModel extends BaseModel{
     }
 
     public function findByUserId($userid){
-        return $this->where(array('userid'=>$userid))->find();
+        $data['ban'] = 0;
+        $data['userid'] = $userid;
+        return $this->where($data)->find();
     }
+
+    //
+    public function findInfo($userid){
+        $data['ban'] = 0;
+        $data['userid'] = $userid;
+        return $this->join('yq_school ON yq_school.schoolid = yq_user.schoolid')->field('schname,yq_user.score,userid,username,email,phone,realname')->where($data)->find();
+    }
+
 
     public function getMaxPage($map = null){
         return max_page($this->where($map)->select());
