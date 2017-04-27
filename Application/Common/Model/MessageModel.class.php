@@ -113,11 +113,11 @@ class MessageModel extends BaseModel{
         if(!$page)
             $page = 1;
         $message = $this
-            ->join('yq_school on yq_message.schoolid = yq_school.schoolid')
-            ->join('yq_type on yq_message.typeid = yq_type.typeid')
-            ->join('yq_product on yq_message.product = yq_product.proid')
+            ->join('LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid')
+            ->join('LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid')
+            ->join('LEFT JOIN yq_product on yq_message.product = yq_product.proid')
             ->where($map)
-            ->field('yq_product.proid ,yq_product.proname,messageid, file, userid, schname, yq_message.score, title, content, createtime, click, type')
+            ->field('yq_product.proid ,yq_product.proname,messageid, file, userid, schname,yq_message.add,yq_message.substract,yq_message.score, title, content, createtime, click, type')
             ->order('createtime desc')
             ->page($page.', 10')
             ->select();
@@ -152,9 +152,9 @@ class MessageModel extends BaseModel{
     public function getMessage($id){
         $map['messageid'] = $id;
         $message = $this
-            ->join('yq_school on yq_message.schoolid = yq_school.schoolid')
-            ->join('yq_type on yq_message.typeid = yq_type.typeid')
-            ->join('yq_user on yq_message.userid = yq_user.userid')
+            ->join('LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid')
+            ->join('LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid')
+            ->join('LEFT JOIN yq_user on yq_message.userid = yq_user.userid')
             ->where($map)
             ->field('yq_message.messageid,yq_message.keyword,url,base,substract,add,yq_message.userid, schname, yq_message.score, yq_message.title, yq_message.content, yq_message.createtime, click, type, username, file')
             ->select();
@@ -169,9 +169,9 @@ class MessageModel extends BaseModel{
     public function getMessageDetails($id){
         $map['messageid'] = $id;
         $message = $this
-            ->join('yq_school on yq_message.schoolid = yq_school.schoolid')
-            ->join('yq_type on yq_message.typeid = yq_type.typeid')
-            ->join('yq_user on yq_message.userid = yq_user.userid')
+            ->join('LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid')
+            ->join('LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid')
+            ->join('LEFT JOIN yq_user on yq_message.userid = yq_user.userid')
             ->where($map)
             ->field('yq_message.messageid,yq_message.keyword,url,base,select,approval,warning,quality,special,substract,add,yq_message.userid, schname, yq_message.score, yq_message.title, yq_message.content, yq_message.createtime, click, type, username')
             ->find();
@@ -190,12 +190,12 @@ class MessageModel extends BaseModel{
 //        $map['yq_message.schoolid'] = 1;
         $map['yq_message.is_delete'] = 0;
         $message = $this
-            ->join('yq_user on yq_message.userid = yq_user.userid')
-            ->join('yq_school on yq_message.schoolid = yq_school.schoolid')
-            ->join('yq_type on yq_message.typeid = yq_type.typeid')
-            ->join('yq_product on yq_message.product = yq_product.proid')
+            ->join('LEFT JOIN yq_user on yq_message.userid = yq_user.userid')
+            ->join('LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid')
+            ->join('LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid')
+            ->join('LEFT JOIN yq_product on yq_message.product = yq_product.proid')
             ->where($map)
-            ->field('yq_product.proid ,yq_product.proname,yq_message.messageid, yq_message.userid, yq_user.username,schname, yq_message.score, title, content, yq_message.createtime, click, type')
+            ->field('yq_product.proid ,yq_product.proname,yq_message.messageid,yq_message.substract,yq_message.add, yq_message.userid, yq_user.username,schname, yq_message.score, title, content, yq_message.createtime, click, type')
             ->order('createtime desc')
             ->page($p.', 10')
             ->select();
@@ -207,9 +207,9 @@ class MessageModel extends BaseModel{
 
         $map['is_delete'] = 0;
         $cnt = $this
-            ->join(' yq_school on yq_message.schoolid = yq_school.schoolid')
-            ->join(' yq_type on yq_message.typeid = yq_type.typeid')
-            ->join(' yq_product on yq_message.product = yq_product.proid')
+            ->join('LEFT JOIN yq_school on yq_message.schoolid = yq_school.schoolid')
+            ->join('LEFT JOIN yq_type on yq_message.typeid = yq_type.typeid')
+            ->join('LEFT JOIN yq_product on yq_message.product = yq_product.proid')
             ->where($map)
             ->count('*');
         $pages = ceil($cnt/10);

@@ -197,7 +197,10 @@ var view = {
         for (var i = 0; i < s.length; i++) {
             $(".integrative-content").append('<div class="integrative-contentDet' + i + '" style="color:black; width: 100%; height: 38px;"></div>');
             $(".integrative-contentDet" + i).append('<span class="integrative-number">' + s[i].messageid + '</span>');
-            $(".integrative-contentDet" + i).append('<span class="integrative-type">' + s[i].type + '</span>');
+            if(!isNull(s[i].type))
+                $(".integrative-contentDet" + i).append('<span class="integrative-type">' + s[i].type + '</span>');
+            else
+                $(".integrative-contentDet" + i).append('<span class="integrative-type">无</span>');
             $(".integrative-contentDet" + i).append('<span class="integrative-product">' + s[i].proname + '</span>');
             if (s[i].file == null)
                 $(".integrative-contentDet" + i).append('<span style="text-align: left;" class="integrative-title"><img style="text-align: left; margin-left: 15%;" src="' + ImgPath + 'content.png"><a style="margin-left: 20px;" onclick="ctrl.indetail(' + s[i].messageid + ')">' + s[i].title + '</a></span>');
@@ -469,7 +472,8 @@ var ctrl = {
                 $(".details-createtime").empty();
                 $(".details-createtime").append('上报时间：' + s.createtime + " ");
                 $(".details-type").empty();
-                $(".details-type").append('舆情类型：' + s.type + "&nbsp;");
+                if(!isNull(s.type))
+                    $(".details-type").append('舆情类型：' + s.type + "&nbsp;");
                 $(".details-base").empty();
                 $(".details-base").append('报送分：' + s.base + "  ");
                 $("details-add").empty();
